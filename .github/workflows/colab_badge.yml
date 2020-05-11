@@ -1,0 +1,15 @@
+name: Google colab badge update
+on: [push]
+
+jobs:
+  build:
+    name: Example Job
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Colab Badge Action 
+        uses: trsvchn/colab-badge-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          check: 'all'
+          update: true
