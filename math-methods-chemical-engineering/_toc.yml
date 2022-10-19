@@ -6,9 +6,9 @@ root: intro
 parts:
 - caption: Course Notes
   chapters:
+  - file: notes/linear_algebra/1-intro-matrices
   - file: notes/linear_algebra/linear_algebra
     sections:
-    - file: notes/linear_algebra/1-intro-matrices
     - file: notes/linear_algebra/2-matrix-manipulation
     - file: notes/linear_algebra/3-gauss-elimination
     - file: notes/linear_algebra/4-rank-gauss-examples
