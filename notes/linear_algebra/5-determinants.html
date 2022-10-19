@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Using matrix inverses, and matrix determinants &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    <title>Using matrix inverses, and matrix determinants &#8212; Mathematical Methods for Chemical Engineering</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -95,7 +95,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <h1 class="site-logo" id="site-title">Mathemtaical Methods for Chemical Engineering</h1>
+      <h1 class="site-logo" id="site-title">Mathematical Methods for Chemical Engineering</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -778,8 +778,8 @@ if <span class="math notranslate nohighlight">\(\arr{A}=\begin{bmatrix}1&amp;0&a
 <li><p>The value of the determinant will tell us whether or not the matrix is singular.</p></li>
 <li><p>Generalized definition:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-3e984489-904f-4033-9808-203e68f648c0">
-<span class="eqno">(4)<a class="headerlink" href="#equation-3e984489-904f-4033-9808-203e68f648c0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3820f4f6-1cf4-4505-89ca-c16bc3e04b50">
+<span class="eqno">(4)<a class="headerlink" href="#equation-3820f4f6-1cf4-4505-89ca-c16bc3e04b50" title="Permalink to this equation">#</a></span>\[\begin{equation}
   D = |\arr{A}| = \det(\arr{A})=\begin{cases}
     a_{11} &amp; \text{if $n=1$}.\\
     a_{11}A_{11} + a_{12}A_{12} + ... + a_{1n}A_{1n} &amp; \text{if n&gt;1}.
@@ -852,8 +852,8 @@ a_{11}a_{22} - a_{12}a_{21} = a_{12}a_{21}\neq0
 <li><p>Great! These cases of <span class="math notranslate nohighlight">\(a_{11}\neq0\)</span> and <span class="math notranslate nohighlight">\(a_{11}=0\)</span> are consistent and we can define <br />
 <span class="math notranslate nohighlight">\(det(\arr{A}) = |\arr{A}| = a_{11}a_{22} - a_{12} a_{21}\)</span></p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-fb5b635c-6fda-4bbf-92d6-f71794fed03f">
-<span class="eqno">(5)<a class="headerlink" href="#equation-fb5b635c-6fda-4bbf-92d6-f71794fed03f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-330c4d6b-7ff5-478c-af4b-b347717f83c0">
+<span class="eqno">(5)<a class="headerlink" href="#equation-330c4d6b-7ff5-478c-af4b-b347717f83c0" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \begin{cases}
     =0 &amp; \text{when $\arr{A}$ is singular}\\
     \neq 0 &amp; \text{when $\arr{A}$ is non-singular}
@@ -877,8 +877,8 @@ a_{31}&amp;a_{32}&amp;a_{33}
 <ul class="simple">
 <li><p>Working with Row 1, decompose as follows:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-fa769214-7178-472e-9b1d-e41e77c7fbee">
-<span class="eqno">(6)<a class="headerlink" href="#equation-fa769214-7178-472e-9b1d-e41e77c7fbee" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-eaabdd87-218b-4898-bbae-d0cb043ba93c">
+<span class="eqno">(6)<a class="headerlink" href="#equation-eaabdd87-218b-4898-bbae-d0cb043ba93c" title="Permalink to this equation">#</a></span>\[\begin{align}
 \det(\arr{A}) &amp;= a_{11} \left|\begin{array}{}
 a_{22}&amp;a_{23}\\
 a_{32}&amp;a_{33}
@@ -903,8 +903,8 @@ a_{31}&amp;a_{33}
 3&amp;1&amp;2\\
 5&amp;4&amp;6\end{array}\right|\)</span></p>
 <p>What is <span class="math notranslate nohighlight">\(\det(\arr{A})\)</span>?</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7fc19b29-5cfd-42f3-84e4-c578c2fc6962">
-<span class="eqno">(7)<a class="headerlink" href="#equation-7fc19b29-5cfd-42f3-84e4-c578c2fc6962" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-99644cd9-771c-43c3-a03d-6c8dbb92bb9e">
+<span class="eqno">(7)<a class="headerlink" href="#equation-99644cd9-771c-43c3-a03d-6c8dbb92bb9e" title="Permalink to this equation">#</a></span>\[\begin{align}
 \det(\arr{A}) &amp;= 2 \left|\begin{array}{}
 1&amp;2\\
 4&amp;6\end{array}\right|
@@ -928,8 +928,8 @@ a_{31}&amp;a_{33}
 2&amp;5&amp;4\\
 3&amp;1&amp;2\\
 5&amp;4&amp;6\end{array}\right|\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-2c6a9339-ce4b-4972-9f3b-31dd8d908155">
-<span class="eqno">(8)<a class="headerlink" href="#equation-2c6a9339-ce4b-4972-9f3b-31dd8d908155" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f23de6a0-7895-4195-a271-f809be984527">
+<span class="eqno">(8)<a class="headerlink" href="#equation-f23de6a0-7895-4195-a271-f809be984527" title="Permalink to this equation">#</a></span>\[\begin{align}
 \det(\arr{A}) &amp;= -5 \left|\begin{array}{}
 3&amp;2\\
 5&amp;6\end{array}\right|
@@ -959,8 +959,8 @@ a_{31}&amp;a_{33}
 <section id="general-definition-of-the-determinant-any-size-matrix">
 <h2>General definition of the determinant (any size matrix)<a class="headerlink" href="#general-definition-of-the-determinant-any-size-matrix" title="Permalink to this headline">#</a></h2>
 <p>OK, so let’s revisit the general determinant definition:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cf00d74d-6f2c-4b37-a48f-9f3e1a844ca2">
-<span class="eqno">(9)<a class="headerlink" href="#equation-cf00d74d-6f2c-4b37-a48f-9f3e1a844ca2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3f3bffe3-ba6d-40ee-9028-20c9f4662a5b">
+<span class="eqno">(9)<a class="headerlink" href="#equation-3f3bffe3-ba6d-40ee-9028-20c9f4662a5b" title="Permalink to this equation">#</a></span>\[\begin{equation}
   D = |\arr{A}| = \det(\arr{A})=\begin{cases}
     a_{11} &amp; \text{if $n=1$}.\\
     a_{11}A_{11} + a_{12}A_{12} + ... + a_{1n}A_{1n} &amp; \text{if n&gt;1}.
@@ -970,8 +970,8 @@ a_{31}&amp;a_{33}
 <ul class="simple">
 <li><p>So, for a 3 <span class="math notranslate nohighlight">\(\times\)</span>3 matrix, this would be</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-80bdee32-7a63-4e9d-9003-5e1160f3a319">
-<span class="eqno">(10)<a class="headerlink" href="#equation-80bdee32-7a63-4e9d-9003-5e1160f3a319" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d6e88e7e-b4ad-4869-8556-a025064a0d99">
+<span class="eqno">(10)<a class="headerlink" href="#equation-d6e88e7e-b4ad-4869-8556-a025064a0d99" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\arr{A}| &amp; = a_{11}(-1)^2\det(\arr{M_{11}}) + a_{12}(-1)^3\det(\arr{M_{12}}) + a_{13}(-1)^4\det(\arr{M_{13}})\\
 &amp; =a_{11}\det(\arr{M_{11}}) - a_{12}\det(\arr{M_{12}}) + a_{13}\det(\arr{M_{13}})
 \end{align}\]</div>
@@ -979,8 +979,8 @@ a_{31}&amp;a_{33}
 <li><p>This generalized definition is for when we work off of Row 1 only.</p></li>
 <li><p>We can further generalize</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-144536ef-7828-4d37-aa2a-0c986702bdf9">
-<span class="eqno">(11)<a class="headerlink" href="#equation-144536ef-7828-4d37-aa2a-0c986702bdf9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-059cf7cd-d446-4075-9b56-26e7a5733870">
+<span class="eqno">(11)<a class="headerlink" href="#equation-059cf7cd-d446-4075-9b56-26e7a5733870" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\arr{A}| = a_{j1}A_{j1} + a_{j2}A_{j2} + ... + a_{jn}A_{jn} &amp;&amp; \text{for n &gt; 1}
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(A_{jk} = (-1)^{j+k}\det(\arr{M_{jk}})\)</span> (careful with the signs!)<br />
@@ -988,8 +988,8 @@ a_{31}&amp;a_{33}
 <ul class="simple">
 <li><p>An n <span class="math notranslate nohighlight">\(\times\)</span> n matrix has <span class="math notranslate nohighlight">\(n^2\)</span> cofactors and <span class="math notranslate nohighlight">\(n^2\)</span> minors.</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-603377f4-bd4b-4b71-abf2-3bec69f3d1e9">
-<span class="eqno">(12)<a class="headerlink" href="#equation-603377f4-bd4b-4b71-abf2-3bec69f3d1e9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ab827eb6-0831-47ba-908b-c49e8628009e">
+<span class="eqno">(12)<a class="headerlink" href="#equation-ab827eb6-0831-47ba-908b-c49e8628009e" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix}
 a_{11} &amp; a_{12} &amp; a_{13}\\
 a_{21} &amp; a_{22} &amp; a_{23}\\
@@ -1025,8 +1025,8 @@ Ex: \begin{bmatrix}
 \end{bmatrix}<br />
 Which column or row to choose? Column 3, which has most zeros.</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-6ecad7cf-17dc-4c89-b821-f5c868d5e927">
-<span class="eqno">(13)<a class="headerlink" href="#equation-6ecad7cf-17dc-4c89-b821-f5c868d5e927" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-36d50885-cc9c-4514-8bea-6130f2a3112f">
+<span class="eqno">(13)<a class="headerlink" href="#equation-36d50885-cc9c-4514-8bea-6130f2a3112f" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\arr{A}| &amp;= a_{13}A_{13} + a_{23}A_{23} + a_{33}A_{33}\\
 &amp; = a_{13} (-1)^{1+3}\det(\arr{M_{13}})\\
 &amp; = 4[(5)(6)-(3)(1)]\\

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Introduction to Numerical Solution of Differential Equations &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    <title>Introduction to Numerical Solution of Differential Equations &#8212; Mathematical Methods for Chemical Engineering</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -95,7 +95,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <h1 class="site-logo" id="site-title">Mathemtaical Methods for Chemical Engineering</h1>
+      <h1 class="site-logo" id="site-title">Mathematical Methods for Chemical Engineering</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -873,21 +873,21 @@ title="Print to PDF"
 <ul class="simple">
 <li><p>We’ll start with simple <span class="math notranslate nohighlight">\(1^\circ\)</span> ODE Initial Value Problem (IVP)</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-0e0d7791-a9df-41c0-992d-c90566773720">
-<span class="eqno">(353)<a class="headerlink" href="#equation-0e0d7791-a9df-41c0-992d-c90566773720" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-72b4f284-5fe9-4777-a5e3-4665aa7727de">
+<span class="eqno">(353)<a class="headerlink" href="#equation-72b4f284-5fe9-4777-a5e3-4665aa7727de" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{dy}{dt} = -y, &amp;&amp; y(t=0) = 1
 \end{align}\]</div>
 <p>We’ve solved this already</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f3b229d6-3ccc-406b-a894-09faad69b62a">
-<span class="eqno">(354)<a class="headerlink" href="#equation-f3b229d6-3ccc-406b-a894-09faad69b62a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ed98b95f-ef7c-4268-b292-bc25f7f610f6">
+<span class="eqno">(354)<a class="headerlink" href="#equation-ed98b95f-ef7c-4268-b292-bc25f7f610f6" title="Permalink to this equation">#</a></span>\[\begin{align}
 y = \exp(-x)
 \end{align}\]</div>
 <ul class="simple">
 <li><p>How would you do this without being able to solve differential equation? The Taylor expansion is a related concept, so let’s quickly review that.</p></li>
 </ul>
 <p>For today, we’re going to solve differential equations of the form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c341f8e6-f507-4a8a-acee-887d8ef06dc5">
-<span class="eqno">(355)<a class="headerlink" href="#equation-c341f8e6-f507-4a8a-acee-887d8ef06dc5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e4e8eca6-5c73-45a4-946c-18359e3a56b5">
+<span class="eqno">(355)<a class="headerlink" href="#equation-e4e8eca6-5c73-45a4-946c-18359e3a56b5" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{dy}{dt}=f(t, y)
 \end{align}\]</div>
 <section id="benefits-of-analytical-numerical-methods">
@@ -934,16 +934,16 @@ y = \exp(-x)
 <ul class="simple">
 <li><p>We have a complicated function (based on info at one point) that we want to  approximate. The Taylor series is a polynomial approxiamation of <span class="math notranslate nohighlight">\(f\)</span>:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-b7782294-1b19-4b3e-b60c-9cddf3d79212">
-<span class="eqno">(356)<a class="headerlink" href="#equation-b7782294-1b19-4b3e-b60c-9cddf3d79212" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8e17f35d-f399-4479-89f2-032363fd0e9f">
+<span class="eqno">(356)<a class="headerlink" href="#equation-8e17f35d-f399-4479-89f2-032363fd0e9f" title="Permalink to this equation">#</a></span>\[\begin{align}
 \hat{f} = a + bx + cx^2 + dx^3
 \end{align}\]</div>
 <p>The simplest approximation is <span class="math notranslate nohighlight">\(\hat{f} = a\)</span>. Let’s demonstrate with <span class="math notranslate nohighlight">\(f(x) = \exp(x)\)</span></p>
 <ul class="simple">
 <li><p>Each coefficient is obtained by matching derivatives</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-289b287c-6cf0-4c10-b715-68629b522f3a">
-<span class="eqno">(357)<a class="headerlink" href="#equation-289b287c-6cf0-4c10-b715-68629b522f3a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-75fce2ae-f636-4451-8bdf-75f15827641b">
+<span class="eqno">(357)<a class="headerlink" href="#equation-75fce2ae-f636-4451-8bdf-75f15827641b" title="Permalink to this equation">#</a></span>\[\begin{align}
 \hat{f}(x=0) = a = f(x=0)\\
 \frac{d\hat{f}}{dx}\bigg|_{x=0} = b = \frac{df}{dx}\bigg|_{x=0}\\
 \frac{d^2\hat{f}}{dx^2}\bigg|_{x=0} = 2c = \frac{d^2}{dx^2}\bigg|_{x=0}
@@ -955,26 +955,26 @@ y = \exp(-x)
 <ul class="simple">
 <li><p>Simplest possible scheme - use the Taylor expansion to move from one point to the next for integrating. Start with definition of derivative:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-7f0d83e3-1dce-4e6f-a0c5-713c0c4fefe9">
-<span class="eqno">(358)<a class="headerlink" href="#equation-7f0d83e3-1dce-4e6f-a0c5-713c0c4fefe9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4c20f802-b2ee-4b9a-bba0-3257b04f2186">
+<span class="eqno">(358)<a class="headerlink" href="#equation-4c20f802-b2ee-4b9a-bba0-3257b04f2186" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{dy}{dt}\bigg|_{t=0} = \frac{y(t=h) - y(t=0)}{h - 0}\\
 \frac{dy}{dt}\bigg|_{t=0} = \frac{y(t_1) - y(t_0)}{t_1 - t_0}
 \end{align}\]</div>
 <p>Let’s rearrange</p>
-<div class="amsmath math notranslate nohighlight" id="equation-52752fcf-8718-4253-b8c1-87fa522a1395">
-<span class="eqno">(359)<a class="headerlink" href="#equation-52752fcf-8718-4253-b8c1-87fa522a1395" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0ed4813f-89ed-40ec-a92b-67aea1449719">
+<span class="eqno">(359)<a class="headerlink" href="#equation-0ed4813f-89ed-40ec-a92b-67aea1449719" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(t_1) = \frac{dy}{dt}\bigg|_{t_0}(t_1-t_0) + y(t_0) \ \rightarrow \text{  ODE gives us this!}
 \end{align}\]</div>
 <p><span class="math notranslate nohighlight">\(\underline{\text{Ex}}\)</span> : <span class="math notranslate nohighlight">\(\frac{dy}{dt} = - y\)</span>,  <span class="math notranslate nohighlight">\(\hspace{1cm}y(t=0) = 1\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-30ce25d5-1133-4b45-a08a-8fd3776e5c4e">
-<span class="eqno">(360)<a class="headerlink" href="#equation-30ce25d5-1133-4b45-a08a-8fd3776e5c4e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2f8f025d-e09c-4a77-95fb-17a88e03041d">
+<span class="eqno">(360)<a class="headerlink" href="#equation-2f8f025d-e09c-4a77-95fb-17a88e03041d" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(t&amp;=0) = 1\\
 y(t_1) &amp;= \frac{dy}{dt}\bigg|_{t=0} (t_1 - 0) + y(t = 0)\\
 &amp;= -y \bigg|_{t=0}t_1 + 1
 \end{align}\]</div>
 <p>Evaluate error for Euler approximation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d205f2ae-08b5-4a9f-b10d-0801094bc205">
-<span class="eqno">(361)<a class="headerlink" href="#equation-d205f2ae-08b5-4a9f-b10d-0801094bc205" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1e257130-9b72-480e-b7da-df8edf080980">
+<span class="eqno">(361)<a class="headerlink" href="#equation-1e257130-9b72-480e-b7da-df8edf080980" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(t) = \exp(-t) \leftarrow \text{  known}\\
 y(\Delta t) = y(0) + \Delta t \frac{dy}{dt}\bigg|_{t=0} + \frac{\Delta t^2}{2} \frac{d^2y}{dt^2}\bigg|_{t=0} + ...\\
 \frac{y(\Delta t) - y(0)}{\Delta t} = \frac{dy}{dt}\bigg|_{t=0} + \frac{\Delta t}{2} \frac{d^2y}{dt^2}\bigg|_{t=0} + ...
@@ -1142,8 +1142,8 @@ y(\Delta t) = y(0) + \Delta t \frac{dy}{dt}\bigg|_{t=0} + \frac{\Delta t^2}{2} \
 <li><p>The Runge-Kutta method works very well and is widely used in practice, and is a reasonable trade-off in Order, complexity, speed etc. This is an <span class="math notranslate nohighlight">\(O(\Delta t^4)\)</span> method - extemely powerful.<br />
 Def:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-8b5fa5fa-241a-4acd-8077-8450276f7319">
-<span class="eqno">(362)<a class="headerlink" href="#equation-8b5fa5fa-241a-4acd-8077-8450276f7319" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e76c09e8-59e2-48ed-8c00-98a46f0b7c1a">
+<span class="eqno">(362)<a class="headerlink" href="#equation-e76c09e8-59e2-48ed-8c00-98a46f0b7c1a" title="Permalink to this equation">#</a></span>\[\begin{align}
 k_1 &amp;= \Delta t \cdot f(t^N, y^N)\\
 k_2 &amp;= \Delta t \cdot f\left(t^N+\frac{\Delta t}{2}, y^N + \frac{k_1}{2}\right)\\
 k_3 &amp;= \Delta t \cdot f\left(t^N+\frac{\Delta t}{2}, y^N + \frac{k_2}{2}\right)\\
@@ -1363,8 +1363,8 @@ m\frac{d^2x}{dt^2}=-kx-c\frac{dx}{dt}+F(t)
 <h2>Euler’s method with second derivatives<a class="headerlink" href="#euler-s-method-with-second-derivatives" title="Permalink to this headline">#</a></h2>
 <p>We truncated the approximation at the first derivative in the Euler scheme. An obvious question is whether using the second derivative would improve things?</p>
 <p>For example, let’s propose a new method:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5bbc4059-8642-4ce3-970b-12dc57346c40">
-<span class="eqno">(363)<a class="headerlink" href="#equation-5bbc4059-8642-4ce3-970b-12dc57346c40" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a84b7730-1700-43d1-8e74-536a099de520">
+<span class="eqno">(363)<a class="headerlink" href="#equation-a84b7730-1700-43d1-8e74-536a099de520" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(t) - y(t_0) = \Delta t \frac{dy}{dt}\bigg|_{t = t_0} + \frac{\Delta t^2}{2} \frac{d^2y}{dt^2}\bigg|_{t = t_0}
 \end{align}\]</div>
 <p>We have a new term, if we know <span class="math notranslate nohighlight">\(\frac{d^2y}{dt^2}\bigg|_{t=t_0}\)</span>. Now the order should be better as <span class="math notranslate nohighlight">\(\Delta t^2\)</span></p>
@@ -1372,8 +1372,8 @@ y(t) - y(t_0) = \Delta t \frac{dy}{dt}\bigg|_{t = t_0} + \frac{\Delta t^2}{2} \f
 <h3>Example with second order<a class="headerlink" href="#example-with-second-order" title="Permalink to this headline">#</a></h3>
 <p><span class="math notranslate nohighlight">\(y(t_1) = -t + 1\)</span><br />
 or more generally:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ff066917-41dd-43b6-b164-fabf7311e9b4">
-<span class="eqno">(364)<a class="headerlink" href="#equation-ff066917-41dd-43b6-b164-fabf7311e9b4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-76b5d5be-01c0-479d-8a5e-67397ee16a7c">
+<span class="eqno">(364)<a class="headerlink" href="#equation-76b5d5be-01c0-479d-8a5e-67397ee16a7c" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(t_1) = -y (t_0) (t_1 - t_0) + y(t_0)
 \end{align}\]</div>
 <p>Remember, this only really holds for <span class="math notranslate nohighlight">\(t_1 - t_0 \rightarrow 0\)</span></p>
@@ -1473,21 +1473,21 @@ y(t_1) = -y (t_0) (t_1 - t_0) + y(t_0)
 <li><p>We showed an example of a second order method if we know the second derivative to help in our Taylor series. We can so similarly well with other schemes.</p></li>
 </ul>
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vRnHTAakWpLwYKmHHkSQtfEcBe9IYZse9Sz3DLt5paAkwYClrhBRzp88uAr4BxIFrn_2qA5YYmOhOhj/pub?w=460&amp;h=808"><p>The problem here is that <span class="math notranslate nohighlight">\(\frac{dy}{dt}\bigg|_{t=0}\)</span> is not a good approximation everywhere in the interval and expectedly at the end. So, let’s make a better approximation. Let’s take a step half way across the interval using the first approximation.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-03064d9d-10a4-49f0-9f8b-f8d0d463803c">
-<span class="eqno">(365)<a class="headerlink" href="#equation-03064d9d-10a4-49f0-9f8b-f8d0d463803c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-87e8ee82-2f9c-4cd3-b3f2-55cefbcda22b">
+<span class="eqno">(365)<a class="headerlink" href="#equation-87e8ee82-2f9c-4cd3-b3f2-55cefbcda22b" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(\Delta t) = y(0) + \Delta t \frac{dy}{dt} \bigg|_{t = \frac{\Delta t}{2}}\\
 \frac{dy}{dt}\bigg|_{t = \frac{\Delta t}{2}} = \frac{dy}{dt}\bigg|_{t=0} + \left( \frac{\Delta t}{2}\right) \frac{d^2y}{dt^2}\bigg|_{t=0} + \frac{1}{2} \left( \frac{\Delta t}{2}\right)^2 \frac{d^3y}{dt^3}\bigg|_{t=0} + ...\\
 y(\Delta t) = y(t=0) + \Delta t \left(\frac{dy}{dt}\bigg|_{t=0} + \frac{\Delta t}{2} \frac{d^2}{dt^2}\bigg|_{t=0} + ... \right)
 \end{align}\]</div>
 <p>Last full term is the approximation of mid-point slope. Thus, mid-point method is an <span class="math notranslate nohighlight">\(O(\Delta t^2)\)</span> method without using any information from the second derivative. Proposed process:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-da866c48-38f9-429c-9972-0ac45eae4ab7">
-<span class="eqno">(366)<a class="headerlink" href="#equation-da866c48-38f9-429c-9972-0ac45eae4ab7" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d39aa8bc-d9a9-47cb-969b-7bc5fa41836c">
+<span class="eqno">(366)<a class="headerlink" href="#equation-d39aa8bc-d9a9-47cb-969b-7bc5fa41836c" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_{N+\frac{1}{2}} = y_N + \frac{\Delta t}{2} \frac{dy}{dt}\bigg|_N\\
 y_{N+1} = y_N + \Delta t \frac{dy}{dt}\bigg|_{N+\frac{1}{2}}
 \end{align}\]</div>
 <p><span class="math notranslate nohighlight">\(\underline{\text{Ex}}\)</span>:  <span class="math notranslate nohighlight">\(\frac{dy}{dt} = -y, \hspace{1cm} y(t=0)=1\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-902b21ce-d7ba-412d-89b9-08d155f7e286">
-<span class="eqno">(367)<a class="headerlink" href="#equation-902b21ce-d7ba-412d-89b9-08d155f7e286" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-956e1a2a-1d82-42f5-b877-078df4f8383d">
+<span class="eqno">(367)<a class="headerlink" href="#equation-956e1a2a-1d82-42f5-b877-078df4f8383d" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_{N+\frac{1}{2}} = 1 + \frac{\Delta t}{2} \frac{dy}{dt}\bigg|_{t=0} = 1 - \frac{\Delta t}{2}\\
 y_{N+1} = 1 + \Delta t \left(- \left(1 - \frac{\Delta t}{2} \right) \right) = 1 - \Delta t \left(1 - \frac{\Delta t}{2} \right) 
 \end{align}\]</div>
@@ -1601,16 +1601,16 @@ y_{N+1} = 1 + \Delta t \left(- \left(1 - \frac{\Delta t}{2} \right) \right) = 1 
 <ul class="simple">
 <li><p>We have a complicated function (based on info at one point) that we want to  approximate. The Taylor series is a polynomial approxiamation of <span class="math notranslate nohighlight">\(f\)</span>:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-52891377-091b-4b49-a4d9-c5f2458899ff">
-<span class="eqno">(368)<a class="headerlink" href="#equation-52891377-091b-4b49-a4d9-c5f2458899ff" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-883278f3-76be-4be9-9709-c161bef019df">
+<span class="eqno">(368)<a class="headerlink" href="#equation-883278f3-76be-4be9-9709-c161bef019df" title="Permalink to this equation">#</a></span>\[\begin{align}
 \hat{f} = a + bx + cx^2 + dx^3
 \end{align}\]</div>
 <p>The simplest approximation is <span class="math notranslate nohighlight">\(\hat{f} = a\)</span>. Let’s demonstrate with <span class="math notranslate nohighlight">\(f(x) = \exp(x)\)</span></p>
 <ul class="simple">
 <li><p>Each coefficient is obtained by matching derivatives</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-246ad6c3-25d9-41af-8f7b-e269020da0a6">
-<span class="eqno">(369)<a class="headerlink" href="#equation-246ad6c3-25d9-41af-8f7b-e269020da0a6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c8b2f60e-cec2-4561-85b9-617ca28c2a2c">
+<span class="eqno">(369)<a class="headerlink" href="#equation-c8b2f60e-cec2-4561-85b9-617ca28c2a2c" title="Permalink to this equation">#</a></span>\[\begin{align}
 \hat{f}(x=0) = a = f(x=0)\\
 \frac{d\hat{f}}{dx}\bigg|_{x=0} = b = \frac{df}{dx}\bigg|_{x=0}\\
 \frac{d^2\hat{f}}{dx^2}\bigg|_{x=0} = 2c = \frac{d^2}{dx^2}\bigg|_{x=0}
@@ -1743,8 +1743,8 @@ y_{N+1} = 1 + \Delta t \left(- \left(1 - \frac{\Delta t}{2} \right) \right) = 1 
 <li><p>Notice how the error gets smaller and smaller as the number of points goes.</p></li>
 <li><p>However, this only works so far, and eventually the error saturates. This is because of how numbers are stored in a computer. Floating point numbers are stored as (on a 32-bit computer):</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-dce4a5eb-0207-490f-8bd7-bc5bcff6b28c">
-<span class="eqno">(370)<a class="headerlink" href="#equation-dce4a5eb-0207-490f-8bd7-bc5bcff6b28c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-51ef8637-5f79-4324-a8d7-cb712290ec84">
+<span class="eqno">(370)<a class="headerlink" href="#equation-51ef8637-5f79-4324-a8d7-cb712290ec84" title="Permalink to this equation">#</a></span>\[\begin{align}
 1.362597134568123 \times 10^{+36} &amp;&amp; \text{(15 decimal places and power of 10)}
 \end{align}\]</div>
 <ul class="simple">

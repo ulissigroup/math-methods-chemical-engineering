@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>The Shooting Method for Solving BVPs &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    <title>The Shooting Method for Solving BVPs &#8212; Mathematical Methods for Chemical Engineering</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -95,7 +95,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <h1 class="site-logo" id="site-title">Mathemtaical Methods for Chemical Engineering</h1>
+      <h1 class="site-logo" id="site-title">Mathematical Methods for Chemical Engineering</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -615,13 +615,13 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="the-shooting-method-for-solving-bvps">
 <h1>The Shooting Method for Solving BVPs<a class="headerlink" href="#the-shooting-method-for-solving-bvps" title="Permalink to this headline">#</a></h1>
 <p>Let’s go back to that pirate defense problem from last class. We figured out that it wasn’t possible to hit the pirate ship with a cannonball speed of 40 m/s, regardless of how we aimed the cannon. Let’s try and solve this again using the same method we used before for finding steady states to a problem, <code class="docutils literal notranslate"><span class="pre">root</span></code>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-52d441bb-7ed2-4e71-8a39-e8976814fed3">
-<span class="eqno">(489)<a class="headerlink" href="#equation-52d441bb-7ed2-4e71-8a39-e8976814fed3" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b1029ac4-9ce4-4850-b8f6-d51b851abb8a">
+<span class="eqno">(489)<a class="headerlink" href="#equation-b1029ac4-9ce4-4850-b8f6-d51b851abb8a" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{d}{dt}\begin{bmatrix}x\\z\\v_x\\v_z \end{bmatrix} = 
 \begin{bmatrix} v_x\\v_z\\-rv_x\\-rv_z-g\end{bmatrix} \rightarrow \text{physics with air friction}
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-20dc273d-a00b-41cb-88d3-3d98eae39208">
-<span class="eqno">(490)<a class="headerlink" href="#equation-20dc273d-a00b-41cb-88d3-3d98eae39208" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fa8f94ba-c686-4c88-9be0-cd3d5d1d2955">
+<span class="eqno">(490)<a class="headerlink" href="#equation-fa8f94ba-c686-4c88-9be0-cd3d5d1d2955" title="Permalink to this equation">#</a></span>\[\begin{align}
 x(t=0) = 0\\
 z(t=0) = H\\
 z(x=L) = 0 
@@ -670,14 +670,14 @@ z(x=L) = 0
 <section id="reformulate-the-ode">
 <h2>Reformulate the ODE<a class="headerlink" href="#reformulate-the-ode" title="Permalink to this headline">#</a></h2>
 <p>As posed, this is a little difficult to solve, since we don’t know exactly how long to integrate for to hit the pirate ship. Let’s solve for all of the variables in terms of derivatives with respect to the horizontal position.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e2f80c1b-b03e-48ab-85f1-ef0d4f8110cd">
-<span class="eqno">(491)<a class="headerlink" href="#equation-e2f80c1b-b03e-48ab-85f1-ef0d4f8110cd" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bfa5b0a3-d16b-47f9-9ec9-d995580ce974">
+<span class="eqno">(491)<a class="headerlink" href="#equation-bfa5b0a3-d16b-47f9-9ec9-d995580ce974" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{d}{dx}\begin{bmatrix}x\\z\\v_x\\v_z \end{bmatrix} =\frac{dt}{dx}\frac{d}{dt}\begin{bmatrix}x\\z\\v_x\\v_z \end{bmatrix}= \frac{1}{v_x}\frac{d}{dt}\begin{bmatrix}x\\z\\v_x\\v_z \end{bmatrix}=\frac{1}{v_x}\begin{bmatrix} v_x\\v_z\\-rv_x\\-rv_z-g\end{bmatrix} =
 \begin{bmatrix} 1\\v_z/v_x\\-r\\(-rv_z-g)/v_x\end{bmatrix} 
 \end{align}\]</div>
 <p>We don’t even need the first equation anymore (of course <span class="math notranslate nohighlight">\(d/dx(x)=1\)</span>), so we’re left with</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f1864464-4fc5-406f-9c33-4f0e6ad3c8cd">
-<span class="eqno">(492)<a class="headerlink" href="#equation-f1864464-4fc5-406f-9c33-4f0e6ad3c8cd" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1fd7be49-a06f-4305-b6fb-dfe2baa32d72">
+<span class="eqno">(492)<a class="headerlink" href="#equation-1fd7be49-a06f-4305-b6fb-dfe2baa32d72" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{d}{dx}\begin{bmatrix}z\\v_x\\v_z \end{bmatrix} =
 \begin{bmatrix} v_z/v_x\\-r\\(-rv_z-g)/v_x\end{bmatrix} 
 \end{align}\]</div>
@@ -924,15 +924,15 @@ C_C = 2 M
 <p>How much <span class="math notranslate nohighlight">\(B\)</span>/<span class="math notranslate nohighlight">\(C\)</span> was initially in tank?<br />
 How much A left at the end?</p>
 <p>First, let’s get this into a set of differential equations</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4f6cc549-d490-44d5-8872-2d716dd95e79">
-<span class="eqno">(493)<a class="headerlink" href="#equation-4f6cc549-d490-44d5-8872-2d716dd95e79" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d5406db2-fbe9-4ef9-b97a-a51adb4945cf">
+<span class="eqno">(493)<a class="headerlink" href="#equation-d5406db2-fbe9-4ef9-b97a-a51adb4945cf" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{dC_A}{dt} &amp;= -2k_1C_A^2+2k_{-1}C_B\\
 \frac{dC_B}{dt} &amp;= k_1C_A^2-k_{-1}C_B - k_2C_B\\
 \frac{dC_C}{dt} &amp;= 2k_2C_B 
 \end{align}\]</div>
 <p>We also need the boundary conditions.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c50c8d7c-cd00-4728-9ebd-3cd0f64a05f0">
-<span class="eqno">(494)<a class="headerlink" href="#equation-c50c8d7c-cd00-4728-9ebd-3cd0f64a05f0" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b8e43d3c-a2de-43f7-9d13-43ea728532c3">
+<span class="eqno">(494)<a class="headerlink" href="#equation-b8e43d3c-a2de-43f7-9d13-43ea728532c3" title="Permalink to this equation">#</a></span>\[\begin{align}
 C_A(t=0) &amp;= 1M\\
 C_B(t=t_f) &amp;= 0.02M\\
 C_C(t=t_f) &amp;= 2 M\\

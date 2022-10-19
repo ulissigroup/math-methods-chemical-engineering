@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Eigenvalue and Eigenvectors &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    <title>Eigenvalue and Eigenvectors &#8212; Mathematical Methods for Chemical Engineering</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -95,7 +95,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <h1 class="site-logo" id="site-title">Mathemtaical Methods for Chemical Engineering</h1>
+      <h1 class="site-logo" id="site-title">Mathematical Methods for Chemical Engineering</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -761,8 +761,8 @@ title="Print to PDF"
 <section id="recap-from-last-class">
 <h2>Recap from last class<a class="headerlink" href="#recap-from-last-class" title="Permalink to this headline">#</a></h2>
 <p>System of linear equations represented as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-55412085-2bee-42bb-b56d-d1c32e8a6a9a">
-<span class="eqno">(14)<a class="headerlink" href="#equation-55412085-2bee-42bb-b56d-d1c32e8a6a9a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5dc7de71-f71f-4a59-a5fd-941eb9aef12f">
+<span class="eqno">(14)<a class="headerlink" href="#equation-5dc7de71-f71f-4a59-a5fd-941eb9aef12f" title="Permalink to this equation">#</a></span>\[\begin{align}
 \arr{A}\vec{x} = \vec{b}
 \end{align}\]</div>
 <ul class="simple">
@@ -793,8 +793,8 @@ title="Print to PDF"
 </li>
 <li><p>For the following expression:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-124ec20b-b37d-4ba9-aaa7-2b107a111795">
-<span class="eqno">(15)<a class="headerlink" href="#equation-124ec20b-b37d-4ba9-aaa7-2b107a111795" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8d4bef65-fc71-4d72-a219-81397685d2de">
+<span class="eqno">(15)<a class="headerlink" href="#equation-8d4bef65-fc71-4d72-a219-81397685d2de" title="Permalink to this equation">#</a></span>\[\begin{align}
 \arr{A}\vec{x}=\lambda \vec{x} 
 \end{align}\]</div>
 <p><span class="math notranslate nohighlight">\(\vec{x}=0\)</span> is always a solution (trivial)<br />
@@ -806,14 +806,14 @@ If <span class="math notranslate nohighlight">\(\vec{x}\neq0\)</span> exists, th
 <ul class="simple">
 <li><p>To find <span class="math notranslate nohighlight">\(\lambda\)</span>, rearrange our key equation:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-ba23759c-7e84-4fac-a4bc-06b568fe1647">
-<span class="eqno">(16)<a class="headerlink" href="#equation-ba23759c-7e84-4fac-a4bc-06b568fe1647" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-596fe92f-0e2b-4f95-8e1e-f874f2f15a96">
+<span class="eqno">(16)<a class="headerlink" href="#equation-596fe92f-0e2b-4f95-8e1e-f874f2f15a96" title="Permalink to this equation">#</a></span>\[\begin{align}
 \arr{A}\vec{x} = \lambda\vec{x}\\
 \arr{A}\vec{x} - \lambda\vec{x} = \vec{0}
 \end{align}\]</div>
 <p><span class="math notranslate nohighlight">\(\arr{A}\)</span> is matrix and <span class="math notranslate nohighlight">\(\lambda\)</span> a scalar, but we can factor out <span class="math notranslate nohighlight">\(\vec{x}\)</span> using <span class="math notranslate nohighlight">\(\arr{I}\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-171de566-695c-4d57-b2e2-470c95d9ab03">
-<span class="eqno">(17)<a class="headerlink" href="#equation-171de566-695c-4d57-b2e2-470c95d9ab03" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-beb27ac5-2841-4474-9133-9594d99139e5">
+<span class="eqno">(17)<a class="headerlink" href="#equation-beb27ac5-2841-4474-9133-9594d99139e5" title="Permalink to this equation">#</a></span>\[\begin{align}
 (\arr{A} - \lambda\arr{I})\vec{x}= \vec{0}
 \end{align}\]</div>
 <p>This is a homogeneous system. We just learned that if the determinant of the matrix on the LHS is zero, then there is a non-trivial solution that is actually a series.<br />
@@ -824,8 +824,8 @@ then there is a non trivial value of <span class="math notranslate nohighlight">
 <h2>Example for a 2x2 matrix<a class="headerlink" href="#example-for-a-2x2-matrix" title="Permalink to this headline">#</a></h2>
 <p><span class="math notranslate nohighlight">\(\arr{A} = \begin{bmatrix}-5 &amp; 0\\ 1 &amp; 2\end{bmatrix}\)</span></p>
 <p>We want</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9a2c35ea-de44-4d7a-bfed-13b7b2938d16">
-<span class="eqno">(18)<a class="headerlink" href="#equation-9a2c35ea-de44-4d7a-bfed-13b7b2938d16" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-19c61fcd-80c1-4df4-a722-e8186e372bdb">
+<span class="eqno">(18)<a class="headerlink" href="#equation-19c61fcd-80c1-4df4-a722-e8186e372bdb" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\arr{A} - \lambda\arr{I}|=0\\
 \left|
 \begin{bmatrix}
@@ -846,8 +846,8 @@ then there is a non trivial value of <span class="math notranslate nohighlight">
 \end{array}
 \right| = 0
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-d96e4400-bede-4973-a518-9d9b585a8ddc">
-<span class="eqno">(19)<a class="headerlink" href="#equation-d96e4400-bede-4973-a518-9d9b585a8ddc" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ee070e93-7425-4bca-8d5b-d3979ecdc74a">
+<span class="eqno">(19)<a class="headerlink" href="#equation-ee070e93-7425-4bca-8d5b-d3979ecdc74a" title="Permalink to this equation">#</a></span>\[\begin{align}
 (-5-\lambda)(2-\lambda)-0 = 0\\
 (-5-\lambda)(2-\lambda)= \lambda^2 + 3 \lambda - 10 = 0 \\
 \end{align}\]</div>
@@ -857,8 +857,8 @@ then there is a non trivial value of <span class="math notranslate nohighlight">
 <li><p>Now, there is one eigenvector assiciated with each eigenvalue: <span class="math notranslate nohighlight">\(\vec{x}^{(1)}\)</span> and <span class="math notranslate nohighlight">\(\vec{x}^{(2)}\)</span></p></li>
 <li><p>Let’s start with <span class="math notranslate nohighlight">\(\lambda_1=2\)</span>:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-f8a872cd-8ecf-40b5-84e0-d1377edd203a">
-<span class="eqno">(20)<a class="headerlink" href="#equation-f8a872cd-8ecf-40b5-84e0-d1377edd203a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1e4bb3da-c156-42bb-ab8b-36d9591364be">
+<span class="eqno">(20)<a class="headerlink" href="#equation-1e4bb3da-c156-42bb-ab8b-36d9591364be" title="Permalink to this equation">#</a></span>\[\begin{align}
 (\arr{A} - 2 \arr{I})\vec{x}^{(1)} &amp;= \vec{0}\\
 \left(
 \begin{bmatrix}
@@ -896,8 +896,8 @@ x_1^{(1)}&amp;=0
 <ul class="simple">
 <li><p>Now, <span class="math notranslate nohighlight">\(\lambda_2=-5:\)</span></p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-2e687928-bf57-4577-b32f-6bd565e236f3">
-<span class="eqno">(21)<a class="headerlink" href="#equation-2e687928-bf57-4577-b32f-6bd565e236f3" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-50641897-2197-4222-a13f-b08556f3660f">
+<span class="eqno">(21)<a class="headerlink" href="#equation-50641897-2197-4222-a13f-b08556f3660f" title="Permalink to this equation">#</a></span>\[\begin{align}
 (\arr{A} - (-5) \arr{I})\vec{x}^{(2)} &amp;= \vec{0}\\
 \left(\begin{bmatrix}-5 &amp; 0\\1 &amp; 2\end{bmatrix}
 +\begin{bmatrix}5 &amp; 0\\0 &amp; 5\end{bmatrix}\right)
@@ -908,8 +908,8 @@ x_1^{(1)}&amp;=0
 \begin{bmatrix}0\\0\end{bmatrix}\\
 \end{align}\]</div>
 <p>Which gives <span class="math notranslate nohighlight">\(0=0\)</span> and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-de9fc977-13bb-4a7a-bcdd-c844a571d726">
-<span class="eqno">(22)<a class="headerlink" href="#equation-de9fc977-13bb-4a7a-bcdd-c844a571d726" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d9a84628-a311-47ed-87e1-d3f7922ce140">
+<span class="eqno">(22)<a class="headerlink" href="#equation-d9a84628-a311-47ed-87e1-d3f7922ce140" title="Permalink to this equation">#</a></span>\[\begin{align}
 x_1^{(2)} + 7 x_2^{(2)} = 0\\ 
 x_1^{(2)} = -7 x_2^{(2)}
 \end{align}\]</div>
@@ -917,17 +917,17 @@ x_1^{(2)} = -7 x_2^{(2)}
 <ul class="simple">
 <li><p>Make sure to check that <span class="math notranslate nohighlight">\(\lambda + \vec{x}\)</span> ‘s satisfy the original equation\</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-bb180642-edf1-4039-b8e5-41e7311962be">
-<span class="eqno">(23)<a class="headerlink" href="#equation-bb180642-edf1-4039-b8e5-41e7311962be" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3aa03975-0f72-4d5c-808c-dcf02d1ad68b">
+<span class="eqno">(23)<a class="headerlink" href="#equation-3aa03975-0f72-4d5c-808c-dcf02d1ad68b" title="Permalink to this equation">#</a></span>\[\begin{align}
 \arr{A}\vec{x} = \lambda \vec{x}\\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-4513292c-dfe4-422b-bcc1-c6bd022716a4">
-<span class="eqno">(24)<a class="headerlink" href="#equation-4513292c-dfe4-422b-bcc1-c6bd022716a4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-17e884f3-6547-4779-8195-3c26714c89a4">
+<span class="eqno">(24)<a class="headerlink" href="#equation-17e884f3-6547-4779-8195-3c26714c89a4" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lambda_1=2 &amp;&amp; \text{and} &amp;&amp; \lambda_2 = -5\\
 \end{align}\]</div>
 <p>\</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0bd3ecfb-b832-4dfd-977c-acbe7b52f935">
-<span class="eqno">(25)<a class="headerlink" href="#equation-0bd3ecfb-b832-4dfd-977c-acbe7b52f935" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-817015e5-fc63-416f-a35e-b2eaa8ebbd9e">
+<span class="eqno">(25)<a class="headerlink" href="#equation-817015e5-fc63-416f-a35e-b2eaa8ebbd9e" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix}-5 &amp; 0\\1 &amp; 2\end{bmatrix}
 \begin{bmatrix}0\\ \alpha \end{bmatrix}=
 2 \begin{bmatrix}0\\ \alpha \end{bmatrix} &amp;&amp; \text{and} &amp;&amp;
@@ -936,8 +936,8 @@ x_1^{(2)} = -7 x_2^{(2)}
 -5 \begin{bmatrix}-7 \beta \\ \beta \end{bmatrix}
 \end{align}\]</div>
 <p>\</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9048b5e4-2030-4462-8820-fedb65ab5f44">
-<span class="eqno">(26)<a class="headerlink" href="#equation-9048b5e4-2030-4462-8820-fedb65ab5f44" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d3f3f2e8-cb14-480b-b994-26600fdc355e">
+<span class="eqno">(26)<a class="headerlink" href="#equation-d3f3f2e8-cb14-480b-b994-26600fdc355e" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix} 0 \\ 2 \alpha \end{bmatrix} = \begin{bmatrix} 0 \\ 2 \alpha \end{bmatrix} &amp;&amp;\text{and}&amp;&amp;
 \begin{bmatrix} 35 \beta \\ -5 \end{bmatrix} = \begin{bmatrix}  35 \beta \\ -5\end{bmatrix}
 \end{align}\]</div>
@@ -945,8 +945,8 @@ x_1^{(2)} = -7 x_2^{(2)}
 <li><p>Eigenspaces are:
 \begin{array}{}</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-d72a1c88-7d12-48f9-809f-748b1513b23a">
-<span class="eqno">(27)<a class="headerlink" href="#equation-d72a1c88-7d12-48f9-809f-748b1513b23a" title="Permalink to this equation">#</a></span>\[\begin{bmatrix} 0\\0 \end{bmatrix}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-a097af0f-b1f0-4f27-b054-84bca8512150">
+<span class="eqno">(27)<a class="headerlink" href="#equation-a097af0f-b1f0-4f27-b054-84bca8512150" title="Permalink to this equation">#</a></span>\[\begin{bmatrix} 0\\0 \end{bmatrix}\]</div>
 <p>\end{array}</p>
 <p>The basis of two non zero eignspaces are <span class="math notranslate nohighlight">\(\begin{bmatrix} 0 \\ 1\end{bmatrix}\)</span> and <span class="math notranslate nohighlight">\(\begin{bmatrix} -7 \\ 1\end{bmatrix}\)</span> respectively.</p>
 </section>
@@ -970,13 +970,13 @@ x_1^{(2)} = -7 x_2^{(2)}
 <li><p>Let’s try a larger example:<br />
 <span class="math notranslate nohighlight">\(\arr{A} = \begin{bmatrix}6&amp;10&amp;6 \\ 0&amp;8&amp;12 \\ 0&amp;0&amp;2 \end{bmatrix} \rightarrow\)</span> we want <span class="math notranslate nohighlight">\(\lambda\)</span>, <span class="math notranslate nohighlight">\(\vec{x}\)</span> such that <span class="math notranslate nohighlight">\(\arr{A} \vec{x} = \lambda \vec{x}\)</span></p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-9edc079b-36d3-44de-8134-4bf5475aea03">
-<span class="eqno">(28)<a class="headerlink" href="#equation-9edc079b-36d3-44de-8134-4bf5475aea03" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0adb33ba-d3f5-4c1f-ac85-b89f982ebadf">
+<span class="eqno">(28)<a class="headerlink" href="#equation-0adb33ba-d3f5-4c1f-ac85-b89f982ebadf" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\arr{A} - \lambda \arr{I}|  &amp;= \begin{bmatrix}6 - \lambda&amp;10&amp;6 \\ 0&amp;8 - \lambda&amp;12 \\ 0&amp;0&amp;2 - \lambda \end{bmatrix}\\
 \end{align}\]</div>
 <p>We choose to work with column 1</p>
-<div class="amsmath math notranslate nohighlight" id="equation-65dad0ae-80ef-4332-8e7c-d196a07fdf89">
-<span class="eqno">(29)<a class="headerlink" href="#equation-65dad0ae-80ef-4332-8e7c-d196a07fdf89" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2df1e005-3d0d-4c3c-ae49-39a42d993137">
+<span class="eqno">(29)<a class="headerlink" href="#equation-2df1e005-3d0d-4c3c-ae49-39a42d993137" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp;=(6-\lambda)\left|\begin{array}{} 8 - \lambda &amp; 12 \\ 0 &amp; 2 - \lambda \end{array} \right|
 - 0 \left|\begin{array}{} 10 &amp; 6 \\ 0 &amp; 2 - \lambda \end{array} \right|
 + 0 \left|\begin{array}{} 10 &amp; 6 \\ 8 - \lambda &amp; 12 \end{array} \right|\\
@@ -985,8 +985,8 @@ x_1^{(2)} = -7 x_2^{(2)}
 \end{align}\]</div>
 <p><br />
 We don’t really need to go further unless we want expanded characteristic equation.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-98d7d840-e3f8-48e9-8af1-0580786ab544">
-<span class="eqno">(30)<a class="headerlink" href="#equation-98d7d840-e3f8-48e9-8af1-0580786ab544" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-24ce969f-63fb-4095-8112-ff54ff224d75">
+<span class="eqno">(30)<a class="headerlink" href="#equation-24ce969f-63fb-4095-8112-ff54ff224d75" title="Permalink to this equation">#</a></span>\[\begin{align}
 0 &amp;= \lambda^3 -16 \lambda^2 + 76\lambda - 96
 \end{align}\]</div>
 <p><span class="math notranslate nohighlight">\(\therefore\)</span> eigenvalues are:
@@ -999,78 +999,78 @@ We can get maximum of 3 eigenvalues since <span class="math notranslate nohighli
 <ol class="simple">
 <li><p>For <span class="math notranslate nohighlight">\(\lambda_1=6\)</span>:</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-97b68b71-293b-4677-a6f6-f09ec5bd531d">
-<span class="eqno">(31)<a class="headerlink" href="#equation-97b68b71-293b-4677-a6f6-f09ec5bd531d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7f9f5052-15b5-4560-938b-21d493eb8a0d">
+<span class="eqno">(31)<a class="headerlink" href="#equation-7f9f5052-15b5-4560-938b-21d493eb8a0d" title="Permalink to this equation">#</a></span>\[\begin{align}
   \begin{bmatrix} 0&amp;10&amp;6 \\ 0&amp;2&amp;12 \\ 0&amp;0&amp;-4 \end{bmatrix}
   \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = 
   \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}
   \end{align}\]</div>
 <p>Which gives:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-72db41ef-6867-4b6a-94e9-573108a63bb7">
-<span class="eqno">(32)<a class="headerlink" href="#equation-72db41ef-6867-4b6a-94e9-573108a63bb7" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bf8bc618-3f89-41ba-a4ee-801491993b43">
+<span class="eqno">(32)<a class="headerlink" href="#equation-bf8bc618-3f89-41ba-a4ee-801491993b43" title="Permalink to this equation">#</a></span>\[\begin{align}
   10x_2 + 6x_3 = 0;\\
   2 x_2 + 12 x_3 = 0;\\
   -4x_3 = 0
   \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-f657b157-aa62-48b9-b053-05b2a5836e84">
-<span class="eqno">(33)<a class="headerlink" href="#equation-f657b157-aa62-48b9-b053-05b2a5836e84" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-31395fad-92be-4481-972c-51edee689ff0">
+<span class="eqno">(33)<a class="headerlink" href="#equation-31395fad-92be-4481-972c-51edee689ff0" title="Permalink to this equation">#</a></span>\[\begin{align}
   \implies x_3 = x_2 = 0 &amp;&amp;\text{and}&amp;&amp; \text{$x_1=$arbitrary}
   \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-47c732c4-2264-442b-8acc-81b0bd8c9513">
-<span class="eqno">(34)<a class="headerlink" href="#equation-47c732c4-2264-442b-8acc-81b0bd8c9513" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b1e09013-d455-416c-ba3a-b98b4e13456a">
+<span class="eqno">(34)<a class="headerlink" href="#equation-b1e09013-d455-416c-ba3a-b98b4e13456a" title="Permalink to this equation">#</a></span>\[\begin{align}
   \vec{x}^{(1)} = \begin{bmatrix} \alpha \\ 0 \\ 0 \end{bmatrix} &amp; \text{, where $\alpha\neq0$}
   \end{align}\]</div>
 <p>or the basis vector <span class="math notranslate nohighlight">\(\vec{x}^{(1)} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}\)</span> (really a series of solutions)</p>
 <ol class="simple">
 <li><p>For <span class="math notranslate nohighlight">\(\lambda_2=8\)</span>:</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-b136dce6-09d2-4c55-a3b5-1c04d5f920ee">
-<span class="eqno">(35)<a class="headerlink" href="#equation-b136dce6-09d2-4c55-a3b5-1c04d5f920ee" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c93231c7-c2b0-4266-9598-78d08b16e5b8">
+<span class="eqno">(35)<a class="headerlink" href="#equation-c93231c7-c2b0-4266-9598-78d08b16e5b8" title="Permalink to this equation">#</a></span>\[\begin{align}
   \begin{bmatrix} -2&amp;10&amp;6 \\ 0&amp;0&amp;12 \\ 0&amp;0&amp;-6 \end{bmatrix}
   \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = 
   \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}
   \end{align}\]</div>
 <p>Which gives:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fa72a188-cf26-44e2-9e1f-3ef29165e212">
-<span class="eqno">(36)<a class="headerlink" href="#equation-fa72a188-cf26-44e2-9e1f-3ef29165e212" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fa1b0d73-e03d-4bca-b6a0-bcef3f571169">
+<span class="eqno">(36)<a class="headerlink" href="#equation-fa1b0d73-e03d-4bca-b6a0-bcef3f571169" title="Permalink to this equation">#</a></span>\[\begin{align}
   -2x_1 + 10x_2 + 6x_3= 0;\\
   12x_3 = 0;\\
   -6x_3 = 0
   \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-af579f1b-894d-4124-ab60-6f1c0ab13447">
-<span class="eqno">(37)<a class="headerlink" href="#equation-af579f1b-894d-4124-ab60-6f1c0ab13447" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5ec9331c-b549-4295-88f3-1e9ec8aa4e48">
+<span class="eqno">(37)<a class="headerlink" href="#equation-5ec9331c-b549-4295-88f3-1e9ec8aa4e48" title="Permalink to this equation">#</a></span>\[\begin{align}
   \implies x_3 = 0, &amp;&amp; x_1 = 5x_2 + 3x_3 &amp;&amp;\text{and}&amp;&amp; \text{$x_2=$arbitrary}
   \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-6c533715-1f52-4a47-baf9-2083609dd16c">
-<span class="eqno">(38)<a class="headerlink" href="#equation-6c533715-1f52-4a47-baf9-2083609dd16c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-967220d5-ab5a-45a4-ba02-ec924aa95de3">
+<span class="eqno">(38)<a class="headerlink" href="#equation-967220d5-ab5a-45a4-ba02-ec924aa95de3" title="Permalink to this equation">#</a></span>\[\begin{align}
   \vec{x}^{(2)} = \begin{bmatrix} 5\beta \\ \beta \\ 0 \end{bmatrix}&amp; \text{, $\beta\neq0$}
   \end{align}\]</div>
 <p>or the basis vector <span class="math notranslate nohighlight">\(\vec{x}^{(2)} = \begin{bmatrix} 5 \\ 1 \\ 0 \end{bmatrix}\)</span></p>
 <ol class="simple">
 <li><p>For <span class="math notranslate nohighlight">\(\lambda_3=2\)</span>:</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-417d8469-7b2c-4d13-8dd8-ac65bc07dc63">
-<span class="eqno">(39)<a class="headerlink" href="#equation-417d8469-7b2c-4d13-8dd8-ac65bc07dc63" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9fce7552-f0e6-4982-99e7-fc504da4c273">
+<span class="eqno">(39)<a class="headerlink" href="#equation-9fce7552-f0e6-4982-99e7-fc504da4c273" title="Permalink to this equation">#</a></span>\[\begin{align}
   \begin{bmatrix} 4&amp;10&amp;6 \\ 0&amp;6&amp;12 \\ 0&amp;0&amp;0 \end{bmatrix}
   \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = 
   \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}
   \end{align}\]</div>
 <p>Which gives:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-de2a9d10-5a60-49bf-b520-e45d6512a397">
-<span class="eqno">(40)<a class="headerlink" href="#equation-de2a9d10-5a60-49bf-b520-e45d6512a397" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1002189c-ff27-4f54-9036-33d69f025354">
+<span class="eqno">(40)<a class="headerlink" href="#equation-1002189c-ff27-4f54-9036-33d69f025354" title="Permalink to this equation">#</a></span>\[\begin{align}
   4x_1 + 10x_2 + 6x_3 = 0;\\
   6x_2 + 12x_3 = 0;\\
   0 = 0
   \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-b5a96b02-d00b-4cb9-8ed7-8581f7304ea3">
-<span class="eqno">(41)<a class="headerlink" href="#equation-b5a96b02-d00b-4cb9-8ed7-8581f7304ea3" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-84a4eb82-184b-4c31-abdf-a091e3ad05d4">
+<span class="eqno">(41)<a class="headerlink" href="#equation-84a4eb82-184b-4c31-abdf-a091e3ad05d4" title="Permalink to this equation">#</a></span>\[\begin{align}
   \implies x_2 &amp;= -2 x_3;\\
   x_1 &amp;= -\frac{10}{4}(-2x_3) - \frac{6}{4}x_3 \\
   &amp;= 5x_3 -\frac{3}{2}x_3\\
   x_1 &amp;= \frac{7}{2}x_3
   \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-2f4eabb6-dd6a-4645-99a8-aceca556ddc8">
-<span class="eqno">(42)<a class="headerlink" href="#equation-2f4eabb6-dd6a-4645-99a8-aceca556ddc8" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-843be0e9-2062-4b07-9b4e-f18824a58a11">
+<span class="eqno">(42)<a class="headerlink" href="#equation-843be0e9-2062-4b07-9b4e-f18824a58a11" title="Permalink to this equation">#</a></span>\[\begin{align}
   \vec{x}^{(3)} = \begin{bmatrix} \frac{7}{2}\delta \\ -2\delta \\ \delta \end{bmatrix}&amp; \text{, $\delta\neq0$}
   \end{align}\]</div>
 <p>or the basis vector <span class="math notranslate nohighlight">\(\vec{x}^{(3)} = \begin{bmatrix} \frac{7}{2} \\ -2 \\ 1 \end{bmatrix} = \begin{bmatrix} 7 \\ -4 \\ 2 \end{bmatrix}\)</span></p>
@@ -1245,8 +1245,8 @@ x_1\\x_2\\x_3
 <p><span class="math notranslate nohighlight">\( \arr{A} = \begin{bmatrix} 1&amp;2 \\ -2&amp;1 \end{bmatrix} \)</span></p>
 <section id="find-lambda-s-by-solving-arr-a-lambda-vec-x-0">
 <h2>Find <span class="math notranslate nohighlight">\(\lambda\)</span> ‘s by solving <span class="math notranslate nohighlight">\(|\arr{A} - \lambda \vec{x}|\)</span> = 0<a class="headerlink" href="#find-lambda-s-by-solving-arr-a-lambda-vec-x-0" title="Permalink to this headline">#</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-002a8f0d-0bd1-41f0-90a8-2696e8cfdc73">
-<span class="eqno">(43)<a class="headerlink" href="#equation-002a8f0d-0bd1-41f0-90a8-2696e8cfdc73" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-509a0a01-0177-4380-9e61-5bd8184ce11d">
+<span class="eqno">(43)<a class="headerlink" href="#equation-509a0a01-0177-4380-9e61-5bd8184ce11d" title="Permalink to this equation">#</a></span>\[\begin{align}
 \left|\begin{array}{} 1 - \lambda &amp; 2 \\ -2 &amp; 1 - \lambda\end{array}\right| = 0\\
 (1-\lambda)^2 + 4 = 0 &amp;&amp; \rightarrow \lambda^2 -2\lambda + 5 = 0 \text{(characteristic equation of $\arr{A}$)}\\
 (1-\lambda)^2 = -4\\
@@ -1259,8 +1259,8 @@ x_1\\x_2\\x_3
 <ol class="simple">
 <li><p>Find <span class="math notranslate nohighlight">\(\vec{x}^{(1)}\)</span> by solving <span class="math notranslate nohighlight">\((\arr{A} - \lambda_1 \arr{I}) \vec{x} = \vec{0}\)</span></p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-6394fc7a-5e82-4d1d-87df-0885a62c7c3c">
-<span class="eqno">(44)<a class="headerlink" href="#equation-6394fc7a-5e82-4d1d-87df-0885a62c7c3c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-272adc24-1605-4b25-a7a5-87d48b472cf5">
+<span class="eqno">(44)<a class="headerlink" href="#equation-272adc24-1605-4b25-a7a5-87d48b472cf5" title="Permalink to this equation">#</a></span>\[\begin{align}
   \begin{bmatrix}1 - (1+2i)&amp;2\\-2&amp;1-(1+2i)\end{bmatrix} \begin{bmatrix} x_1\\x_2\end{bmatrix} = \begin{bmatrix} 0\\0 \end{bmatrix}\\
   \left[\begin{array}{rr|r}
   -2i&amp;2&amp;0\\-2&amp;-2i&amp;0
@@ -1270,8 +1270,8 @@ x_1\\x_2\\x_3
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(R_1 = \frac{1}{2}R_1\)</span> and <span class="math notranslate nohighlight">\(R_2=\frac{1}{2}iR_2\)</span>:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-a34ea183-301c-47a8-a9be-2953972139af">
-<span class="eqno">(45)<a class="headerlink" href="#equation-a34ea183-301c-47a8-a9be-2953972139af" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4e68525a-abbe-49df-bebd-2303a9b13e01">
+<span class="eqno">(45)<a class="headerlink" href="#equation-4e68525a-abbe-49df-bebd-2303a9b13e01" title="Permalink to this equation">#</a></span>\[\begin{align}
   \left[
     \begin{array}{rr|r}
     -i &amp; 1 &amp; 0\\
@@ -1281,8 +1281,8 @@ x_1\\x_2\\x_3
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* $R_2 = R_2 - R_1$:
 </pre></div>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-81949b75-1e3f-47c6-8666-9117f0c31e2b">
-<span class="eqno">(46)<a class="headerlink" href="#equation-81949b75-1e3f-47c6-8666-9117f0c31e2b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a3f39556-5424-4ff3-834d-899ac983760b">
+<span class="eqno">(46)<a class="headerlink" href="#equation-a3f39556-5424-4ff3-834d-899ac983760b" title="Permalink to this equation">#</a></span>\[\begin{align}
   \left[
     \begin{array}{rr|r}
     -i &amp; 1 &amp; 0\\
@@ -1293,15 +1293,15 @@ x_1\\x_2\\x_3
   \vec{x}^{(1)} = \begin{bmatrix} \alpha \\ i   \alpha\end{bmatrix} \text{where $\alpha\neq0$}\\
   \end{align}\]</div>
 <p>or,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fb3b01a4-04f0-4da9-8f8f-9621b38e6a3a">
-<span class="eqno">(47)<a class="headerlink" href="#equation-fb3b01a4-04f0-4da9-8f8f-9621b38e6a3a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a5443a38-84ee-4c98-b2d9-2c0b13588263">
+<span class="eqno">(47)<a class="headerlink" href="#equation-a5443a38-84ee-4c98-b2d9-2c0b13588263" title="Permalink to this equation">#</a></span>\[\begin{align}
  \vec{x}^{(1)} = \begin{bmatrix} 1 \\ i \end{bmatrix}
  \end{align}\]</div>
 <ol class="simple">
 <li><p>Find <span class="math notranslate nohighlight">\(\vec{x}^{(2)}\)</span> by solving <span class="math notranslate nohighlight">\((\arr{A} - \lambda_2 \arr{I}) \vec{x} = \vec{0}\)</span></p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-7aca8d5b-4160-4ad2-b9f9-cd3d98646c8c">
-<span class="eqno">(48)<a class="headerlink" href="#equation-7aca8d5b-4160-4ad2-b9f9-cd3d98646c8c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d5599e93-9113-436b-8144-fcd12ac6cf9d">
+<span class="eqno">(48)<a class="headerlink" href="#equation-d5599e93-9113-436b-8144-fcd12ac6cf9d" title="Permalink to this equation">#</a></span>\[\begin{align}
   \begin{bmatrix}1 - (1-2i)&amp;2\\-2&amp;1-(1-2i)\end{bmatrix} \begin{bmatrix} x_1\\x_2\end{bmatrix} = \begin{bmatrix} 0\\0 \end{bmatrix}\\
   \left[\begin{array}{rr|r}
   2i&amp;2&amp;0\\-2&amp;2i&amp;0
@@ -1309,8 +1309,8 @@ x_1\\x_2\\x_3
   \right]
   \end{align}\]</div>
 <p><span class="math notranslate nohighlight">\(R_1 = \frac{1}{2}R_1\)</span> and <span class="math notranslate nohighlight">\(R_2=\frac{1}{2}iR_2\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ef9f9dda-deca-4d0c-a9e9-4559c6908458">
-<span class="eqno">(49)<a class="headerlink" href="#equation-ef9f9dda-deca-4d0c-a9e9-4559c6908458" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8aebf9ce-67f1-4e09-888a-c463a6ef3f2d">
+<span class="eqno">(49)<a class="headerlink" href="#equation-8aebf9ce-67f1-4e09-888a-c463a6ef3f2d" title="Permalink to this equation">#</a></span>\[\begin{align}
   \left[
     \begin{array}{rr|r}
     i &amp; 1 &amp; 0\\
@@ -1318,8 +1318,8 @@ x_1\\x_2\\x_3
   \right]
   \end{align}\]</div>
 <p><span class="math notranslate nohighlight">\(R_2 = R_2 + R_1\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-495c50bf-ecb5-41ae-b370-2cd0b9068406">
-<span class="eqno">(50)<a class="headerlink" href="#equation-495c50bf-ecb5-41ae-b370-2cd0b9068406" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c6a18fd9-7b6d-4800-b0d3-e3c1c6c90369">
+<span class="eqno">(50)<a class="headerlink" href="#equation-c6a18fd9-7b6d-4800-b0d3-e3c1c6c90369" title="Permalink to this equation">#</a></span>\[\begin{align}
   \left[
     \begin{array}{rr|r}
     i &amp; 1 &amp; 0\\
@@ -1329,13 +1329,13 @@ x_1\\x_2\\x_3
    -i\alpha\end{bmatrix} \text{where $\alpha\neq0$}\\
   \end{align}\]</div>
 <p>or,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e79a66b2-a292-4475-aead-883bb3740447">
-<span class="eqno">(51)<a class="headerlink" href="#equation-e79a66b2-a292-4475-aead-883bb3740447" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-058f602b-b984-4335-b4a4-67cf89a87349">
+<span class="eqno">(51)<a class="headerlink" href="#equation-058f602b-b984-4335-b4a4-67cf89a87349" title="Permalink to this equation">#</a></span>\[\begin{align}
  \vec{x}^{(2)} = \begin{bmatrix} 1\\-i \end{bmatrix}
  \end{align}\]</div>
 <p><span class="math notranslate nohighlight">\(\therefore\)</span> Eigenspace of <span class="math notranslate nohighlight">\(A\)</span> is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0530afd5-96b6-4f5e-b083-5fd54aaaf3f1">
-<span class="eqno">(52)<a class="headerlink" href="#equation-0530afd5-96b6-4f5e-b083-5fd54aaaf3f1" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-29d02df7-d8ed-421f-9b43-3e98d77cebf6">
+<span class="eqno">(52)<a class="headerlink" href="#equation-29d02df7-d8ed-421f-9b43-3e98d77cebf6" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vec{x}=\vec{0}; &amp;&amp; (1 + 2i), \begin{bmatrix}1\\i \end{bmatrix} ; &amp;&amp; (1-2i), \begin{bmatrix}1\\-i \end{bmatrix}
 \end{align}\]</div>
 </section>

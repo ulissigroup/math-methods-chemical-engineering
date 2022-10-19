@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Boundary value problems &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    <title>Boundary value problems &#8212; Mathematical Methods for Chemical Engineering</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -95,7 +95,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <h1 class="site-logo" id="site-title">Mathemtaical Methods for Chemical Engineering</h1>
+      <h1 class="site-logo" id="site-title">Mathematical Methods for Chemical Engineering</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -604,15 +604,15 @@ title="Print to PDF"
 <ul class="simple">
 <li><p>Initial conditions specify state at a single value of the independent variable</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-4b344138-dfbd-4eac-b0fb-2e721ae79f96">
-<span class="eqno">(473)<a class="headerlink" href="#equation-4b344138-dfbd-4eac-b0fb-2e721ae79f96" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-903d8ad0-af00-44b5-96d8-740e54220e96">
+<span class="eqno">(473)<a class="headerlink" href="#equation-903d8ad0-af00-44b5-96d8-740e54220e96" title="Permalink to this equation">#</a></span>\[\begin{align}
 t = 0 \rightarrow y(t&amp;=0) = y_0\\
 y'(t&amp;=0) = y_0'
 \end{align}\]</div>
 <p>These IVP will have one unique solution. Implicitly, we have assumed that y and y’ are both defined at the initial condition, and that the system of differential equations is continuous over the solution interval.</p>
 <p><span class="math notranslate nohighlight">\(\underline{\text{Ex}}\)</span>: <span class="math notranslate nohighlight">\(y'' = 0 \hspace{2cm} y(0) = 2, \ y'(0) = 1\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-b40909bd-e1d2-4b02-9806-30076cc80f8d">
-<span class="eqno">(474)<a class="headerlink" href="#equation-b40909bd-e1d2-4b02-9806-30076cc80f8d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-631a0600-5ee9-4829-aa4d-14725ed92f3b">
+<span class="eqno">(474)<a class="headerlink" href="#equation-631a0600-5ee9-4829-aa4d-14725ed92f3b" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(t) = ct + d\\
 y(0) = 2 = d &amp;&amp; \rightarrow \text{IC#1 gives intercept}\\
 y'(0) = 1 = c &amp;&amp; \text{IC#2 gives slope}
@@ -625,21 +625,21 @@ y'(0) = 1 = c &amp;&amp; \text{IC#2 gives slope}
 <ol class="simple">
 <li><p>Analytical solution <span class="math notranslate nohighlight">\(\rightarrow\)</span> apply all of our boundary conditions</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-3756e16b-2235-4136-aad8-df9f10867bce">
-<span class="eqno">(475)<a class="headerlink" href="#equation-3756e16b-2235-4136-aad8-df9f10867bce" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-33988fb3-ee3e-4087-9511-5d09f8b5a638">
+<span class="eqno">(475)<a class="headerlink" href="#equation-33988fb3-ee3e-4087-9511-5d09f8b5a638" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{d}{dt}\begin{bmatrix}x\\z\\v_x\\v_z \end{bmatrix} = 
 \begin{bmatrix} v_x\\v_z\\-rv_x\\-rv_z-g\end{bmatrix} \rightarrow \text{physics with air friction}
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-174780e4-8ada-41dc-ac20-afc5d0881dd8">
-<span class="eqno">(476)<a class="headerlink" href="#equation-174780e4-8ada-41dc-ac20-afc5d0881dd8" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-885535d0-66ce-40d5-b29b-42575a984e93">
+<span class="eqno">(476)<a class="headerlink" href="#equation-885535d0-66ce-40d5-b29b-42575a984e93" title="Permalink to this equation">#</a></span>\[\begin{align}
 x(t=0) = 0\\
 z(t=0) = H\\
 z(x=L) = 0 
 \end{align}\]</div>
 <p>That third condition is very strange!</p>
 <p>The conditions that we would use if we were treating this as an initial value problem are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d3380ea7-927e-4e77-8eb6-93177ee145e5">
-<span class="eqno">(477)<a class="headerlink" href="#equation-d3380ea7-927e-4e77-8eb6-93177ee145e5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3b5453a6-244b-46a3-bd7c-8624c0ce64e9">
+<span class="eqno">(477)<a class="headerlink" href="#equation-3b5453a6-244b-46a3-bd7c-8624c0ce64e9" title="Permalink to this equation">#</a></span>\[\begin{align}
 x(t=0) = 0\\
 z(t=0) = H\\
 v_x(t=0) = ?\\
@@ -753,8 +753,8 @@ v_z(t=0) = ?
 <h2>Analytical solutions to BVPs<a class="headerlink" href="#analytical-solutions-to-bvps" title="Permalink to this headline">#</a></h2>
 <p>Analytical solutions to BVPs are usually not a problem to solve, just new boundary conditions.</p>
 <p><span class="math notranslate nohighlight">\(\underline{\text{Ex}}\)</span>: <span class="math notranslate nohighlight">\(2^{nd}\)</span> order ODE would be specified by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f8f79968-d1ec-4c8d-b06f-484679ee0154">
-<span class="eqno">(478)<a class="headerlink" href="#equation-f8f79968-d1ec-4c8d-b06f-484679ee0154" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5f9f696b-ed15-4278-8a18-d02a3aff78c8">
+<span class="eqno">(478)<a class="headerlink" href="#equation-5f9f696b-ed15-4278-8a18-d02a3aff78c8" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(x=x_1) = y_1\\
 y(x=x_2) = y_2
 \end{align}\]</div>
@@ -765,8 +765,8 @@ y(x=x_2) = y_2
 <li><p>infinite solutions</p></li>
 </ul>
 <p><span class="math notranslate nohighlight">\(\underline{\text{Ex}}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-29c27113-eace-4f50-97c5-6489c411629e">
-<span class="eqno">(479)<a class="headerlink" href="#equation-29c27113-eace-4f50-97c5-6489c411629e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-94b226ac-eaa7-46d0-b4ab-83070d89bf82">
+<span class="eqno">(479)<a class="headerlink" href="#equation-94b226ac-eaa7-46d0-b4ab-83070d89bf82" title="Permalink to this equation">#</a></span>\[\begin{align}
 y'' + \lambda y = 0 &amp;&amp; \rightarrow \text{rod of length $L$}\\
 y(0) = 0\\
 y(L) = 0
@@ -789,18 +789,18 @@ y(L) = 0
 <ul class="simple">
 <li><p>Also care about critical <span class="math notranslate nohighlight">\(P\)</span></p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-ec7ae8e9-f71f-4b87-8292-1390597bcd77">
-<span class="eqno">(480)<a class="headerlink" href="#equation-ec7ae8e9-f71f-4b87-8292-1390597bcd77" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-94d0b3a0-840f-4271-bdb8-377d8e786dfb">
+<span class="eqno">(480)<a class="headerlink" href="#equation-94d0b3a0-840f-4271-bdb8-377d8e786dfb" title="Permalink to this equation">#</a></span>\[\begin{align}
 EIy'''' + Py'' = 0
 \end{align}\]</div>
 <p>BC:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8bfd62ff-2671-4715-87ff-2543a80c7f72">
-<span class="eqno">(481)<a class="headerlink" href="#equation-8bfd62ff-2671-4715-87ff-2543a80c7f72" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-daf419b5-d9bd-4dbe-b06f-42609851ede4">
+<span class="eqno">(481)<a class="headerlink" href="#equation-daf419b5-d9bd-4dbe-b06f-42609851ede4" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(x=0) = 0 &amp;&amp; y'(x=L) = 0\\
 y(x=L) = 0 &amp;&amp; y''(x=0) = 0
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-bf502302-b2f3-4382-850a-05d98d423d36">
-<span class="eqno">(482)<a class="headerlink" href="#equation-bf502302-b2f3-4382-850a-05d98d423d36" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e14d9030-a31e-4752-8070-abc4cfbe18ab">
+<span class="eqno">(482)<a class="headerlink" href="#equation-e14d9030-a31e-4752-8070-abc4cfbe18ab" title="Permalink to this equation">#</a></span>\[\begin{align}
 y'''' + \lambda y'' = 0 &amp;&amp; \lambda \equiv \frac{P}{EI}\\
 F \equiv y'' \rightarrow &amp;&amp; F'' + \lambda F = 0
 \end{align}\]</div>
@@ -816,8 +816,8 @@ y'' &amp;= ax + b\\
 y &amp;= c_1x^3 + c_2x^2 + c_3x + c_4
 \end{align*}\]</div>
 <p>apply BC:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b56ba792-fcd4-43fe-8ea1-f91e35ff5cb2">
-<span class="eqno">(483)<a class="headerlink" href="#equation-b56ba792-fcd4-43fe-8ea1-f91e35ff5cb2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-eac39f3c-3b62-4c52-ae7e-51f7f9b5c0d0">
+<span class="eqno">(483)<a class="headerlink" href="#equation-eac39f3c-3b62-4c52-ae7e-51f7f9b5c0d0" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(c&amp;=0) = 0 = c_4\\
 y''(x&amp;=0) = 0 = 2c_2\\
 y(x&amp;=L) = 0 = c_1L^3 + c_3L \rightarrow c_3 = -c_1L^2\\
@@ -828,22 +828,22 @@ This is the solution if <span class="math notranslate nohighlight">\(P=0\)</span
 2. <span class="math notranslate nohighlight">\(\lambda \neq 0 \rightarrow y'''' + \lambda y'' = 0\)</span> <br />
 guess <span class="math notranslate nohighlight">\(y(x) = e^{rx}\)</span><br />
 plug in:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9623c637-0fb9-4188-9afb-e38fa16281bf">
-<span class="eqno">(484)<a class="headerlink" href="#equation-9623c637-0fb9-4188-9afb-e38fa16281bf" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-84fb07e8-e1fa-4d05-9da8-3d944cab6c5f">
+<span class="eqno">(484)<a class="headerlink" href="#equation-84fb07e8-e1fa-4d05-9da8-3d944cab6c5f" title="Permalink to this equation">#</a></span>\[\begin{align}
 r^4e^{rx} + \lambda r^2e^{rx} = 0\\
 r^4 + \lambda r^2 = 0\\
 r^2(r^2 + \lambda) = 0\\
 r = 0,\ 0,\ \pm i\sqrt{\lambda} \\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-9eca9e0b-fd67-4e86-9bce-438b47f5acb5">
-<span class="eqno">(485)<a class="headerlink" href="#equation-9eca9e0b-fd67-4e86-9bce-438b47f5acb5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-474aa2d5-4fa2-4e83-835a-11f6c0017675">
+<span class="eqno">(485)<a class="headerlink" href="#equation-474aa2d5-4fa2-4e83-835a-11f6c0017675" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1 &amp;= e^{0x}\\
 y_2 &amp;= xe^{0x}\\
 y_3 &amp;= \sin\sqrt{\lambda}x\\
 y_4 &amp;= \cos\sqrt{\lambda}x
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-ce8393ea-fad6-413e-a73a-6694a75c0b2c">
-<span class="eqno">(486)<a class="headerlink" href="#equation-ce8393ea-fad6-413e-a73a-6694a75c0b2c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-314ecc87-afa4-4be5-b297-f56c3e72df39">
+<span class="eqno">(486)<a class="headerlink" href="#equation-314ecc87-afa4-4be5-b297-f56c3e72df39" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(x) &amp;= c_1 + c_2x + c_3\sin\sqrt{\lambda}x + c_4\cos\sqrt{\lambda}x\\
 y'(x) &amp;= c_2 + c_3\sqrt{\lambda}\cos\sqrt{\lambda}x - c_4\sqrt{\lambda}\sin\sqrt{\lambda}x\\
 y''(x) &amp;= -c_3\lambda\sin\sqrt{\lambda}x - c_4\lambda\cos\sqrt{\lambda}x
@@ -865,15 +865,15 @@ y’(x=L) = 0 &amp;= c_2 + c_3\sqrt{\lambda}\cos\sqrt{\lambda}L\
 &amp;= c_3(\sqrt{\lambda}L\cos\sqrt{\lambda}L - \sin\sqrt{\lambda}L)
 \end{align}
 Only situation without trivial solution is if</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e51be753-0e09-4426-90a8-fd3b4363bce3">
-<span class="eqno">(487)<a class="headerlink" href="#equation-e51be753-0e09-4426-90a8-fd3b4363bce3" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b83d4710-0116-4cb5-b70d-d4ff1036f608">
+<span class="eqno">(487)<a class="headerlink" href="#equation-b83d4710-0116-4cb5-b70d-d4ff1036f608" title="Permalink to this equation">#</a></span>\[\begin{align}
 \sqrt{\lambda}L\cos\sqrt{\lambda}L - \sin\sqrt{\lambda}L = 0\\
 \rightarrow \tan\sqrt{\lambda}L = \sqrt{\lambda}L \rightarrow \tan x = x 
 \end{align}\]</div>
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vR-WnIunOQjjauqlmNGvuq83eLzIUUXSaT2SCCEboAIfRNN_tovUiRqnTai2qE6AJAt89KyQPMGRK_p/pub?w=558&h=283">
 <p><span class="math notranslate nohighlight">\(\rightarrow\)</span> infinite number of solutions but only care about the first one (smallest <span class="math notranslate nohighlight">\(P\)</span>)</p>
-<div class="amsmath math notranslate nohighlight" id="equation-89abf817-2611-423a-9694-6b4bec8fc087">
-<span class="eqno">(488)<a class="headerlink" href="#equation-89abf817-2611-423a-9694-6b4bec8fc087" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f46517ec-809b-45a0-9c11-2e19242b327d">
+<span class="eqno">(488)<a class="headerlink" href="#equation-f46517ec-809b-45a0-9c11-2e19242b327d" title="Permalink to this equation">#</a></span>\[\begin{align}
 \sqrt{\lambda}L &amp;= 4.4934...\\
 \lambda_1 &amp;= \frac{(4.493)^2}{L^2}\\
 P &amp;= \lambda EI \rightarrow P_{max} = \frac{(4.49)^2}{L^2}EI \approx \frac{20.2}{L^2}EI

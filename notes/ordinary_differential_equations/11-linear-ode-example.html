@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Application of linear ODEs to ChE examples &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    <title>Application of linear ODEs to ChE examples &#8212; Mathematical Methods for Chemical Engineering</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -95,7 +95,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <h1 class="site-logo" id="site-title">Mathemtaical Methods for Chemical Engineering</h1>
+      <h1 class="site-logo" id="site-title">Mathematical Methods for Chemical Engineering</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -690,20 +690,20 @@ title="Print to PDF"
 <h2>Alternate Method (Last class continued)<a class="headerlink" href="#alternate-method-last-class-continued" title="Permalink to this headline">#</a></h2>
 <section id="treat-as-linear-ode">
 <h3>Treat as Linear ODE<a class="headerlink" href="#treat-as-linear-ode" title="Permalink to this headline">#</a></h3>
-<div class="amsmath math notranslate nohighlight" id="equation-0fa08488-b003-4dc1-a8f7-e8a612e30b40">
-<span class="eqno">(181)<a class="headerlink" href="#equation-0fa08488-b003-4dc1-a8f7-e8a612e30b40" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4d5c80e0-9320-44d8-9775-a8501f733ba8">
+<span class="eqno">(181)<a class="headerlink" href="#equation-4d5c80e0-9320-44d8-9775-a8501f733ba8" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{dC}{dt} = \frac{F}{V}C_{in} - \frac{1}{V}(F+kV)C\\
 \frac{dC}{dt} + \frac{1}{V} (F+kV)C = \frac{F}{V}C_{in}
 \end{align}\]</div>
 <p>Take <span class="math notranslate nohighlight">\(p(t) = \frac{1}{V}(F+kV)\)</span> and <span class="math notranslate nohighlight">\(r(t) = \frac{F}{V}C_{in}\)</span>. Then,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-91e49e7e-7f25-48fa-bdc9-18a234d35d88">
-<span class="eqno">(182)<a class="headerlink" href="#equation-91e49e7e-7f25-48fa-bdc9-18a234d35d88" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3ac9d5ee-ae17-4148-88b4-03e9a829cbba">
+<span class="eqno">(182)<a class="headerlink" href="#equation-3ac9d5ee-ae17-4148-88b4-03e9a829cbba" title="Permalink to this equation">#</a></span>\[\begin{align}
 h &amp;= \int p(t)dt\\
 &amp;= \int \frac{1}{V}(F+kV)dt = \frac{F+kV}{V}t
 \end{align}\]</div>
 <p>And</p>
-<div class="amsmath math notranslate nohighlight" id="equation-da3e3076-d618-4595-b1fd-0dacf02a0a5e">
-<span class="eqno">(183)<a class="headerlink" href="#equation-da3e3076-d618-4595-b1fd-0dacf02a0a5e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9cebfaee-9ad1-4574-b0c6-8243b0f7c713">
+<span class="eqno">(183)<a class="headerlink" href="#equation-9cebfaee-9ad1-4574-b0c6-8243b0f7c713" title="Permalink to this equation">#</a></span>\[\begin{align}
 C(t) &amp;= e^{-h}\left[\int e^h r(t)dt + \alpha \right]\\
 &amp;= e^{-h}\left[\int e^h \frac{F}{V}C_{in}dt + \alpha \right]\\
 &amp;= e^{-h}\left[ \frac{F}{V}C_{in}\int \exp \left(\frac{F+kV}{V}t \right) dt + \alpha \right]\\
@@ -711,8 +711,8 @@ C(t) &amp;= e^{-h}\left[\int e^h r(t)dt + \alpha \right]\\
 C(t) &amp;= \frac{F C_{in}}{F+kV} + \alpha \exp \left[\frac{-(F+kV)}{V}t \right] &amp;&amp; \text{general solution}
 \end{align}\]</div>
 <p>If <span class="math notranslate nohighlight">\(C(t=0) = C_0\)</span> then <span class="math notranslate nohighlight">\(C_0 = \frac{FC_{in}}{F+kV} + \alpha \implies \alpha = C_0 - \frac{FC_{in}}{F+kV}\)</span> and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-98ad33b5-e5d2-427c-97e8-05831317f133">
-<span class="eqno">(184)<a class="headerlink" href="#equation-98ad33b5-e5d2-427c-97e8-05831317f133" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-53dbefdd-8a20-463c-ac18-36eb5f6eddc7">
+<span class="eqno">(184)<a class="headerlink" href="#equation-53dbefdd-8a20-463c-ac18-36eb5f6eddc7" title="Permalink to this equation">#</a></span>\[\begin{align}
 C(t) = \frac{FC_{in}}{F+kV} \left(1 - \exp \left[\frac{-(F+kV)}{V}t \right] \right) + C_0 \exp \left[\frac{-(F+kV)}{V}t \right] &amp;&amp; \text{specific solution}
  \end{align}\]</div>
 <ul class="simple">
@@ -727,21 +727,21 @@ C(t) = \frac{FC_{in}}{F+kV} \left(1 - \exp \left[\frac{-(F+kV)}{V}t \right] \rig
 <span class="math notranslate nohighlight">\(\implies\)</span> What if the feed concentration varies with time for the same example?</p></li>
 </ul>
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vQagiZAST5NYR8kg_x7asdAdM-0V_fa7ti3eFTsFvXth7gCBC6ZPNhnNJtGeRPtcDtgyPikV-pemrJp/pub?w=316&h=314">
-<div class="amsmath math notranslate nohighlight" id="equation-9f0ff0cd-b4ee-471e-ad3f-2d5dfc1f31ae">
-<span class="eqno">(185)<a class="headerlink" href="#equation-9f0ff0cd-b4ee-471e-ad3f-2d5dfc1f31ae" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b9177862-df7e-46d8-903f-50e273a9bc9f">
+<span class="eqno">(185)<a class="headerlink" href="#equation-b9177862-df7e-46d8-903f-50e273a9bc9f" title="Permalink to this equation">#</a></span>\[\begin{align}
 \text{Accum = In - Out + Gen - Consumption}\\
 \frac{dM}{dt} = V\frac{dC}{dt} = FC_f(t) - FC(t) - kVC(t)\\
 \frac{dC}{dt} + \left(\frac{F+kV}{V} \right)C = \frac{F}{V}C_F(t) &amp;&amp; \text{(not separable)}
 \end{align}\]</div>
 <p>Take <span class="math notranslate nohighlight">\(p(t) = \left(\frac{F+kV}{V} \right)\)</span> and <span class="math notranslate nohighlight">\(r(t) = \frac{F}{V}C_F(t)\)</span><br />
 <span class="math notranslate nohighlight">\(\rightarrow\)</span> Solve as a linear <span class="math notranslate nohighlight">\(1^\circ\)</span> ODE:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-42b1554c-392e-4ecf-b1d4-4a5e44a8d4a9">
-<span class="eqno">(186)<a class="headerlink" href="#equation-42b1554c-392e-4ecf-b1d4-4a5e44a8d4a9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3e501268-d378-4790-8386-b51b6b3d8587">
+<span class="eqno">(186)<a class="headerlink" href="#equation-3e501268-d378-4790-8386-b51b6b3d8587" title="Permalink to this equation">#</a></span>\[\begin{align}
 h \equiv \int p(t)dt  = \int \frac{F+kV}{V}dt = \left( \frac{F+kV}{V}\right)t = \alpha t
 \end{align}\]</div>
 <p>then,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4c446fd7-ed69-4fef-b356-bab9eaf8077e">
-<span class="eqno">(187)<a class="headerlink" href="#equation-4c446fd7-ed69-4fef-b356-bab9eaf8077e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-208921d1-f58f-4077-8985-ea0011bd4e4c">
+<span class="eqno">(187)<a class="headerlink" href="#equation-208921d1-f58f-4077-8985-ea0011bd4e4c" title="Permalink to this equation">#</a></span>\[\begin{align}
 C(t) &amp;= e^{-h} \left(\int e^h \cdot r(t)dt + N \right)\\
 C(t) &amp;= e^{-\alpha t}\left( \frac{F}{V}\int e^{\alpha t} \cdot C_F(t) dt + N\right)
 \end{align}\]</div>
@@ -752,14 +752,14 @@ C(t) &amp;= e^{-\alpha t}\left( \frac{F}{V}\int e^{\alpha t} \cdot C_F(t) dt + N
 <ul class="simple">
 <li><p>Think first: tank is filled with initial reactant at <span class="math notranslate nohighlight">\(C_0\)</span> and that’s all there will be. Solution for <span class="math notranslate nohighlight">\(C(t)\)</span> should decay from <span class="math notranslate nohighlight">\(C_0\)</span> to 0.</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-d0908298-fc87-4b55-a91c-f58921775c36">
-<span class="eqno">(188)<a class="headerlink" href="#equation-d0908298-fc87-4b55-a91c-f58921775c36" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2ab8f578-dd63-4aba-aca6-0c0f8cf8a4e1">
+<span class="eqno">(188)<a class="headerlink" href="#equation-2ab8f578-dd63-4aba-aca6-0c0f8cf8a4e1" title="Permalink to this equation">#</a></span>\[\begin{align}
 C(t) &amp;= e^{-\alpha t} \left(\frac{F}{V}\int e^{\alpha t} \cdot 0 \cdot dt + N \right) \\
 &amp;= Ne^{-\alpha t}
 \end{align}\]</div>
 <p>then, <span class="math notranslate nohighlight">\(C(t=0)=C_0=Ne^{-\alpha 0} \implies N=C_0\)</span> and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b728a7d9-2bb1-48e2-8c92-3e421a925c76">
-<span class="eqno">(189)<a class="headerlink" href="#equation-b728a7d9-2bb1-48e2-8c92-3e421a925c76" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-67a48687-5820-45ad-b4cd-efe2eb733fce">
+<span class="eqno">(189)<a class="headerlink" href="#equation-67a48687-5820-45ad-b4cd-efe2eb733fce" title="Permalink to this equation">#</a></span>\[\begin{align}
 C(t) = C_0 e^{-\alpha t}
 \end{align}\]</div>
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vTk0XsDjZ3rMLmFQY2GWM-7jKPgbFoWhjcpKEEt3E-qgKgFm93W0yIS2AMbmBLoXOZ7ROocBdReF-30/pub?w=451&h=280"></section>
@@ -769,22 +769,22 @@ C(t) = C_0 e^{-\alpha t}
 <ul class="simple">
 <li><p>Think first: initial conc. in tank is <span class="math notranslate nohighlight">\(C_0\)</span> and will assyptotically approach a lower or highr value depending on if <span class="math notranslate nohighlight">\(C_F&lt;C_0\)</span> or <span class="math notranslate nohighlight">\(C_F&gt;C_0\)</span></p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-6d893f2e-140d-45e2-b211-b51b3d97269c">
-<span class="eqno">(190)<a class="headerlink" href="#equation-6d893f2e-140d-45e2-b211-b51b3d97269c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8135e22c-1f2f-4bb8-8b7d-bc3263b43a77">
+<span class="eqno">(190)<a class="headerlink" href="#equation-8135e22c-1f2f-4bb8-8b7d-bc3263b43a77" title="Permalink to this equation">#</a></span>\[\begin{align}
 C(t) &amp;= e^{-\alpha t}\left(\frac{F}{V} \int e^{\alpha t} \cdot C_F dt + N \right)\\
 &amp;= e^{-\alpha t} \left(\frac{FC_F}{V\alpha}e^{\alpha t} + N \right)\\
 C(t) &amp;= \frac{FC_F}{V\alpha} + N e^{-\alpha t}
 \end{align}\]</div>
 <p>then, <span class="math notranslate nohighlight">\(C(t=0) = C_0 = \frac{FC_F}{V\alpha} + N e^{-\alpha 0} \implies N = C_0 - \frac{FC_F}{V\alpha}\)</span>
 and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-312ec759-24a3-4141-b8b9-155ad7ba914f">
-<span class="eqno">(191)<a class="headerlink" href="#equation-312ec759-24a3-4141-b8b9-155ad7ba914f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-16bcd6e0-ad95-49f0-b73a-5752cb7f5888">
+<span class="eqno">(191)<a class="headerlink" href="#equation-16bcd6e0-ad95-49f0-b73a-5752cb7f5888" title="Permalink to this equation">#</a></span>\[\begin{align}
 C(t) &amp;= \frac{FC_F}{V\alpha} + \left(C_0 - \frac{FC_F}{V\alpha} \right) e^{-\alpha t}\\
 C(t) &amp;= \frac{FC_F}{V\alpha} (1 - e^{-\alpha t}) + C_0 e^{-\alpha t}
 \end{align}\]</div>
 <p>At steady state:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b5cfd0e6-36d9-4741-8174-d19a2c8c4e4f">
-<span class="eqno">(192)<a class="headerlink" href="#equation-b5cfd0e6-36d9-4741-8174-d19a2c8c4e4f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6675d737-4188-455b-b63c-adbbbca056d5">
+<span class="eqno">(192)<a class="headerlink" href="#equation-6675d737-4188-455b-b63c-adbbbca056d5" title="Permalink to this equation">#</a></span>\[\begin{align}
 C(t) \lim_{t \rightarrow \infty} = \frac{FC_F}{V \alpha} = \frac{FC_F}{F+kV}
 \end{align}\]</div>
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vRbKLUzBI1rE_G6udZ-_qLYUsNviVIQc4fGNQ6c_CgjYnkL9MJe9DMPvGTTxfME1vNd8SKqVSBYSfy_/pub?w=558&h=283"></section>
@@ -793,21 +793,21 @@ C(t) \lim_{t \rightarrow \infty} = \frac{FC_F}{V \alpha} = \frac{FC_F}{F+kV}
 <p><span class="math notranslate nohighlight">\(\underline{\text{Case 3}}\)</span> : <span class="math notranslate nohighlight">\(C_F(t) = C_F \exp(-\beta t)\)</span> (decaying function)</p>
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vRC9A60X-7shaDgtgikZZS1bzWM5n_9xQ4lE7yLKGqiuZ1vl0FTrz4-TTeRhWmYj4VH3bqo1VIXWtxs/pub?w=451&h=280">
 <p><span class="math notranslate nohighlight">\(\beta\)</span> controls the speed of the approach to steady state</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4813b48e-33ed-48aa-a06c-f8016a7f350e">
-<span class="eqno">(193)<a class="headerlink" href="#equation-4813b48e-33ed-48aa-a06c-f8016a7f350e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6da5185d-f223-4be6-a17a-4567d2380e53">
+<span class="eqno">(193)<a class="headerlink" href="#equation-6da5185d-f223-4be6-a17a-4567d2380e53" title="Permalink to this equation">#</a></span>\[\begin{align}
 C(t) &amp;= e^{-\alpha t}\left(\frac{F}{V} \int e^{\alpha t} \cdot C_F \cdot e^{-\beta t}dt + N \right)\\
 &amp;= e^{-\alpha t}\left(\frac{FC_F}{V} \int e^{(\alpha - \beta) t} dt + N \right)\\
 &amp;= e^{-\alpha t}\left(\frac{FC_F}{V(\alpha - \beta)} e^{(\alpha - \beta) t} + N \right)\\
 &amp;= \frac{FC_F}{V(\alpha - \beta)}e^{-\beta t} + N e^{-\alpha t}
 \end{align}\]</div>
 <p>then <span class="math notranslate nohighlight">\(C(t=0) = C_0 = \frac{FC_F}{V(\alpha - \beta)}e^0 + Ne^0 \implies N = C_0 - \frac{FC_F}{V(\alpha - \beta)}\)</span> and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a4f3a302-799d-43d1-bbed-1da902fa2d3f">
-<span class="eqno">(194)<a class="headerlink" href="#equation-a4f3a302-799d-43d1-bbed-1da902fa2d3f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-244b59cf-1e9b-452e-b878-ec9f32fd7458">
+<span class="eqno">(194)<a class="headerlink" href="#equation-244b59cf-1e9b-452e-b878-ec9f32fd7458" title="Permalink to this equation">#</a></span>\[\begin{align}
 C(t) = \frac{FC_F}{V(\alpha - \beta)} e^{-\beta t} + \left(C_0 - \frac{FC_F}{V(\alpha - \beta)} \right) e^{-\alpha t}
 \end{align}\]</div>
 <p>At steady state,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7807d6dc-ff3f-42d0-98fd-eb768984cb74">
-<span class="eqno">(195)<a class="headerlink" href="#equation-7807d6dc-ff3f-42d0-98fd-eb768984cb74" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0aad7174-98f3-43c8-8015-2e9b435eebe0">
+<span class="eqno">(195)<a class="headerlink" href="#equation-0aad7174-98f3-43c8-8015-2e9b435eebe0" title="Permalink to this equation">#</a></span>\[\begin{align}
 C(t) \lim_{t \rightarrow \infty} = 0
 \end{align}\]</div>
 <p>Makes sense, right? No new reactant entering the reactor at steady state
@@ -818,22 +818,22 @@ Rate of decay depends on parameters <span class="math notranslate nohighlight">\
 <h3>Oscillating Feed (<span class="math notranslate nohighlight">\(C_F(t) = C_f[1+\sin(\omega t)]\)</span>(<a class="headerlink" href="#oscillating-feed-c-f-t-c-f-1-sin-omega-t" title="Permalink to this headline">#</a></h3>
 <p><span class="math notranslate nohighlight">\(\underline{\text{Case 4}}\)</span>: <span class="math notranslate nohighlight">\(C_F(t) = C_f[1+\sin(\omega t)]\)</span> (oscillating feed)
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vTzOn08l0N3sYIMQ7xnrSzLIlhsIjcc929s5rj-Kr2IiGG-Rk_hjux7dvOQ7p1AdBlXnv-wpklNKpz5/pub?w=519&h=275"></p>
-<div class="amsmath math notranslate nohighlight" id="equation-95d6db64-291d-491f-9497-87e63dc297db">
-<span class="eqno">(196)<a class="headerlink" href="#equation-95d6db64-291d-491f-9497-87e63dc297db" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-984e54d7-a838-4d4d-bb55-5c665ee64fc8">
+<span class="eqno">(196)<a class="headerlink" href="#equation-984e54d7-a838-4d4d-bb55-5c665ee64fc8" title="Permalink to this equation">#</a></span>\[\begin{align}
 C(t) &amp;= e^{-\alpha t} \left[\frac{F}{V}\int e^{\alpha t} \cdot C_F [1+\sin(\omega t)] dt + N \right]\\
 &amp;= e^{-\alpha t} \left[\frac{FC_F}{V}\int (e^{\alpha t} + e^{\alpha t} \sin(\omega t)) dt + N \right]\\
 &amp;= e^{-\alpha t}\left[\frac{FC_F}{\alpha V} e^{\alpha t} + \frac{FC_F}{V(\alpha^2 + \omega^2)} e^{\alpha t} (\alpha \sin \omega t - \omega \cos \omega t) \right]\\
 &amp;= \frac{FC_F}{\alpha V} + \frac{FC_F}{V(\alpha^2 + \omega^2)}[\alpha \sin(\omega t)-\omega \cos(\omega t)] + Ne^{-\alpha t}
 \end{align}\]</div>
 <p>then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0bf3889c-2244-4fc7-94ff-9fc1c59202b4">
-<span class="eqno">(197)<a class="headerlink" href="#equation-0bf3889c-2244-4fc7-94ff-9fc1c59202b4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2c7742d4-eb32-457b-9163-4fc3f67980c3">
+<span class="eqno">(197)<a class="headerlink" href="#equation-2c7742d4-eb32-457b-9163-4fc3f67980c3" title="Permalink to this equation">#</a></span>\[\begin{align}
 C(t=0) = C_0 &amp;= \frac{FC_F}{\alpha V} + \frac{FC_F}{V(\alpha^2 + \omega^2)} \cdot (-\omega) + Ne^0\\
 N &amp;= C_0 - \frac{FC_F}{V} \left(\frac{1}{\alpha} - \frac{\omega}{\alpha^2 + \omega^2} \right)
 \end{align}\]</div>
 <p>and:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d4190381-4a47-420e-99f5-bd4458b9657d">
-<span class="eqno">(198)<a class="headerlink" href="#equation-d4190381-4a47-420e-99f5-bd4458b9657d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c20f1196-ea50-4eb5-a257-d057bb0daf88">
+<span class="eqno">(198)<a class="headerlink" href="#equation-c20f1196-ea50-4eb5-a257-d057bb0daf88" title="Permalink to this equation">#</a></span>\[\begin{align}
 C(t) = \frac{F}{V}C_F \left[\frac{1}{\alpha} + \frac{\alpha \sin \omega t - \omega \cos \omega t}{\alpha^2 + \omega ^2} \right] + \left[C_0 - \frac{F}{V}C_F \left(\frac{1}{\alpha} - \frac{\omega}{\alpha^2 + \omega^2} \right) \right]e^{-\alpha t}
 \end{align}\]</div>
 <p>At steady state right side term drops out; we’r still oscillating at steady state.</p>
@@ -941,7 +941,7 @@ C(t) = \frac{F}{V}C_F \left[\frac{1}{\alpha} + \frac{\alpha \sin \omega t - \ome
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fb5dce5a920&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f5f18432770&gt;
 </pre></div>
 </div>
 <img alt="../../_images/11-linear-ode-example_20_1.png" src="../../_images/11-linear-ode-example_20_1.png" />
@@ -965,7 +965,7 @@ C(t) = \frac{F}{V}C_F \left[\frac{1}{\alpha} + \frac{\alpha \sin \omega t - \ome
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fb5dcdc3be0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f5f3b5f3580&gt;
 </pre></div>
 </div>
 <img alt="../../_images/11-linear-ode-example_21_1.png" src="../../_images/11-linear-ode-example_21_1.png" />
@@ -988,7 +988,7 @@ C(t) = \frac{F}{V}C_F \left[\frac{1}{\alpha} + \frac{\alpha \sin \omega t - \ome
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fb5dcc95360&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f5f1826d1b0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/11-linear-ode-example_22_1.png" src="../../_images/11-linear-ode-example_22_1.png" />

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Exact ODEs &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    <title>Exact ODEs &#8212; Mathematical Methods for Chemical Engineering</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -95,7 +95,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <h1 class="site-logo" id="site-title">Mathemtaical Methods for Chemical Engineering</h1>
+      <h1 class="site-logo" id="site-title">Mathematical Methods for Chemical Engineering</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -679,15 +679,15 @@ title="Print to PDF"
 <li><p>It can be written as <span class="math notranslate nohighlight">\(M(x,y)dx + N(x,y)dy = 0 \hspace{3cm} (*)\)</span></p></li>
 <li><p>There is some function <span class="math notranslate nohighlight">\(u(x,y)\)</span> such that</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-f9577fcc-fd7f-4309-8e36-bc1f5008a406">
-<span class="eqno">(114)<a class="headerlink" href="#equation-f9577fcc-fd7f-4309-8e36-bc1f5008a406" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-11912fad-b733-44cf-829c-ad31796c6da2">
+<span class="eqno">(114)<a class="headerlink" href="#equation-11912fad-b733-44cf-829c-ad31796c6da2" title="Permalink to this equation">#</a></span>\[\begin{align}
   \frac{\partial u}{\partial x} =M(x,y) &amp;&amp; \text{and} &amp;&amp; \frac{\partial u}{\partial y}=N(x,y)
   \end{align}\]</div>
 </li>
 </ul>
 <p><span class="math notranslate nohighlight">\(\rightarrow\)</span> plugging this into <span class="math notranslate nohighlight">\((*)\)</span>, we see:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b3bffdcb-dccc-47ea-82d0-fde3032cc794">
-<span class="eqno">(115)<a class="headerlink" href="#equation-b3bffdcb-dccc-47ea-82d0-fde3032cc794" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-76f88c0b-222f-444b-88ae-7e2b082c5988">
+<span class="eqno">(115)<a class="headerlink" href="#equation-76f88c0b-222f-444b-88ae-7e2b082c5988" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial u}{\partial x}dx + \frac{\partial u}{\partial y} dy = 0\\
 \therefore du = 0
 \end{align}\]</div>
@@ -697,16 +697,16 @@ title="Print to PDF"
 <ul class="simple">
 <li><p>Does <span class="math notranslate nohighlight">\(u(x,y)\)</span> exist such that</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-92475286-a7b6-4583-880f-0ba899a93525">
-<span class="eqno">(116)<a class="headerlink" href="#equation-92475286-a7b6-4583-880f-0ba899a93525" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-07fd8468-7889-4ab1-829e-992e303759e7">
+<span class="eqno">(116)<a class="headerlink" href="#equation-07fd8468-7889-4ab1-829e-992e303759e7" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial u}{\partial x} = M(x,y) &amp;&amp; \text{and} &amp;&amp; \frac{\partial u}{\partial y} = N(x,y) \hspace{1cm} ?
 \end{align}\]</div>
 <p>This strategy can also be applied to higher order differential equations, but it’s not as helpful there so I’m not going to cover that in lectures.</p>
 <ul class="simple">
 <li><p>If we assume continuity of the derivatives of <span class="math notranslate nohighlight">\(u(x,y)\)</span>, then we can write</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-49371376-dc6b-42c1-9a06-16d9c9f29074">
-<span class="eqno">(117)<a class="headerlink" href="#equation-49371376-dc6b-42c1-9a06-16d9c9f29074" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-68af696e-4760-4434-8e15-93db7c6d1f69">
+<span class="eqno">(117)<a class="headerlink" href="#equation-68af696e-4760-4434-8e15-93db7c6d1f69" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial^2u}{\partial x\partial y} &amp;= \frac{\partial^2u}{\partial y\partial x}\\
 \frac{\partial}{\partial x}\left(\frac{\partial u}{\partial y} \right) &amp;= \frac{\partial}{\partial y}\left(\frac{\partial u}{\partial x} \right)\\
 \frac{\partial}{\partial x}N(x,y) &amp;= \frac{\partial}{\partial y}M(x,y) &amp;&amp; \leftarrow \text{if exact, this will be true} 
@@ -719,8 +719,8 @@ title="Print to PDF"
 <ol class="simple">
 <li><p>Separate</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-ed3c2aeb-3d36-4580-95e9-58a76b770d25">
-<span class="eqno">(118)<a class="headerlink" href="#equation-ed3c2aeb-3d36-4580-95e9-58a76b770d25" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4dbf71d2-46c1-45a8-bf99-8a2d8eb50b1e">
+<span class="eqno">(118)<a class="headerlink" href="#equation-4dbf71d2-46c1-45a8-bf99-8a2d8eb50b1e" title="Permalink to this equation">#</a></span>\[\begin{align}
 3xy^2 \frac{dy}{dx} = -y^3\\
 \frac{3}{y} dy = -\frac{1}{x}dx\\
 3 \ln y = - \ln x + \beta\\
@@ -733,33 +733,33 @@ xy^3 = \alpha &amp;&amp;\rightarrow \text{implicit solution(didn't solve for y) 
 <li><p>Let’s check to see if we can solve by exactness:<br />
 a) Write as <span class="math notranslate nohighlight">\(M(x,y)dx + N(x,y)dy=0\)</span>:</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-2443cb68-3853-4356-bc86-e88acc264395">
-<span class="eqno">(119)<a class="headerlink" href="#equation-2443cb68-3853-4356-bc86-e88acc264395" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-644bbfe0-c989-44af-9324-715b6ad4df8f">
+<span class="eqno">(119)<a class="headerlink" href="#equation-644bbfe0-c989-44af-9324-715b6ad4df8f" title="Permalink to this equation">#</a></span>\[\begin{align}
   y^3dx + 3xy^2 dy = 0
   \end{align}\]</div>
 <p>b) Check if <span class="math notranslate nohighlight">\(\frac{\partial}{\partial x}N(x,y) = \frac{\partial}{\partial y} M(x,y)\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-82fa096a-800a-4402-bfe1-31b985c671d9">
-<span class="eqno">(120)<a class="headerlink" href="#equation-82fa096a-800a-4402-bfe1-31b985c671d9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7e5c4247-e58d-470c-ad13-8b17f1a886c8">
+<span class="eqno">(120)<a class="headerlink" href="#equation-7e5c4247-e58d-470c-ad13-8b17f1a886c8" title="Permalink to this equation">#</a></span>\[\begin{align}
   \frac{\partial}{\partial x} (3xy^2) &amp;= \frac{\partial}{\partial y}(y^3)\\
   3y^2 &amp;= 3y^2 &amp;&amp; \rightarrow \text{ODE is exact; we can continue}
   \end{align}\]</div>
 <p>c) Find <span class="math notranslate nohighlight">\(u(x,y)\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-dce43513-9b9c-48e3-9122-2afbbe33a7ab">
-<span class="eqno">(121)<a class="headerlink" href="#equation-dce43513-9b9c-48e3-9122-2afbbe33a7ab" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4828562f-3bf9-44cf-bb9c-6a39f59b4ed1">
+<span class="eqno">(121)<a class="headerlink" href="#equation-4828562f-3bf9-44cf-bb9c-6a39f59b4ed1" title="Permalink to this equation">#</a></span>\[\begin{align}
   \text{we know that} &amp;&amp; \frac{\partial u}{\partial x} = M(x,y) = y^3\\
   \text{and} &amp;&amp; \frac{\partial u}{\partial y} = N(x,y) = 3xy^2\\
   \end{align}\]</div>
 <p>Since these are partial derivatives, we can integrate them as follows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8bdc1be2-0082-4d16-a29f-f72ebb17409b">
-<span class="eqno">(122)<a class="headerlink" href="#equation-8bdc1be2-0082-4d16-a29f-f72ebb17409b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-09d0acfa-cbe9-4895-be9e-a44032c88f8d">
+<span class="eqno">(122)<a class="headerlink" href="#equation-09d0acfa-cbe9-4895-be9e-a44032c88f8d" title="Permalink to this equation">#</a></span>\[\begin{align}
   \frac{\partial u}{\partial x} &amp;= y^3\\
   \int du &amp;= \int y^3 dx\\
   u(x,y) &amp;= xy^3 + k(y)
   \end{align}\]</div>
 <p>we need to include the last term because its derivative wr.t. <span class="math notranslate nohighlight">\(x=0\)</span><br />
 We can find <span class="math notranslate nohighlight">\(k(y)\)</span> by considering our second partial derivative:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-50183bd2-3815-4ec9-9b1b-5f755595fdc3">
-<span class="eqno">(123)<a class="headerlink" href="#equation-50183bd2-3815-4ec9-9b1b-5f755595fdc3" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d267d9df-888a-4123-ae44-81ce559d9f01">
+<span class="eqno">(123)<a class="headerlink" href="#equation-d267d9df-888a-4123-ae44-81ce559d9f01" title="Permalink to this equation">#</a></span>\[\begin{align}
   \frac{\partial u}{\partial y} = 3xy^2\\
   \frac{\partial}{\partial y}(xy^3 + k(y)) = 3xy^2\\
   3xy^2 + \frac{dk}{dy} = 3xy^2\\
@@ -767,8 +767,8 @@ We can find <span class="math notranslate nohighlight">\(k(y)\)</span> by consid
   \therefore u(x,y) = xy^3 + k
   \end{align}\]</div>
 <p>d) Use <span class="math notranslate nohighlight">\(u(x,y)\)</span> to identify solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e9758563-35e8-4e64-9453-43263113c6c9">
-<span class="eqno">(124)<a class="headerlink" href="#equation-e9758563-35e8-4e64-9453-43263113c6c9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b594c828-b0b5-4636-afd9-1af2efa46200">
+<span class="eqno">(124)<a class="headerlink" href="#equation-b594c828-b0b5-4636-afd9-1af2efa46200" title="Permalink to this equation">#</a></span>\[\begin{align}
   u(x,y) = c = xy^3 + k \\
   \implies xy^3 = \alpha
   \end{align}\]</div>
@@ -776,22 +776,22 @@ We can find <span class="math notranslate nohighlight">\(k(y)\)</span> by consid
 </section>
 <section id="id1">
 <h2>Example<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-a4b1c9cb-20bf-4edb-b959-f283ff1c0171">
-<span class="eqno">(125)<a class="headerlink" href="#equation-a4b1c9cb-20bf-4edb-b959-f283ff1c0171" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fd82b0a3-471e-440d-94dd-5438b3dca72d">
+<span class="eqno">(125)<a class="headerlink" href="#equation-fd82b0a3-471e-440d-94dd-5438b3dca72d" title="Permalink to this equation">#</a></span>\[\begin{align}
 y' = \frac{-2xy^3 - 2}{3x^2y^2 + e^y} &amp;&amp; \text{(not separable)}
 \end{align}\]</div>
 <ol class="simple">
 <li><p>Put into the form <span class="math notranslate nohighlight">\(M(x,y)dx + N(x,y)dy = 0\)</span></p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-1e9d865e-52f0-42df-a740-354e13a9ab52">
-<span class="eqno">(126)<a class="headerlink" href="#equation-1e9d865e-52f0-42df-a740-354e13a9ab52" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e3939e3e-c20a-423c-8286-87983da4cd0f">
+<span class="eqno">(126)<a class="headerlink" href="#equation-e3939e3e-c20a-423c-8286-87983da4cd0f" title="Permalink to this equation">#</a></span>\[\begin{align}
 (2xy^3 + 2) dx + (3x^2y^2 + e^y)dy = 0
 \end{align}\]</div>
 <ol class="simple">
 <li><p>Check for exactness</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-002f6c97-a0d4-4b3b-9be8-00d8efd39692">
-<span class="eqno">(127)<a class="headerlink" href="#equation-002f6c97-a0d4-4b3b-9be8-00d8efd39692" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fb623f8b-a1db-4105-9d97-718d58573a7d">
+<span class="eqno">(127)<a class="headerlink" href="#equation-fb623f8b-a1db-4105-9d97-718d58573a7d" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial}{\partial x}N(x,y) &amp;= \frac{\partial}{\partial y}M(x,y) &amp;&amp; \text{(must be true)}\\
 \frac{\partial}{\partial x} (3x^2y^2 + e^y) &amp;= \frac{\partial}{\partial y} (2xy^3 + 2)\\
 3y^2\frac{\partial}{\partial x} (x^2) &amp;= 2x \frac{\partial}{\partial y}(y^3)\\
@@ -800,18 +800,18 @@ y' = \frac{-2xy^3 - 2}{3x^2y^2 + e^y} &amp;&amp; \text{(not separable)}
 <ol class="simple">
 <li><p>Now find <span class="math notranslate nohighlight">\(u(x,y)\)</span> such that</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-c81f4fb0-2b4d-4a1c-abdb-00af2aa37127">
-<span class="eqno">(128)<a class="headerlink" href="#equation-c81f4fb0-2b4d-4a1c-abdb-00af2aa37127" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-308dcd38-c770-4fa8-bc13-60df3d6a5f97">
+<span class="eqno">(128)<a class="headerlink" href="#equation-308dcd38-c770-4fa8-bc13-60df3d6a5f97" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial u}{\partial y} = N(x,y)=3x^2y^2 + e^y &amp;&amp; \text{and} &amp;&amp; \frac{\partial u}{\partial x} = M(x,y)=2xy^3 + 2 &amp;&amp; \text{(can start with either)}
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-9a0fcd59-9972-42be-98b9-819242ee7eae">
-<span class="eqno">(129)<a class="headerlink" href="#equation-9a0fcd59-9972-42be-98b9-819242ee7eae" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2c09d1b4-2ad1-4832-b953-767d5513a56c">
+<span class="eqno">(129)<a class="headerlink" href="#equation-2c09d1b4-2ad1-4832-b953-767d5513a56c" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int \partial u = \int (3x^2y^2 + e^y) dy\\
 u(x,y) = x^2y^3 + e^y + k(x)
 \end{align}\]</div>
 <p><span class="math notranslate nohighlight">\(\rightarrow\)</span> determine <span class="math notranslate nohighlight">\(k(y)\)</span> with second partial derivative:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-566fd7c7-be69-46d5-87c2-fcb03e77f2da">
-<span class="eqno">(130)<a class="headerlink" href="#equation-566fd7c7-be69-46d5-87c2-fcb03e77f2da" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-28479086-6051-430b-8828-91cb5df65e09">
+<span class="eqno">(130)<a class="headerlink" href="#equation-28479086-6051-430b-8828-91cb5df65e09" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial}{\partial x}(x^2y^3 + e^y + k(x)) &amp;= 2xy^3 + 2\\
 2xy^3 + \frac{dk}{dx} &amp;= 2xy^3 + 2\\
 \frac{dk}{dx} &amp;= 2\\
@@ -819,8 +819,8 @@ k(x) &amp;= 2x + k
 \end{align}\]</div>
 <p><span class="math notranslate nohighlight">\(\therefore u(x,y) = x^2y^3 + e^y + 2x + k\)</span>
 4. Find implicit solution using <span class="math notranslate nohighlight">\(u(x,y) = c\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-462a04d9-18de-4529-9a09-0a3241327580">
-<span class="eqno">(131)<a class="headerlink" href="#equation-462a04d9-18de-4529-9a09-0a3241327580" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-55721467-90b6-4f88-b709-04a6148d8e25">
+<span class="eqno">(131)<a class="headerlink" href="#equation-55721467-90b6-4f88-b709-04a6148d8e25" title="Permalink to this equation">#</a></span>\[\begin{align}
 c = x^2y^3 + e^y + 2x + k\\
 x^2 y^3 + e^y + 2x = \alpha &amp;&amp; \text {general solution}
 \end{align}\]</div>
@@ -832,16 +832,16 @@ x^2 y^3 + e^y + 2x = \alpha &amp;&amp; \text {general solution}
 <li><p>Intefrating Factors (IFs) are a tool we can use to make some inexact equations exact so we can solve.<br />
 In general, we have</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-13b1c13a-6a52-4ac6-b02d-2bdb5c7629f2">
-<span class="eqno">(132)<a class="headerlink" href="#equation-13b1c13a-6a52-4ac6-b02d-2bdb5c7629f2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d3d9d39b-4ad7-4220-ad0c-ad03ab7816b2">
+<span class="eqno">(132)<a class="headerlink" href="#equation-d3d9d39b-4ad7-4220-ad0c-ad03ab7816b2" title="Permalink to this equation">#</a></span>\[\begin{align}
 P(x,y)dx + Q(x,y) dy = 0
 \end{align}\]</div>
 <p>Where <span class="math notranslate nohighlight">\(\frac{\partial P}{\partial y} \neq \frac{\partial Q}{\partial x} \implies\)</span> not exact</p>
 <ul class="simple">
 <li><p>We can try to find an I.F., <span class="math notranslate nohighlight">\(F(x,y)\)</span>, s.t. <span class="math notranslate nohighlight">\(F(x,y)P(x,y)dx + F(x,y)Q(x,y)dy = 0\)</span> is an exact equation. This would require:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-73209116-3319-44da-a1c8-698646b0d625">
-<span class="eqno">(133)<a class="headerlink" href="#equation-73209116-3319-44da-a1c8-698646b0d625" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ac8c2b3f-81bb-46cb-82a9-92703aabe546">
+<span class="eqno">(133)<a class="headerlink" href="#equation-ac8c2b3f-81bb-46cb-82a9-92703aabe546" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial}{\partial y}[F(x,y)P(x,y)] &amp;= \frac{\partial}{\partial x} [F(x,y)Q(x,y)]\\
 F(x,y)\frac{\partial P}{\partial y} + P(x,y)\frac{\partial F}{\partial y} &amp;= F(x,y)\frac{\partial Q}{\partial x} + Q(x,y)\frac{\partial F}{\partial x}
 \end{align}\]</div>
@@ -849,33 +849,33 @@ F(x,y)\frac{\partial P}{\partial y} + P(x,y)\frac{\partial F}{\partial y} &amp;=
 <ol class="simple">
 <li><p>First assume that <span class="math notranslate nohighlight">\(F(x,y) = F(x)\)</span> only. Now,</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-f49b080f-412b-4083-999a-230168ce6751">
-<span class="eqno">(134)<a class="headerlink" href="#equation-f49b080f-412b-4083-999a-230168ce6751" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9456a062-cb71-42b1-aa1b-dd43361588ea">
+<span class="eqno">(134)<a class="headerlink" href="#equation-9456a062-cb71-42b1-aa1b-dd43361588ea" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial F}{\partial y} = 0 &amp;&amp; \text{and} &amp;&amp; \frac{\partial F}{\partial x} = \frac{dF}{dx}  &amp;&amp; \text{(partial becomes full)}
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-a2a61a03-658d-4dee-9146-d14642cf85ff">
-<span class="eqno">(135)<a class="headerlink" href="#equation-a2a61a03-658d-4dee-9146-d14642cf85ff" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8560322f-b8b0-45c9-b93c-41837337dcb4">
+<span class="eqno">(135)<a class="headerlink" href="#equation-8560322f-b8b0-45c9-b93c-41837337dcb4" title="Permalink to this equation">#</a></span>\[\begin{align}
 \therefore F(x) \frac{\partial P}{\partial y} + P(x,y) \frac{\partial F}{\partial y} &amp;= F(x) \frac{\partial Q}{\partial x} + Q(x,y) \frac{dF}{dx}\\
 F(x)\left[\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x} \right] &amp;= Q(x,y)\frac{dF}{dx}\\
 \frac{1}{F(x)}\frac{dF}{dx} &amp;= \frac{1}{Q(x,y)}\left[\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x} \right]
 \end{align}\]</div>
 <p>we know the RHS term, call it <span class="math notranslate nohighlight">\(R(x,y)\)</span><br />
 <span class="math notranslate nohighlight">\(\rightarrow\)</span> If <span class="math notranslate nohighlight">\(R(x,y) = R(x)\)</span> only, then you can find <span class="math notranslate nohighlight">\(F(x)\)</span> from integration</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f4539b98-9338-4a65-8c5f-73baf8d9bdce">
-<span class="eqno">(136)<a class="headerlink" href="#equation-f4539b98-9338-4a65-8c5f-73baf8d9bdce" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d9f8d1f5-328d-4ec7-b24b-052b56e2ab58">
+<span class="eqno">(136)<a class="headerlink" href="#equation-d9f8d1f5-328d-4ec7-b24b-052b56e2ab58" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial F}{F} = R(x)dx \implies F(x) = \exp\left[\int R(x)dx \right]
 \end{align}\]</div>
 <p><span class="math notranslate nohighlight">\(\rightarrow\)</span> If <span class="math notranslate nohighlight">\(R(x,y)\neq R(x)\)</span>, then out assumption that <span class="math notranslate nohighlight">\(F(x,y)=F(x)\)</span> is not true. Then try step 2.</p>
 <ol class="simple">
 <li><p>Assume <span class="math notranslate nohighlight">\(F(x,y) = F(y)\)</span> only. Then,</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-7f455752-0e8a-40f3-b968-8158d683dca1">
-<span class="eqno">(137)<a class="headerlink" href="#equation-7f455752-0e8a-40f3-b968-8158d683dca1" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4c6d4846-5f2f-4d50-abf8-16352f33ab3d">
+<span class="eqno">(137)<a class="headerlink" href="#equation-4c6d4846-5f2f-4d50-abf8-16352f33ab3d" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial F}{\partial x} = 0 &amp;&amp; \text{and} &amp;&amp; \frac{\partial F}{\partial y} = \frac{dF}{dy}  
 \end{align}\]</div>
 <p>Partial derivative equation simplifies to:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-27746b45-1ab1-45b7-b6af-8173ff615c98">
-<span class="eqno">(138)<a class="headerlink" href="#equation-27746b45-1ab1-45b7-b6af-8173ff615c98" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4a3be257-29b5-4669-9c2e-3aedfc7d6d9e">
+<span class="eqno">(138)<a class="headerlink" href="#equation-4a3be257-29b5-4669-9c2e-3aedfc7d6d9e" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{1}{F} \frac{dF}{dy} = \frac{1}{P(x,y)}\left[\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right]
 \end{align}\]</div>
 <p>Again, let RHS = <span class="math notranslate nohighlight">\(R(x,y)\)</span><br />
@@ -883,24 +883,24 @@ F(x)\left[\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x} \right] 
 <span class="math notranslate nohighlight">\(\rightarrow\)</span>If <span class="math notranslate nohighlight">\(R(x,y) \neq R(y)\)</span>, then <span class="math notranslate nohighlight">\(F(x,y)\)</span> = function of both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> and you will need some other clue to solve.</p>
 <section id="id2">
 <h2>Example<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-90a8ca54-3ebb-463d-ae93-71b333e80d2a">
-<span class="eqno">(139)<a class="headerlink" href="#equation-90a8ca54-3ebb-463d-ae93-71b333e80d2a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c9fbaa7d-6dfa-4276-affc-9039e7d0454f">
+<span class="eqno">(139)<a class="headerlink" href="#equation-c9fbaa7d-6dfa-4276-affc-9039e7d0454f" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{dy}{dx} = \frac{-2xy}{4y + 3x^2}
 \end{align}\]</div>
 <ol class="simple">
 <li><p>rewrite as: <span class="math notranslate nohighlight">\((2xy)dx + (4y + 3x^2) dy = 0\)</span></p></li>
 <li><p>check for exactness:</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-46782a2c-0885-479e-9eb1-e301e52a8bae">
-<span class="eqno">(140)<a class="headerlink" href="#equation-46782a2c-0885-479e-9eb1-e301e52a8bae" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0d58632f-21d5-47fa-81eb-d1ad7814f155">
+<span class="eqno">(140)<a class="headerlink" href="#equation-0d58632f-21d5-47fa-81eb-d1ad7814f155" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial P}{\partial y} &amp;= \frac{\partial Q}{\partial x}\\
 2x &amp;\neq 6x \implies \text{not exact}
 \end{align}\]</div>
 <ol class="simple">
 <li><p>Try to find an I.F. <span class="math notranslate nohighlight">\(F(x,y)=F(x)\)</span></p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-d2752383-99b6-4b0f-acd1-fd17b9b5b0f3">
-<span class="eqno">(141)<a class="headerlink" href="#equation-d2752383-99b6-4b0f-acd1-fd17b9b5b0f3" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d4e74027-f169-446f-85e3-80a382e45eb5">
+<span class="eqno">(141)<a class="headerlink" href="#equation-d4e74027-f169-446f-85e3-80a382e45eb5" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial (FP)}{\partial y} &amp;= \frac{\partial (FQ)}{\partial x}\\
 F\frac{\partial P}{\partial y} + P\frac{\partial F}{\partial y} &amp;= F \frac{\partial Q}{\partial x} + Q\frac{\partial F}{\partial x}\\
 \therefore \frac{1}{F} \frac{dF}{dx} &amp;= \frac{1}{Q}\left(\frac{\partial P}{\partial y} - \ \frac{\partial Q}{\partial x}\right)\\
@@ -910,14 +910,14 @@ F\frac{\partial P}{\partial y} + P\frac{\partial F}{\partial y} &amp;= F \frac{\
 <ol class="simple">
 <li><p>Try to find I.F. <span class="math notranslate nohighlight">\(F(x,y) = F(y)\)</span></p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-62c428bb-fcb1-42ae-97e6-f419125d0095">
-<span class="eqno">(142)<a class="headerlink" href="#equation-62c428bb-fcb1-42ae-97e6-f419125d0095" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ae78ed75-e2e7-473d-82da-fe726579fa73">
+<span class="eqno">(142)<a class="headerlink" href="#equation-ae78ed75-e2e7-473d-82da-fe726579fa73" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{1}{F} \frac{dF}{dy} &amp;= \frac{1}{P}\left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right)\\
 &amp;=\frac{1}{2xy}(6x-2x) = \frac{2}{y} = R(y) &amp;&amp; \text{(good!)}
 \end{align}\]</div>
 <p>Continuing,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8fbf90da-c35a-40e0-b204-3abe8d39e754">
-<span class="eqno">(143)<a class="headerlink" href="#equation-8fbf90da-c35a-40e0-b204-3abe8d39e754" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-af706e6c-61e6-4a78-9442-ebd9a590a01a">
+<span class="eqno">(143)<a class="headerlink" href="#equation-af706e6c-61e6-4a78-9442-ebd9a590a01a" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int \frac{dF}{F} &amp;= \int \frac{2}{y}dy\\
 \ln F(y) &amp;= 2 \ln y\\
 F(y) &amp;= y^2
@@ -925,8 +925,8 @@ F(y) &amp;= y^2
 <ol class="simple">
 <li><p>We can now make our equation exact using <span class="math notranslate nohighlight">\(F(y)\)</span></p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-09a8feb6-7ab2-4f3f-8989-6446f5afce5a">
-<span class="eqno">(144)<a class="headerlink" href="#equation-09a8feb6-7ab2-4f3f-8989-6446f5afce5a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4ad5040a-c644-4b57-8d8d-e97251a2c266">
+<span class="eqno">(144)<a class="headerlink" href="#equation-4ad5040a-c644-4b57-8d8d-e97251a2c266" title="Permalink to this equation">#</a></span>\[\begin{align}
 F(y)[P(x,y)dx + Q(x,y)dy] = 0\\
 y^2 [(2xy)dx + (4y + 3x^2)dy] = 0\\
 2xy^3 dx + (4y^3 + 3x^2y^2)dy = 0
@@ -934,16 +934,16 @@ y^2 [(2xy)dx + (4y + 3x^2)dy] = 0\\
 <ol class="simple">
 <li><p>Check for exactness:</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-eea4fa0f-c091-441f-8065-f8818749a566">
-<span class="eqno">(145)<a class="headerlink" href="#equation-eea4fa0f-c091-441f-8065-f8818749a566" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a9dd975c-a4fb-40be-a9af-f9dfa30be9b4">
+<span class="eqno">(145)<a class="headerlink" href="#equation-a9dd975c-a4fb-40be-a9af-f9dfa30be9b4" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial}{\partial y}(2xy^3) &amp;= \frac{\partial}{\partial x}(4y^3 + 3x^2y^2)\\
 6xy^2 &amp;=6xy^2 &amp;&amp; \text{exact}
 \end{align}\]</div>
 <ol class="simple">
 <li><p>Find <span class="math notranslate nohighlight">\(u(x,y)\)</span></p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-b95b0a5a-1af4-4661-aa3c-b9d7f8e2e9d1">
-<span class="eqno">(146)<a class="headerlink" href="#equation-b95b0a5a-1af4-4661-aa3c-b9d7f8e2e9d1" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9d14a98e-05d9-45c8-963a-78760b66a494">
+<span class="eqno">(146)<a class="headerlink" href="#equation-9d14a98e-05d9-45c8-963a-78760b66a494" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial u}{\partial x} = 2xy^3 \implies u(x,y) = x^2y^3 + k(y)\\
 \frac{\partial u}{\partial y} = \frac{\partial}{\partial y} (x^2y^3 + k(y)) = 4y^3 + 3x^2y^2\\
 3x^2y^2 + \frac{dk}{dy} = 4y^3 + 3x^2y^2\\
@@ -952,8 +952,8 @@ k(y) = y^4 + k
 <ol class="simple">
 <li><p>Find implicit solution using <span class="math notranslate nohighlight">\(u(x,y) = c\)</span></p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-f7637d21-953d-40be-be67-bd09a16214a7">
-<span class="eqno">(147)<a class="headerlink" href="#equation-f7637d21-953d-40be-be67-bd09a16214a7" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f5893cb0-4c7a-42ec-890e-8ac75f68574e">
+<span class="eqno">(147)<a class="headerlink" href="#equation-f5893cb0-4c7a-42ec-890e-8ac75f68574e" title="Permalink to this equation">#</a></span>\[\begin{align}
 x^2y^3 + y^4 + k = c\\
 x^2 y^3 + y^4 = \alpha &amp;&amp; \text{general solution}
 \end{align}\]</div>

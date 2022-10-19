@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Non-linear regression &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    <title>Non-linear regression &#8212; Mathematical Methods for Chemical Engineering</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -95,7 +95,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <h1 class="site-logo" id="site-title">Mathemtaical Methods for Chemical Engineering</h1>
+      <h1 class="site-logo" id="site-title">Mathematical Methods for Chemical Engineering</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -617,15 +617,15 @@ title="Print to PDF"
 <li><p>We consider the disappearance of <span class="math notranslate nohighlight">\(A\)</span></p></li>
 <li><p>From the mole balance we know:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-3932b1d6-7977-4c16-813c-381a1f39cca2">
-<span class="eqno">(507)<a class="headerlink" href="#equation-3932b1d6-7977-4c16-813c-381a1f39cca2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f42a0d9b-e682-4a60-aac5-134f878b6087">
+<span class="eqno">(507)<a class="headerlink" href="#equation-f42a0d9b-e682-4a60-aac5-134f878b6087" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{dN_A}{dt} = r_A V
 \end{equation}\]</div>
 <ul class="simple">
 <li><p>Let us assume the rate law is of the form: <span class="math notranslate nohighlight">\(r_A = k C_A^\alpha\)</span> and a constant volume so that:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-fd92508c-1b4b-4924-b7ee-9c5e3013cf78">
-<span class="eqno">(508)<a class="headerlink" href="#equation-fd92508c-1b4b-4924-b7ee-9c5e3013cf78" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d599580c-c898-4ff6-8d8d-0ea94097515a">
+<span class="eqno">(508)<a class="headerlink" href="#equation-d599580c-c898-4ff6-8d8d-0ea94097515a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{dC_A}{dt} = -k C_A^\alpha
 \end{equation}\]</div>
 <ul class="simple">
@@ -635,8 +635,8 @@ title="Print to PDF"
 </ul>
 </li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-926bc364-3899-433f-a6e0-85ed69680364">
-<span class="eqno">(509)<a class="headerlink" href="#equation-926bc364-3899-433f-a6e0-85ed69680364" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-04f52785-b444-431b-ab8a-6f7e37dc3ec4">
+<span class="eqno">(509)<a class="headerlink" href="#equation-04f52785-b444-431b-ab8a-6f7e37dc3ec4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \ln(-\frac{dC_A}{dt}) = \ln{k} + \alpha \ln C_A
 \end{equation}\]</div>
 <ul class="simple">
@@ -747,7 +747,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f4955d44f10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f001ee04cd0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/26-bonus-nonlinear-regression_7_1.png" src="../../_images/26-bonus-nonlinear-regression_7_1.png" />
@@ -836,7 +836,7 @@ k = 0.1402128334966662, conf interval [0.09372748 0.20975319]
   <th>Date:</th>             <td>Wed, 19 Oct 2022</td> <th>  Prob (F-statistic):</th> <td>8.22e-08</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>15:59:17</td>     <th>  Log-Likelihood:    </th> <td>  13.785</td>
+  <th>Time:</th>                 <td>19:29:39</td>     <th>  Log-Likelihood:    </th> <td>  13.785</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>     7</td>      <th>  AIC:               </th> <td>  -23.57</td>
@@ -1025,10 +1025,12 @@ k = 0.1402128334966662, conf interval [0.09372748 0.20975319]
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: lmfit in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (1.0.3)
-Requirement already satisfied: numpy&gt;=1.18 in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (from lmfit) (1.23.4)
-Requirement already satisfied: scipy&gt;=1.4 in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (from lmfit) (1.9.2)
-Requirement already satisfied: asteval&gt;=0.9.22 in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (from lmfit) (0.9.27)
 Requirement already satisfied: uncertainties&gt;=3.0.1 in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (from lmfit) (3.1.7)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy&gt;=1.4 in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (from lmfit) (1.9.2)
+Requirement already satisfied: asteval&gt;=0.9.22 in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (from lmfit) (0.9.27)
+Requirement already satisfied: numpy&gt;=1.18 in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (from lmfit) (1.23.4)
 Requirement already satisfied: future in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (from uncertainties&gt;=3.0.1-&gt;lmfit) (0.18.2)
 </pre></div>
 </div>
