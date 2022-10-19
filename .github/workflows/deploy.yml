@@ -31,7 +31,7 @@ jobs:
     # Build the book
     - name: Build the book
       run: |
-        jupyter-book build math-methods-chemical-engineering
+        conda activate buildenv && jupyter-book build math-methods-chemical-engineering
 
     # Deploy the book's HTML to gh-pages branch
     - name: GitHub Pages action
