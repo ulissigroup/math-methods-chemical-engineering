@@ -1,0 +1,1157 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Using the inverse of A to solve a system of linear equations &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Homogeneous vs. Non-homogeneous Systems" href="6-eigenvalues-1.html" />
+    <link rel="prev" title="Chemical Engineering example solved with Gauss elimination" href="4-rank-gauss-examples.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Mathemtaical Methods for Chemical Engineering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Lecture notes for CMU 06-262 Math Methods in Chemical Engineering (Zachary Ulissi, CMU)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Notes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="linear_algebra.html">
+   Linear Algebra
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="1-intro-matrices.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2-matrix-manipulation.html">
+     Note on HW expectations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3-gauss-elimination.html">
+     Return to Systems of Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4-rank-gauss-examples.html">
+     Chemical Engineering example solved with Gauss elimination
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Using the inverse of A to solve a system of linear equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6-eigenvalues-1.html">
+     Homogeneous vs. Non-homogeneous Systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="7-eigenvalue-2-difference-equations.html">
+     <span class="math notranslate nohighlight">
+      \(\underline{Ex}\)
+     </span>
+     : Symmetric matrix (
+     <span class="math notranslate nohighlight">
+      \(\lambda\)
+     </span>
+     always real)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="7b-numerical-eigenvalues.html">
+     Eigenvectors in python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ordinary_differential_equations/ordinary_differential_equations.html">
+   Ordinary Differential Equations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/8-differential-equations.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/9-exact-ode.html">
+     Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/10-linear-ode.html">
+     Integrating Factors - Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/11-linear-ode-example.html">
+     Alternate Method (Last class continued)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/12-second-order-odes.html">
+     Second Order Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/13-non-homogeneous-linear-odes.html">
+     Recap from last class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/14-MoUC-VoP.html">
+     Method of Undetermined Coefficients (sec 2.9)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/15-springs-numerical-odes.html">
+     Introduction to Numerical Solution of Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/16-coupled-odes.html">
+     Coupled Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/17-coupled-ode-continued.html">
+     Recap for coupled differential equations:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/18-nonlinear-coupled-ODEs.html">
+     Nonlinear coupled ODE’s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/19-linear-stability.html">
+     Steady states in Non-Linear Coupled ODE’s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/20-BVP.html">
+     Boundary Value Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/21-BVP-shooting-method.html">
+     The Shooting Method for Solving BVPs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../partial_differential_equations/partial_differential_equations.html">
+   Partial Differential Equations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../partial_differential_equations/22-Intro-PDEs.html">
+     Partial Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../partial_differential_equations/23-Fourier-Coefficients.html">
+     Recap on PDEs from last lecture
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../statistics/statistics.html">
+   Statistics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/24-intro-statistics.html">
+     Intro to engineering statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/25-statistics-continue-linear-regression.html">
+     Recap from last class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/26-bonus-nonlinear-regression.html">
+     Recap on linear regression
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-recap.html">
+   06-262 Math Methods Recap
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ulissigroup/math-methods-chemical-engineering/main?urlpath=lab/tree/math-methods-chemical-engineering/notes/linear_algebra/5-determinants.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/ulissigroup/math-methods-chemical-engineering/blob/main/math-methods-chemical-engineering/notes/linear_algebra/5-determinants.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/ulissigroup/math-methods-chemical-engineering"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/ulissigroup/math-methods-chemical-engineering/issues/new?title=Issue%20on%20page%20%2Fnotes/linear_algebra/5-determinants.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/notes/linear_algebra/5-determinants.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Using the inverse of A to solve a system of linear equations
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#determinants">
+   Determinants
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#case-1-1-times1-matrix">
+     Case 1: 1
+     <span class="math notranslate nohighlight">
+      \(\times\)
+     </span>
+     1 Matrix
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#case-2-2-times2-matrix">
+     Case 2: 2
+     <span class="math notranslate nohighlight">
+      \(\times\)
+     </span>
+     2 matrix
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#case-3-3-times-3-matrix">
+     Case 3: 3
+     <span class="math notranslate nohighlight">
+      \(\times\)
+     </span>
+     3 Matrix
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example">
+       Example
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#row-choice-for-determinants">
+     Row choice for determinants
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#in-class-problem">
+   In-class problem
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#general-definition-of-the-determinant-any-size-matrix">
+     General definition of the determinant (any size matrix)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-what-if-you-have-a-row-or-column-of-all-zeros">
+     Question: What if you have a row or column of all zeros?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-of-determinant-in-solving-systems-of-equations">
+   Use of determinant in solving systems of equations
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numerical-calculation-of-determinant">
+   Numerical calculation of determinant
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Using the inverse of A to solve a system of linear equations</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Using the inverse of A to solve a system of linear equations
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#determinants">
+   Determinants
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#case-1-1-times1-matrix">
+     Case 1: 1
+     <span class="math notranslate nohighlight">
+      \(\times\)
+     </span>
+     1 Matrix
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#case-2-2-times2-matrix">
+     Case 2: 2
+     <span class="math notranslate nohighlight">
+      \(\times\)
+     </span>
+     2 matrix
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#case-3-3-times-3-matrix">
+     Case 3: 3
+     <span class="math notranslate nohighlight">
+      \(\times\)
+     </span>
+     3 Matrix
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example">
+       Example
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#row-choice-for-determinants">
+     Row choice for determinants
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#in-class-problem">
+   In-class problem
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#general-definition-of-the-determinant-any-size-matrix">
+     General definition of the determinant (any size matrix)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-what-if-you-have-a-row-or-column-of-all-zeros">
+     Question: What if you have a row or column of all zeros?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-of-determinant-in-solving-systems-of-equations">
+   Use of determinant in solving systems of equations
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numerical-calculation-of-determinant">
+   Numerical calculation of determinant
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p>{{ badge }}
+$<span class="math notranslate nohighlight">\(\newcommand{\arr}[1]{\underline{\underline{#1}}}\)</span><span class="math notranslate nohighlight">\(    
+\)</span><span class="math notranslate nohighlight">\(\newcommand{\vec}[1]{\underline{#1}}\)</span><span class="math notranslate nohighlight">\(   
+\)</span><span class="math notranslate nohighlight">\(\require{mhchem}\)</span>$</p>
+<section class="tex2jax_ignore mathjax_ignore" id="using-the-inverse-of-a-to-solve-a-system-of-linear-equations">
+<h1>Using the inverse of A to solve a system of linear equations<a class="headerlink" href="#using-the-inverse-of-a-to-solve-a-system-of-linear-equations" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>If you have the inverse of a matrix <span class="math notranslate nohighlight">\(\arr{A}\)</span> representative of a linear system of equations, you can use it to find <span class="math notranslate nohighlight">\(\vec{x}\)</span>:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\arr{A}\vec{x}=\vec{b}\\
+\arr{A}^{-1}\arr{A}\vec{x}=\arr{A}^{-1}\vec{b}\\
+\vec{x}=\arr{A}^{-1}\vec{b}
+\end{align*}\]</div>
+<p>now <span class="math notranslate nohighlight">\(\vec{x}\)</span> is just the product.</p>
+<ul class="simple">
+<li><p>Fun fact: An n<span class="math notranslate nohighlight">\(\times\)</span>n system <span class="math notranslate nohighlight">\(\arr{A}\vec{x}=\vec{b}\)</span> has a unique solution if and only if <span class="math notranslate nohighlight">\(\arr{A}\)</span> is nonsingular (i.e. has an inverse).
+*Other properties:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+(\arr{A}\arr{C})^{-1}=\arr{C}^{-1}\arr{A}^{-1}\\
+(\arr{A}\arr{B}\arr{C})^{-1}=\arr{C}^{-1}\arr{B}^{-1}\arr{A}^{-1}
+\end{align*}\]</div>
+<ul class="simple">
+<li><p>Be careful:<br />
+if <span class="math notranslate nohighlight">\(\arr{A}=\begin{bmatrix}1&amp;0&amp;-2\\
+2&amp;-1&amp;3\\
+4&amp;0&amp;2\end{bmatrix}\)</span> then <span class="math notranslate nohighlight">\(\arr{A}^{-1}=\begin{bmatrix}2/10&amp;0&amp;2/10\\
+-8/10&amp;-1&amp;7/10\\
+\bf{-4/10}&amp;\bf{0}&amp;\bf{1/10}\end{bmatrix}\)</span></p></li>
+</ul>
+<p>if <span class="math notranslate nohighlight">\(\arr{B}=\begin{bmatrix}1&amp;0&amp;-2\\
+4&amp;0&amp;2\\
+2&amp;-1&amp;3\end{bmatrix}\)</span>(switched rows), then <span class="math notranslate nohighlight">\(\arr{B}^{-1}\neq\begin{bmatrix}2/10&amp;0&amp;2/10\\
+\bf{-4/10}&amp;\bf{0}&amp;\bf{1/10}\\
+-8/10&amp;-1&amp;7/10\end{bmatrix}\)</span> but <span class="math notranslate nohighlight">\(\arr{B}^{-1}=\begin{bmatrix}2/10&amp;2/10&amp;0\\
+-8/10&amp;7/10&amp;-1\\
+-4/10&amp;1/10&amp;0\end{bmatrix}\)</span></p>
+<p>Notice the columns were switched here.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="determinants">
+<h1>Determinants<a class="headerlink" href="#determinants" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Every square matrix is associated with a real number (a scalar) called the determinant.</p></li>
+<li><p>The value of the determinant will tell us whether or not the matrix is singular.</p></li>
+<li><p>Generalized definition:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-dbaa28ab-449e-4fb0-951f-5ea7ef44d8aa">
+<span class="eqno">(4)<a class="headerlink" href="#equation-dbaa28ab-449e-4fb0-951f-5ea7ef44d8aa" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  D = |\arr{A}| = \det(\arr{A})=\begin{cases}
+    a_{11} &amp; \text{if $n=1$}.\\
+    a_{11}A_{11} + a_{12}A_{12} + ... + a_{1n}A_{1n} &amp; \text{if n&gt;1}.
+  \end{cases}
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(A_{1k} = (-1)^{1+k} \det(\arr{M_{1k}})\)</span>, for <span class="math notranslate nohighlight">\(k=1,2,...n\)</span><br />
+Here, <span class="math notranslate nohighlight">\(A_{1k}\)</span> is a “cofactor” and <span class="math notranslate nohighlight">\(\det(\arr{M_{1k}})\)</span> is the “minor” of <span class="math notranslate nohighlight">\(a_{1k}\)</span>.<br />
+Also, <span class="math notranslate nohighlight">\(\arr{M_{1k}}\)</span> = submatrix formed from <span class="math notranslate nohighlight">\(\arr{A}\)</span> when deleting row <span class="math notranslate nohighlight">\(1\)</span> and column <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<p>OK, so this makes no sense without some examples. Let’s consider matrices of different sizes.</p>
+<section id="case-1-1-times1-matrix">
+<h2>Case 1: 1<span class="math notranslate nohighlight">\(\times\)</span>1 Matrix<a class="headerlink" href="#case-1-1-times1-matrix" title="Permalink to this headline">#</a></h2>
+<p><span class="math notranslate nohighlight">\(|A| = a_{11}=a\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\arr{A}\)</span> is non-singular if <span class="math notranslate nohighlight">\(a\neq0\)</span> and singular if <span class="math notranslate nohighlight">\(a=0\)</span>.<br />
+Ex: <span class="math notranslate nohighlight">\(\arr{A}=[5] \hspace{0.5cm} \rightarrow{} \det(\arr{A})=5\)</span> (non singular) <br />
+<span class="math notranslate nohighlight">\(\hspace{0.6cm} \arr{B}=[0] \hspace{0.5cm} \rightarrow{} \det(\arr{B})=0\)</span> (singular)</p></li>
+</ul>
+<p>Let’s think about a physical system <span class="math notranslate nohighlight">\(ax=5\)</span>. If <span class="math notranslate nohighlight">\(a\)</span> is zero, we have a problem! If it’s non-zero, we can solve.</p>
+</section>
+<section id="case-2-2-times2-matrix">
+<h2>Case 2: 2<span class="math notranslate nohighlight">\(\times\)</span>2 matrix<a class="headerlink" href="#case-2-2-times2-matrix" title="Permalink to this headline">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(\arr{A} = \begin{bmatrix}a_{11} &amp; a_{12}\\ a_{21} &amp; a_{22}\end{bmatrix}\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\arr{A}\)</span> will be non-singular only if we can convert it to <span class="math notranslate nohighlight">\(\arr{I}\)</span> using elementary row operations. This property is called “row equivalence”.</p></li>
+<li><p>Let’s consider how we would convert <span class="math notranslate nohighlight">\(\arr{A}\)</span> to <span class="math notranslate nohighlight">\(\arr{I}\)</span>.<br />
+If <span class="math notranslate nohighlight">\(a_{11}\neq0\)</span> then we can perform the following row operations:</p></li>
+</ul>
+<ol class="simple">
+<li><p>Multiply the second row of <span class="math notranslate nohighlight">\(\arr{A}\)</span> by <span class="math notranslate nohighlight">\(a_{11}\)</span> <span class="math notranslate nohighlight">\((R_2=a_{11}R_2)\)</span></p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\arr{A}=\begin{bmatrix}a_{11} &amp; a_{12}\\
+a_{11}a_{21} &amp; a_{11}a_{22}\end{bmatrix}
+\end{align*}\]</div>
+<ol class="simple">
+<li><p>Subtract <span class="math notranslate nohighlight">\(a_{21} \times \)</span>Row 1 from Row 2 <span class="math notranslate nohighlight">\((R_2 = R_2 - a_{21} R_1)\)</span>\</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\arr{A}=\begin{bmatrix}a_{11} &amp; a_{12}\\
+0 &amp; a_{11}a_{22} - a_{12}a_{21}\end{bmatrix}
+\end{align*}\]</div>
+<ul class="simple">
+<li><p>Since <span class="math notranslate nohighlight">\(a_{11}\neq0\)</span>, <span class="math notranslate nohighlight">\(\arr{A}\)</span> will be row equivalent to <span class="math notranslate nohighlight">\(\arr{I}\)</span> IFF:\</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+a_{11}a_{22}-a_{12}a_{21} \neq 0 \hspace{2cm} (*)
+\end{align*}\]</div>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(a_{11}=0\)</span>, then we can switch the two rows:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\arr{A} = \begin{bmatrix}
+a_{21} &amp; a_{22}\\
+0 &amp; a_{12}
+\end{bmatrix}
+\end{align*}\]</div>
+<ul class="simple">
+<li><p>Now, <span class="math notranslate nohighlight">\(\arr{A}\)</span> will be row equivalent to <span class="math notranslate nohighlight">\(\arr{I}\)</span> if <span class="math notranslate nohighlight">\(a_{21}\neq0\)</span> and <span class="math notranslate nohighlight">\(a_{12}\neq0\)</span></p></li>
+<li><p>This is the same as saying <span class="math notranslate nohighlight">\(a_{11}a_{21} \neq 0\)</span> which is equivalent to (*) for <span class="math notranslate nohighlight">\(a_{11}=0\)</span>:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+a_{11}a_{22} - a_{12}a_{21} = a_{12}a_{21}\neq0
+\end{align*}\]</div>
+<ul class="simple">
+<li><p>Great! These cases of <span class="math notranslate nohighlight">\(a_{11}\neq0\)</span> and <span class="math notranslate nohighlight">\(a_{11}=0\)</span> are consistent and we can define <br />
+<span class="math notranslate nohighlight">\(det(\arr{A}) = |\arr{A}| = a_{11}a_{22} - a_{12} a_{21}\)</span></p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-9a65227e-7ec6-487b-9e63-60848265b082">
+<span class="eqno">(5)<a class="headerlink" href="#equation-9a65227e-7ec6-487b-9e63-60848265b082" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  \begin{cases}
+    =0 &amp; \text{when $\arr{A}$ is singular}\\
+    \neq 0 &amp; \text{when $\arr{A}$ is non-singular}
+  \end{cases}
+\end{equation}\]</div>
+</section>
+<section id="case-3-3-times-3-matrix">
+<h2>Case 3: 3<span class="math notranslate nohighlight">\(\times\)</span> 3 Matrix<a class="headerlink" href="#case-3-3-times-3-matrix" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>We will not derive the determinant for a 3 <span class="math notranslate nohighlight">\(\times\)</span> 3 matrix in class (see text).</p></li>
+<li><p>How to find it?</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\det(\arr{A}) = \left|\begin{array}{}
+a_{11}&amp;a_{12}&amp;a_{13}\\
+a_{21}&amp;a_{22}&amp;a_{23}\\
+a_{31}&amp;a_{32}&amp;a_{33}
+\end{array}\right|
+\end{align*}\]</div>
+<ul class="simple">
+<li><p>Working with Row 1, decompose as follows:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-f624a9bd-6508-47e4-b3fa-18d99a8f7434">
+<span class="eqno">(6)<a class="headerlink" href="#equation-f624a9bd-6508-47e4-b3fa-18d99a8f7434" title="Permalink to this equation">#</a></span>\[\begin{align}
+\det(\arr{A}) &amp;= a_{11} \left|\begin{array}{}
+a_{22}&amp;a_{23}\\
+a_{32}&amp;a_{33}
+\end{array}\right|
+-a_{12} \left|\begin{array}{}
+a_{21}&amp;a_{23}\\
+a_{31}&amp;a_{33}
+\end{array}\right|
++ a_{13} \left|\begin{array}{}
+a_{21}&amp;a_{22}\\
+a_{31}&amp;a_{33}
+\end{array}\right|\\
+&amp;= a_{11}(a_{22}a_{33}-a_{23}a_{32}) - a_{12}(a_{21}a_{33}-a_{23}a_{31}) + a_{13}(a_{21}a_{32}-a_{22}a_{31})
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Looks complicated but it’s just a number. Each determinant is a “minor” determinant of the submatrix formed by eliminating row <span class="math notranslate nohighlight">\(j\)</span> and column <span class="math notranslate nohighlight">\(k\)</span>.\</p></li>
+</ul>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(Ex: \arr{A} = \left|\begin{array}{}
+2&amp;5&amp;4\\
+3&amp;1&amp;2\\
+5&amp;4&amp;6\end{array}\right|\)</span></p>
+<p>What is <span class="math notranslate nohighlight">\(\det(\arr{A})\)</span>?</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4c00d902-7173-47a5-b6d6-f0014db17904">
+<span class="eqno">(7)<a class="headerlink" href="#equation-4c00d902-7173-47a5-b6d6-f0014db17904" title="Permalink to this equation">#</a></span>\[\begin{align}
+\det(\arr{A}) &amp;= 2 \left|\begin{array}{}
+1&amp;2\\
+4&amp;6\end{array}\right|
+ - 5 \left|\begin{array}{}
+3&amp;2\\
+5&amp;6\end{array}\right|
++4 \left|\begin{array}{}
+3&amp;1\\
+5&amp;4\end{array}\right|\\
+&amp;=2(6-8) - 5(18-10) + 4(12-5)\\
+&amp;=-4 -40 + 28\\
+\det(\arr{A})&amp;=-16
+\end{align}\]</div>
+</section>
+</section>
+<section id="row-choice-for-determinants">
+<h2>Row choice for determinants<a class="headerlink" href="#row-choice-for-determinants" title="Permalink to this headline">#</a></h2>
+<p>You don’t need to work with Row 1. You can use any column or row you’d like but must switch signs for even number rows or columns.</p>
+<p>Ex: Choose column 2<br />
+<span class="math notranslate nohighlight">\(\arr{A} = \left|\begin{array}{}
+2&amp;5&amp;4\\
+3&amp;1&amp;2\\
+5&amp;4&amp;6\end{array}\right|\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-5978fdc2-4b50-4176-b511-2025be11da71">
+<span class="eqno">(8)<a class="headerlink" href="#equation-5978fdc2-4b50-4176-b511-2025be11da71" title="Permalink to this equation">#</a></span>\[\begin{align}
+\det(\arr{A}) &amp;= -5 \left|\begin{array}{}
+3&amp;2\\
+5&amp;6\end{array}\right|
+ +1 \left|\begin{array}{}
+2&amp;4\\
+5&amp;6\end{array}\right|
+-4 \left|\begin{array}{}
+2&amp;4\\
+3&amp;2\end{array}\right|\\
+&amp;=-5(18-10) +(12-20) - 4(4-12)\\
+&amp;=-40 -8 + 32\\
+&amp;=-16
+\end{align}\]</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="in-class-problem">
+<h1>In-class problem<a class="headerlink" href="#in-class-problem" title="Permalink to this headline">#</a></h1>
+<p>Calculate the determinant of</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\begin{bmatrix}
+-1&amp;2&amp;3\\
+0&amp;5&amp;3\\
+3&amp;1&amp;1
+\end{bmatrix}
+\end{align*}\]</div>
+<section id="general-definition-of-the-determinant-any-size-matrix">
+<h2>General definition of the determinant (any size matrix)<a class="headerlink" href="#general-definition-of-the-determinant-any-size-matrix" title="Permalink to this headline">#</a></h2>
+<p>OK, so let’s revisit the general determinant definition:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a58b846e-754c-4ed9-9dcc-30a7a0ee1e22">
+<span class="eqno">(9)<a class="headerlink" href="#equation-a58b846e-754c-4ed9-9dcc-30a7a0ee1e22" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  D = |\arr{A}| = \det(\arr{A})=\begin{cases}
+    a_{11} &amp; \text{if $n=1$}.\\
+    a_{11}A_{11} + a_{12}A_{12} + ... + a_{1n}A_{1n} &amp; \text{if n&gt;1}.
+  \end{cases}
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(A_{1k} = (-1)^{1+k} \det(\arr{M_{1k}})\)</span>, for <span class="math notranslate nohighlight">\(k=1,2,...n\)</span></p>
+<ul class="simple">
+<li><p>So, for a 3 <span class="math notranslate nohighlight">\(\times\)</span>3 matrix, this would be</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-992dd1e8-0e5a-491a-9ceb-56a1f208236d">
+<span class="eqno">(10)<a class="headerlink" href="#equation-992dd1e8-0e5a-491a-9ceb-56a1f208236d" title="Permalink to this equation">#</a></span>\[\begin{align}
+|\arr{A}| &amp; = a_{11}(-1)^2\det(\arr{M_{11}}) + a_{12}(-1)^3\det(\arr{M_{12}}) + a_{13}(-1)^4\det(\arr{M_{13}})\\
+&amp; =a_{11}\det(\arr{M_{11}}) - a_{12}\det(\arr{M_{12}}) + a_{13}\det(\arr{M_{13}})
+\end{align}\]</div>
+<ul class="simple">
+<li><p>This generalized definition is for when we work off of Row 1 only.</p></li>
+<li><p>We can further generalize</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-a08c0c83-bbc3-47ef-9915-ec05dce91a17">
+<span class="eqno">(11)<a class="headerlink" href="#equation-a08c0c83-bbc3-47ef-9915-ec05dce91a17" title="Permalink to this equation">#</a></span>\[\begin{align}
+|\arr{A}| = a_{j1}A_{j1} + a_{j2}A_{j2} + ... + a_{jn}A_{jn} &amp;&amp; \text{for n &gt; 1}
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(A_{jk} = (-1)^{j+k}\det(\arr{M_{jk}})\)</span> (careful with the signs!)<br />
+<span class="math notranslate nohighlight">\(A_{jk}\)</span> is the “cofactor” and <span class="math notranslate nohighlight">\(\det(\arr{M_{jk}})\)</span> is the “minor”</p>
+<ul class="simple">
+<li><p>An n <span class="math notranslate nohighlight">\(\times\)</span> n matrix has <span class="math notranslate nohighlight">\(n^2\)</span> cofactors and <span class="math notranslate nohighlight">\(n^2\)</span> minors.</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-93d92205-eee5-4a7b-8a6e-7d6c507980b1">
+<span class="eqno">(12)<a class="headerlink" href="#equation-93d92205-eee5-4a7b-8a6e-7d6c507980b1" title="Permalink to this equation">#</a></span>\[\begin{align}
+\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; a_{13}\\
+a_{21} &amp; a_{22} &amp; a_{23}\\
+a_{31} &amp; a_{32} &amp; a_{33}
+\end{bmatrix} &amp; \rightarrow 3 \times 3 &amp; \text{will have 9 cofactors and 9 minors}\\
+\\
+\begin{array}{}
+A_{11}=+\det(\arr{M_{11}}) &amp;&amp; A_{12}=-\det(\arr{M_{12}}) &amp;&amp; A_{13}=+\det(\arr{M_{13}})\\
+A_{21}=-\det(\arr{M_{21}}) &amp;&amp; A_{22}=+\det(\arr{M_{22}}) &amp;&amp; A_{23}=-\det(\arr{M_{23}})\\
+A_{31}=+\det(\arr{M_{31}}) &amp;&amp; A_{32}=-\det(\arr{M_{32}}) &amp;&amp; A_{33}=+\det(\arr{M_{33}})
+\end{array}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Note the “checker board” of the signs:<br />
+\begin{array}{}</p></li>
+</ul>
+<ul class="simple">
+<li><p>&amp; - &amp; +\</p></li>
+</ul>
+<ul class="simple">
+<li><p>&amp; + &amp; -\</p></li>
+</ul>
+<ul class="simple">
+<li><p>&amp; - &amp; +
+\end{array}</p></li>
+</ul>
+<ul class="simple">
+<li><p>In general, working with Row 1 is easiest, but the super-generalized formula (allowing you to work with any row or column) can be useful depending on the matrix.<br />
+Ex: \begin{bmatrix}
+9 &amp; 2 &amp; \bf{4}\
+5 &amp; 3 &amp; \bf{0}\
+1 &amp; 6 &amp; \bf{0}
+\end{bmatrix}<br />
+Which column or row to choose? Column 3, which has most zeros.</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-9df21db4-c71d-4904-bad6-b75a24db3f8b">
+<span class="eqno">(13)<a class="headerlink" href="#equation-9df21db4-c71d-4904-bad6-b75a24db3f8b" title="Permalink to this equation">#</a></span>\[\begin{align}
+|\arr{A}| &amp;= a_{13}A_{13} + a_{23}A_{23} + a_{33}A_{33}\\
+&amp; = a_{13} (-1)^{1+3}\det(\arr{M_{13}})\\
+&amp; = 4[(5)(6)-(3)(1)]\\
+&amp; = 108
+\end{align}\]</div>
+</section>
+<section id="question-what-if-you-have-a-row-or-column-of-all-zeros">
+<h2>Question: What if you have a row or column of all zeros?<a class="headerlink" href="#question-what-if-you-have-a-row-or-column-of-all-zeros" title="Permalink to this headline">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\underline{ANS}:\)</span> Determinant is zero. We can “choose” all-zero row or column and then all <span class="math notranslate nohighlight">\(a_{jk}\)</span>’s will be zero.<br />
+Makes sense right? When <span class="math notranslate nohighlight">\(|\arr{A}|=0, \arr{A}\)</span> is singular, or not invertible i.e. we can’t convert the matrix to <span class="math notranslate nohighlight">\(\arr{I}\)</span> if there is a row or column of all zeros.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="use-of-determinant-in-solving-systems-of-equations">
+<h1>Use of determinant in solving systems of equations<a class="headerlink" href="#use-of-determinant-in-solving-systems-of-equations" title="Permalink to this headline">#</a></h1>
+<p>We will use the determinant a lot next class. Let’s clarify a couple of uses now.</p>
+<p>We’re interested in a solution to the system <span class="math notranslate nohighlight">\(\arr{A}\vec{x}=\vec{b}\)</span>. There are two situations:</p>
+<ul class="simple">
+<li><p>Non-homogeneous system of equations (<span class="math notranslate nohighlight">\(\vec{b}\neq\vec{0}\)</span>)</p>
+<ul>
+<li><p>If <span class="math notranslate nohighlight">\(\det(\arr{A})\neq 0\)</span> or</p></li>
+<li><p>rank(<span class="math notranslate nohighlight">\(\arr{A}\)</span>)=n, or</p></li>
+<li><p><span class="math notranslate nohighlight">\(\arr{A}\)</span> is invertible,</p></li>
+<li><p><strong>THEN</strong> a unique solution exists</p></li>
+</ul>
+</li>
+<li><p>Homogeneous system of equations (<span class="math notranslate nohighlight">\(\vec{b}=\vec{0}\)</span>)</p>
+<ul>
+<li><p>If <span class="math notranslate nohighlight">\(\det(\arr{A})\neq 0\)</span></p>
+<ul>
+<li><p>There is only the trivial solution <span class="math notranslate nohighlight">\(\vec{x}=\vec{0}\)</span></p></li>
+</ul>
+</li>
+<li><p>If <span class="math notranslate nohighlight">\(\det(\arr{A})= 0\)</span></p>
+<ul>
+<li><p>There is both the trivial solution <span class="math notranslate nohighlight">\(\vec{x}=\vec{0}\)</span> <strong>AND</strong> a series of non-trivial solutions</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="numerical-calculation-of-determinant">
+<h1>Numerical calculation of determinant<a class="headerlink" href="#numerical-calculation-of-determinant" title="Permalink to this headline">#</a></h1>
+<p>Easy! np.linalg.det</p>
+<p>Calculate the determinant of</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\begin{bmatrix}
+-1&amp;2&amp;3\\
+0&amp;5&amp;3\\
+3&amp;1&amp;1
+\end{bmatrix}
+\end{align*}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-28.99999999999999
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notes/linear_algebra"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="4-rank-gauss-examples.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Chemical Engineering example solved with Gauss elimination</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="6-eigenvalues-1.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Homogeneous vs. Non-homogeneous Systems</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Zachary Ulissi<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

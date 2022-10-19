@@ -1,0 +1,1029 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Recap &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Integrating Factors - Recap" href="10-linear-ode.html" />
+    <link rel="prev" title="Differential Equations" href="8-differential-equations.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Mathemtaical Methods for Chemical Engineering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Lecture notes for CMU 06-262 Math Methods in Chemical Engineering (Zachary Ulissi, CMU)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Notes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../linear_algebra/linear_algebra.html">
+   Linear Algebra
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/1-intro-matrices.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/2-matrix-manipulation.html">
+     Note on HW expectations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/3-gauss-elimination.html">
+     Return to Systems of Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/4-rank-gauss-examples.html">
+     Chemical Engineering example solved with Gauss elimination
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/5-determinants.html">
+     Using the inverse of A to solve a system of linear equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/6-eigenvalues-1.html">
+     Homogeneous vs. Non-homogeneous Systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/7-eigenvalue-2-difference-equations.html">
+     <span class="math notranslate nohighlight">
+      \(\underline{Ex}\)
+     </span>
+     : Symmetric matrix (
+     <span class="math notranslate nohighlight">
+      \(\lambda\)
+     </span>
+     always real)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/7b-numerical-eigenvalues.html">
+     Eigenvectors in python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="ordinary_differential_equations.html">
+   Ordinary Differential Equations
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="8-differential-equations.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10-linear-ode.html">
+     Integrating Factors - Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-linear-ode-example.html">
+     Alternate Method (Last class continued)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12-second-order-odes.html">
+     Second Order Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13-non-homogeneous-linear-odes.html">
+     Recap from last class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14-MoUC-VoP.html">
+     Method of Undetermined Coefficients (sec 2.9)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15-springs-numerical-odes.html">
+     Introduction to Numerical Solution of Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16-coupled-odes.html">
+     Coupled Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="17-coupled-ode-continued.html">
+     Recap for coupled differential equations:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="18-nonlinear-coupled-ODEs.html">
+     Nonlinear coupled ODE’s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="19-linear-stability.html">
+     Steady states in Non-Linear Coupled ODE’s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="20-BVP.html">
+     Boundary Value Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="21-BVP-shooting-method.html">
+     The Shooting Method for Solving BVPs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../partial_differential_equations/partial_differential_equations.html">
+   Partial Differential Equations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../partial_differential_equations/22-Intro-PDEs.html">
+     Partial Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../partial_differential_equations/23-Fourier-Coefficients.html">
+     Recap on PDEs from last lecture
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../statistics/statistics.html">
+   Statistics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/24-intro-statistics.html">
+     Intro to engineering statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/25-statistics-continue-linear-regression.html">
+     Recap from last class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/26-bonus-nonlinear-regression.html">
+     Recap on linear regression
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-recap.html">
+   06-262 Math Methods Recap
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ulissigroup/math-methods-chemical-engineering/main?urlpath=lab/tree/math-methods-chemical-engineering/notes/ordinary_differential_equations/9-exact-ode.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/ulissigroup/math-methods-chemical-engineering/blob/main/math-methods-chemical-engineering/notes/ordinary_differential_equations/9-exact-ode.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/ulissigroup/math-methods-chemical-engineering"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/ulissigroup/math-methods-chemical-engineering/issues/new?title=Issue%20on%20page%20%2Fnotes/ordinary_differential_equations/9-exact-ode.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/notes/ordinary_differential_equations/9-exact-ode.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Recap
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exact-1-circ-odes">
+   Exact
+   <span class="math notranslate nohighlight">
+    \(1^\circ\)
+   </span>
+   ODEs
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integrating-factors">
+   Integrating Factors
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Recap</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Recap
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exact-1-circ-odes">
+   Exact
+   <span class="math notranslate nohighlight">
+    \(1^\circ\)
+   </span>
+   ODEs
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integrating-factors">
+   Integrating Factors
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p>{{ badge }}
+$<span class="math notranslate nohighlight">\(\newcommand{\arr}[1]{\underline{\underline{#1}}}\)</span><span class="math notranslate nohighlight">\(    
+\)</span><span class="math notranslate nohighlight">\(\newcommand{\vec}[1]{\underline{#1}}\)</span><span class="math notranslate nohighlight">\(   
+\)</span><span class="math notranslate nohighlight">\(\require{mhchem}\)</span>$</p>
+<section class="tex2jax_ignore mathjax_ignore" id="recap">
+<h1>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">#</a></h1>
+<p>We did a lot last class!</p>
+<ul class="simple">
+<li><p>Definition of differential equations and classifications</p>
+<ul>
+<li><p>Linear/non-linear</p></li>
+<li><p>ODE/PDE</p></li>
+<li><p>Order</p></li>
+<li><p>Separable diff eq</p></li>
+</ul>
+</li>
+<li><p>Implicit vs explicit solutions</p></li>
+<li><p>General vs particular solutions</p></li>
+<li><p>Mol balance applications with an accumulation term</p></li>
+</ul>
+<p>Misc logistics:</p>
+<ul class="simple">
+<li><p>Exam practice is up on google drive (Exam Thursday next week, 2/24)</p></li>
+<li><p>First SI session will be this week (I think weekend?) and cover a review for exam 1</p></li>
+<li><p>There will be a shorter HW assigned this week to practice exact differential equations</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exact-1-circ-odes">
+<h1>Exact <span class="math notranslate nohighlight">\(1^\circ\)</span> ODEs<a class="headerlink" href="#exact-1-circ-odes" title="Permalink to this headline">#</a></h1>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> Specific type of ODE<br />
+<span class="math notranslate nohighlight">\(\rightarrow\)</span> Method of solving exact <span class="math notranslate nohighlight">\(1^\circ\)</span> ODEs was developed by guessing and messing around.<br />
+<span class="math notranslate nohighlight">\(\rightarrow\)</span> Now, if we can classify as “exact”, we have a method to find the solution.</p>
+<ul>
+<li><p>The <span class="math notranslate nohighlight">\(1^\circ\)</span> ODE <span class="math notranslate nohighlight">\(\frac{dy}{dx} = f(x,y)\)</span> is exact if:</p>
+<ol class="simple">
+<li><p>It can be written as <span class="math notranslate nohighlight">\(M(x,y)dx + N(x,y)dy = 0 \hspace{3cm} (*)\)</span></p></li>
+<li><p>There is some function <span class="math notranslate nohighlight">\(u(x,y)\)</span> such that</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-8f889d46-ea27-42af-bd2b-45c3d2e36ddf">
+<span class="eqno">(114)<a class="headerlink" href="#equation-8f889d46-ea27-42af-bd2b-45c3d2e36ddf" title="Permalink to this equation">#</a></span>\[\begin{align}
+  \frac{\partial u}{\partial x} =M(x,y) &amp;&amp; \text{and} &amp;&amp; \frac{\partial u}{\partial y}=N(x,y)
+  \end{align}\]</div>
+</li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> plugging this into <span class="math notranslate nohighlight">\((*)\)</span>, we see:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c1df7378-3cf0-4f46-8a6a-01934b81826b">
+<span class="eqno">(115)<a class="headerlink" href="#equation-c1df7378-3cf0-4f46-8a6a-01934b81826b" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial u}{\partial x}dx + \frac{\partial u}{\partial y} dy = 0\\
+\therefore du = 0
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> integrating this gives <span class="math notranslate nohighlight">\(u(x,y) = c\)</span><br />
+<span class="math notranslate nohighlight">\(\rightarrow\)</span> Therefore if we have an exact equation <span class="math notranslate nohighlight">\(y'=f(x,y)\)</span>, then the general solution can be written as <span class="math notranslate nohighlight">\(u(x,y) = c \implies\)</span> function of <span class="math notranslate nohighlight">\(x,y\)</span> gives a constant, not a derivative.</p>
+<p>To prove exactness:</p>
+<ul class="simple">
+<li><p>Does <span class="math notranslate nohighlight">\(u(x,y)\)</span> exist such that</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-e17b77ee-957d-4c29-852a-556bbf3df6d8">
+<span class="eqno">(116)<a class="headerlink" href="#equation-e17b77ee-957d-4c29-852a-556bbf3df6d8" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial u}{\partial x} = M(x,y) &amp;&amp; \text{and} &amp;&amp; \frac{\partial u}{\partial y} = N(x,y) \hspace{1cm} ?
+\end{align}\]</div>
+<p>This strategy can also be applied to higher order differential equations, but it’s not as helpful there so I’m not going to cover that in lectures.</p>
+<ul class="simple">
+<li><p>If we assume continuity of the derivatives of <span class="math notranslate nohighlight">\(u(x,y)\)</span>, then we can write</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-d31e09e6-655d-473f-8564-a502bb887fa5">
+<span class="eqno">(117)<a class="headerlink" href="#equation-d31e09e6-655d-473f-8564-a502bb887fa5" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial^2u}{\partial x\partial y} &amp;= \frac{\partial^2u}{\partial y\partial x}\\
+\frac{\partial}{\partial x}\left(\frac{\partial u}{\partial y} \right) &amp;= \frac{\partial}{\partial y}\left(\frac{\partial u}{\partial x} \right)\\
+\frac{\partial}{\partial x}N(x,y) &amp;= \frac{\partial}{\partial y}M(x,y) &amp;&amp; \leftarrow \text{if exact, this will be true} 
+\end{align}\]</div>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h2>
+<div class="math notranslate nohighlight">
+\[3xy^2y' + y^3 = 0\]</div>
+<p><span class="math notranslate nohighlight">\(3xy^2y' + y^3 = 0 \rightarrow\)</span> we can solve 2 ways: by separating and by exactness</p>
+<ol class="simple">
+<li><p>Separate</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-c7f44ab8-22c5-4df6-ade3-e3a1b0cc7d68">
+<span class="eqno">(118)<a class="headerlink" href="#equation-c7f44ab8-22c5-4df6-ade3-e3a1b0cc7d68" title="Permalink to this equation">#</a></span>\[\begin{align}
+3xy^2 \frac{dy}{dx} = -y^3\\
+\frac{3}{y} dy = -\frac{1}{x}dx\\
+3 \ln y = - \ln x + \beta\\
+\ln (y^3) + \ln x = \beta\\
+\ln(xy^3) = \beta\\
+xy^3 = \exp \beta \\
+xy^3 = \alpha &amp;&amp;\rightarrow \text{implicit solution(didn't solve for y) by separation}
+\end{align}\]</div>
+<ol class="simple">
+<li><p>Let’s check to see if we can solve by exactness:<br />
+a) Write as <span class="math notranslate nohighlight">\(M(x,y)dx + N(x,y)dy=0\)</span>:</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-e5065ffa-68a6-4ea5-bca0-c904bdd96b80">
+<span class="eqno">(119)<a class="headerlink" href="#equation-e5065ffa-68a6-4ea5-bca0-c904bdd96b80" title="Permalink to this equation">#</a></span>\[\begin{align}
+  y^3dx + 3xy^2 dy = 0
+  \end{align}\]</div>
+<p>b) Check if <span class="math notranslate nohighlight">\(\frac{\partial}{\partial x}N(x,y) = \frac{\partial}{\partial y} M(x,y)\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-f221a3a7-9e8c-4fae-8d48-98e5ced5ea2d">
+<span class="eqno">(120)<a class="headerlink" href="#equation-f221a3a7-9e8c-4fae-8d48-98e5ced5ea2d" title="Permalink to this equation">#</a></span>\[\begin{align}
+  \frac{\partial}{\partial x} (3xy^2) &amp;= \frac{\partial}{\partial y}(y^3)\\
+  3y^2 &amp;= 3y^2 &amp;&amp; \rightarrow \text{ODE is exact; we can continue}
+  \end{align}\]</div>
+<p>c) Find <span class="math notranslate nohighlight">\(u(x,y)\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-b86b1dbd-f0dc-45bc-a0cc-0d0a0c635151">
+<span class="eqno">(121)<a class="headerlink" href="#equation-b86b1dbd-f0dc-45bc-a0cc-0d0a0c635151" title="Permalink to this equation">#</a></span>\[\begin{align}
+  \text{we know that} &amp;&amp; \frac{\partial u}{\partial x} = M(x,y) = y^3\\
+  \text{and} &amp;&amp; \frac{\partial u}{\partial y} = N(x,y) = 3xy^2\\
+  \end{align}\]</div>
+<p>Since these are partial derivatives, we can integrate them as follows:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6ddff724-019a-45e4-8850-bef698285989">
+<span class="eqno">(122)<a class="headerlink" href="#equation-6ddff724-019a-45e4-8850-bef698285989" title="Permalink to this equation">#</a></span>\[\begin{align}
+  \frac{\partial u}{\partial x} &amp;= y^3\\
+  \int du &amp;= \int y^3 dx\\
+  u(x,y) &amp;= xy^3 + k(y)
+  \end{align}\]</div>
+<p>we need to include the last term because its derivative wr.t. <span class="math notranslate nohighlight">\(x=0\)</span><br />
+We can find <span class="math notranslate nohighlight">\(k(y)\)</span> by considering our second partial derivative:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6b71dfbe-364c-4783-804c-b0844144a1fa">
+<span class="eqno">(123)<a class="headerlink" href="#equation-6b71dfbe-364c-4783-804c-b0844144a1fa" title="Permalink to this equation">#</a></span>\[\begin{align}
+  \frac{\partial u}{\partial y} = 3xy^2\\
+  \frac{\partial}{\partial y}(xy^3 + k(y)) = 3xy^2\\
+  3xy^2 + \frac{dk}{dy} = 3xy^2\\
+  \frac{dk}{dy} = 0 \implies k(y) = k &amp;&amp; \text{(constant)}\\
+  \therefore u(x,y) = xy^3 + k
+  \end{align}\]</div>
+<p>d) Use <span class="math notranslate nohighlight">\(u(x,y)\)</span> to identify solution</p>
+<div class="amsmath math notranslate nohighlight" id="equation-caa217be-0b52-4069-9bf0-6c8df8417fab">
+<span class="eqno">(124)<a class="headerlink" href="#equation-caa217be-0b52-4069-9bf0-6c8df8417fab" title="Permalink to this equation">#</a></span>\[\begin{align}
+  u(x,y) = c = xy^3 + k \\
+  \implies xy^3 = \alpha
+  \end{align}\]</div>
+<p>Implicit solution; same as when we separated.</p>
+</section>
+<section id="id1">
+<h2>Example<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<div class="amsmath math notranslate nohighlight" id="equation-d8198ae7-9bb4-4d95-8443-0ec2de3dde30">
+<span class="eqno">(125)<a class="headerlink" href="#equation-d8198ae7-9bb4-4d95-8443-0ec2de3dde30" title="Permalink to this equation">#</a></span>\[\begin{align}
+y' = \frac{-2xy^3 - 2}{3x^2y^2 + e^y} &amp;&amp; \text{(not separable)}
+\end{align}\]</div>
+<ol class="simple">
+<li><p>Put into the form <span class="math notranslate nohighlight">\(M(x,y)dx + N(x,y)dy = 0\)</span></p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-ac563f63-a18e-4b95-a6b0-d1ae9a892150">
+<span class="eqno">(126)<a class="headerlink" href="#equation-ac563f63-a18e-4b95-a6b0-d1ae9a892150" title="Permalink to this equation">#</a></span>\[\begin{align}
+(2xy^3 + 2) dx + (3x^2y^2 + e^y)dy = 0
+\end{align}\]</div>
+<ol class="simple">
+<li><p>Check for exactness</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-893a7c8e-6d6a-4d8e-9439-4d3fd46ccaa2">
+<span class="eqno">(127)<a class="headerlink" href="#equation-893a7c8e-6d6a-4d8e-9439-4d3fd46ccaa2" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial}{\partial x}N(x,y) &amp;= \frac{\partial}{\partial y}M(x,y) &amp;&amp; \text{(must be true)}\\
+\frac{\partial}{\partial x} (3x^2y^2 + e^y) &amp;= \frac{\partial}{\partial y} (2xy^3 + 2)\\
+3y^2\frac{\partial}{\partial x} (x^2) &amp;= 2x \frac{\partial}{\partial y}(y^3)\\
+6y^2x &amp;=6xy^2 &amp;&amp;\text{(exact)}
+\end{align}\]</div>
+<ol class="simple">
+<li><p>Now find <span class="math notranslate nohighlight">\(u(x,y)\)</span> such that</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-a73347ea-3d74-4dd2-a40b-43a0ca8a1857">
+<span class="eqno">(128)<a class="headerlink" href="#equation-a73347ea-3d74-4dd2-a40b-43a0ca8a1857" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial u}{\partial y} = N(x,y)=3x^2y^2 + e^y &amp;&amp; \text{and} &amp;&amp; \frac{\partial u}{\partial x} = M(x,y)=2xy^3 + 2 &amp;&amp; \text{(can start with either)}
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-ae1a34d2-487a-4c29-aa62-29cbbe8e220e">
+<span class="eqno">(129)<a class="headerlink" href="#equation-ae1a34d2-487a-4c29-aa62-29cbbe8e220e" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int \partial u = \int (3x^2y^2 + e^y) dy\\
+u(x,y) = x^2y^3 + e^y + k(x)
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> determine <span class="math notranslate nohighlight">\(k(y)\)</span> with second partial derivative:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-799f9274-d9fb-4e85-971b-6366de0e1547">
+<span class="eqno">(130)<a class="headerlink" href="#equation-799f9274-d9fb-4e85-971b-6366de0e1547" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial}{\partial x}(x^2y^3 + e^y + k(x)) &amp;= 2xy^3 + 2\\
+2xy^3 + \frac{dk}{dx} &amp;= 2xy^3 + 2\\
+\frac{dk}{dx} &amp;= 2\\
+k(x) &amp;= 2x + k
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\therefore u(x,y) = x^2y^3 + e^y + 2x + k\)</span>
+4. Find implicit solution using <span class="math notranslate nohighlight">\(u(x,y) = c\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-8b50b0f7-280f-4381-b202-f7590c7106a8">
+<span class="eqno">(131)<a class="headerlink" href="#equation-8b50b0f7-280f-4381-b202-f7590c7106a8" title="Permalink to this equation">#</a></span>\[\begin{align}
+c = x^2y^3 + e^y + 2x + k\\
+x^2 y^3 + e^y + 2x = \alpha &amp;&amp; \text {general solution}
+\end{align}\]</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="integrating-factors">
+<h1>Integrating Factors<a class="headerlink" href="#integrating-factors" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Intefrating Factors (IFs) are a tool we can use to make some inexact equations exact so we can solve.<br />
+In general, we have</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-14fd1b38-c313-4f27-bf27-5c67de73dac1">
+<span class="eqno">(132)<a class="headerlink" href="#equation-14fd1b38-c313-4f27-bf27-5c67de73dac1" title="Permalink to this equation">#</a></span>\[\begin{align}
+P(x,y)dx + Q(x,y) dy = 0
+\end{align}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\frac{\partial P}{\partial y} \neq \frac{\partial Q}{\partial x} \implies\)</span> not exact</p>
+<ul class="simple">
+<li><p>We can try to find an I.F., <span class="math notranslate nohighlight">\(F(x,y)\)</span>, s.t. <span class="math notranslate nohighlight">\(F(x,y)P(x,y)dx + F(x,y)Q(x,y)dy = 0\)</span> is an exact equation. This would require:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-27a373d4-3589-4603-bae2-3647696ee353">
+<span class="eqno">(133)<a class="headerlink" href="#equation-27a373d4-3589-4603-bae2-3647696ee353" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial}{\partial y}[F(x,y)P(x,y)] &amp;= \frac{\partial}{\partial x} [F(x,y)Q(x,y)]\\
+F(x,y)\frac{\partial P}{\partial y} + P(x,y)\frac{\partial F}{\partial y} &amp;= F(x,y)\frac{\partial Q}{\partial x} + Q(x,y)\frac{\partial F}{\partial x}
+\end{align}\]</div>
+<p>Knowing only P(x,y) and Q(x,y) would make this nearly impossible to solve. Can use the following strategy:</p>
+<ol class="simple">
+<li><p>First assume that <span class="math notranslate nohighlight">\(F(x,y) = F(x)\)</span> only. Now,</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-c5e7f48a-ab03-4315-b8a9-236df9170555">
+<span class="eqno">(134)<a class="headerlink" href="#equation-c5e7f48a-ab03-4315-b8a9-236df9170555" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial F}{\partial y} = 0 &amp;&amp; \text{and} &amp;&amp; \frac{\partial F}{\partial x} = \frac{dF}{dx}  &amp;&amp; \text{(partial becomes full)}
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f6fbec4c-18cc-48d0-82d0-f9208acdf9e7">
+<span class="eqno">(135)<a class="headerlink" href="#equation-f6fbec4c-18cc-48d0-82d0-f9208acdf9e7" title="Permalink to this equation">#</a></span>\[\begin{align}
+\therefore F(x) \frac{\partial P}{\partial y} + P(x,y) \frac{\partial F}{\partial y} &amp;= F(x) \frac{\partial Q}{\partial x} + Q(x,y) \frac{dF}{dx}\\
+F(x)\left[\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x} \right] &amp;= Q(x,y)\frac{dF}{dx}\\
+\frac{1}{F(x)}\frac{dF}{dx} &amp;= \frac{1}{Q(x,y)}\left[\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x} \right]
+\end{align}\]</div>
+<p>we know the RHS term, call it <span class="math notranslate nohighlight">\(R(x,y)\)</span><br />
+<span class="math notranslate nohighlight">\(\rightarrow\)</span> If <span class="math notranslate nohighlight">\(R(x,y) = R(x)\)</span> only, then you can find <span class="math notranslate nohighlight">\(F(x)\)</span> from integration</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c9937ab3-79d6-403e-b60d-645e0c5545b9">
+<span class="eqno">(136)<a class="headerlink" href="#equation-c9937ab3-79d6-403e-b60d-645e0c5545b9" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial F}{F} = R(x)dx \implies F(x) = \exp\left[\int R(x)dx \right]
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> If <span class="math notranslate nohighlight">\(R(x,y)\neq R(x)\)</span>, then out assumption that <span class="math notranslate nohighlight">\(F(x,y)=F(x)\)</span> is not true. Then try step 2.</p>
+<ol class="simple">
+<li><p>Assume <span class="math notranslate nohighlight">\(F(x,y) = F(y)\)</span> only. Then,</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-cedf360a-c35b-4faf-b040-06158fb9f3a3">
+<span class="eqno">(137)<a class="headerlink" href="#equation-cedf360a-c35b-4faf-b040-06158fb9f3a3" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial F}{\partial x} = 0 &amp;&amp; \text{and} &amp;&amp; \frac{\partial F}{\partial y} = \frac{dF}{dy}  
+\end{align}\]</div>
+<p>Partial derivative equation simplifies to:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-25ebc2cb-81b9-4bcb-8a8f-18de5a711cb6">
+<span class="eqno">(138)<a class="headerlink" href="#equation-25ebc2cb-81b9-4bcb-8a8f-18de5a711cb6" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{1}{F} \frac{dF}{dy} = \frac{1}{P(x,y)}\left[\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right]
+\end{align}\]</div>
+<p>Again, let RHS = <span class="math notranslate nohighlight">\(R(x,y)\)</span><br />
+<span class="math notranslate nohighlight">\(\rightarrow\)</span> If <span class="math notranslate nohighlight">\(R(x,y) = R(y)\)</span> only then <span class="math notranslate nohighlight">\(F(y) = \exp \left[\int R(y)dy \right]\)</span><br />
+<span class="math notranslate nohighlight">\(\rightarrow\)</span>If <span class="math notranslate nohighlight">\(R(x,y) \neq R(y)\)</span>, then <span class="math notranslate nohighlight">\(F(x,y)\)</span> = function of both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> and you will need some other clue to solve.</p>
+<section id="id2">
+<h2>Example<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<div class="amsmath math notranslate nohighlight" id="equation-fe97648b-775c-47d6-8960-67daf65ad446">
+<span class="eqno">(139)<a class="headerlink" href="#equation-fe97648b-775c-47d6-8960-67daf65ad446" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{dy}{dx} = \frac{-2xy}{4y + 3x^2}
+\end{align}\]</div>
+<ol class="simple">
+<li><p>rewrite as: <span class="math notranslate nohighlight">\((2xy)dx + (4y + 3x^2) dy = 0\)</span></p></li>
+<li><p>check for exactness:</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-d7b71fc4-78e5-4867-b183-5402dabcb31d">
+<span class="eqno">(140)<a class="headerlink" href="#equation-d7b71fc4-78e5-4867-b183-5402dabcb31d" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial P}{\partial y} &amp;= \frac{\partial Q}{\partial x}\\
+2x &amp;\neq 6x \implies \text{not exact}
+\end{align}\]</div>
+<ol class="simple">
+<li><p>Try to find an I.F. <span class="math notranslate nohighlight">\(F(x,y)=F(x)\)</span></p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-640e6d79-9592-42a9-928c-1bebb99f87f9">
+<span class="eqno">(141)<a class="headerlink" href="#equation-640e6d79-9592-42a9-928c-1bebb99f87f9" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial (FP)}{\partial y} &amp;= \frac{\partial (FQ)}{\partial x}\\
+F\frac{\partial P}{\partial y} + P\frac{\partial F}{\partial y} &amp;= F \frac{\partial Q}{\partial x} + Q\frac{\partial F}{\partial x}\\
+\therefore \frac{1}{F} \frac{dF}{dx} &amp;= \frac{1}{Q}\left(\frac{\partial P}{\partial y} - \ \frac{\partial Q}{\partial x}\right)\\
+&amp;=\frac{1}{4y + 3x^2}(2x-6x)\\
+&amp;=-\frac{4x}{4y+3x^2} \implies \text{($R(x,y)$ depends on $x$ and $y\rightarrow$ no good)}
+\end{align}\]</div>
+<ol class="simple">
+<li><p>Try to find I.F. <span class="math notranslate nohighlight">\(F(x,y) = F(y)\)</span></p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-3937d334-edb7-4efd-9de8-97654631bc31">
+<span class="eqno">(142)<a class="headerlink" href="#equation-3937d334-edb7-4efd-9de8-97654631bc31" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{1}{F} \frac{dF}{dy} &amp;= \frac{1}{P}\left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right)\\
+&amp;=\frac{1}{2xy}(6x-2x) = \frac{2}{y} = R(y) &amp;&amp; \text{(good!)}
+\end{align}\]</div>
+<p>Continuing,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2d74e6fb-3cf1-45c0-938e-d2e69127ff12">
+<span class="eqno">(143)<a class="headerlink" href="#equation-2d74e6fb-3cf1-45c0-938e-d2e69127ff12" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int \frac{dF}{F} &amp;= \int \frac{2}{y}dy\\
+\ln F(y) &amp;= 2 \ln y\\
+F(y) &amp;= y^2
+\end{align}\]</div>
+<ol class="simple">
+<li><p>We can now make our equation exact using <span class="math notranslate nohighlight">\(F(y)\)</span></p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-b4262957-3b0e-4dd6-93e8-5479e6ebe698">
+<span class="eqno">(144)<a class="headerlink" href="#equation-b4262957-3b0e-4dd6-93e8-5479e6ebe698" title="Permalink to this equation">#</a></span>\[\begin{align}
+F(y)[P(x,y)dx + Q(x,y)dy] = 0\\
+y^2 [(2xy)dx + (4y + 3x^2)dy] = 0\\
+2xy^3 dx + (4y^3 + 3x^2y^2)dy = 0
+\end{align}\]</div>
+<ol class="simple">
+<li><p>Check for exactness:</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-9afd3ae2-6e90-4859-8d84-19d001911059">
+<span class="eqno">(145)<a class="headerlink" href="#equation-9afd3ae2-6e90-4859-8d84-19d001911059" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial}{\partial y}(2xy^3) &amp;= \frac{\partial}{\partial x}(4y^3 + 3x^2y^2)\\
+6xy^2 &amp;=6xy^2 &amp;&amp; \text{exact}
+\end{align}\]</div>
+<ol class="simple">
+<li><p>Find <span class="math notranslate nohighlight">\(u(x,y)\)</span></p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-c8be2495-a7c2-45b2-b8e0-51498425de82">
+<span class="eqno">(146)<a class="headerlink" href="#equation-c8be2495-a7c2-45b2-b8e0-51498425de82" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial u}{\partial x} = 2xy^3 \implies u(x,y) = x^2y^3 + k(y)\\
+\frac{\partial u}{\partial y} = \frac{\partial}{\partial y} (x^2y^3 + k(y)) = 4y^3 + 3x^2y^2\\
+3x^2y^2 + \frac{dk}{dy} = 4y^3 + 3x^2y^2\\
+k(y) = y^4 + k
+\end{align}\]</div>
+<ol class="simple">
+<li><p>Find implicit solution using <span class="math notranslate nohighlight">\(u(x,y) = c\)</span></p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-ca6e9bb0-4a1b-4e5a-88f0-0447577e0854">
+<span class="eqno">(147)<a class="headerlink" href="#equation-ca6e9bb0-4a1b-4e5a-88f0-0447577e0854" title="Permalink to this equation">#</a></span>\[\begin{align}
+x^2y^3 + y^4 + k = c\\
+x^2 y^3 + y^4 = \alpha &amp;&amp; \text{general solution}
+\end{align}\]</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notes/ordinary_differential_equations"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="8-differential-equations.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Differential Equations</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="10-linear-ode.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Integrating Factors - Recap</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Zachary Ulissi<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,1578 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Recap from last class &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Recap on linear regression" href="26-bonus-nonlinear-regression.html" />
+    <link rel="prev" title="Intro to engineering statistics" href="24-intro-statistics.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Mathemtaical Methods for Chemical Engineering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Lecture notes for CMU 06-262 Math Methods in Chemical Engineering (Zachary Ulissi, CMU)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Notes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../linear_algebra/linear_algebra.html">
+   Linear Algebra
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/1-intro-matrices.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/2-matrix-manipulation.html">
+     Note on HW expectations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/3-gauss-elimination.html">
+     Return to Systems of Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/4-rank-gauss-examples.html">
+     Chemical Engineering example solved with Gauss elimination
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/5-determinants.html">
+     Using the inverse of A to solve a system of linear equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/6-eigenvalues-1.html">
+     Homogeneous vs. Non-homogeneous Systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/7-eigenvalue-2-difference-equations.html">
+     <span class="math notranslate nohighlight">
+      \(\underline{Ex}\)
+     </span>
+     : Symmetric matrix (
+     <span class="math notranslate nohighlight">
+      \(\lambda\)
+     </span>
+     always real)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/7b-numerical-eigenvalues.html">
+     Eigenvectors in python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ordinary_differential_equations/ordinary_differential_equations.html">
+   Ordinary Differential Equations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/8-differential-equations.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/9-exact-ode.html">
+     Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/10-linear-ode.html">
+     Integrating Factors - Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/11-linear-ode-example.html">
+     Alternate Method (Last class continued)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/12-second-order-odes.html">
+     Second Order Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/13-non-homogeneous-linear-odes.html">
+     Recap from last class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/14-MoUC-VoP.html">
+     Method of Undetermined Coefficients (sec 2.9)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/15-springs-numerical-odes.html">
+     Introduction to Numerical Solution of Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/16-coupled-odes.html">
+     Coupled Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/17-coupled-ode-continued.html">
+     Recap for coupled differential equations:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/18-nonlinear-coupled-ODEs.html">
+     Nonlinear coupled ODE’s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/19-linear-stability.html">
+     Steady states in Non-Linear Coupled ODE’s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/20-BVP.html">
+     Boundary Value Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/21-BVP-shooting-method.html">
+     The Shooting Method for Solving BVPs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../partial_differential_equations/partial_differential_equations.html">
+   Partial Differential Equations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../partial_differential_equations/22-Intro-PDEs.html">
+     Partial Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../partial_differential_equations/23-Fourier-Coefficients.html">
+     Recap on PDEs from last lecture
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="statistics.html">
+   Statistics
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="24-intro-statistics.html">
+     Intro to engineering statistics
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Recap from last class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="26-bonus-nonlinear-regression.html">
+     Recap on linear regression
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-recap.html">
+   06-262 Math Methods Recap
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ulissigroup/math-methods-chemical-engineering/main?urlpath=lab/tree/math-methods-chemical-engineering/notes/statistics/25-statistics-continue-linear-regression.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/ulissigroup/math-methods-chemical-engineering/blob/main/math-methods-chemical-engineering/notes/statistics/25-statistics-continue-linear-regression.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/ulissigroup/math-methods-chemical-engineering"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/ulissigroup/math-methods-chemical-engineering/issues/new?title=Issue%20on%20page%20%2Fnotes/statistics/25-statistics-continue-linear-regression.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/notes/statistics/25-statistics-continue-linear-regression.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Recap from last class
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#confidence-intervals-on-samples-from-a-gaussian-distribution">
+   Confidence intervals on samples from a Gaussian distribution
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-regression">
+   Linear Regression
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Linear regression
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-for-polynomial-fitting-using-linear-regression">
+   Example for polynomial fitting using linear regression
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-regression-polynomial-order-1">
+     Linear regression (polynomial order 1)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#polynomial-fit-fourth-order">
+     Polynomial fit (fourth order)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-regresion-minimizes-the-sum-squared-error">
+     Linear regresion minimizes the sum squared error
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#metrics-to-evaluate-how-well-two-models-fit">
+     Metrics to evaluate how well two models fit
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#confidence-intervals-on-parameters-in-linear-regression">
+   Confidence intervals on parameters in linear regression
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-class-assignment">
+     In-class assignment
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Recap from last class</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Recap from last class
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#confidence-intervals-on-samples-from-a-gaussian-distribution">
+   Confidence intervals on samples from a Gaussian distribution
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-regression">
+   Linear Regression
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Linear regression
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-for-polynomial-fitting-using-linear-regression">
+   Example for polynomial fitting using linear regression
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-regression-polynomial-order-1">
+     Linear regression (polynomial order 1)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#polynomial-fit-fourth-order">
+     Polynomial fit (fourth order)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-regresion-minimizes-the-sum-squared-error">
+     Linear regresion minimizes the sum squared error
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#metrics-to-evaluate-how-well-two-models-fit">
+     Metrics to evaluate how well two models fit
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#confidence-intervals-on-parameters-in-linear-regression">
+   Confidence intervals on parameters in linear regression
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-class-assignment">
+     In-class assignment
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="math notranslate nohighlight">
+\[\newcommand{\arr}[1]{\underline{\underline{#1}}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\vec}[1]{\underline{#1}}\]</div>
+<div class="math notranslate nohighlight">
+\[\require{mhchem}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># make our plot look a little prettier </span>
+
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="recap-from-last-class">
+<h1>Recap from last class<a class="headerlink" href="#recap-from-last-class" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>There are multiple types of distributions depending on whether the problem is discrete and the underlying physics generating the samples</p></li>
+<li><p>Averaging lots of independent random variables (regardless of their distributions) tends to lead to Gaussian distributions</p></li>
+<li><p>We can plot and fit distributions of any type. Be careful of binning errors, and think about whether PDF or CDF is the more useful way to visualize your distribution</p></li>
+<li><p>If we have experimental data there are multiple ways we can fit the distribution:</p>
+<ul>
+<li><p>We could fit the cumulative distribution function (just like any curve fitting)</p></li>
+<li><p>We could look up estimators for the quantity we want for the specific distribution we’re interested in</p></li>
+<li><p>(harder, not covered) we could use maximum likelihood estimation to derive an MLE estimator for the parameters</p></li>
+</ul>
+</li>
+<li><p>Estimators for quantitites we’re interested in, with uncertainty on those measurements, allow us to compare distributions and forms the basis of tools like the Student t-test</p></li>
+<li><p>Always think about the assumption you’re making with various statistic tools (distributions, etc)</p>
+<ul>
+<li><p>Think about whether those assumptions are appropriate or not.</p></li>
+<li><p>It is often possible to directly sample the quantities for the assumed question and test your understanding/interpretation</p></li>
+<li><p>Common implicit assumption: all errors are Gaussian and independent and identically distributed (IID)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="confidence-intervals-on-samples-from-a-gaussian-distribution">
+<h1>Confidence intervals on samples from a Gaussian distribution<a class="headerlink" href="#confidence-intervals-on-samples-from-a-gaussian-distribution" title="Permalink to this headline">#</a></h1>
+<p>The most common thing we have to do as engineers is estimate the confidence interval from a set of repeated measurements. If we assume an unknown constant Gaussian noise is added to each data point, we want to calculate the 95% confidence interval.</p>
+<p>You now have the tools to calculate this. You can also do this more simply with scipy.stats.norm.interval.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
+<span class="n">samples</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+
+<span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">interval</span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.95</span><span class="p">,</span>
+                    <span class="n">loc</span> <span class="o">=</span> <span class="n">samples</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+                    <span class="n">scale</span> <span class="o">=</span> <span class="n">samples</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">samples</span><span class="p">)))</span>
+                    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1043/1371339296.py:8: DeprecationWarning: Use of keyword argument `alpha` for method `interval` is deprecated. Use first positional argument or keyword argument `confidence` instead.
+  stats.norm.interval(alpha = 0.95,
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.2261659242325153, 0.7244713838727317)
+</pre></div>
+</div>
+</div>
+</div>
+<p>You are welcome to use this to check your results on the homework!</p>
+<p>Don’t be afraid to test whether your interpretation is correct by direct sampling.</p>
+<p>The interpretation is “if we assume this data came from a gaussian distribution with the mean/std estimated from our data and we repeated the sampling, there is a 95% chance that the new estimated mean would be within this range”.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="linear-regression">
+<h1>Linear Regression<a class="headerlink" href="#linear-regression" title="Permalink to this headline">#</a></h1>
+<p>This section is partially adapted from the 06-623 lecture notes.</p>
+<p>I am sure you all have fit linear curves through experimental data. We will briefly review this, show that it is a linear algebra problem you can solve, and then show you can do the same thing with linear combinations of non-linear functions.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Linear regression<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<p>In linear regression, we seek to find models in the form <span class="math notranslate nohighlight">\(y = a_{0} f_{0}(x) + a_{1} f_{1}(x) + ... + a_{n} f_{n}(x) + \epsilon\)</span>, where <span class="math notranslate nohighlight">\(a_{i}\)</span> are coefficients to be determined, and ε are the residual errors. We call this linear regression because the model is linear in the unknown coefficients <span class="math notranslate nohighlight">\(a_{i}\)</span>. The functions can be any function of <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>If we are given some data as pairs of (x, y), we can construct a set of equations of the form:</p>
+<p><span class="math notranslate nohighlight">\([f_{0}(x_{i}), f_{1}(x_{i}), ..., f_{n}(x_{i})]\cdot[a_{0}, a_{1}, ...,  a_{n}]^T = y_{i}\)</span></p>
+<p>There will be one of these equations for every data point, so we end up with a matrix equation that looks like:</p>
+<p><span class="math notranslate nohighlight">\(\arr{X} \vec{a} = \vec{y}\)</span></p>
+<p>There are <em>usually</em> more data points than in the vector of <span class="math notranslate nohighlight">\(\mathbf{a}\)</span>, so the shapes of these arrays are not suitable to solve directly.</p>
+<p>To be a little more specific, suppose we have <span class="math notranslate nohighlight">\(m\)</span> pairs of (x, y) data points, and we want to fit a model containing <span class="math notranslate nohighlight">\(n\)</span> parameters. Then, the dimensions of the <span class="math notranslate nohighlight">\(\arr{X}\)</span> will be (m, n), the dimensions of <span class="math notranslate nohighlight">\(\vec{a}\)</span> will be (n, 1), and the dimensions of <span class="math notranslate nohighlight">\(\vec{y}\)</span> will be (m, 1).  We have more equations than unknowns here, and we cannot use <code class="docutils literal notranslate"><span class="pre">np.linalg.solve(X,y)</span></code> because <span class="math notranslate nohighlight">\(\arr{X}\)</span> is not square.</p>
+<p>We can modify the equation though if we <em>left multiply</em> each side of the equation by <span class="math notranslate nohighlight">\(\arr{X}^T\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\arr{X}^T \arr{X} \vec{a} = \arr{X}^T \vec{y}\)</span></p>
+<p>The array <span class="math notranslate nohighlight">\(\arr{X}^T \arr{X}\)</span> now has the shape (n, m) * (m, n) = (n, n). The right hand side <span class="math notranslate nohighlight">\(\arr{X}^T \vec{y}\)</span> has a shape of (n, m) * (n, 1) = (n, 1), and <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> is still (n, 1). This new matrix equation can be solved efficiently with <code class="docutils literal notranslate"><span class="pre">A\b</span></code>. We will not prove this, but solving this modified equation <em>is equivalent</em> to finding the set of parameters that minimizes the summed squared errors: <span class="math notranslate nohighlight">\(\sum (\arr{X}^T\arr{X} \cdot \vec{a} - \arr{X}^T\vec{y})^2\)</span>.</p>
+<p>The parameters can then be found by linear algebra. Let’s do this for our example.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="example-for-polynomial-fitting-using-linear-regression">
+<h1>Example for polynomial fitting using linear regression<a class="headerlink" href="#example-for-polynomial-fitting-using-linear-regression" title="Permalink to this headline">#</a></h1>
+<p>Let’s start with some sample data collected from an experimental reactor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">50.0</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mf">150.0</span><span class="p">,</span> <span class="mf">200.0</span><span class="p">,</span> <span class="mf">250.0</span><span class="p">,</span> <span class="mf">300.0</span><span class="p">])</span>
+<span class="n">Ca</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">50.0</span><span class="p">,</span> <span class="mf">38.0</span><span class="p">,</span> <span class="mf">30.6</span><span class="p">,</span> <span class="mf">25.6</span><span class="p">,</span> <span class="mf">22.2</span><span class="p">,</span> <span class="mf">19.5</span><span class="p">,</span> <span class="mf">17.4</span><span class="p">])</span><span class="o">*</span><span class="mf">1e-3</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">Ca</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time $t$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Concentration $C_A$&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Concentration $C_A$&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/25-statistics-continue-linear-regression_10_1.png" src="../../_images/25-statistics-continue-linear-regression_10_1.png" />
+</div>
+</div>
+<p>Fit a fourth order polynomial to this data and determine the confidence interval for each parameter. This data is from example 5-1 in Fogler, Elements of Chemical Reaction Engineering.</p>
+<section id="linear-regression-polynomial-order-1">
+<h2>Linear regression (polynomial order 1)<a class="headerlink" href="#linear-regression-polynomial-order-1" title="Permalink to this headline">#</a></h2>
+<p>Let’s start with the relatively easy case of fitting <span class="math notranslate nohighlight">\(C_a(t) = b_0 + b_1t\)</span>, where <span class="math notranslate nohighlight">\(b_0,b_1\)</span> are the parameters we’re trying to fit. This is equivalent to the linear algebra problem</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\vec{y}=\arr{X}\vec{b}
+\end{align*}\]</div>
+<p>where the first column of <span class="math notranslate nohighlight">\(X\)</span> is 1, and the second column is <span class="math notranslate nohighlight">\(t\)</span>. This becomes a little more obvious if we just look at the data!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">time</span><span class="o">**</span><span class="mi">0</span><span class="p">,</span> <span class="n">time</span><span class="o">**</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[  1.   0.]
+ [  1.  50.]
+ [  1. 100.]
+ [  1. 150.]
+ [  1. 200.]
+ [  1. 250.]
+ [  1. 300.]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Imagine multiplying this matrix by a vector <span class="math notranslate nohighlight">\(\vec{b}\)</span>. The first entry would be <span class="math notranslate nohighlight">\(b_0+b_10=b_0\)</span>. The second row would be <span class="math notranslate nohighlight">\(b_0+b_150\)</span> etc. Now, we are going to form the linear algebra problem</p>
+<p><span class="math notranslate nohighlight">\(\arr{X}^T \arr{X} \vec{b} = \arr{X}^T \vec{y}\)</span></p>
+<p>And then solve this!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="nd">@X</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="nd">@Ca</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.04438571 -0.00010229]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is the best possible linear fit for our system, and we did it with linear algebra! Let’s plot it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">Ca</span><span class="p">,</span><span class="s1">&#39;o-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">time</span><span class="o">*</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time $t$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Concentration $C_A$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/25-statistics-continue-linear-regression_17_0.png" src="../../_images/25-statistics-continue-linear-regression_17_0.png" />
+</div>
+</div>
+</section>
+<section id="polynomial-fit-fourth-order">
+<h2>Polynomial fit (fourth order)<a class="headerlink" href="#polynomial-fit-fourth-order" title="Permalink to this headline">#</a></h2>
+<p>Now here is the really cool thing: we can do this for more complicated functions too as long as it’s a linear combination. Let’s try a fourth order fit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">time</span><span class="o">**</span><span class="mi">0</span><span class="p">,</span> <span class="n">time</span><span class="o">**</span><span class="mi">1</span><span class="p">,</span> <span class="n">time</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">time</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">time</span><span class="p">)])</span><span class="o">.</span><span class="n">T</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="nd">@X</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="nd">@Ca</span><span class="p">)</span>
+
+<span class="c1"># Calculate the fitted polynomial at 50 points between 0 and 300</span>
+<span class="n">time_eval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">X_eval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">time_eval</span><span class="o">**</span><span class="mi">0</span><span class="p">,</span> <span class="n">time_eval</span><span class="o">**</span><span class="mi">1</span><span class="p">,</span> <span class="n">time_eval</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">time_eval</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">time_eval</span><span class="p">)])</span><span class="o">.</span><span class="n">T</span>
+
+<span class="c1"># Plot the results</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">Ca</span><span class="p">,</span><span class="s1">&#39;o-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_eval</span><span class="p">,</span> <span class="n">X_eval</span><span class="nd">@b</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time $t$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Concentration $C_A$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/25-statistics-continue-linear-regression_19_0.png" src="../../_images/25-statistics-continue-linear-regression_19_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 4.82000000e-02, -2.37761905e-04,  7.10000000e-07, -8.66666667e-10,
+        1.80000000e-03])
+</pre></div>
+</div>
+</div>
+</div>
+<p>The function itself is obviously non-linear. However, because it is a linear combination of non-linear things, we can do this. We could add whatever basis functions we want into this if we wanted!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">time</span><span class="o">**</span><span class="mi">0</span><span class="p">,</span> <span class="n">time</span><span class="o">**</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="nd">@X</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="nd">@Ca</span><span class="p">)</span>
+
+<span class="c1"># Calculate the fitted polynomial at 50 points between 0 and 300</span>
+<span class="n">time_eval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">X_eval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">time_eval</span><span class="o">**</span><span class="mi">0</span><span class="p">,</span> <span class="n">time_eval</span><span class="o">**</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+
+<span class="c1"># Plot the results</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">Ca</span><span class="p">,</span><span class="s1">&#39;o-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_eval</span><span class="p">,</span> <span class="n">X_eval</span><span class="nd">@b</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time $t$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Concentration $C_A$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/25-statistics-continue-linear-regression_23_0.png" src="../../_images/25-statistics-continue-linear-regression_23_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.04438571, -0.00010229])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we can see that the best fit actually includes a little bit of the log function.</p>
+</section>
+<section id="linear-regresion-minimizes-the-sum-squared-error">
+<h2>Linear regresion minimizes the sum squared error<a class="headerlink" href="#linear-regresion-minimizes-the-sum-squared-error" title="Permalink to this headline">#</a></h2>
+<p>I claimed that solving this equation was equivalent to minimizing the summed squared errors. Here we demonstrate that is consistent with our observation for the first parameter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">time</span><span class="o">**</span><span class="mi">0</span><span class="p">,</span> <span class="n">time</span><span class="o">**</span><span class="mi">1</span><span class="p">,</span> <span class="n">time</span><span class="o">**</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="nd">@X</span><span class="p">,</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="nd">@Ca</span><span class="p">)</span>
+
+<span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.9</span><span class="o">*</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mf">1.1</span><span class="o">*</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">b_copy</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">errors</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">P</span><span class="p">:</span>
+    <span class="n">b_copy</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">p</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">Ca</span><span class="o">-</span><span class="n">X</span><span class="nd">@b_copy</span><span class="p">)</span><span class="o">**</span><span class="mf">2.</span><span class="p">)</span>
+    <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="n">errors</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;intercept, b[0]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;SSE&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;SSE&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/25-statistics-continue-linear-regression_27_1.png" src="../../_images/25-statistics-continue-linear-regression_27_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 4.89214286e-02, -2.11142857e-04,  3.62857143e-07])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 4.89214286e-02 -2.11142857e-04  3.62857143e-07]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The minimum in the sum square error is precisely at the bottom of this well!</p>
+</section>
+<section id="metrics-to-evaluate-how-well-two-models-fit">
+<h2>Metrics to evaluate how well two models fit<a class="headerlink" href="#metrics-to-evaluate-how-well-two-models-fit" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>The error in the fit is defined as: <span class="math notranslate nohighlight">\(\bf{e} = \bf{y} - \bf{X}\cdot \bf{p}\)</span></p></li>
+<li><p>We can compute the summed squared error as <span class="math notranslate nohighlight">\(SSE = \bf{e} \cdot \bf{e}\)</span></p></li>
+<li><p>We define <span class="math notranslate nohighlight">\(SST = \sum (\bf{y} - \overline{y})^2 = (\bf{y} - \overline{y})\cdot(\bf{y} - \overline{y})\)</span></p></li>
+<li><p>We can use that to compute <span class="math notranslate nohighlight">\(R^2 = 1 - SSE/SST\)</span> which roughly corresponds to the fraction of variance in the data explained by the model.</p></li>
+<li><p>Other common metrics include the root mean squared error, and the mean absolute error.</p></li>
+<li><p>Let us calculate each of these</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">Ca</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">Ca</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="n">SSE</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+
+<span class="n">yb</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">SST</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">yb</span><span class="p">,</span> <span class="n">yb</span><span class="p">)</span>
+
+<span class="n">Rsq</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">SSE</span><span class="o">/</span><span class="n">SST</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;R^2 = </span><span class="si">%1.5f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">Rsq</span>)
+
+<span class="n">mean_absolute_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mean absolute error = </span><span class="si">%1.6f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">mean_absolute_error</span>)
+
+<span class="n">root_mean_squared_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">e</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RMSE = </span><span class="si">%1.6f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">root_mean_squared_error</span>)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R^2 = 0.99298
+Mean absolute error = 0.000841
+RMSE = 0.000900
+</pre></div>
+</div>
+</div>
+</div>
+<p>We also made an assumption (implicitly) that the errors were Gaussian distributed and random. It’s good to check that this is in fact the case. If the residuals do not look gaussian distributed and random, you are probably missing additional physics/effects/etc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="s1">&#39;.--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Residuals&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/25-statistics-continue-linear-regression_35_0.png" src="../../_images/25-statistics-continue-linear-regression_35_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">time</span><span class="o">**</span><span class="mi">0</span><span class="p">,</span> <span class="n">time</span><span class="o">**</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="nd">@X</span><span class="p">,</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="nd">@Ca</span><span class="p">)</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">Ca</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">Ca</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="n">SSE</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+
+<span class="n">yb</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">SST</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">yb</span><span class="p">,</span> <span class="n">yb</span><span class="p">)</span>
+
+<span class="n">Rsq</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">SSE</span><span class="o">/</span><span class="n">SST</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;R^2 = </span><span class="si">%1.5f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">Rsq</span>)
+
+<span class="n">mean_absolute_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mean absolute error = </span><span class="si">%1.6f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">mean_absolute_error</span>)
+
+<span class="n">root_mean_squared_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">e</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RMSE = </span><span class="si">%1.6f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">root_mean_squared_error</span>)
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="s1">&#39;.--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Residuals&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R^2 = 0.90734
+Mean absolute error = 0.002857
+RMSE = 0.003269
+</pre></div>
+</div>
+<img alt="../../_images/25-statistics-continue-linear-regression_36_1.png" src="../../_images/25-statistics-continue-linear-regression_36_1.png" />
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="confidence-intervals-on-parameters-in-linear-regression">
+<h1>Confidence intervals on parameters in linear regression<a class="headerlink" href="#confidence-intervals-on-parameters-in-linear-regression" title="Permalink to this headline">#</a></h1>
+<p>The confidence intervals reflect the range of values we are confident the true parameter lies in. Remember we are only <em>estimating</em> these parameters from a small amount of data.</p>
+<p>The assumption is basically that there is an unknown amount of gaussian noise that is being added to the fitted model to generate the data. Because of this noise, we will obtain a different estimate of the parameters <span class="math notranslate nohighlight">\(p\)</span> every time we run the experiment. So, similar to how we estimated the mean and the variance of the estimate above, we can do something similar for the parameters here.</p>
+<p>The statistics is not so complicated, but it is complicated enough that I would suggest just using a good statistical package to do it for you. For linear really models, I really like <a class="reference external" href="https://www.statsmodels.org/stable/index.html">statsmodels</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install the statsmodels toolbox </span>
+<span class="o">!</span>pip install statsmodels
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: The directory &#39;/home/jovyan/.cache/pip&#39; or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo&#39;s -H flag.</span>
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: statsmodels in /opt/conda/lib/python3.10/site-packages (0.13.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy&gt;=1.3 in /opt/conda/lib/python3.10/site-packages (from statsmodels) (1.9.1)
+Requirement already satisfied: numpy&gt;=1.17 in /opt/conda/lib/python3.10/site-packages (from statsmodels) (1.23.3)
+Requirement already satisfied: patsy&gt;=0.5.2 in /opt/conda/lib/python3.10/site-packages (from statsmodels) (0.5.3)
+Requirement already satisfied: pandas&gt;=0.25 in /opt/conda/lib/python3.10/site-packages (from statsmodels) (1.5.0)
+Requirement already satisfied: packaging&gt;=21.3 in /opt/conda/lib/python3.10/site-packages (from statsmodels) (21.3)
+Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /opt/conda/lib/python3.10/site-packages (from packaging&gt;=21.3-&gt;statsmodels) (3.0.9)
+Requirement already satisfied: python-dateutil&gt;=2.8.1 in /opt/conda/lib/python3.10/site-packages (from pandas&gt;=0.25-&gt;statsmodels) (2.8.2)
+Requirement already satisfied: pytz&gt;=2020.1 in /opt/conda/lib/python3.10/site-packages (from pandas&gt;=0.25-&gt;statsmodels) (2022.4)
+Requirement already satisfied: six in /opt/conda/lib/python3.10/site-packages (from patsy&gt;=0.5.2-&gt;statsmodels) (1.16.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">time</span><span class="o">**</span><span class="mi">0</span><span class="p">,</span> <span class="n">time</span><span class="o">**</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+
+<span class="n">mod</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">Ca</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="n">res</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.10/site-packages/statsmodels/stats/stattools.py:74: ValueWarning: omni_normtest is not valid with less than 8 observations; 7 samples were given.
+  warn(&quot;omni_normtest is not valid with less than 8 observations; %i &quot;
+</pre></div>
+</div>
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>            <td>y</td>        <th>  R-squared:         </th> <td>   0.907</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.889</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   48.96</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Wed, 19 Oct 2022</td> <th>  Prob (F-statistic):</th> <td>0.000918</td>
+</tr>
+<tr>
+  <th>Time:</th>                 <td>14:13:05</td>     <th>  Log-Likelihood:    </th> <td>  30.131</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>     7</td>      <th>  AIC:               </th> <td>  -56.26</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>     5</td>      <th>  BIC:               </th> <td>  -56.37</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     1</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+    <td></td>       <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>const</th> <td>    0.0444</td> <td>    0.003</td> <td>   16.843</td> <td> 0.000</td> <td>    0.038</td> <td>    0.051</td>
+</tr>
+<tr>
+  <th>x1</th>    <td>   -0.0001</td> <td> 1.46e-05</td> <td>   -6.997</td> <td> 0.001</td> <td>   -0.000</td> <td>-6.47e-05</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td>   nan</td> <th>  Durbin-Watson:     </th> <td>   0.943</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td>   nan</td> <th>  Jarque-Bera (JB):  </th> <td>   0.729</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td> 0.552</td> <th>  Prob(JB):          </th> <td>   0.695</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 1.869</td> <th>  Cond. No.          </th> <td>    325.</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">time</span><span class="o">**</span><span class="mi">0</span><span class="p">,</span> <span class="n">time</span><span class="o">**</span><span class="mi">1</span><span class="p">,</span> <span class="n">time</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">time</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">time</span><span class="o">**</span><span class="mi">4</span><span class="p">,</span> <span class="n">time</span><span class="o">**</span><span class="mi">5</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+
+<span class="n">mod</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">Ca</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="n">res</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.10/site-packages/statsmodels/stats/stattools.py:74: ValueWarning: omni_normtest is not valid with less than 8 observations; 7 samples were given.
+  warn(&quot;omni_normtest is not valid with less than 8 observations; %i &quot;
+</pre></div>
+</div>
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>            <td>y</td>        <th>  R-squared:         </th> <td>   1.000</td> 
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   1.000</td> 
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>2.589e+04</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Wed, 19 Oct 2022</td> <th>  Prob (F-statistic):</th>  <td>0.00472</td> 
+</tr>
+<tr>
+  <th>Time:</th>                 <td>14:13:05</td>     <th>  Log-Likelihood:    </th> <td>  63.004</td> 
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>     7</td>      <th>  AIC:               </th> <td>  -114.0</td> 
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>     1</td>      <th>  BIC:               </th> <td>  -114.3</td> 
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     5</td>      <th>                     </th>     <td> </td>    
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>    
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+    <td></td>       <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>const</th> <td>    0.0500</td> <td> 7.89e-05</td> <td>  633.559</td> <td> 0.001</td> <td>    0.049</td> <td>    0.051</td>
+</tr>
+<tr>
+  <th>x1</th>    <td>   -0.0003</td> <td> 8.24e-06</td> <td>  -36.837</td> <td> 0.017</td> <td>   -0.000</td> <td>   -0.000</td>
+</tr>
+<tr>
+  <th>x2</th>    <td> 1.508e-06</td> <td> 2.11e-07</td> <td>    7.164</td> <td> 0.088</td> <td>-1.17e-06</td> <td> 4.18e-06</td>
+</tr>
+<tr>
+  <th>x3</th>    <td>-5.052e-09</td> <td> 1.92e-09</td> <td>   -2.626</td> <td> 0.232</td> <td>-2.95e-08</td> <td> 1.94e-08</td>
+</tr>
+<tr>
+  <th>x4</th>    <td> 9.698e-12</td> <td> 7.26e-12</td> <td>    1.336</td> <td> 0.409</td> <td>-8.26e-11</td> <td> 1.02e-10</td>
+</tr>
+<tr>
+  <th>x5</th>    <td>-8.002e-15</td> <td> 9.65e-15</td> <td>   -0.829</td> <td> 0.559</td> <td>-1.31e-13</td> <td> 1.15e-13</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td>   nan</td> <th>  Durbin-Watson:     </th> <td>   3.713</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td>   nan</td> <th>  Jarque-Bera (JB):  </th> <td>   0.236</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td>-0.169</td> <th>  Prob(JB):          </th> <td>   0.889</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 2.166</td> <th>  Cond. No.          </th> <td>2.64e+12</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.<br/>[2] The condition number is large, 2.64e+12. This might indicate that there are<br/>strong multicollinearity or other numerical problems.</div></div>
+</div>
+<p>This gives us tons of information. The most important is the 95% confidence intervals for each parameter. Note that the estimate for the parameters is exactly the same as the one we found above!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="o">.</span><span class="n">cov_params</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 6.22759630e-09, -2.58536955e-10,  3.74535587e-12,
+        -2.44653909e-14,  7.36800197e-17, -8.31267385e-20],
+       [-2.58536955e-10,  6.79232224e-11, -1.67228413e-12,
+         1.45287212e-14, -5.23949760e-17,  6.68877124e-20],
+       [ 3.74535587e-12, -1.67228413e-12,  4.43401663e-14,
+        -4.00367849e-16,  1.47930497e-18, -1.92018266e-21],
+       [-2.44653909e-14,  1.45287212e-14, -4.00367849e-16,
+         3.69923813e-18, -1.38856162e-20,  1.82320496e-23],
+       [ 7.36800197e-17, -5.23949760e-17,  1.47930497e-18,
+        -1.38856162e-20,  5.27213018e-23, -6.98249175e-26],
+       [-8.31267385e-20,  6.68877124e-20, -1.92018266e-21,
+         1.82320496e-23, -6.98249175e-26,  9.30999468e-29]])
+</pre></div>
+</div>
+</div>
+</div>
+<section id="in-class-assignment">
+<h2>In-class assignment<a class="headerlink" href="#in-class-assignment" title="Permalink to this headline">#</a></h2>
+<p>Fit a quadratic polynomial (<span class="math notranslate nohighlight">\(y=ax^2 +bx +c\)</span>) to the following data manually.</p>
+<p>Then, fit it with statsmodels and get the uncertainty in the final parameters.</p>
+<p>Check the coefficient on the quadratic term; is it clear if the quadratic term is actually necessary?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.157</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.315</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.472</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.629</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.942</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.255</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.884</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.147</span><span class="p">])</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;o-&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f132381fe20&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/25-statistics-continue-linear-regression_44_1.png" src="../../_images/25-statistics-continue-linear-regression_44_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="o">**</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+
+<span class="n">mod</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="n">res</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1769: UserWarning: kurtosistest only valid for n&gt;=20 ... continuing anyway, n=9
+  warnings.warn(&quot;kurtosistest only valid for n&gt;=20 ... continuing &quot;
+</pre></div>
+</div>
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>            <td>y</td>        <th>  R-squared:         </th> <td>   1.000</td> 
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   1.000</td> 
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>4.042e+06</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Wed, 19 Oct 2022</td> <th>  Prob (F-statistic):</th> <td>4.09e-19</td> 
+</tr>
+<tr>
+  <th>Time:</th>                 <td>14:13:06</td>     <th>  Log-Likelihood:    </th> <td>  51.242</td> 
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>     9</td>      <th>  AIC:               </th> <td>  -96.48</td> 
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>     6</td>      <th>  BIC:               </th> <td>  -95.89</td> 
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     2</td>      <th>                     </th>     <td> </td>    
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>    
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+    <td></td>       <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>const</th> <td>   -0.0011</td> <td>    0.001</td> <td>   -1.700</td> <td> 0.140</td> <td>   -0.003</td> <td>    0.000</td>
+</tr>
+<tr>
+  <th>x1</th>    <td>   -0.3131</td> <td>    0.000</td> <td> -829.147</td> <td> 0.000</td> <td>   -0.314</td> <td>   -0.312</td>
+</tr>
+<tr>
+  <th>x2</th>    <td>   -0.0001</td> <td> 3.69e-05</td> <td>   -3.987</td> <td> 0.007</td> <td>   -0.000</td> <td>-5.69e-05</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td> 3.557</td> <th>  Durbin-Watson:     </th> <td>   0.933</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.169</td> <th>  Jarque-Bera (JB):  </th> <td>   0.990</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td> 0.013</td> <th>  Prob(JB):          </th> <td>   0.610</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 1.376</td> <th>  Cond. No.          </th> <td>    78.3</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="o">**</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+
+<span class="n">mod</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="n">res</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1769: UserWarning: kurtosistest only valid for n&gt;=20 ... continuing anyway, n=9
+  warnings.warn(&quot;kurtosistest only valid for n&gt;=20 ... continuing &quot;
+</pre></div>
+</div>
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>            <td>y</td>        <th>  R-squared:         </th> <td>   1.000</td> 
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   1.000</td> 
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>2.584e+06</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Wed, 19 Oct 2022</td> <th>  Prob (F-statistic):</th> <td>9.52e-21</td> 
+</tr>
+<tr>
+  <th>Time:</th>                 <td>14:13:06</td>     <th>  Log-Likelihood:    </th> <td>  45.417</td> 
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>     9</td>      <th>  AIC:               </th> <td>  -86.83</td> 
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>     7</td>      <th>  BIC:               </th> <td>  -86.44</td> 
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     1</td>      <th>                     </th>     <td> </td>    
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>    
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+    <td></td>       <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>const</th> <td>    0.0006</td> <td>    0.001</td> <td>    0.738</td> <td> 0.485</td> <td>   -0.001</td> <td>    0.003</td>
+</tr>
+<tr>
+  <th>x1</th>    <td>   -0.3145</td> <td>    0.000</td> <td>-1607.619</td> <td> 0.000</td> <td>   -0.315</td> <td>   -0.314</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td> 0.655</td> <th>  Durbin-Watson:     </th> <td>   1.353</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.721</td> <th>  Jarque-Bera (JB):  </th> <td>   0.585</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td> 0.450</td> <th>  Prob(JB):          </th> <td>   0.747</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 2.136</td> <th>  Cond. No.          </th> <td>    6.40</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="summary">
+<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>We showed that linear regression (fitting a linear combination of functions) is essentially a linear algebra problem</p>
+<ul>
+<li><p>First we find the augmented matrix, where each row is a datapoint and each column is a feature (1, X, logx, etc)</p></li>
+<li><p>Then we solve <span class="math notranslate nohighlight">\(\arr{X}^T \arr{X} \vec{a} = \arr{X}^T \vec{y}\)</span></p></li>
+<li><p>This solution is the one that minimizes the sum squared error</p></li>
+</ul>
+</li>
+<li><p>If we want parameter estimates, then it’s probably best to use a package like statsmodel.</p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notes/statistics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="24-intro-statistics.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Intro to engineering statistics</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="26-bonus-nonlinear-regression.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Recap on linear regression</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Zachary Ulissi<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,1080 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Differential Equations &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Recap" href="9-exact-ode.html" />
+    <link rel="prev" title="Ordinary Differential Equations" href="ordinary_differential_equations.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Mathemtaical Methods for Chemical Engineering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Lecture notes for CMU 06-262 Math Methods in Chemical Engineering (Zachary Ulissi, CMU)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Notes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../linear_algebra/linear_algebra.html">
+   Linear Algebra
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/1-intro-matrices.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/2-matrix-manipulation.html">
+     Note on HW expectations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/3-gauss-elimination.html">
+     Return to Systems of Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/4-rank-gauss-examples.html">
+     Chemical Engineering example solved with Gauss elimination
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/5-determinants.html">
+     Using the inverse of A to solve a system of linear equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/6-eigenvalues-1.html">
+     Homogeneous vs. Non-homogeneous Systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/7-eigenvalue-2-difference-equations.html">
+     <span class="math notranslate nohighlight">
+      \(\underline{Ex}\)
+     </span>
+     : Symmetric matrix (
+     <span class="math notranslate nohighlight">
+      \(\lambda\)
+     </span>
+     always real)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/7b-numerical-eigenvalues.html">
+     Eigenvectors in python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="ordinary_differential_equations.html">
+   Ordinary Differential Equations
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="9-exact-ode.html">
+     Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10-linear-ode.html">
+     Integrating Factors - Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-linear-ode-example.html">
+     Alternate Method (Last class continued)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12-second-order-odes.html">
+     Second Order Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13-non-homogeneous-linear-odes.html">
+     Recap from last class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14-MoUC-VoP.html">
+     Method of Undetermined Coefficients (sec 2.9)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15-springs-numerical-odes.html">
+     Introduction to Numerical Solution of Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16-coupled-odes.html">
+     Coupled Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="17-coupled-ode-continued.html">
+     Recap for coupled differential equations:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="18-nonlinear-coupled-ODEs.html">
+     Nonlinear coupled ODE’s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="19-linear-stability.html">
+     Steady states in Non-Linear Coupled ODE’s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="20-BVP.html">
+     Boundary Value Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="21-BVP-shooting-method.html">
+     The Shooting Method for Solving BVPs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../partial_differential_equations/partial_differential_equations.html">
+   Partial Differential Equations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../partial_differential_equations/22-Intro-PDEs.html">
+     Partial Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../partial_differential_equations/23-Fourier-Coefficients.html">
+     Recap on PDEs from last lecture
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../statistics/statistics.html">
+   Statistics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/24-intro-statistics.html">
+     Intro to engineering statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/25-statistics-continue-linear-regression.html">
+     Recap from last class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/26-bonus-nonlinear-regression.html">
+     Recap on linear regression
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-recap.html">
+   06-262 Math Methods Recap
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ulissigroup/math-methods-chemical-engineering/main?urlpath=lab/tree/math-methods-chemical-engineering/notes/ordinary_differential_equations/8-differential-equations.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/ulissigroup/math-methods-chemical-engineering/blob/main/math-methods-chemical-engineering/notes/ordinary_differential_equations/8-differential-equations.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/ulissigroup/math-methods-chemical-engineering"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/ulissigroup/math-methods-chemical-engineering/issues/new?title=Issue%20on%20page%20%2Fnotes/ordinary_differential_equations/8-differential-equations.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/notes/ordinary_differential_equations/8-differential-equations.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Differential Equations
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notation">
+     Notation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples-of-odes">
+     Examples of ODEs:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#first-order-differential-equations">
+     First Order Differential Equations
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-differential-equations">
+     Linear differential equations
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#examples">
+       Examples:
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classification-of-differential-equations">
+   Classification of Differential Equations
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#separable-1-circ-odes">
+     Separable
+     <span class="math notranslate nohighlight">
+      \(1^\circ \)
+     </span>
+     ODEs
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-separable-first-order-ode">
+     Example separable first order ODE
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Example separable first order ODE
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#transient-batch-reactor">
+   Transient Batch Reactor
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reality-checks">
+   Reality checks
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Differential Equations</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Differential Equations
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notation">
+     Notation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples-of-odes">
+     Examples of ODEs:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#first-order-differential-equations">
+     First Order Differential Equations
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-differential-equations">
+     Linear differential equations
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#examples">
+       Examples:
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classification-of-differential-equations">
+   Classification of Differential Equations
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#separable-1-circ-odes">
+     Separable
+     <span class="math notranslate nohighlight">
+      \(1^\circ \)
+     </span>
+     ODEs
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-separable-first-order-ode">
+     Example separable first order ODE
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Example separable first order ODE
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#transient-batch-reactor">
+   Transient Batch Reactor
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reality-checks">
+   Reality checks
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p>{{ badge }}
+$<span class="math notranslate nohighlight">\(\newcommand{\arr}[1]{\underline{\underline{#1}}}\)</span><span class="math notranslate nohighlight">\(    
+\)</span><span class="math notranslate nohighlight">\(\newcommand{\vec}[1]{\underline{#1}}\)</span><span class="math notranslate nohighlight">\(   
+\)</span><span class="math notranslate nohighlight">\(\require{mhchem}\)</span>$</p>
+<section class="tex2jax_ignore mathjax_ignore" id="differential-equations">
+<h1>Differential Equations<a class="headerlink" href="#differential-equations" title="Permalink to this headline">#</a></h1>
+<ul>
+<li><p>See chapters 1-5 of text</p></li>
+<li><p>A differential equation is an equation containing one or more detivatives of an unknown function.<br />
+A) Ordinary Differential Equation (ODE)<br />
+<span class="math notranslate nohighlight">\(\rightarrow\)</span> Unknown depends on only one variable\</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8ce836c2-823b-4929-8521-4e704b678d2d">
+<span class="eqno">(88)<a class="headerlink" href="#equation-8ce836c2-823b-4929-8521-4e704b678d2d" title="Permalink to this equation">#</a></span>\[\begin{align}
+    \frac{dy}{dx} = x \rightarrow y=y(x)\\
+    \frac{dC}{dt} = -kC^2 \rightarrow C = C(t)
+    \end{align}\]</div>
+<p>B) Partial Differential Equation (PDE)<br />
+<span class="math notranslate nohighlight">\(\rightarrow\)</span> Unknown function depends on two or more variables</p>
+<div class="amsmath math notranslate nohighlight" id="equation-da29eaf3-0357-4c4c-aff9-62d8182cce91">
+<span class="eqno">(89)<a class="headerlink" href="#equation-da29eaf3-0357-4c4c-aff9-62d8182cce91" title="Permalink to this equation">#</a></span>\[\begin{align}
+  \frac{\partial y}{\partial t} = k \frac{\partial y}{\partial x} \rightarrow y=y(t,x)
+  \end{align}\]</div>
+</li>
+</ul>
+<section id="notation">
+<h2>Notation<a class="headerlink" href="#notation" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>For an unknown function y(x)</p>
+<ol class="simple">
+<li><p>First derivative of <span class="math notranslate nohighlight">\(y\)</span>: <span class="math notranslate nohighlight">\(\frac{dy}{dx} \equiv y'\)</span></p></li>
+<li><p>Second derivative: <span class="math notranslate nohighlight">\(\frac{d^2y}{dx^2}\equiv y''\)</span></p></li>
+<li><p>Third derivative: <span class="math notranslate nohighlight">\(\frac{d^3y}{dx^3}\equiv y'''\)</span></p></li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="examples-of-odes">
+<h2>Examples of ODEs:<a class="headerlink" href="#examples-of-odes" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(y'=cos(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y'' + 4y = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x^2y'''y' + 2e^xy''=x^2+2\)</span></p></li>
+</ul>
+<p>“Order” of ODE: the order of the highest order derivative<br />
+<span class="math notranslate nohighlight">\(\rightarrow\)</span> above equations are <span class="math notranslate nohighlight">\(1^{st}\)</span>, <span class="math notranslate nohighlight">\(2^{nd}\)</span> and <span class="math notranslate nohighlight">\(3^{rd}\)</span> order respectively.</p>
+</section>
+<section id="first-order-differential-equations">
+<h2>First Order Differential Equations<a class="headerlink" href="#first-order-differential-equations" title="Permalink to this headline">#</a></h2>
+<div class="amsmath math notranslate nohighlight" id="equation-9ed6e27f-16ce-4316-953e-b48db14cff4c">
+<span class="eqno">(90)<a class="headerlink" href="#equation-9ed6e27f-16ce-4316-953e-b48db14cff4c" title="Permalink to this equation">#</a></span>\[\begin{align}
+F(x,y,y')=0 &amp;&amp; \text{or} &amp;&amp; y'=f(x, y)
+\end{align}\]</div>
+<p>will have a general solution</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4a6c425a-a7b8-44ee-ad82-dcb1dcd3abb5">
+<span class="eqno">(91)<a class="headerlink" href="#equation-4a6c425a-a7b8-44ee-ad82-dcb1dcd3abb5" title="Permalink to this equation">#</a></span>\[\begin{align}
+y=h(x) &amp;&amp; \rightarrow \text{explicit}\\
+H(x,y) = 0 &amp;&amp; \rightarrow \text{implicit}
+\end{align}\]</div>
+</section>
+<section id="linear-differential-equations">
+<h2>Linear differential equations<a class="headerlink" href="#linear-differential-equations" title="Permalink to this headline">#</a></h2>
+<p>A linear ODE is one where we can write it in the form $<span class="math notranslate nohighlight">\(a_n(t)y^{(n)}(t)+a_{n-1}(t)y^{(n-1)}(t)+\dots+a_1(t)y'(t)+a_0(t)y(t)=g(t)\)</span><span class="math notranslate nohighlight">\( where \)</span>y^n(t)$ is the nth derivative of y. If we can get it in this form, it is linear. If not, non-linear.</p>
+<section id="examples">
+<h3>Examples:<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(y'=\cos(t)\)</span></p>
+<ul>
+<li><p>Linear!</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(y''+4y=0\)</span></p>
+<ul>
+<li><p>Linear!</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(x^2y'''y'+2e^xy''=x^2+2\)</span></p>
+<ul>
+<li><p>Nonlinear because of the <span class="math notranslate nohighlight">\(y'''y'\)</span> term</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\exp(y)+y''=4x\)</span></p>
+<ul>
+<li><p>Nonlinear because of the <span class="math notranslate nohighlight">\(\exp(y)\)</span> term</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\exp(x)+y''=3x\)</span></p>
+<ul>
+<li><p>Linear</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(y+y''=3x\)</span></p>
+<ul>
+<li><p>Linear</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="classification-of-differential-equations">
+<h1>Classification of Differential Equations<a class="headerlink" href="#classification-of-differential-equations" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>We just discussed two types of differential equations:</p>
+<ul>
+<li><p>Partial Differential Equations (PDE’s)</p></li>
+<li><p>Ordinary Differential Equations (ODE’s)</p></li>
+</ul>
+</li>
+<li><p>We can also describe the order of the differential equation</p>
+<ul>
+<li><p>1st order</p></li>
+<li><p>2nd order</p></li>
+<li><p>etc</p></li>
+</ul>
+</li>
+<li><p>Linearity of differential equation</p>
+<ul>
+<li><p>Linear</p></li>
+<li><p>Non-linear</p></li>
+</ul>
+</li>
+</ul>
+<p>As we progress in the class we will add more classifications.</p>
+<section id="separable-1-circ-odes">
+<h2>Separable <span class="math notranslate nohighlight">\(1^\circ \)</span> ODEs<a class="headerlink" href="#separable-1-circ-odes" title="Permalink to this headline">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> should already know these<br />
+<span class="math notranslate nohighlight">\(\rightarrow\)</span> Equation is separable if it can be written as:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-bd2dbae3-4dee-44c5-81f2-c002821ddebb">
+<span class="eqno">(92)<a class="headerlink" href="#equation-bd2dbae3-4dee-44c5-81f2-c002821ddebb" title="Permalink to this equation">#</a></span>\[\begin{align}
+g(y)y'=f(x)
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> since <span class="math notranslate nohighlight">\(y'=\frac{dy}{dx}\)</span>, then</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c9228b42-1286-43bc-b96c-f3f2771e022a">
+<span class="eqno">(93)<a class="headerlink" href="#equation-c9228b42-1286-43bc-b96c-f3f2771e022a" title="Permalink to this equation">#</a></span>\[\begin{align}
+g(y)dy = f(x)dx &amp;&amp; \text{separate all $y$'s from all $x$'s}
+\end{align}\]</div>
+<p>Simple integration solution</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5f441792-7798-4383-a0e4-81f15ef5ab52">
+<span class="eqno">(94)<a class="headerlink" href="#equation-5f441792-7798-4383-a0e4-81f15ef5ab52" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int g(y)dy = \int f(x) dx + \underline{c} &amp;&amp; \text{don't forget the constant!}
+\end{align}\]</div>
+</section>
+<section id="example-separable-first-order-ode">
+<h2>Example separable first order ODE<a class="headerlink" href="#example-separable-first-order-ode" title="Permalink to this headline">#</a></h2>
+<p><span class="math notranslate nohighlight">\(y'=2x\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-6c45f434-c9d9-48d1-b09e-0ee796e91707">
+<span class="eqno">(95)<a class="headerlink" href="#equation-6c45f434-c9d9-48d1-b09e-0ee796e91707" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{dy}{dx} = 2x\\
+dy = 2x dx &amp;&amp; \text{separate}\\
+\int dy =\int 2x dx + c &amp;&amp; \text{integrate}\\
+y(x) = x^2 + c &amp;&amp; \text{general solution}
+\end{align}\]</div>
+<p>We need more information to determine <span class="math notranslate nohighlight">\(c\)</span>. Once <span class="math notranslate nohighlight">\(c\)</span> is known <span class="math notranslate nohighlight">\(\rightarrow\)</span> particular solution.<br />
+e.g. if we know <span class="math notranslate nohighlight">\(y(x=0)=2\)</span>, then</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d24c01f7-c5d0-4e28-a08c-8f6db2195323">
+<span class="eqno">(96)<a class="headerlink" href="#equation-d24c01f7-c5d0-4e28-a08c-8f6db2195323" title="Permalink to this equation">#</a></span>\[\begin{align}
+2&amp;=0^2+c\\
+c&amp;=2
+\end{align}\]</div>
+<p>and the particular solution is <span class="math notranslate nohighlight">\(y(x) = x^2 + 2\)</span></p>
+<ul class="simple">
+<li><p>Separable <span class="math notranslate nohighlight">\(1^\circ\)</span> ODE’s arise frequantly in engineering problems</p></li>
+</ul>
+</section>
+<section id="id1">
+<h2>Example separable first order ODE<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\underline{Ex}\)</span>: There is a pond just north of Pittsburgh where people like to swim in summer. Unfortunately on Memorial Day (May 25), the pond is polluted with a substance <span class="math notranslate nohighlight">\(T\)</span> at a concentration of 100 ppm. There is a flow rate of fresh water into the pond that equals the rate at which water leaches into the soil (pond volume of <span class="math notranslate nohighlight">\(10^4 m^3\)</span> doesn’t change). Swimming will be safe only once <span class="math notranslate nohighlight">\(C_T &lt; 5\)</span> ppm. Will swimmers be back in business before Labor Day (Sept. 5)?</p>
+<img src="https://docs.google.com/drawings/d/e/2PACX-1vS8mkzTjLckrqsayNi9kZhbf6jhU_D4Gw3g2Gz_x924UWb2MPNObOqqS7oqIl4j7Lpsc-yWrT6SbpYH/pub?w=960&h=720">
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> Solve by performing a mass balance on what? (the pollutant)</p>
+<div class="amsmath math notranslate nohighlight" id="equation-66046da4-c845-4d3e-a700-c80f0c5f752c">
+<span class="eqno">(97)<a class="headerlink" href="#equation-66046da4-c845-4d3e-a700-c80f0c5f752c" title="Permalink to this equation">#</a></span>\[\begin{align}
+\text{Accumulation = In - Out + Gen - Consumption}
+\end{align}\]</div>
+<p>Inlet term is zero because only fresh water enters. Generation and Consumption are zero as well because there’s no reaction.<br />
+<span class="math notranslate nohighlight">\(\rightarrow\)</span> Unlike linear systems, this problem is interested in what happens before steady state.<br />
+<span class="math notranslate nohighlight">\(\rightarrow\)</span> There is an element of time involved</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5264fd4c-7c5c-4e11-a2c3-fb1a187e341a">
+<span class="eqno">(98)<a class="headerlink" href="#equation-5264fd4c-7c5c-4e11-a2c3-fb1a187e341a" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{dM}{dt} = \frac{d(C \cdot V)}{dt} = -FC
+\end{align}\]</div>
+<p>Check units,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d83b4b87-09c5-48d3-85b5-7158207c60c9">
+<span class="eqno">(99)<a class="headerlink" href="#equation-d83b4b87-09c5-48d3-85b5-7158207c60c9" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{kg}{s} [=] \frac{\frac{kg}{L} L}{s} [=] \frac{L}{s} \cdot \frac{kg}{L} 
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> since <span class="math notranslate nohighlight">\(V\)</span> is constant, we can pull it out</p>
+<div class="amsmath math notranslate nohighlight" id="equation-56e3b4a3-ac53-4979-8ce6-5b5becd594c7">
+<span class="eqno">(100)<a class="headerlink" href="#equation-56e3b4a3-ac53-4979-8ce6-5b5becd594c7" title="Permalink to this equation">#</a></span>\[\begin{align}
+V\frac{dC}{dt} = -FC &amp;&amp; \text{$1^\circ$ ODE that models our system}\\
+\frac{dC}{C} = -\frac{F}{V} dt &amp;&amp; \text{separate}\\
+\int \frac{dC}{C} = -\frac{F}{V} \int dt + \alpha &amp;&amp; \text{integrate}\\
+\ln C = -\frac{F}{V} t + \alpha\\
+C(t) = \exp\left[-\frac{F}{V}t + \alpha\right] &amp;&amp; \text{General solution}
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> to find <span class="math notranslate nohighlight">\(\alpha\)</span>, we need to know <span class="math notranslate nohighlight">\(C(t)\)</span> at some time <span class="math notranslate nohighlight">\(\rightarrow\)</span> will yield our particular solution<br />
+<span class="math notranslate nohighlight">\(\rightarrow\)</span> we know <span class="math notranslate nohighlight">\(C(t=0)=C_0=100ppm\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-c829a348-9a53-4732-8251-f6cd000cffe1">
+<span class="eqno">(101)<a class="headerlink" href="#equation-c829a348-9a53-4732-8251-f6cd000cffe1" title="Permalink to this equation">#</a></span>\[\begin{align}
+\therefore C(t=0) = C_0 &amp;= \exp\left[-\frac{F}{V} \cdot 0 + \alpha\right]\\
+C_0 &amp;= \exp(\alpha)\\
+\alpha &amp;= \ln C_0 &amp;&amp; \rightarrow \text{can plug into general solution}\\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d51eb8fc-02cf-4569-8cdb-d0fbc19b55fa">
+<span class="eqno">(102)<a class="headerlink" href="#equation-d51eb8fc-02cf-4569-8cdb-d0fbc19b55fa" title="Permalink to this equation">#</a></span>\[\begin{align}
+C(t) &amp;= \exp\left[-\frac{F}{V}t + lnC_0 \right]\\
+&amp;=\exp\left[-\frac{F}{V}t\right]\cdot \exp[lnC_0]\\
+C(t) &amp;= C_0 \exp \left[ -\frac{F}{V}t\right] &amp;&amp; \text{particular solution}
+\end{align}\]</div>
+<p>For our problem: <span class="math notranslate nohighlight">\(C_0 =100ppm\)</span>, <span class="math notranslate nohighlight">\(V=10^4 m^3\)</span>, <span class="math notranslate nohighlight">\(F=100 m^3\)</span>/day</p>
+<div class="amsmath math notranslate nohighlight" id="equation-06b16206-83a5-489a-98b5-107f8c6baeb6">
+<span class="eqno">(103)<a class="headerlink" href="#equation-06b16206-83a5-489a-98b5-107f8c6baeb6" title="Permalink to this equation">#</a></span>\[\begin{align}
+C(t) &amp;= 100 ppm \cdot \exp\left(\frac{100 m^3/day}{10^4m^3}t \right)\\
+C(t) &amp;
+= 100 \exp(-0.01t) &amp;&amp; \text{where $C[=]ppm, t[=]days$} 
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> Can swimmers swim on Labor Day? Let’s determine how long it will take for <span class="math notranslate nohighlight">\(C(t)\)</span> to drop to 5 ppm.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fde478f0-03ca-4ce7-a739-b8b8a3b30afc">
+<span class="eqno">(104)<a class="headerlink" href="#equation-fde478f0-03ca-4ce7-a739-b8b8a3b30afc" title="Permalink to this equation">#</a></span>\[\begin{align}
+5=100\exp(-0.01t)\\
+ln\left(\frac{5}{100} \right) = -0.01t\\
+t = 300 days
+&amp;&amp; \rightarrow \text{Can't swim until next summer :(}
+\end{align}\]</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="transient-batch-reactor">
+<h1>Transient Batch Reactor<a class="headerlink" href="#transient-batch-reactor" title="Permalink to this headline">#</a></h1>
+<img src="https://docs.google.com/drawings/d/e/2PACX-1vSf2jVdqbl_bfEDKJRTToTinA-WikP4MJbZv8E-t8GKjxe9CNSQMRdO9Vinb2YBDz8qLcpk1Fi5I2iq/pub?w=960&h=720">
+\begin{equation}
+\ce{CH_3COOC_2H5 + H_2O -> CH_3COOH + C_2H_5OH}\\
+\text{ethyl acetate}\hspace{3cm} \text{acetic acid} \hspace{0.8cm} \text{ethanol}
+\end{equation}
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> Develop a model for the concentration of ethyl acetate in the reactor as a function of time. The reaction consumes E.A. at a rate proportional to the instantaneous concentration of E.A.<br />
+<span class="math notranslate nohighlight">\(\rightarrow\)</span> Assume the reactor is charged with <span class="math notranslate nohighlight">\(C_0\)</span>.<br />
+Step 1: What is changing with time?<br />
+Concentration of E.A. <span class="math notranslate nohighlight">\(\rightarrow\)</span> mass is conserved.<br />
+MB on E.A: Accum = In - Out + Gen - Consump<br />
+The reactor has no inlet and outlet. E.A. isn’t being produced by the reaction. Hence, Generation term is also zero.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2c3e5232-fb7a-40b7-a5d0-f763dd02deb3">
+<span class="eqno">(105)<a class="headerlink" href="#equation-2c3e5232-fb7a-40b7-a5d0-f763dd02deb3" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{dM}{dt} = -kC
+\end{align}\]</div>
+<p>We were told Consump <span class="math notranslate nohighlight">\(\propto C_{EA}\)</span>. Given <span class="math notranslate nohighlight">\(C[=]\frac{mass}{vol} \implies k[=]\frac{vol}{time}\)</span> to match LHS units of <span class="math notranslate nohighlight">\(\frac{mass}{time}\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-f410b3b8-739c-4144-a6b2-5994d117a06b">
+<span class="eqno">(106)<a class="headerlink" href="#equation-f410b3b8-739c-4144-a6b2-5994d117a06b" title="Permalink to this equation">#</a></span>\[\begin{align}
+V\frac{dC}{dt} = -kC\\
+\frac{dC}{C} = -\frac{k}{V} dt &amp;&amp; \text{separate}\\
+\ln C = -\frac{k}{V}t + \beta\\
+C(t) = \exp\left(-\frac{k}{V}t \right) \cdot \exp(\beta)
+\end{align}\]</div>
+<p>Let <span class="math notranslate nohighlight">\(\exp(\beta) = \alpha\)</span>,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4a6c455b-37cf-440e-9849-0b81ba726b03">
+<span class="eqno">(107)<a class="headerlink" href="#equation-4a6c455b-37cf-440e-9849-0b81ba726b03" title="Permalink to this equation">#</a></span>\[\begin{align}
+C(t) = \alpha \cdot \exp\left(-\frac{k}{V}t\right) &amp;&amp; \text{general solution}
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> We know that <span class="math notranslate nohighlight">\(C(t=0) = C_0\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-a1cde17f-f8f8-44c8-b132-682b3bc3c375">
+<span class="eqno">(108)<a class="headerlink" href="#equation-a1cde17f-f8f8-44c8-b132-682b3bc3c375" title="Permalink to this equation">#</a></span>\[\begin{align}
+\therefore C(t=0) = C_0 = \alpha \cdot \exp(0) \implies C_0 = \alpha
+\end{align}\]</div>
+<p>then,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-78033be1-d2f8-445d-954c-f41387ae0e9b">
+<span class="eqno">(109)<a class="headerlink" href="#equation-78033be1-d2f8-445d-954c-f41387ae0e9b" title="Permalink to this equation">#</a></span>\[\begin{align}
+C(t) = C_0 \cdot \exp\left(-\frac{k}{V} t\right) &amp;&amp; \text{particular solution}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>What if, instead of knowing the initial concentration, we were told that ater 10 minutes, conc. = <span class="math notranslate nohighlight">\(C_1\)</span>?<br />
+<span class="math notranslate nohighlight">\(\rightarrow\)</span> only <span class="math notranslate nohighlight">\(\alpha\)</span> will change</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-49193919-8d24-42b3-b2cc-40f2963ca694">
+<span class="eqno">(110)<a class="headerlink" href="#equation-49193919-8d24-42b3-b2cc-40f2963ca694" title="Permalink to this equation">#</a></span>\[\begin{align}
+C(t=10) = C_1 = \alpha \cdot \exp\left(\frac{-10k}{V} \right) \implies \alpha=\frac{C_1}{\exp\left(\frac{-10k}{V} \right)}
+\end{align}\]</div>
+<p>and</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ec62b8e7-778e-4e00-86ba-ca099e61da00">
+<span class="eqno">(111)<a class="headerlink" href="#equation-ec62b8e7-778e-4e00-86ba-ca099e61da00" title="Permalink to this equation">#</a></span>\[\begin{align}
+C(t) = \frac{ C_1 \exp\left(-\frac{k}{V} t \right)}{\exp\left(-\frac{10k}{V} t \right)} =C_1 \exp\left[\frac{k}{V} (10 - t)\right] 
+\end{align}\]</div>
+<p>The basic batch reactor pops up often.<br />
+<span class="math notranslate nohighlight">\(\rightarrow\)</span> Redo the problem with different kinetics:<br />
+What if E.A. is consumed at a rate proportional to the square of the instantaneous concentration of E.A.?<br />
+Now: Accumulation = - Consumption</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d7056ea0-7609-43d6-9982-aabdd3328814">
+<span class="eqno">(112)<a class="headerlink" href="#equation-d7056ea0-7609-43d6-9982-aabdd3328814" title="Permalink to this equation">#</a></span>\[\begin{align}
+V\frac{dC}{dt} = -kC^2 &amp;&amp; \text{where now $k[=]\frac{vol^2}{mass \cdot time}$}\\
+\frac{dC}{C^2} = -\frac{k}{V}dt\\
+-\frac{1}{C} = -\frac{k}{V}t + \alpha\\
+\frac{1}{C} = \frac{k}{V}t + \alpha &amp;&amp; \text{OK to change sign of $\alpha$ since it is arbitrary}\\
+C(t) = \frac{1}{\frac{k}{V}t+ \alpha} &amp;&amp; \text{general solution}
+\end{align}\]</div>
+<p>Given <span class="math notranslate nohighlight">\(C(0) = C_0\)</span>, then <span class="math notranslate nohighlight">\(C(t=0) = 1/\alpha \implies \alpha = \frac{1}{C_0}\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-6141928e-8778-4ce3-809f-fe0eef1337fc">
+<span class="eqno">(113)<a class="headerlink" href="#equation-6141928e-8778-4ce3-809f-fe0eef1337fc" title="Permalink to this equation">#</a></span>\[\begin{align}
+C(t) = \frac{1}{\frac{k}{V}t+ \frac{1}{C_0}}\\
+C(t) = \frac{C_0}{\frac{k}{V}C_0t+ 1} &amp;&amp; \text{particular solution}
+\end{align}\]</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="reality-checks">
+<h1>Reality checks<a class="headerlink" href="#reality-checks" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Consider the possible steady states of the system.</p></li>
+<li><p>What do you know? What will be a reasonable answer?</p></li>
+<li><p>If you’re worried about your solution, plug it in and check if it’s a solution</p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notes/ordinary_differential_equations"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="ordinary_differential_equations.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Ordinary Differential Equations</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="9-exact-ode.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Recap</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Zachary Ulissi<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

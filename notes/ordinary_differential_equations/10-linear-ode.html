@@ -1,0 +1,1053 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Integrating Factors - Recap &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Alternate Method (Last class continued)" href="11-linear-ode-example.html" />
+    <link rel="prev" title="Recap" href="9-exact-ode.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Mathemtaical Methods for Chemical Engineering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Lecture notes for CMU 06-262 Math Methods in Chemical Engineering (Zachary Ulissi, CMU)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Notes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../linear_algebra/linear_algebra.html">
+   Linear Algebra
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/1-intro-matrices.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/2-matrix-manipulation.html">
+     Note on HW expectations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/3-gauss-elimination.html">
+     Return to Systems of Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/4-rank-gauss-examples.html">
+     Chemical Engineering example solved with Gauss elimination
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/5-determinants.html">
+     Using the inverse of A to solve a system of linear equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/6-eigenvalues-1.html">
+     Homogeneous vs. Non-homogeneous Systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/7-eigenvalue-2-difference-equations.html">
+     <span class="math notranslate nohighlight">
+      \(\underline{Ex}\)
+     </span>
+     : Symmetric matrix (
+     <span class="math notranslate nohighlight">
+      \(\lambda\)
+     </span>
+     always real)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/7b-numerical-eigenvalues.html">
+     Eigenvectors in python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="ordinary_differential_equations.html">
+   Ordinary Differential Equations
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="8-differential-equations.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="9-exact-ode.html">
+     Recap
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Integrating Factors - Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-linear-ode-example.html">
+     Alternate Method (Last class continued)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12-second-order-odes.html">
+     Second Order Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13-non-homogeneous-linear-odes.html">
+     Recap from last class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14-MoUC-VoP.html">
+     Method of Undetermined Coefficients (sec 2.9)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15-springs-numerical-odes.html">
+     Introduction to Numerical Solution of Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16-coupled-odes.html">
+     Coupled Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="17-coupled-ode-continued.html">
+     Recap for coupled differential equations:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="18-nonlinear-coupled-ODEs.html">
+     Nonlinear coupled ODE’s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="19-linear-stability.html">
+     Steady states in Non-Linear Coupled ODE’s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="20-BVP.html">
+     Boundary Value Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="21-BVP-shooting-method.html">
+     The Shooting Method for Solving BVPs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../partial_differential_equations/partial_differential_equations.html">
+   Partial Differential Equations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../partial_differential_equations/22-Intro-PDEs.html">
+     Partial Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../partial_differential_equations/23-Fourier-Coefficients.html">
+     Recap on PDEs from last lecture
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../statistics/statistics.html">
+   Statistics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/24-intro-statistics.html">
+     Intro to engineering statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/25-statistics-continue-linear-regression.html">
+     Recap from last class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/26-bonus-nonlinear-regression.html">
+     Recap on linear regression
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-recap.html">
+   06-262 Math Methods Recap
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ulissigroup/math-methods-chemical-engineering/main?urlpath=lab/tree/math-methods-chemical-engineering/notes/ordinary_differential_equations/10-linear-ode.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/ulissigroup/math-methods-chemical-engineering/blob/main/math-methods-chemical-engineering/notes/ordinary_differential_equations/10-linear-ode.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/ulissigroup/math-methods-chemical-engineering"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/ulissigroup/math-methods-chemical-engineering/issues/new?title=Issue%20on%20page%20%2Fnotes/ordinary_differential_equations/10-linear-ode.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/notes/ordinary_differential_equations/10-linear-ode.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Integrating Factors - Recap
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-1-circ-odes">
+   Linear
+   <span class="math notranslate nohighlight">
+    \(1^\circ\)
+   </span>
+   ODEs
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#homogeneous-case">
+     Homogeneous Case
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#non-homogeneous-case">
+     Non-Homogeneous Case
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example">
+       Example
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integrating-by-parts-refresher">
+   Integrating by Parts (Refresher)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Example
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recap-of-linear-1-circ-odes">
+     Recap of linear
+     <span class="math notranslate nohighlight">
+      \(1^\circ ODEs:\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chemical-engineering-example">
+     Chemical Engineering Example
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#separate">
+       1. Separate
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Integrating Factors - Recap</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Integrating Factors - Recap
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-1-circ-odes">
+   Linear
+   <span class="math notranslate nohighlight">
+    \(1^\circ\)
+   </span>
+   ODEs
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#homogeneous-case">
+     Homogeneous Case
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#non-homogeneous-case">
+     Non-Homogeneous Case
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example">
+       Example
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integrating-by-parts-refresher">
+   Integrating by Parts (Refresher)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Example
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recap-of-linear-1-circ-odes">
+     Recap of linear
+     <span class="math notranslate nohighlight">
+      \(1^\circ ODEs:\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chemical-engineering-example">
+     Chemical Engineering Example
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#separate">
+       1. Separate
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p>{{ badge }}
+$<span class="math notranslate nohighlight">\(\newcommand{\arr}[1]{\underline{\underline{#1}}}\)</span><span class="math notranslate nohighlight">\(    
+\)</span><span class="math notranslate nohighlight">\(\newcommand{\vec}[1]{\underline{#1}}\)</span><span class="math notranslate nohighlight">\(   
+\)</span><span class="math notranslate nohighlight">\(\require{mhchem}\)</span>$</p>
+<section class="tex2jax_ignore mathjax_ignore" id="integrating-factors-recap">
+<h1>Integrating Factors - Recap<a class="headerlink" href="#integrating-factors-recap" title="Permalink to this headline">#</a></h1>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> Functions that make inexact <span class="math notranslate nohighlight">\(1^\circ\)</span> ODEs exact (can’t always find them).<br />
+<span class="math notranslate nohighlight">\(\rightarrow\)</span> Two possibilities in this class: <span class="math notranslate nohighlight">\(F(x)\)</span> or <span class="math notranslate nohighlight">\(F(y)\)</span></p>
+<ul class="simple">
+<li><p>if <span class="math notranslate nohighlight">\(F(x)\)</span>, then</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-e4e3da8a-d4f9-4521-bc31-1d0e6c64e668">
+<span class="eqno">(148)<a class="headerlink" href="#equation-e4e3da8a-d4f9-4521-bc31-1d0e6c64e668" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{1}{F}\frac{dF}{dx} = \frac{1}{Q}\left[\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}\right] = R(x)
+\end{align}\]</div>
+<p>and <span class="math notranslate nohighlight">\(F(x) = \exp[\int R(x)dx]\)</span></p>
+<ul class="simple">
+<li><p>if <span class="math notranslate nohighlight">\(F(y)\)</span>, then</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-4e04de95-bd70-4203-91a6-077828ed8a86">
+<span class="eqno">(149)<a class="headerlink" href="#equation-4e04de95-bd70-4203-91a6-077828ed8a86" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{1}{F}\frac{dF}{dy} = \frac{1}{P}\left[\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right] = R(y)
+\end{align}\]</div>
+<p>and <span class="math notranslate nohighlight">\(F(y) = \exp[\int R(y)dy]\)</span></p>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> Once you find your I.F., follow the steps for solving an exact equation:</p>
+<ol class="simple">
+<li><p>Write in form <span class="math notranslate nohighlight">\(M(x)dx + N(y)dy = 0\)</span></p></li>
+<li><p>Check for exactness</p></li>
+<li><p>If exact find <span class="math notranslate nohighlight">\(u(x,y)\)</span></p></li>
+<li><p>Find implicit general solution from <span class="math notranslate nohighlight">\(u(x,y)=c\)</span></p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="linear-1-circ-odes">
+<h1>Linear <span class="math notranslate nohighlight">\(1^\circ\)</span> ODEs<a class="headerlink" href="#linear-1-circ-odes" title="Permalink to this headline">#</a></h1>
+<p>A <span class="math notranslate nohighlight">\(1^\circ\)</span> differential equation is linear if it can be written:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5d80f7b0-149f-452c-ae74-10d7d569eed7">
+<span class="eqno">(150)<a class="headerlink" href="#equation-5d80f7b0-149f-452c-ae74-10d7d569eed7" title="Permalink to this equation">#</a></span>\[\begin{align}
+y' + p(x) y = r(x)
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> it is linear in <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(y'\)</span><br />
+<span class="math notranslate nohighlight">\(\rightarrow\)</span> <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(r\)</span> may be any function of <span class="math notranslate nohighlight">\(x\)</span> only</p>
+<ul class="simple">
+<li><p>Two cases to solve:</p></li>
+</ul>
+<ol class="simple">
+<li><p>Homogeneous Linear ODE</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-f0f38af0-7bf5-4d80-9cad-345091d7b09a">
+<span class="eqno">(151)<a class="headerlink" href="#equation-f0f38af0-7bf5-4d80-9cad-345091d7b09a" title="Permalink to this equation">#</a></span>\[\begin{align}
+r(x) = 0 &amp;&amp; \implies \text{can solve by separating}
+\end{align}\]</div>
+<ol class="simple">
+<li><p>Non-homogeneous Linear ODE</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-cc9ac1ad-57f3-45f9-aafb-406de31a9718">
+<span class="eqno">(152)<a class="headerlink" href="#equation-cc9ac1ad-57f3-45f9-aafb-406de31a9718" title="Permalink to this equation">#</a></span>\[\begin{align}
+r(x) \neq 0 &amp;&amp; \implies \text{can solve as an exact equation with a simple integrating factor}
+\end{align}\]</div>
+<section id="homogeneous-case">
+<h2>Homogeneous Case<a class="headerlink" href="#homogeneous-case" title="Permalink to this headline">#</a></h2>
+<div class="amsmath math notranslate nohighlight" id="equation-0edfb00c-297a-42b6-b0b9-ad1d24a476a7">
+<span class="eqno">(153)<a class="headerlink" href="#equation-0edfb00c-297a-42b6-b0b9-ad1d24a476a7" title="Permalink to this equation">#</a></span>\[\begin{align}
+y' &amp;+ p(x)y = 0\\
+\frac{dy}{dx} &amp;= -p(x) y\\
+\frac{dy}{y} &amp;= -p(x)dx\\
+\ln y &amp;= -\int p(x)dx + \beta\\
+y(x) &amp;= \alpha \exp\left[- \int p(x) dx\right]
+\end{align}\]</div>
+</section>
+<section id="non-homogeneous-case">
+<h2>Non-Homogeneous Case<a class="headerlink" href="#non-homogeneous-case" title="Permalink to this headline">#</a></h2>
+<div class="amsmath math notranslate nohighlight" id="equation-1ffaf15f-5eaf-481d-a4b5-be1598822ec5">
+<span class="eqno">(154)<a class="headerlink" href="#equation-1ffaf15f-5eaf-481d-a4b5-be1598822ec5" title="Permalink to this equation">#</a></span>\[\begin{align}
+y' &amp;+ p(x)y = r(x)\\
+\frac{dy}{dx} &amp;= -p(x)y + r(x)\\
+\end{align}\]</div>
+<ol class="simple">
+<li><p>Write in the form</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-bf7e33cb-1503-4bf3-bff5-76179fa30297">
+<span class="eqno">(155)<a class="headerlink" href="#equation-bf7e33cb-1503-4bf3-bff5-76179fa30297" title="Permalink to this equation">#</a></span>\[\begin{align}
+[p(x)y - r(x) ]dx + 1 dy = 0
+\end{align}\]</div>
+<ol class="simple">
+<li><p>Check for exactness:</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-a73ea122-c114-4b7d-a88f-a33df255bc69">
+<span class="eqno">(156)<a class="headerlink" href="#equation-a73ea122-c114-4b7d-a88f-a33df255bc69" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial}{\partial y}P(x,y) &amp;= \frac{\partial}{\partial x} Q(x,y)\\
+p(x) &amp; \neq 0 &amp;&amp; \implies \text{not exact}
+\end{align}\]</div>
+<ol class="simple">
+<li><p>Find an integrating factor. Try <span class="math notranslate nohighlight">\(F(x,y)=F(x)\)</span></p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-b0c332af-ad4b-4d19-abf2-80af9b077b08">
+<span class="eqno">(157)<a class="headerlink" href="#equation-b0c332af-ad4b-4d19-abf2-80af9b077b08" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{1}{F}\frac{dF(x)}{dx} &amp;= \frac{1}{Q} \left[\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x} \right]\\
+&amp;= \frac{1}{1}(p(x) - 0)\\
+&amp;= p(x)\\
+\therefore F(x) &amp;= \exp\left(\int p(x)dx\right) &amp;&amp; \implies \text{this will always be the I.F. for a linear ODE}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Once you recognize that you have a linear <span class="math notranslate nohighlight">\(1^\circ\)</span> ODE, you know that you can solve it as an exact equation using the I.F. <span class="math notranslate nohighlight">\(F(x) = \exp\left( \int p(x)dx \right)\)</span></p></li>
+<li><p>Therefore since we will always have the same I.F., let’s solve the non-homogeneous linear <span class="math notranslate nohighlight">\(1^\circ\)</span> ODE to obtain a general solution <span class="math notranslate nohighlight">\(\implies\)</span> won’t have to derive every time.</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-ef2005e0-92d2-408b-ba5b-b460f8305332">
+<span class="eqno">(158)<a class="headerlink" href="#equation-ef2005e0-92d2-408b-ba5b-b460f8305332" title="Permalink to this equation">#</a></span>\[\begin{align}
+F(x)y' + F(x) p(x) y = F(x) r(x)\\
+\exp\left[ \int p(x) dx\right] y' + \exp \left[ \int p(x) dx\right] p(x) y = \exp\left[\int p(x)dx \right] r(x)\\
+\frac{d}{dx} \left( \exp\left[\int p(x) dx \right] y \right) = \exp\left[\int p(x)dx \right] r(x) &amp;&amp; \text{(chain rule)}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Note that the RHS is dependent only on x, so we can simply integrate</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-60544445-4d05-40c1-86d7-df98e7a0e349">
+<span class="eqno">(159)<a class="headerlink" href="#equation-60544445-4d05-40c1-86d7-df98e7a0e349" title="Permalink to this equation">#</a></span>\[\begin{align}
+\exp \left[\int p(x)dx \right] y = \int \exp\left[\int p(x)dx \right] r(x) dx + c\\
+y(x) = \exp \left[-\int p(x)dx \right]\left(\int \exp \left[\int p(x) dx \right] r(x)dx + c \right)\\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-2c4670a3-8482-41c3-a283-b1a94a252388">
+<span class="eqno">(160)<a class="headerlink" href="#equation-2c4670a3-8482-41c3-a283-b1a94a252388" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(x) = e^{-\int p dx} \left[\int e^{\int p dx} r dx + c \right] &amp;&amp; \rightarrow \text{general solution for linear $1^\circ$ ODE}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>If homogeneous, then <span class="math notranslate nohighlight">\(r=0\)</span> and <span class="math notranslate nohighlight">\(y(x) = ce^{-\int p dx}\)</span> as we found before.</p></li>
+</ul>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\frac{dy}{dx} = (x+1)^2 - y\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-220bfe01-1a48-4842-aaf4-6bfc4766b5a7">
+<span class="eqno">(161)<a class="headerlink" href="#equation-220bfe01-1a48-4842-aaf4-6bfc4766b5a7" title="Permalink to this equation">#</a></span>\[\begin{align}
+y' + y = (x+1)^2 &amp;&amp; \rightarrow \text{non-homogeneous linear $1^\circ$ ODE}
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\therefore\)</span> we know we can solve by turning it into an exact equation using an I.F. of the form</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2fab628b-f895-4027-82ca-7111b1384866">
+<span class="eqno">(162)<a class="headerlink" href="#equation-2fab628b-f895-4027-82ca-7111b1384866" title="Permalink to this equation">#</a></span>\[\begin{align}
+F(x) = \exp\left(\int p(x)dx \right) &amp;&amp; \text{where $p(x) = 1$ (the coeff. of y)}\\
+F(x) = \exp\left(\int 1 dx \right) = e^x
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Multiply our ODE by our I.F.:\</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-109c4197-6e93-46a1-b705-6f593dab1dd4">
+<span class="eqno">(163)<a class="headerlink" href="#equation-109c4197-6e93-46a1-b705-6f593dab1dd4" title="Permalink to this equation">#</a></span>\[\begin{align}
+e^xy' + e^x y &amp;= e^x(x+1)^2\\
+\frac{d}{dx}(e^xy) &amp;= e^x(x+1)^2\\
+e^xy &amp;= \int e^x (x+1)^2 dx\\
+e^xy &amp;= e^x (x^2+1) + c &amp;&amp; \text{integration by parts, often worst step. See this calc in next section}\\
+y(x) &amp;= (x^2+1) + ce^{-x} &amp;&amp; \text{general solution}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Or we could have found this from our fully generalized solution</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-2b7422c3-677a-42e8-b21e-ccd989d6f570">
+<span class="eqno">(164)<a class="headerlink" href="#equation-2b7422c3-677a-42e8-b21e-ccd989d6f570" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(x) &amp;= e^{-\int p dx} \left[\int e^{\int p dx} r dx + c\right], &amp;&amp; \text{where $p(x) = 1$ and $r(x) = (x+1)^2$}\\
+y(x) &amp;= e^{-x}\left[\int e^x (x+1)^2 dx + c \right]\\
+&amp;= (x^2 + 1) + ce^{-x}
+\end{align}\]</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="integrating-by-parts-refresher">
+<h1>Integrating by Parts (Refresher)<a class="headerlink" href="#integrating-by-parts-refresher" title="Permalink to this headline">#</a></h1>
+<p>Method to integrate product of 2 terms</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0f8fcce3-bf3c-41f1-b2ed-decc0c9796ab">
+<span class="eqno">(165)<a class="headerlink" href="#equation-0f8fcce3-bf3c-41f1-b2ed-decc0c9796ab" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int u \cdot \frac{dv}{dx} dx = u \cdot v - \int v \cdot \frac{du}{dx} dx
+\end{align}\]</div>
+<section id="id1">
+<h2>Example<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>Consider <span class="math notranslate nohighlight">\(\int e^x (x+1)^2 dx\)</span></p>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> easiest to set</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0d4800f5-a37a-4840-84d0-b5ac537cb6d0">
+<span class="eqno">(166)<a class="headerlink" href="#equation-0d4800f5-a37a-4840-84d0-b5ac537cb6d0" title="Permalink to this equation">#</a></span>\[\begin{align}
+u = (x+1)^2 = x^2 + 2x + 1 &amp;&amp; \text{and} &amp;&amp; \frac{dv}{dx} = e^x
+\end{align}\]</div>
+<p>then,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1448f907-abbe-42ac-841b-b6cf53f47cef">
+<span class="eqno">(167)<a class="headerlink" href="#equation-1448f907-abbe-42ac-841b-b6cf53f47cef" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{du}{dx} = 2x + 2 &amp;&amp; \text{and} &amp;&amp; v = e^x
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-efaf228a-96d8-45ad-a571-b3fbe6047e15">
+<span class="eqno">(168)<a class="headerlink" href="#equation-efaf228a-96d8-45ad-a571-b3fbe6047e15" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int e^x (x+1)^2 dx = (x+1)^2 e^x - \int e^x (2x+2) dx &amp;&amp; \text{need IBP again!}\\
+u = 2x + 2 \implies \frac{du}{dx} = 2\\
+\frac{dv}{dx} = e^x \implies v = e^x
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-0bfe3a03-1146-458d-a58a-628e32f2b136">
+<span class="eqno">(169)<a class="headerlink" href="#equation-0bfe3a03-1146-458d-a58a-628e32f2b136" title="Permalink to this equation">#</a></span>\[\begin{align}
+\text{Integral} &amp;= (x+1)^2 e^x - \left[(2x+2)e^x - \int e^x \cdot 2 dx \right]\\
+&amp;=  (x+1)^2 e^x - (2x+2)e^x + 2e^x\\
+&amp;= e^x (x^2 + 2x + 1 - 2x -2 + 2)\\
+\int e^x (x+1)^2 dx &amp;= e^x (x^2+1)
+\end{align}\]</div>
+</section>
+<section id="recap-of-linear-1-circ-odes">
+<h2>Recap of linear <span class="math notranslate nohighlight">\(1^\circ ODEs:\)</span><a class="headerlink" href="#recap-of-linear-1-circ-odes" title="Permalink to this headline">#</a></h2>
+<div class="amsmath math notranslate nohighlight" id="equation-c7ac799c-9f71-413d-aa77-72bc5bcfd34a">
+<span class="eqno">(170)<a class="headerlink" href="#equation-c7ac799c-9f71-413d-aa77-72bc5bcfd34a" title="Permalink to this equation">#</a></span>\[\begin{align}
+y' + p(x)y &amp;= r(x)\\
+r(x) &amp;= 0 \implies \text{homogeneous and separable}\\
+r(x) &amp;\neq 0 \implies \text{non-homogeneous}\\
+\text{I.F.} = F(x) &amp;= \exp\left[\int p(x) dx \right]
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Chain rule provides a simple solution:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-297ff415-d7a2-4e4b-9f2b-5c04be7e25e7">
+<span class="eqno">(171)<a class="headerlink" href="#equation-297ff415-d7a2-4e4b-9f2b-5c04be7e25e7" title="Permalink to this equation">#</a></span>\[\begin{align}
+h = \int p(x) dx\\
+y(x) = e^{-h}\left[\int e^h r(x) dx + c \right] &amp;&amp; \text{general solution}
+\end{align}\]</div>
+<p>Integral can be difficult to solve</p>
+</section>
+<section id="chemical-engineering-example">
+<h2>Chemical Engineering Example<a class="headerlink" href="#chemical-engineering-example" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Ethyl acetate decomposition</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-858fec48-95ed-458a-8f0b-0fd8a4f98f9b">
+<span class="eqno">(172)<a class="headerlink" href="#equation-858fec48-95ed-458a-8f0b-0fd8a4f98f9b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\ce{CH_3COOC_2H5 + H_2O -&gt; CH_3COOH + C_2H_5OH}\\
+\text{(A)} \hspace{2cm} \text{$\rightarrow$first order kinetics}
+\end{equation}\]</div>
+<img src="https://docs.google.com/drawings/d/e/2PACX-1vRmfzZPZ4UbOqbcO_9oZcw2odqzqUX9YR-v2VyA6_GkKJqU7qP9H1hfBwE9rmVPaNMtfo9jgyrEiub9/pub?w=316&h=314">
+CSTR : Continuous Stirred Tank Reactor<ul class="simple">
+<li><p>At steady state, each drop of feed is immediately converted to the composition of product stream.</p></li>
+<li><p>What is concentration profile of A before steady state?<br />
+Mass balance on A:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-68c580eb-ff7b-45f7-bbdb-4c87a7fe33aa">
+<span class="eqno">(173)<a class="headerlink" href="#equation-68c580eb-ff7b-45f7-bbdb-4c87a7fe33aa" title="Permalink to this equation">#</a></span>\[\begin{align}
+\text{Accum = In - Out + Gen - Consump}\\
+V\frac{dC}{dt} = FC_{in} - F C(t) - kV C(t)\\
+\frac{dC}{dt} = \frac{F}{V}C_{in} - \frac{1}{V}(F+kV)C
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\implies\)</span> We can solve 2 ways:</p>
+<ol class="simple">
+<li><p>Separate</p></li>
+<li><p>Treat as linear equation</p></li>
+</ol>
+<section id="separate">
+<h3>1. Separate<a class="headerlink" href="#separate" title="Permalink to this headline">#</a></h3>
+<div class="amsmath math notranslate nohighlight" id="equation-d502b4e1-5b41-4a7b-810c-adb7c0bca26e">
+<span class="eqno">(174)<a class="headerlink" href="#equation-d502b4e1-5b41-4a7b-810c-adb7c0bca26e" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int \frac{dC}{\frac{FC_{in}}{V} - \frac{(F+kV)}{V}C} = \int dt
+\end{align}\]</div>
+<p>Useful integral:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-30877bc7-5dd2-470c-aaca-630d41de49cc">
+<span class="eqno">(175)<a class="headerlink" href="#equation-30877bc7-5dd2-470c-aaca-630d41de49cc" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int(ax + b)^{-1}dx = \frac{1}{a}\ln (ax + b) + c
+\end{align}\]</div>
+<p>Take <span class="math notranslate nohighlight">\(a=-\frac{F+kV}{V}\)</span> and <span class="math notranslate nohighlight">\(b=\frac{FC_0}{V}\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-825df5a5-24d4-4e16-a6dc-a416eeeb6ead">
+<span class="eqno">(176)<a class="headerlink" href="#equation-825df5a5-24d4-4e16-a6dc-a416eeeb6ead" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{-V}{(F+kV)}\ln \left[ \frac{FC_{in}}{V} - \frac{(F+kV)}{V}C\right] &amp;= t + \alpha\\
+\ln \left[ \frac{FC_{in}}{V} - \frac{(F+kV)}{V}C\right] &amp;= -\frac{(F+kV)}{V}t + \frac{-(F+kV)}{V}\alpha
+\end{align}\]</div>
+<p>Take the last term as <span class="math notranslate nohighlight">\(\beta\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e9323794-a369-4b6e-a184-6bc1f716d46a">
+<span class="eqno">(177)<a class="headerlink" href="#equation-e9323794-a369-4b6e-a184-6bc1f716d46a" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{FC_{in}}{V} - \frac{(F+kV)}{V}C &amp;= \exp \left[\frac{-(F+kV)t}{V} + \beta \right]\\
+&amp;=\phi \exp \left[\frac{-(F+kV)}{V}t\right]\\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-08df5db2-6540-4027-81b3-8f34cd301095">
+<span class="eqno">(178)<a class="headerlink" href="#equation-08df5db2-6540-4027-81b3-8f34cd301095" title="Permalink to this equation">#</a></span>\[\begin{align}
+C(t) &amp;= \frac{V}{(F+kV)}\left(\frac{FC_{in}}{V} - \phi \exp \left[\frac{-(F+kV)}{V} t \right] \right)\\
+C(t) &amp;= \frac{FC_{in}}{F+kV} - \gamma \exp \left[\frac{-(F+kV)}{V} t \right] &amp;&amp; \text{General Solution}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Find <span class="math notranslate nohighlight">\(\gamma\)</span> with I.C. <span class="math notranslate nohighlight">\(C(t=0) = C_0\)</span> which is what the CSTR is charged with; doesn’t have to be equal to <span class="math notranslate nohighlight">\(C_{in}\)</span></p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-81ad5201-7c42-4e43-be45-6297575c6c18">
+<span class="eqno">(179)<a class="headerlink" href="#equation-81ad5201-7c42-4e43-be45-6297575c6c18" title="Permalink to this equation">#</a></span>\[\begin{align}
+C(0) = C_0 &amp;= \frac{FC_{in}}{F+kV} - \gamma \exp(0)\\
+\gamma &amp;= \frac{FC_{in}}{F+kV} - C_0
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-1b2cc4cb-f1ec-4858-aba0-9bfc5725360a">
+<span class="eqno">(180)<a class="headerlink" href="#equation-1b2cc4cb-f1ec-4858-aba0-9bfc5725360a" title="Permalink to this equation">#</a></span>\[\begin{align}
+C(t) &amp;= \frac{FC_{in}}{F+kV} - \left(\frac{FC_{in}}{F+kV}-C_0 \right) \exp \left[-\frac{(F+kV)}{V}t \right]\\
+C(t) &amp;= \frac{FC_{in}}{F+kV}\left(1 - \exp \left[-\frac{(F+kV)}{V}t \right] \right) + C_0 \exp \left[-\frac{(F+kV)}{V}t \right] &amp;&amp; \text{specific  solution}
+\end{align}\]</div>
+<p>Check : Does <span class="math notranslate nohighlight">\(C(0) = C_o\)</span>? (yes)<br />
+Does <span class="math notranslate nohighlight">\(C(t)\)</span> as <span class="math notranslate nohighlight">\(T\rightarrow \infty\)</span> = <span class="math notranslate nohighlight">\(\frac{F}{(F+kV)}C_{in}\)</span>? (yes!)</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notes/ordinary_differential_equations"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="9-exact-ode.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Recap</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="11-linear-ode-example.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Alternate Method (Last class continued)</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Zachary Ulissi<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

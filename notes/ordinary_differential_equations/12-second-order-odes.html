@@ -1,0 +1,1157 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Second Order Differential Equations &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Recap from last class" href="13-non-homogeneous-linear-odes.html" />
+    <link rel="prev" title="Alternate Method (Last class continued)" href="11-linear-ode-example.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Mathemtaical Methods for Chemical Engineering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Lecture notes for CMU 06-262 Math Methods in Chemical Engineering (Zachary Ulissi, CMU)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Notes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../linear_algebra/linear_algebra.html">
+   Linear Algebra
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/1-intro-matrices.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/2-matrix-manipulation.html">
+     Note on HW expectations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/3-gauss-elimination.html">
+     Return to Systems of Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/4-rank-gauss-examples.html">
+     Chemical Engineering example solved with Gauss elimination
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/5-determinants.html">
+     Using the inverse of A to solve a system of linear equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/6-eigenvalues-1.html">
+     Homogeneous vs. Non-homogeneous Systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/7-eigenvalue-2-difference-equations.html">
+     <span class="math notranslate nohighlight">
+      \(\underline{Ex}\)
+     </span>
+     : Symmetric matrix (
+     <span class="math notranslate nohighlight">
+      \(\lambda\)
+     </span>
+     always real)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/7b-numerical-eigenvalues.html">
+     Eigenvectors in python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="ordinary_differential_equations.html">
+   Ordinary Differential Equations
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="8-differential-equations.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="9-exact-ode.html">
+     Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10-linear-ode.html">
+     Integrating Factors - Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-linear-ode-example.html">
+     Alternate Method (Last class continued)
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Second Order Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13-non-homogeneous-linear-odes.html">
+     Recap from last class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14-MoUC-VoP.html">
+     Method of Undetermined Coefficients (sec 2.9)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15-springs-numerical-odes.html">
+     Introduction to Numerical Solution of Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16-coupled-odes.html">
+     Coupled Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="17-coupled-ode-continued.html">
+     Recap for coupled differential equations:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="18-nonlinear-coupled-ODEs.html">
+     Nonlinear coupled ODE’s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="19-linear-stability.html">
+     Steady states in Non-Linear Coupled ODE’s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="20-BVP.html">
+     Boundary Value Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="21-BVP-shooting-method.html">
+     The Shooting Method for Solving BVPs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../partial_differential_equations/partial_differential_equations.html">
+   Partial Differential Equations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../partial_differential_equations/22-Intro-PDEs.html">
+     Partial Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../partial_differential_equations/23-Fourier-Coefficients.html">
+     Recap on PDEs from last lecture
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../statistics/statistics.html">
+   Statistics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/24-intro-statistics.html">
+     Intro to engineering statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/25-statistics-continue-linear-regression.html">
+     Recap from last class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/26-bonus-nonlinear-regression.html">
+     Recap on linear regression
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-recap.html">
+   06-262 Math Methods Recap
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ulissigroup/math-methods-chemical-engineering/main?urlpath=lab/tree/math-methods-chemical-engineering/notes/ordinary_differential_equations/12-second-order-odes.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/ulissigroup/math-methods-chemical-engineering/blob/main/math-methods-chemical-engineering/notes/ordinary_differential_equations/12-second-order-odes.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/ulissigroup/math-methods-chemical-engineering"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/ulissigroup/math-methods-chemical-engineering/issues/new?title=Issue%20on%20page%20%2Fnotes/ordinary_differential_equations/12-second-order-odes.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/notes/ordinary_differential_equations/12-second-order-odes.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-2-circ-ode">
+   Linear
+   <span class="math notranslate nohighlight">
+    \(2^\circ\)
+   </span>
+   ODE:
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solution-basis">
+     Solution Basis
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-case-1-two-real-and-different-roots">
+     Example (Case 1) Two real and different roots
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-case-2-real-double-roots">
+     Example (Case 2): Real, double roots
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reduction-of-order">
+     Reduction of Order
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-case-3-complex-roots">
+     Example: Case 3 (Complex roots)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aside-complex-exponentials">
+     (Aside) Complex exponentials
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Second Order Differential Equations</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-2-circ-ode">
+   Linear
+   <span class="math notranslate nohighlight">
+    \(2^\circ\)
+   </span>
+   ODE:
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solution-basis">
+     Solution Basis
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-case-1-two-real-and-different-roots">
+     Example (Case 1) Two real and different roots
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-case-2-real-double-roots">
+     Example (Case 2): Real, double roots
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reduction-of-order">
+     Reduction of Order
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-case-3-complex-roots">
+     Example: Case 3 (Complex roots)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aside-complex-exponentials">
+     (Aside) Complex exponentials
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p>{{ badge }}
+$<span class="math notranslate nohighlight">\(\newcommand{\arr}[1]{\underline{\underline{#1}}}\)</span><span class="math notranslate nohighlight">\(    
+\)</span><span class="math notranslate nohighlight">\(\newcommand{\vec}[1]{\underline{#1}}\)</span><span class="math notranslate nohighlight">\(   
+\)</span><span class="math notranslate nohighlight">\(\require{mhchem}\)</span>$</p>
+<section class="tex2jax_ignore mathjax_ignore" id="second-order-differential-equations">
+<h1>Second Order Differential Equations<a class="headerlink" href="#second-order-differential-equations" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Occur in many important applications: fluid mechanics, diffusion, heat transport, statics and circuit theory.<br />
+In general <span class="math notranslate nohighlight">\(F(y'',y',y,x)=0\)</span> where <span class="math notranslate nohighlight">\(y'' = \frac{d^2y}{dx^2}\)</span></p></li>
+<li><p>Analytical solutions are possible (usually) only when <span class="math notranslate nohighlight">\(2^\circ\)</span> ODE is linear. Exceptions are two special types of <span class="math notranslate nohighlight">\(2^\circ\)</span> ODE that can be solved by change of variables to make <span class="math notranslate nohighlight">\(1^\circ\)</span> ODE.</p></li>
+</ul>
+<section id="linear-2-circ-ode">
+<h2>Linear <span class="math notranslate nohighlight">\(2^\circ\)</span> ODE:<a class="headerlink" href="#linear-2-circ-ode" title="Permalink to this headline">#</a></h2>
+<div class="amsmath math notranslate nohighlight" id="equation-31a4c32c-e1f8-40d2-891d-8687ec977e01">
+<span class="eqno">(199)<a class="headerlink" href="#equation-31a4c32c-e1f8-40d2-891d-8687ec977e01" title="Permalink to this equation">#</a></span>\[\begin{align}
+y'' + p(x) y' + q(x) y = r(x)
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(p(x), q(x)\)</span> and <span class="math notranslate nohighlight">\(r(x)\)</span> are any functions of <span class="math notranslate nohighlight">\(x\)</span>.<br />
+<span class="math notranslate nohighlight">\(\rightarrow\)</span> if <span class="math notranslate nohighlight">\(y''\)</span> has a coefficient, divide through.</p>
+<ul class="simple">
+<li><p>Linear <span class="math notranslate nohighlight">\(2^\circ\)</span> ODEs come in two flavors:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(r(x) = 0 \implies\)</span> homogeneous</p></li>
+<li><p><span class="math notranslate nohighlight">\(r(x) \neq 0 \implies\)</span> non-homogeneous</p></li>
+</ol>
+</li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> We will begin with homogeneous equations. We will later show that once homogeneous equation has been solved, we can always solve the non-homogeneous one.</p>
+<ul class="simple">
+<li><p>Because <span class="math notranslate nohighlight">\(2^\circ\)</span> ODEs typically require two integrations, we will have two constants of integration. <br />
+<span class="math notranslate nohighlight">\(\therefore\)</span> We need two initial/boundary conditions to find particular solutions.</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-b0e2455d-195f-4e69-bafe-6e5bb46ff52b">
+<span class="eqno">(200)<a class="headerlink" href="#equation-b0e2455d-195f-4e69-bafe-6e5bb46ff52b" title="Permalink to this equation">#</a></span>\[\begin{align}
+\text{usually} &amp;&amp; y(x_0) = k1 &amp;&amp;\text{&amp;} &amp;&amp; y'(x_0) = k_2\\
+\text{sometimes} &amp;&amp; y(x_0) = k1 &amp;&amp;\text{&amp;} &amp;&amp; y(x_1) = k_2\\
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Let’s begin by considering a simple example of a homogeneous linear <span class="math notranslate nohighlight">\(2^\circ\)</span> ODE:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-34137193-3932-4928-889c-66fb5872c7ab">
+<span class="eqno">(201)<a class="headerlink" href="#equation-34137193-3932-4928-889c-66fb5872c7ab" title="Permalink to this equation">#</a></span>\[\begin{align}
+y'' - y = 0 \implies y'' = y
+\end{align}\]</div>
+<p>Second derivative is the same as the function itself. Can you think of any solutions?</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(y(x) = e^x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y(x) = e^{-x}\)</span></p></li>
+<li><p>Multiples: <span class="math notranslate nohighlight">\(y(x) = c_1 e^x\)</span> or <span class="math notranslate nohighlight">\(y(x) = c_2e^{-x}\)</span></p></li>
+<li><p>Sum: <span class="math notranslate nohighlight">\(y(x) = c_1 e^x + c_2 e^{-x}\)</span><br />
+check: <span class="math notranslate nohighlight">\(y' = c_1 e^x - c_2 e^{-x}\)</span> <br />
+<span class="math notranslate nohighlight">\(\hspace{1cm}\)</span> <span class="math notranslate nohighlight">\(y'' = c_1e^x + c_2 e^{-x} \implies y'' = y\)</span> for all values of <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span></p></li>
+</ol>
+<ul>
+<li><p>Once we noticed that <span class="math notranslate nohighlight">\(y_1 = e^x\)</span> and <span class="math notranslate nohighlight">\(y_2 = e^{-x}\)</span> are solutions, it follows that the general linear combination is also a solution.</p>
+<ul class="simple">
+<li><p>Since <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span> are arbitrary, this gives a double infinity family of solutions.</p></li>
+<li><p><span class="math notranslate nohighlight">\(y_1(x)\)</span> and <span class="math notranslate nohighlight">\(y_2(x)\)</span> form a basis <span class="math notranslate nohighlight">\(\rightarrow\)</span> they are linearly independent.</p></li>
+<li><p>Let’s pick out a particular member of the <span class="math notranslate nohighlight">\(\infty\)</span> solution family that also satisfies a set of initial conditions:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-bb26d96a-d86b-4dbf-b0c6-d9df0a3c8566">
+<span class="eqno">(202)<a class="headerlink" href="#equation-bb26d96a-d86b-4dbf-b0c6-d9df0a3c8566" title="Permalink to this equation">#</a></span>\[\begin{align}
+  y(0) = 2 &amp;&amp; \text{and} &amp;&amp;y'(0) = -1
+  \end{align}\]</div>
+<p>These specify the value and slope of the function ar <span class="math notranslate nohighlight">\(x=0\)</span><br />
+IC 1:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-769548e4-735b-4765-a5aa-7da65e923e1d">
+<span class="eqno">(203)<a class="headerlink" href="#equation-769548e4-735b-4765-a5aa-7da65e923e1d" title="Permalink to this equation">#</a></span>\[\begin{align}
+  y(0) = &amp;2 = c_1 e^0 + c_2 e^{-0}\\
+  &amp;2 = c_1 + c_2 \implies c_1 = 2 - c_2
+  \end{align}\]</div>
+<p>IC 2:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e2428049-0cb0-4c60-bf8b-b2645fadfd65">
+<span class="eqno">(204)<a class="headerlink" href="#equation-e2428049-0cb0-4c60-bf8b-b2645fadfd65" title="Permalink to this equation">#</a></span>\[\begin{align}
+  y'(0) = -1 &amp;= c_1 e^0 - c_2 e^{-0}\\
+  -1 &amp;= c_1 - c_2\\
+  c_2 &amp;= (2-c_2) + 1\\
+  2c_2 &amp;= 3 \\
+  \implies c_2 = \frac{3}{2}\\
+  c_1 = \frac{1}{2}
+  \end{align}\]</div>
+<p>then, <span class="math notranslate nohighlight">\(y(x) = \frac{1}{2} e^x + \frac{3}{2}e^{-x}\)</span></p>
+</li>
+</ul>
+<section id="solution-basis">
+<h3>Solution Basis<a class="headerlink" href="#solution-basis" title="Permalink to this headline">#</a></h3>
+<p>Consider <span class="math notranslate nohighlight">\(y(x) = c_1 e^x + c_2 e^{-x}\)</span><br />
+or more generally <span class="math notranslate nohighlight">\(y(x) = c_1y_1(x) + c_2y_2(x)\)</span><br />
+<span class="math notranslate nohighlight">\(\implies\)</span> provided that <span class="math notranslate nohighlight">\(y_1(x)\)</span> and <span class="math notranslate nohighlight">\(y_2(x)\)</span> are linearly independent, they form a basis for the ODE solution. Similar concept to a basis of vectors<br />
+<span class="math notranslate nohighlight">\(\implies\)</span> <span class="math notranslate nohighlight">\(y_1(x)\)</span> and <span class="math notranslate nohighlight">\(y_2(x)\)</span> are linearly independent as long as <span class="math notranslate nohighlight">\(\frac{y_1(x)}{y_2(x)}\neq \)</span> constant</p>
+<p>Let’s consider a general homogeneous linear <span class="math notranslate nohighlight">\(2^\circ\)</span> ODE with constant coefficients</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f86755e4-a4ed-44f6-9cfd-18c77a8920e5">
+<span class="eqno">(205)<a class="headerlink" href="#equation-f86755e4-a4ed-44f6-9cfd-18c77a8920e5" title="Permalink to this equation">#</a></span>\[\begin{align}
+y'' + a y' + by = 0
+\end{align}\]</div>
+<p>with arbitrary, real coefficients (not functions of x)</p>
+<ul class="simple">
+<li><p>Based on our exprience with simple case, let us seek exponential solutions. Let’s suppose <span class="math notranslate nohighlight">\(y(x) = e^{\lambda x}\)</span> where <span class="math notranslate nohighlight">\(r\)</span> is to be determined.<br />
+then, <span class="math notranslate nohighlight">\(y' = \lambda e^{\lambda x}\)</span> and <span class="math notranslate nohighlight">\(y'' = \lambda^2 e^{\lambda x}\)</span></p></li>
+<li><p>Substituting these into our <span class="math notranslate nohighlight">\(2^\circ\)</span> ODE gives:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-34a4739f-c03a-45a8-b859-1d3d9a25915a">
+<span class="eqno">(206)<a class="headerlink" href="#equation-34a4739f-c03a-45a8-b859-1d3d9a25915a" title="Permalink to this equation">#</a></span>\[\begin{align}
+\lambda^2 e^{\lambda x} + a \lambda e^{\lambda x} + b e^{\lambda x} = 0\\
+(\lambda^2 + a\lambda + b) e^{\lambda x} = 0
+\end{align}\]</div>
+<p>Since <span class="math notranslate nohighlight">\(e^{\lambda x} \neq 0\)</span> :</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2af5c157-c2f1-4744-80dd-f8be001b186e">
+<span class="eqno">(207)<a class="headerlink" href="#equation-2af5c157-c2f1-4744-80dd-f8be001b186e" title="Permalink to this equation">#</a></span>\[\begin{align}
+\lambda^2 + a\lambda + b = 0 &amp;&amp; \rightarrow \text{characteristic equation of the linear ODE}
+\end{align}\]</div>
+<p>Any <span class="math notranslate nohighlight">\(\lambda\)</span> that is a root will give an ODE solution</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5fcdd1da-646b-4b3a-bf68-5d3352de8e8e">
+<span class="eqno">(208)<a class="headerlink" href="#equation-5fcdd1da-646b-4b3a-bf68-5d3352de8e8e" title="Permalink to this equation">#</a></span>\[\begin{align}
+\lambda_1 = \frac{1}{2}(-a + \sqrt{a^2 - 4b})\\
+\lambda_2 = \frac{1}{2}(-a - \sqrt{a^2 - 4b})
+\end{align}\]</div>
+<ul class="simple">
+<li><p>The characteristic equation is a quadratic equation with real coefficients. We will have three variations on the two roots:</p></li>
+</ul>
+<ol class="simple">
+<li><p>real and different <span class="math notranslate nohighlight">\((a^2 - 4b &gt; 0)\)</span></p></li>
+<li><p>real but repeated <span class="math notranslate nohighlight">\((a^2 - 4b = 0)\)</span></p></li>
+<li><p>complex conjugates <span class="math notranslate nohighlight">\((a^2 - 4b &lt; 0)\)</span></p></li>
+</ol>
+</section>
+<section id="example-case-1-two-real-and-different-roots">
+<h3>Example (Case 1) Two real and different roots<a class="headerlink" href="#example-case-1-two-real-and-different-roots" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(y'' + 2y' - 3y = 0\)</span> ; <span class="math notranslate nohighlight">\(y(0) = 1\)</span> and <span class="math notranslate nohighlight">\(y'(0) = 4\)</span></p>
+<p>$y(x) = c_1 e^{\lambda_1 x} + c_2 e^{\lambda_2 x}$ is the general solution\</p>
+<p>Either solve characteristic equation:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-76180bc4-8e9e-427c-9224-d1155161ca96">
+<span class="eqno">(209)<a class="headerlink" href="#equation-76180bc4-8e9e-427c-9224-d1155161ca96" title="Permalink to this equation">#</a></span>\[\begin{align}
+\lambda^2 + a\lambda + b = 0\\
+\lambda^2 + 2\lambda - 3 = 0\\
+(\lambda + 3)(\lambda - 1) = 0 &amp;&amp; \implies \lambda_1 = 1; \lambda_2 = -3
+\end{align}\]</div>
+<p>or with formula:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ace51256-b0e8-4b61-92b6-15899def9097">
+<span class="eqno">(210)<a class="headerlink" href="#equation-ace51256-b0e8-4b61-92b6-15899def9097" title="Permalink to this equation">#</a></span>\[\begin{align}
+\lambda &amp;= \frac{1}{2}(-a \pm \sqrt{a^2 - 4b})\\
+&amp;= \frac{1}{2}(-2 \pm \sqrt{4 + 12})\\
+&amp;= -1 \pm 2 \implies \lambda_1 = 1 ; \lambda_2 = -3
+\end{align}\]</div>
+<p>then,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-94553a53-7008-4a78-aa8b-061aa96518c9">
+<span class="eqno">(211)<a class="headerlink" href="#equation-94553a53-7008-4a78-aa8b-061aa96518c9" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(x) = c_1e^x + c_2 e^{-3x} &amp;&amp; \text{(general solution)}
+\end{align}\]</div>
+<p>Let’s double check that this works:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a4e9cf91-e6d4-43aa-b63d-8b3369e4621d">
+<span class="eqno">(212)<a class="headerlink" href="#equation-a4e9cf91-e6d4-43aa-b63d-8b3369e4621d" title="Permalink to this equation">#</a></span>\[\begin{align}
+y' = c_1e^x - 3c_2e^{-3x}\\
+y'' = c_1e^x + 9c_2e^{-3x}
+\end{align}\]</div>
+<p>ODE:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-89b210c7-023a-46fb-85a0-e255f94ae671">
+<span class="eqno">(213)<a class="headerlink" href="#equation-89b210c7-023a-46fb-85a0-e255f94ae671" title="Permalink to this equation">#</a></span>\[\begin{align}
+y'' + 2y' - 3y = 0\\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-782e9215-8078-470c-92cb-53155d8029cd">
+<span class="eqno">(214)<a class="headerlink" href="#equation-782e9215-8078-470c-92cb-53155d8029cd" title="Permalink to this equation">#</a></span>\[\begin{align}
+(c_1e^x + 9c_2e^{-3x}) + 2(c_1e^x - 3c_2e^{-3x}) - 3(c_1e^x + c_2e^{-3x}) = 0\\
+(1+2-3)c_1e^x + (9-6-3)c_3e^{-3x} = 0
+\end{align}\]</div>
+<p>Both coefficients on LHS are 0.<br />
+Now we need a particular solution</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3321d068-2238-4cf2-b4a1-5d40c23395c9">
+<span class="eqno">(215)<a class="headerlink" href="#equation-3321d068-2238-4cf2-b4a1-5d40c23395c9" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(0) = 1 &amp;= c_1e^0 + c_2e^{-3\cdot 0}\\
+1 &amp;= c_1 + c_2 \implies c_2 = 1 - c_1\\
+y'(0) = 4 &amp;= c_1e^0 - 3c_2e^{-3\cdot 0}\\
+4 &amp;= c_1 - 3(1-c_1)\\
+7 &amp;= 4c_1\\
+c_1 &amp;= \frac{7}{4} \\
+c_2 &amp;= -\frac{3}{4}\\
+\therefore y(x) &amp;= \frac{7}{4}e^x - \frac{3}{4}e^{-3x} &amp;&amp; \text{particular solution}
+\end{align}\]</div>
+</section>
+<section id="example-case-2-real-double-roots">
+<h3>Example (Case 2): Real, double roots<a class="headerlink" href="#example-case-2-real-double-roots" title="Permalink to this headline">#</a></h3>
+<div class="amsmath math notranslate nohighlight" id="equation-e0c18da1-c762-4358-8d8b-f4300983d5c5">
+<span class="eqno">(216)<a class="headerlink" href="#equation-e0c18da1-c762-4358-8d8b-f4300983d5c5" title="Permalink to this equation">#</a></span>\[\begin{align}
+y'' + a y' + by= 0
+\end{align}\]</div>
+<p>in the special circumstance that <span class="math notranslate nohighlight">\(b = \frac{1}{4}a^2\)</span> the characteristic equation is <span class="math notranslate nohighlight">\(\lambda^2 + a\lambda + b = 0\)</span> where</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ce068e3a-ac2a-4f08-a59c-1ce60a106ce2">
+<span class="eqno">(217)<a class="headerlink" href="#equation-ce068e3a-ac2a-4f08-a59c-1ce60a106ce2" title="Permalink to this equation">#</a></span>\[\begin{align}
+\lambda &amp;= \frac{1}{2}(-a \pm \sqrt{a^2 - 4b})\\
+&amp;= \frac{1}{2}(-a \pm \sqrt{a^2 - 4\cdot \frac{1}{4}a^2})\\
+\lambda &amp;= -\frac{1}{2}a \implies y(x) = c_1e^{-\frac{1}{2}ax}
+\end{align}\]</div>
+<p>That’s great but it’s only one solution (half of our basis). We need another linearly independent solution.
+Fortunately, there is a method to obtain a basis if one solution is known:</p>
+</section>
+<section id="reduction-of-order">
+<h3>Reduction of Order<a class="headerlink" href="#reduction-of-order" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>To obtain <span class="math notranslate nohighlight">\(y_2(x)\)</span> we set</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-4e65ef5e-737b-44cf-9086-1d62715133de">
+<span class="eqno">(218)<a class="headerlink" href="#equation-4e65ef5e-737b-44cf-9086-1d62715133de" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_2(x) = u(x)y_1(x) \implies \text{need to determine $u(x)$}
+\end{align}\]</div>
+<p>then,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d0128c65-f071-49df-ac59-b3480fcc76ac">
+<span class="eqno">(219)<a class="headerlink" href="#equation-d0128c65-f071-49df-ac59-b3480fcc76ac" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_2' = u' \cdot y_1 + u \cdot y_1' &amp;&amp; \text{(chain rule / product differentiation)}
+\end{align}\]</div>
+<p>and</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c19c6e4e-b764-43b6-913a-15f9ecaadafc">
+<span class="eqno">(220)<a class="headerlink" href="#equation-c19c6e4e-b764-43b6-913a-15f9ecaadafc" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_2'' &amp;= u'' \cdot y_1 + u' \cdot y_1' + u'\cdot y_1' + u \cdot y_1''\\
+&amp;= u''y_1 + 2u'y_1' + uy_1''
+\end{align}\]</div>
+<ul class="simple">
+<li><p>OK, let’s plug those terms back into our general linear homogeneous <span class="math notranslate nohighlight">\(2^\circ\)</span> ODE:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-3ce9a40a-3c43-45a1-9627-805ce0819b56">
+<span class="eqno">(221)<a class="headerlink" href="#equation-3ce9a40a-3c43-45a1-9627-805ce0819b56" title="Permalink to this equation">#</a></span>\[\begin{align}
+y'' + p(x)y' + q(x)y = 0
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d232fbde-60d6-4925-9284-b76af8c90071">
+<span class="eqno">(222)<a class="headerlink" href="#equation-d232fbde-60d6-4925-9284-b76af8c90071" title="Permalink to this equation">#</a></span>\[\begin{align}
+u''y_1 + 2u'y_1' + uy_1'' + p(u'y_1 + uy_1') + q\cdot uy_1 = 0
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Rearrange strategically:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-7271c4d6-67cf-47fa-8389-28f0cb82fb76">
+<span class="eqno">(223)<a class="headerlink" href="#equation-7271c4d6-67cf-47fa-8389-28f0cb82fb76" title="Permalink to this equation">#</a></span>\[\begin{align}
+u''y_1 + u'(2y_1' + py_1) + u(y_1'' + py_1' + qy_1) = 0
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-c586a5f9-8302-405a-bdc6-bad6adeaf8dd">
+<span class="eqno">(224)<a class="headerlink" href="#equation-c586a5f9-8302-405a-bdc6-bad6adeaf8dd" title="Permalink to this equation">#</a></span>\[\begin{align}
+u'' + u'\left(\frac{2y_1' + py_1}{y_1}\right) = 0
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Now since we have <span class="math notranslate nohighlight">\(u''\)</span> and <span class="math notranslate nohighlight">\(u'\)</span> (but no <span class="math notranslate nohighlight">\(u\)</span>), we can reduce the order.<br />
+Let <span class="math notranslate nohighlight">\(U = u'\)</span> and <span class="math notranslate nohighlight">\(U' = u''\)</span>. Now,</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-b36b86a9-983a-4dc2-89ed-faf2a7392764">
+<span class="eqno">(225)<a class="headerlink" href="#equation-b36b86a9-983a-4dc2-89ed-faf2a7392764" title="Permalink to this equation">#</a></span>\[\begin{align}
+U' + \left(\frac{2y_1'}{y_1} + p \right) U = 0 &amp;&amp; \implies \text{separable!}\\
+\int \frac{dU}{U} = \int - \left(\frac{2y_1'}{y_1} + p \right)dx\\
+\ln U = -2 \ln y_1 - \int p dx\\
+U = \frac{1}{y_1^2} \exp \left[-\int p dx \right] 
+\end{align}\]</div>
+<p>Since <span class="math notranslate nohighlight">\(U = u'\)</span>, then</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b51cffa6-5680-4cac-96bd-83a8fc2a603a">
+<span class="eqno">(226)<a class="headerlink" href="#equation-b51cffa6-5680-4cac-96bd-83a8fc2a603a" title="Permalink to this equation">#</a></span>\[\begin{align}
+u = \int U dx = \int \frac{1}{y_1^2}\exp \left[ -\int p dx \right] dx
+\end{align}\]</div>
+<p>Integral looks ugly but it’s known since we know <span class="math notranslate nohighlight">\(p\)</span> and already found <span class="math notranslate nohighlight">\(y_1\)</span></p>
+<ul class="simple">
+<li><p>Now that we have <span class="math notranslate nohighlight">\(u(x)\)</span>, we obtain our second solution, allowing us to complete our basis:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-4de2e399-fa47-43c4-ac11-9555e5e69306">
+<span class="eqno">(227)<a class="headerlink" href="#equation-4de2e399-fa47-43c4-ac11-9555e5e69306" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_2(x) = u(x) \cdot y_1(x)
+\end{align}\]</div>
+<p>and</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7a956118-c875-42d3-9bd5-575a84bfddc1">
+<span class="eqno">(228)<a class="headerlink" href="#equation-7a956118-c875-42d3-9bd5-575a84bfddc1" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(x) = c_1y_1(x) + c_2u(x)y_1(x)
+\end{align}\]</div>
+<p>$\rightarrow<span class="math notranslate nohighlight">\( Now let's use reduction of order to solve a linear homogeneous \)</span>2^\circ$ ODE with double roots:\</p>
+</section>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(y'' - y' + 0.25 y = 0\)</span> ; <span class="math notranslate nohighlight">\(y(0) = 2\)</span> and <span class="math notranslate nohighlight">\(y'(0) = \frac{1}{3}\)</span></p>
+<p>We can either</p>
+<ol class="simple">
+<li><p>Solve characteristic equation</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-a240b1f8-90d2-4e1c-b81d-70b191919e0e">
+<span class="eqno">(229)<a class="headerlink" href="#equation-a240b1f8-90d2-4e1c-b81d-70b191919e0e" title="Permalink to this equation">#</a></span>\[\begin{align}
+\lambda^2 + a \lambda + b &amp;= 0\\
+\lambda^2 - \lambda + \frac{1}{4} &amp;= 0\\
+(\lambda - \frac{1}{2})^2 &amp;= 0 \implies \lambda_1 = \lambda_2 = \frac{1}{2} 
+\end{align}\]</div>
+<ol class="simple">
+<li><p>Use formula</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-f1ab8306-9ef7-415c-80ed-190bbb7c486e">
+<span class="eqno">(230)<a class="headerlink" href="#equation-f1ab8306-9ef7-415c-80ed-190bbb7c486e" title="Permalink to this equation">#</a></span>\[\begin{align}
+\lambda &amp;= \frac{1}{2}(-a \pm \sqrt{a^2 - 4b})\\
+&amp;= \frac{1}{2}(1 \pm \sqrt{1-1})\\
+\lambda &amp;= \frac{1}{2}\\
+y_1(x) &amp;= e^{\frac{1}{2}x}
+\end{align}\]</div>
+<p>need reduction of variables to find <span class="math notranslate nohighlight">\(y_2(x) = u(x)y_1(x)\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-daa76b4b-e2cf-4979-baf4-eab63f364655">
+<span class="eqno">(231)<a class="headerlink" href="#equation-daa76b4b-e2cf-4979-baf4-eab63f364655" title="Permalink to this equation">#</a></span>\[\begin{align}
+u(x) &amp;= \int \frac{1}{y_1^2} \exp\left[ -\int p dx \right]dx\\
+&amp;= \int \frac{1}{e^x}\exp\left[-\int -1 dx \right] dx\\
+&amp;= \int e^{-x} \cdot e^x dx\\
+u(x) &amp;= x
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-6fcae3fd-5060-4488-85f9-2ec8bfc4f8b1">
+<span class="eqno">(232)<a class="headerlink" href="#equation-6fcae3fd-5060-4488-85f9-2ec8bfc4f8b1" title="Permalink to this equation">#</a></span>\[\begin{align}
+\therefore y_2(x) = x e^{\frac{1}{2}x}
+\end{align}\]</div>
+<p>and</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d0ca5f52-07f4-4f17-b5d4-8f2e556ddb46">
+<span class="eqno">(233)<a class="headerlink" href="#equation-d0ca5f52-07f4-4f17-b5d4-8f2e556ddb46" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(x) = c_1 e^{\frac{1}{2}x} + c_2 x e^{\frac{1}{2}x} &amp;&amp; \text{general solution}
+\end{align}\]</div>
+<p>Now,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5cfc5b1e-4f25-4e08-9787-a26cd983e2d2">
+<span class="eqno">(234)<a class="headerlink" href="#equation-5cfc5b1e-4f25-4e08-9787-a26cd983e2d2" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(0) = 2 = c_1 e^0 + c_2 \cdot 0 \cdot e^0 \implies c_1 = 2\\
+y'(0) = \frac{1}{3} = \frac{1}{2}c_1 e^0 + c_2( e^0 + 0 \cdot e^0)\\
+\frac{1}{3} = \frac{1}{2} \cdot 2 + c_2 \implies c_2 = -\frac{2}{3} 
+\end{align}\]</div>
+<p>and</p>
+<div class="amsmath math notranslate nohighlight" id="equation-897d502c-8330-4925-9319-e28673100dd4">
+<span class="eqno">(235)<a class="headerlink" href="#equation-897d502c-8330-4925-9319-e28673100dd4" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(x) = 2 e^{\frac{1}{2}x} - \frac{2}{3} x e^{\frac{1}{2}x} &amp;&amp; \text{particular solution}
+\end{align}\]</div>
+</section>
+<section id="example-case-3-complex-roots">
+<h3>Example: Case 3 (Complex roots)<a class="headerlink" href="#example-case-3-complex-roots" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(y'' + ay' + by = 0\)</span> (second order, homogeneous, linear with constant coefficients)</p>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> complex roots when the characteristic equation <span class="math notranslate nohighlight">\(\lambda^2 + a \lambda + b = 0\)</span> yields</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3d8977f0-6d9f-4b4f-b84e-15f38e9a1538">
+<span class="eqno">(236)<a class="headerlink" href="#equation-3d8977f0-6d9f-4b4f-b84e-15f38e9a1538" title="Permalink to this equation">#</a></span>\[\begin{align}
+\lambda = \frac{1}{2}(-a \pm \sqrt{a^2 - 4b}) &amp;&amp; \text{where } a^2 - 4b &lt; 0
+\end{align}\]</div>
+<p>Then,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8bd4811c-a86d-4230-96aa-fdd6a2df8cc0">
+<span class="eqno">(237)<a class="headerlink" href="#equation-8bd4811c-a86d-4230-96aa-fdd6a2df8cc0" title="Permalink to this equation">#</a></span>\[\begin{align}
+\sqrt{a^2 - 4b} &amp;= \sqrt{-1} \cdot \sqrt{4b - a^2}\\
+&amp;= i \cdot \sqrt{4} \cdot \sqrt{b - \frac{1}{4}a^2}\\
+&amp;= 2i\sqrt{b - \frac{1}{4}a^2}\\
+\therefore \lambda &amp;= \frac{1}{2}\left(-a \pm 2i \sqrt{b - \frac{1}{4}a^2}\right)\\
+&amp;= -\frac{1}{2}a \pm \frac{1}{2} \cdot 2i \sqrt{b - \frac{1}{4}a^2}\\
+\lambda &amp;= -\frac{1}{2}a \pm i \omega &amp;&amp; \text{where } \omega = \sqrt{b - \frac{1}{4}a^2} 
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\omega\)</span> is always real.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-99ae7701-106c-4f51-aea1-622da2341960">
+<span class="eqno">(238)<a class="headerlink" href="#equation-99ae7701-106c-4f51-aea1-622da2341960" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(x) &amp;= c_1 e^{\lambda_1 x} + c_2 e^{\lambda_2 x}\\
+&amp;= c_1 e^{-\frac{a}{2}x} e^{i\omega x} + c_2 e^{-\frac{a}{2}x} e^{-i \omega x}
+\end{align}\]</div>
+<p>How to evaluate imaginary exponentials?</p>
+</section>
+<section id="aside-complex-exponentials">
+<h3>(Aside) Complex exponentials<a class="headerlink" href="#aside-complex-exponentials" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>For any complex number <span class="math notranslate nohighlight">\(z = s + it\)</span>,<br />
+<span class="math notranslate nohighlight">\(e^z = e^{s + it} = e^se^{it} \equiv e^s(\cos t + i\sin t)\)</span>\</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-b27208f2-6a79-451a-990e-2bc075b3c3a6">
+<span class="eqno">(239)<a class="headerlink" href="#equation-b27208f2-6a79-451a-990e-2bc075b3c3a6" title="Permalink to this equation">#</a></span>\[\begin{align}
+e^{it} \equiv \cos (t) + i\sin (t) &amp;&amp; \text{Euler formula}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Look at <span class="math notranslate nohighlight">\(e^{it}\)</span>:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-19c8e130-cac5-4007-8459-4c1396808cd5">
+<span class="eqno">(240)<a class="headerlink" href="#equation-19c8e130-cac5-4007-8459-4c1396808cd5" title="Permalink to this equation">#</a></span>\[\begin{align}
+t = 0 \implies e^{i0} = \cos (0) + i \sin(0) = 1\\
+t = \frac{\pi}{2} \implies e^{i \frac{\pi}{2}} = \cos (\frac{\pi}{2}) + i \sin(\frac{\pi}{2}) = i\\
+t = \pi \implies e^{i\pi} = \cos(\pi) + i \sin (\pi) = -1
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\rightarrow e^{it}\)</span> oscillates back and forth into imaginary space.</p>
+<ul class="simple">
+<li><p>Derivative:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-dd1408f2-7831-481d-bb73-caa459abca04">
+<span class="eqno">(241)<a class="headerlink" href="#equation-dd1408f2-7831-481d-bb73-caa459abca04" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{d}{dt}e^{it} &amp;= \frac{d}{dt}(\cos t + i\sin t)\\
+&amp;= -\sin t + i \cos t\\
+&amp;= i (i \sin t + \cos t)\\
+\frac{d}{dt}e^{it} &amp;= i e^{it}
+\end{align}\]</div>
+<p>So,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3c22eb09-8a1f-4b6e-9bd5-82dd80e08fe3">
+<span class="eqno">(242)<a class="headerlink" href="#equation-3c22eb09-8a1f-4b6e-9bd5-82dd80e08fe3" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(x) = e^{-\frac{a}{2}x}(c_1 e^{i\omega x} + c_2 e^{-i \omega x})
+\end{align}\]</div>
+<p>and</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7341342b-71e2-41cd-a84a-4627a73a2ccb">
+<span class="eqno">(243)<a class="headerlink" href="#equation-7341342b-71e2-41cd-a84a-4627a73a2ccb" title="Permalink to this equation">#</a></span>\[\begin{align}
+e^{i\omega x} &amp;= \cos(\omega x) + i\sin(\omega x)\\
+e^{-i\omega x} &amp;= \cos(-\omega x) + i\sin(-\omega x)\\
+&amp;= \cos(\omega x) - i \sin(\omega x) &amp;&amp; \text{(properties of sin and cos)}
+\end{align}\]</div>
+<p>Now,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fdaa039c-3d3c-4885-a5dd-46a6b16ef2d3">
+<span class="eqno">(244)<a class="headerlink" href="#equation-fdaa039c-3d3c-4885-a5dd-46a6b16ef2d3" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(x) &amp;= e^{-\frac{a}{2}x}[c_1(\cos(\omega x) + i\sin(\omega x)) + c_2(\cos(\omega x) - i\sin(\omega x))]\\
+&amp;= e^{-\frac{a}{2}x} [(c_1 + c_2) \cos(\omega x) + (c_1 - c_2) i \sin(\omega x)]
+\end{align}\]</div>
+<p>Looks messy, but remember, we can pick any basis as long as it solves the ODE.</p>
+<ul class="simple">
+<li><p>If</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-3d6862ef-90df-4b76-afa7-3f5cb67c556a">
+<span class="eqno">(245)<a class="headerlink" href="#equation-3d6862ef-90df-4b76-afa7-3f5cb67c556a" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_1 = e^{-\frac{a}{2}x}e^{i\omega x} = e^{-\frac{a}{2}x}[\cos(\omega x) + i\sin(\omega x)]\\
+y_2 = e^{-\frac{a}{2}x}e^{-i\omega x} = e^{-\frac{a}{2}x}[\cos(\omega x) - i\sin(\omega x)]
+\end{align}\]</div>
+<p>Let’s define</p>
+<div class="amsmath math notranslate nohighlight" id="equation-834736f1-40fc-4c41-9d8c-51b8bfd2a007">
+<span class="eqno">(246)<a class="headerlink" href="#equation-834736f1-40fc-4c41-9d8c-51b8bfd2a007" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_3 &amp;= \frac{1}{2}(y_1 + y_2) \implies\text{OK because it's a linear combo}\\
+&amp;= \frac{1}{2}e^{-\frac{a}{2}x}[\cos\omega x + i\sin\omega x + \cos\omega x -i\sin\omega x]\\
+&amp;= \frac{1}{2}e^{-\frac{a}{2}x} \cdot 2 \cos\omega x\\
+y_3 &amp;= e^{-\frac{a}{2}x} \cdot \cos\omega x \implies \text{real solution}
+\end{align}\]</div>
+<p>and</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5831ed07-1e70-4771-af1a-3826e390566f">
+<span class="eqno">(247)<a class="headerlink" href="#equation-5831ed07-1e70-4771-af1a-3826e390566f" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_4 &amp;= -\frac{1}{2}i(y_1 - y_2)\\
+&amp;= -\frac{1}{2}ie^{-\frac{a}{2}x}[\cos\omega x + i\sin\omega x - \cos\omega x + i\sin\omega x]\\
+&amp;= -\frac{1}{2} i e^{-\frac{a}{2}x}\cdot 2i\sin\omega x\\
+y_4 &amp;= e^{-\frac{a}{2}x} \sin\omega x \implies \text{real solution}
+\end{align}\]</div>
+<p>Then, we can say</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3fe24a52-8b5c-4721-aff9-ef52c44f84b9">
+<span class="eqno">(248)<a class="headerlink" href="#equation-3fe24a52-8b5c-4721-aff9-ef52c44f84b9" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(x) &amp;= Ay_3(x) + B y_4(x) &amp;&amp; \text{general solution}\\
+y(x) &amp;= e^{-\frac{a}{2}x}[A\sin(\omega x) + B\cos(\omega x)] &amp;&amp; \omega = \sqrt{b - \frac{1}{4}a^2}
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are our arbitrary constants. All components of the solution are real.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notes/ordinary_differential_equations"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="11-linear-ode-example.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Alternate Method (Last class continued)</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="13-non-homogeneous-linear-odes.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Recap from last class</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Zachary Ulissi<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,55 @@
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/opt/conda/lib/python3.10/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/opt/conda/lib/python3.10/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/opt/conda/lib/python3.10/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/opt/conda/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/opt/conda/lib/python3.10/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/opt/conda/lib/python3.10/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/conda/lib/python3.10/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+A = np.array([[1,2,1],
+              [2,-1,1],
+              [4,3,3],
+              [3,1,2]])
+b = np.array([1,2,4,3])
+
+
+#Same answer!
+print(np.linalg.solve(A,b))
+
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mLinAlgError[0m                               Traceback (most recent call last)
+Cell [0;32mIn [8], line 9[0m
+[1;32m      5[0m b [38;5;241m=[39m np[38;5;241m.[39marray([[38;5;241m1[39m,[38;5;241m2[39m,[38;5;241m4[39m,[38;5;241m3[39m])
+[1;32m      8[0m [38;5;66;03m#Same answer![39;00m
+[0;32m----> 9[0m [38;5;28mprint[39m([43mnp[49m[38;5;241;43m.[39;49m[43mlinalg[49m[38;5;241;43m.[39;49m[43msolve[49m[43m([49m[43mA[49m[43m,[49m[43mb[49m[43m)[49m)
+
+File [0;32m<__array_function__ internals>:180[0m, in [0;36msolve[0;34m(*args, **kwargs)[0m
+
+File [0;32m/opt/conda/lib/python3.10/site-packages/numpy/linalg/linalg.py:387[0m, in [0;36msolve[0;34m(a, b)[0m
+[1;32m    385[0m a, _ [38;5;241m=[39m _makearray(a)
+[1;32m    386[0m _assert_stacked_2d(a)
+[0;32m--> 387[0m [43m_assert_stacked_square[49m[43m([49m[43ma[49m[43m)[49m
+[1;32m    388[0m b, wrap [38;5;241m=[39m _makearray(b)
+[1;32m    389[0m t, result_t [38;5;241m=[39m _commonType(a, b)
+
+File [0;32m/opt/conda/lib/python3.10/site-packages/numpy/linalg/linalg.py:204[0m, in [0;36m_assert_stacked_square[0;34m(*arrays)[0m
+[1;32m    202[0m m, n [38;5;241m=[39m a[38;5;241m.[39mshape[[38;5;241m-[39m[38;5;241m2[39m:]
+[1;32m    203[0m [38;5;28;01mif[39;00m m [38;5;241m!=[39m n:
+[0;32m--> 204[0m     [38;5;28;01mraise[39;00m LinAlgError([38;5;124m'[39m[38;5;124mLast 2 dimensions of the array must be square[39m[38;5;124m'[39m)
+
+[0;31mLinAlgError[0m: Last 2 dimensions of the array must be square
+LinAlgError: Last 2 dimensions of the array must be square
+
