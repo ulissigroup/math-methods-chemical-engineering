@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Recap on linear regression" href="statistics/26-bonus-nonlinear-regression.html" />
+    <link rel="prev" title="Non-linear regression" href="statistics/26-bonus-nonlinear-regression.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -116,6 +116,11 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_algebra/1-intro-matrices.html">
+   Introduction to math methods for ChE and motivation for linear algebra
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="linear_algebra/linear_algebra.html">
    Linear Algebra
@@ -127,50 +132,38 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="linear_algebra/1-intro-matrices.html">
-     Introduction
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="linear_algebra/2-matrix-manipulation.html">
-     Note on HW expectations
+     Matrix/Linear Algebra
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="linear_algebra/3-gauss-elimination.html">
-     Return to Systems of Equations
+     Intro to Gauss Elimination
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="linear_algebra/4-rank-gauss-examples.html">
-     Chemical Engineering example solved with Gauss elimination
+     Example of Gauss Elimination, and Matrix Rank/Inverse
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="linear_algebra/5-determinants.html">
-     Using the inverse of A to solve a system of linear equations
+     Using matrix inverses, and matrix determinants
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="linear_algebra/6-eigenvalues-1.html">
-     Homogeneous vs. Non-homogeneous Systems
+     Eigenvalue and Eigenvectors
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="linear_algebra/7-eigenvalue-2-difference-equations.html">
-     <span class="math notranslate nohighlight">
-      \(\underline{Ex}\)
-     </span>
-     : Symmetric matrix (
-     <span class="math notranslate nohighlight">
-      \(\lambda\)
-     </span>
-     always real)
+     Eigenvalues/Eigenvectors continued, and application of eigenvalues to difference equations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="linear_algebra/7b-numerical-eigenvalues.html">
-     Eigenvectors in python
+     Numerical Calculations of Eigenvalues/Eigenvectors in python
     </a>
    </li>
   </ul>
@@ -187,22 +180,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="ordinary_differential_equations/8-differential-equations.html">
-     Differential Equations
+     Intro to Differential Equations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ordinary_differential_equations/9-exact-ode.html">
-     Recap
+     Exact ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ordinary_differential_equations/10-linear-ode.html">
-     Integrating Factors - Recap
+     Linear 1st-order ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ordinary_differential_equations/11-linear-ode-example.html">
-     Alternate Method (Last class continued)
+     Application of linear ODEs to ChE examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -212,12 +205,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ordinary_differential_equations/13-non-homogeneous-linear-odes.html">
-     Recap from last class
+     Non-homogeneous linear ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ordinary_differential_equations/14-MoUC-VoP.html">
-     Method of Undetermined Coefficients (sec 2.9)
+     Method of Undetermined Coefficient and Variations of Parameters
     </a>
    </li>
    <li class="toctree-l2">
@@ -232,7 +225,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ordinary_differential_equations/17-coupled-ode-continued.html">
-     Recap for coupled differential equations:
+     Coupled Differential Equations Continued!
     </a>
    </li>
    <li class="toctree-l2">
@@ -247,7 +240,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ordinary_differential_equations/20-BVP.html">
-     Boundary Value Problems
+     Boundary value problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,7 +267,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="partial_differential_equations/23-Fourier-Coefficients.html">
-     Recap on PDEs from last lecture
+     Fourier Coefficients!
     </a>
    </li>
   </ul>
@@ -296,12 +289,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="statistics/25-statistics-continue-linear-regression.html">
-     Recap from last class
+     Stats continued and linear regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="statistics/26-bonus-nonlinear-regression.html">
-     Recap on linear regression
+     Non-linear regression
     </a>
    </li>
   </ul>
@@ -646,10 +639,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <p>{{ badge }}
-$<span class="math notranslate nohighlight">\(\newcommand{\arr}[1]{\underline{\underline{#1}}}\)</span><span class="math notranslate nohighlight">\(    
-\)</span><span class="math notranslate nohighlight">\(\newcommand{\vec}[1]{\underline{#1}}\)</span><span class="math notranslate nohighlight">\(   
-\)</span><span class="math notranslate nohighlight">\(\require{mhchem}\)</span>$</p>
+  <div class="math notranslate nohighlight">
+\[\newcommand{\arr}[1]{\underline{\underline{#1}}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\vec}[1]{\underline{#1}}\]</div>
+<div class="math notranslate nohighlight">
+\[\require{mhchem}\]</div>
 <section class="tex2jax_ignore mathjax_ignore" id="math-methods-recap">
 <h1>06-262 Math Methods Recap<a class="headerlink" href="#math-methods-recap" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
@@ -658,15 +653,15 @@ $<span class="math notranslate nohighlight">\(\newcommand{\arr}[1]{\underline{\u
 </ul>
 <section id="linear-algebra-recap">
 <h2>Linear Algebra Recap<a class="headerlink" href="#linear-algebra-recap" title="Permalink to this headline">#</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-5482f217-1533-4c2c-b8a1-f2468bafacc0">
-<span class="eqno">(510)<a class="headerlink" href="#equation-5482f217-1533-4c2c-b8a1-f2468bafacc0" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c1463532-e91f-499c-a01a-bf6c773d43ac">
+<span class="eqno">(510)<a class="headerlink" href="#equation-c1463532-e91f-499c-a01a-bf6c773d43ac" title="Permalink to this equation">#</a></span>\[\begin{align}
 \arr{A} = \begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{bmatrix} \rightarrow 2\times 2 \text{ matrix}
 \end{align}\]</div>
 <ul class="simple">
 <li><p>Allows us to use shorthand in defining linear systems of equations</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-8097a1e5-38e3-41f5-bfee-af78fd842545">
-<span class="eqno">(511)<a class="headerlink" href="#equation-8097a1e5-38e3-41f5-bfee-af78fd842545" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-dd4d2df9-de0c-4605-a014-2b31f78090b0">
+<span class="eqno">(511)<a class="headerlink" href="#equation-dd4d2df9-de0c-4605-a014-2b31f78090b0" title="Permalink to this equation">#</a></span>\[\begin{align}
 a_{11}x_1 + a_{12}x_2 + ... + a_{1n}x_n = b_1\\
 a_{11}x_1 + a_{12}x_2 + ... + a_{1n}x_n = b_1\\
 .\\.\\.\\
@@ -678,15 +673,15 @@ a_{m1}x_1 + a_{m2}x_2 + ... + a_{mn}x_n = b_m\\
 <li><p>We used Gauss Elimination to solve systems of equations.<br />
 E.g.the system</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-53f53cb0-87b9-42d1-8897-2940c9070cba">
-<span class="eqno">(512)<a class="headerlink" href="#equation-53f53cb0-87b9-42d1-8897-2940c9070cba" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f0501f76-c61b-46ab-802a-faa5062b860b">
+<span class="eqno">(512)<a class="headerlink" href="#equation-f0501f76-c61b-46ab-802a-faa5062b860b" title="Permalink to this equation">#</a></span>\[\begin{align}
 x_1 + 2x_2 - x_3 = 4\\
 4x_2 - 2x_3 = -2\\
 x_1 - 2x_2 + 3x_3 = 0
 \end{align}\]</div>
 <p>can be represented by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2139e614-df07-406c-92e6-f1cf89ed5604">
-<span class="eqno">(513)<a class="headerlink" href="#equation-2139e614-df07-406c-92e6-f1cf89ed5604" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d858fe6b-6944-4b8d-832e-862d2e0aec06">
+<span class="eqno">(513)<a class="headerlink" href="#equation-d858fe6b-6944-4b8d-832e-862d2e0aec06" title="Permalink to this equation">#</a></span>\[\begin{align}
 \left[\begin{array}{rrr|r} 1 &amp; 2 &amp; -1 &amp; 4\\
 0 &amp; 4 &amp; -2 &amp; -2 \\
 1 &amp; -2 &amp; 3 &amp; 0\end{array}\right] \rightarrow ^{\text{G.E.}}
@@ -710,8 +705,8 @@ Not dictated by how “determined” system is</p></li>
 </li>
 <li><p>Determinants <span class="math notranslate nohighlight">\(\rightarrow\)</span> important property to calculate</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-c588c91e-79f0-427f-b56c-d7c4b62ec1fa">
-<span class="eqno">(514)<a class="headerlink" href="#equation-c588c91e-79f0-427f-b56c-d7c4b62ec1fa" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-62871c6e-5eeb-4067-9ff5-43622020c0a6">
+<span class="eqno">(514)<a class="headerlink" href="#equation-62871c6e-5eeb-4067-9ff5-43622020c0a6" title="Permalink to this equation">#</a></span>\[\begin{equation}
   |\arr{A}| = \det(\arr{A})=\begin{cases}
     a_{11} &amp; \text{if $n=1$}.\\
     a_{11}A_{11} + a_{12}A_{12} + ... + a_{1n}A_{1n} &amp; \text{if $n\neq 1$}.
@@ -850,8 +845,8 @@ especially when working with higher number of equations (like in chemical plant)
 <ul class="simple">
 <li><p>Matrices come back:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-01ec5801-7bd0-4bfc-b9f9-d8254c241d1c">
-<span class="eqno">(515)<a class="headerlink" href="#equation-01ec5801-7bd0-4bfc-b9f9-d8254c241d1c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bf632477-e098-433b-a999-6b9ee40b724b">
+<span class="eqno">(515)<a class="headerlink" href="#equation-bf632477-e098-433b-a999-6b9ee40b724b" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vec{y}'=\arr{A}\vec{y}+\vec{b}(x)
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\vec{b}(x)\)</span> is the non-homogeneous term, <span class="math notranslate nohighlight">\(\vec{y}\)</span> is an <span class="math notranslate nohighlight">\(n\times 1\)</span> vector of unknown functions and <span class="math notranslate nohighlight">\(\arr{A}\)</span> is an <span class="math notranslate nohighlight">\(n\times n\)</span> coefficient matrix<br />
@@ -859,8 +854,8 @@ For the example, <span class="math notranslate nohighlight">\(\arr{A}=\begin{bma
 <ul class="simple">
 <li><p>We proved that the eigenvalues and eigenvectors of <span class="math notranslate nohighlight">\(\arr{A}\)</span> yield the homogenoeus solution:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-0eb90f42-fd27-4694-8d0d-3ac384c55684">
-<span class="eqno">(516)<a class="headerlink" href="#equation-0eb90f42-fd27-4694-8d0d-3ac384c55684" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0072f48e-132d-48fd-bf24-f97c0ccb5cb4">
+<span class="eqno">(516)<a class="headerlink" href="#equation-0072f48e-132d-48fd-bf24-f97c0ccb5cb4" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vec{y} = c_1\vec{x}^{(1)}e^{\lambda_1t} + c_2\vec{x}^{(2)}e^{\lambda_2t} + ... + c_n\vec{x}^{(n)}e^{\lambda_nt}
 \end{align}\]</div>
 <p>for real, distinct eigenvalues</p>
@@ -869,13 +864,13 @@ For the example, <span class="math notranslate nohighlight">\(\arr{A}=\begin{bma
 e.g. <span class="math notranslate nohighlight">\(c_1\vec{x}^{(1)}e^{\lambda_1t} + c_2\vec{x}^{(1)}te^{\lambda_1t}\)</span> (remember there is also a term from the solution of the generalized eigenvalue problem!)</p></li>
 <li><p>For complex eigenvalues, we must use Euler’s formula</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-5715301a-d7aa-4765-a5a8-9267cbadc6c9">
-<span class="eqno">(517)<a class="headerlink" href="#equation-5715301a-d7aa-4765-a5a8-9267cbadc6c9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b7a75315-3be4-42ee-a9ea-a4838aff2f44">
+<span class="eqno">(517)<a class="headerlink" href="#equation-b7a75315-3be4-42ee-a9ea-a4838aff2f44" title="Permalink to this equation">#</a></span>\[\begin{align}
 e^{\omega it} = \cos(\omega t) + i\sin(\omega t)
 \end{align}\]</div>
 <p>to change basis and obtain a real solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-73fe1c8d-3067-4a38-8fae-702eda7bf726">
-<span class="eqno">(518)<a class="headerlink" href="#equation-73fe1c8d-3067-4a38-8fae-702eda7bf726" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2c8630a3-ec09-4c34-9ee3-5f0f0d54337f">
+<span class="eqno">(518)<a class="headerlink" href="#equation-2c8630a3-ec09-4c34-9ee3-5f0f0d54337f" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vec{y}=c_1 \begin{bmatrix} \cos\omega t \\ -sin\omega t \end{bmatrix} + c_2 \begin{bmatrix} \sin \omega t \\ \cos \omega t \end{bmatrix}
 \end{align}\]</div>
 <ul class="simple">
@@ -971,7 +966,7 @@ where <span class="math notranslate nohighlight">\(\arr{Y}(t)\)</span> is the fu
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Recap on linear regression</p>
+            <p class="prev-next-title">Non-linear regression</p>
         </div>
     </a>
 </div>

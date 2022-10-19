@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Recap from last class" href="25-statistics-continue-linear-regression.html" />
+    <link rel="next" title="Stats continued and linear regression" href="25-statistics-continue-linear-regression.html" />
     <link rel="prev" title="Statistics" href="statistics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -117,6 +117,11 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linear_algebra/1-intro-matrices.html">
+   Introduction to math methods for ChE and motivation for linear algebra
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../linear_algebra/linear_algebra.html">
    Linear Algebra
@@ -128,50 +133,38 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../linear_algebra/1-intro-matrices.html">
-     Introduction
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/2-matrix-manipulation.html">
-     Note on HW expectations
+     Matrix/Linear Algebra
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/3-gauss-elimination.html">
-     Return to Systems of Equations
+     Intro to Gauss Elimination
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/4-rank-gauss-examples.html">
-     Chemical Engineering example solved with Gauss elimination
+     Example of Gauss Elimination, and Matrix Rank/Inverse
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/5-determinants.html">
-     Using the inverse of A to solve a system of linear equations
+     Using matrix inverses, and matrix determinants
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/6-eigenvalues-1.html">
-     Homogeneous vs. Non-homogeneous Systems
+     Eigenvalue and Eigenvectors
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/7-eigenvalue-2-difference-equations.html">
-     <span class="math notranslate nohighlight">
-      \(\underline{Ex}\)
-     </span>
-     : Symmetric matrix (
-     <span class="math notranslate nohighlight">
-      \(\lambda\)
-     </span>
-     always real)
+     Eigenvalues/Eigenvectors continued, and application of eigenvalues to difference equations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/7b-numerical-eigenvalues.html">
-     Eigenvectors in python
+     Numerical Calculations of Eigenvalues/Eigenvectors in python
     </a>
    </li>
   </ul>
@@ -188,22 +181,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/8-differential-equations.html">
-     Differential Equations
+     Intro to Differential Equations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/9-exact-ode.html">
-     Recap
+     Exact ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/10-linear-ode.html">
-     Integrating Factors - Recap
+     Linear 1st-order ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/11-linear-ode-example.html">
-     Alternate Method (Last class continued)
+     Application of linear ODEs to ChE examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -213,12 +206,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/13-non-homogeneous-linear-odes.html">
-     Recap from last class
+     Non-homogeneous linear ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/14-MoUC-VoP.html">
-     Method of Undetermined Coefficients (sec 2.9)
+     Method of Undetermined Coefficient and Variations of Parameters
     </a>
    </li>
    <li class="toctree-l2">
@@ -233,7 +226,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/17-coupled-ode-continued.html">
-     Recap for coupled differential equations:
+     Coupled Differential Equations Continued!
     </a>
    </li>
    <li class="toctree-l2">
@@ -248,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/20-BVP.html">
-     Boundary Value Problems
+     Boundary value problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -275,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../partial_differential_equations/23-Fourier-Coefficients.html">
-     Recap on PDEs from last lecture
+     Fourier Coefficients!
     </a>
    </li>
   </ul>
@@ -297,12 +290,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="25-statistics-continue-linear-regression.html">
-     Recap from last class
+     Stats continued and linear regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="26-bonus-nonlinear-regression.html">
-     Recap on linear regression
+     Non-linear regression
     </a>
    </li>
   </ul>
@@ -731,8 +724,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <p>{{ badge }}</p>
-<section class="tex2jax_ignore mathjax_ignore" id="intro-to-engineering-statistics">
+  <section class="tex2jax_ignore mathjax_ignore" id="intro-to-engineering-statistics">
 <h1>Intro to engineering statistics<a class="headerlink" href="#intro-to-engineering-statistics" title="Permalink to this headline">#</a></h1>
 <p>Most of the models you have covered in your chemical engineering classes are focused on deterministic models:</p>
 <ul class="simple">
@@ -863,7 +855,7 @@ title="Print to PDF"
   FutureWarning
 </pre></div>
 </div>
-<img alt="../../_images/24-intro-statistics_12_1.png" src="../../_images/24-intro-statistics_12_1.png" />
+<img alt="../../_images/24-intro-statistics_11_1.png" src="../../_images/24-intro-statistics_11_1.png" />
 </div>
 </div>
 <p>Notice that this histogram is stochastic - every time you run it you get a different result. We’ll come back to this.</p>
@@ -936,7 +928,7 @@ title="Print to PDF"
   FutureWarning
 </pre></div>
 </div>
-<img alt="../../_images/24-intro-statistics_18_1.png" src="../../_images/24-intro-statistics_18_1.png" />
+<img alt="../../_images/24-intro-statistics_17_1.png" src="../../_images/24-intro-statistics_17_1.png" />
 </div>
 </div>
 <p>This histogram is also stochastic but has more discrete possibilities.</p>
@@ -968,7 +960,7 @@ title="Print to PDF"
   FutureWarning
 </pre></div>
 </div>
-<img alt="../../_images/24-intro-statistics_21_1.png" src="../../_images/24-intro-statistics_21_1.png" />
+<img alt="../../_images/24-intro-statistics_20_1.png" src="../../_images/24-intro-statistics_20_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -993,7 +985,7 @@ title="Print to PDF"
   FutureWarning
 </pre></div>
 </div>
-<img alt="../../_images/24-intro-statistics_22_1.png" src="../../_images/24-intro-statistics_22_1.png" />
+<img alt="../../_images/24-intro-statistics_21_1.png" src="../../_images/24-intro-statistics_21_1.png" />
 </div>
 </div>
 </section>
@@ -1026,7 +1018,7 @@ We can also define the cumulative distribution function:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Probability Density (units of 1/x)&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/24-intro-statistics_26_1.png" src="../../_images/24-intro-statistics_26_1.png" />
+<img alt="../../_images/24-intro-statistics_25_1.png" src="../../_images/24-intro-statistics_25_1.png" />
 </div>
 </div>
 <p>This is the probability density function. It represents the distribution of possibilities that you could get if you randomly sampled from this distribution many times. We can do that with numpy too.</p>
@@ -1045,7 +1037,7 @@ We can also define the cumulative distribution function:
   warnings.warn(msg, FutureWarning)
 </pre></div>
 </div>
-<img alt="../../_images/24-intro-statistics_28_1.png" src="../../_images/24-intro-statistics_28_1.png" />
+<img alt="../../_images/24-intro-statistics_27_1.png" src="../../_images/24-intro-statistics_27_1.png" />
 </div>
 </div>
 <p>Note that this doesn’t say anything about the mean (0) and standard deviation (1). We can get that by modifying this with an offset and standard deviation:
@@ -1071,7 +1063,7 @@ where \)</span>\mu<span class="math notranslate nohighlight">\( is the mean and 
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Probability Density [1/C]&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/24-intro-statistics_31_1.png" src="../../_images/24-intro-statistics_31_1.png" />
+<img alt="../../_images/24-intro-statistics_30_1.png" src="../../_images/24-intro-statistics_30_1.png" />
 </div>
 </div>
 <p>This implies that if we were to go out and measure the temperature more times, then plot a histogram, we would get something that look this. This also says that the probability of the temperature being in between 10 and 11 C is:
@@ -1166,7 +1158,7 @@ The probability that T is between 10 and 11 is 19.1 percent
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/24-intro-statistics_42_0.png" src="../../_images/24-intro-statistics_42_0.png" />
+<img alt="../../_images/24-intro-statistics_41_0.png" src="../../_images/24-intro-statistics_41_0.png" />
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/dist-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
   warnings.warn(msg, FutureWarning)
 </pre></div>
@@ -1174,7 +1166,7 @@ The probability that T is between 10 and 11 is 19.1 percent
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Count&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/24-intro-statistics_42_3.png" src="../../_images/24-intro-statistics_42_3.png" />
+<img alt="../../_images/24-intro-statistics_41_3.png" src="../../_images/24-intro-statistics_41_3.png" />
 </div>
 </div>
 <p>This count is not very helpful, as we can’t really compare it to the probability distribution function from before. Most importantly, it’s not normalized, but it also depends on the bin size. For example:</p>
@@ -1191,7 +1183,7 @@ The probability that T is between 10 and 11 is 19.1 percent
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Count&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/24-intro-statistics_44_1.png" src="../../_images/24-intro-statistics_44_1.png" />
+<img alt="../../_images/24-intro-statistics_43_1.png" src="../../_images/24-intro-statistics_43_1.png" />
 </div>
 </div>
 <p>What we are often more interested in is an estimate of the probability distribution function with some assumption on how smooth the curve is. For example, there is a gaussian_kde function to do this for you.</p>
@@ -1218,7 +1210,7 @@ The probability that T is between 10 and 11 is 19.1 percent
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Probability Density Function&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/24-intro-statistics_46_1.png" src="../../_images/24-intro-statistics_46_1.png" />
+<img alt="../../_images/24-intro-statistics_45_1.png" src="../../_images/24-intro-statistics_45_1.png" />
 </div>
 </div>
 <p>The seaborn package (similar to matplotlib), can do this for you</p>
@@ -1236,7 +1228,7 @@ The probability that T is between 10 and 11 is 19.1 percent
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f9cd3108f50&gt;
 </pre></div>
 </div>
-<img alt="../../_images/24-intro-statistics_48_2.png" src="../../_images/24-intro-statistics_48_2.png" />
+<img alt="../../_images/24-intro-statistics_47_2.png" src="../../_images/24-intro-statistics_47_2.png" />
 </div>
 </div>
 </section>
@@ -1282,7 +1274,7 @@ The probability that T is between 10 and 11 is 19.1 percent
   warnings.warn(msg, FutureWarning)
 </pre></div>
 </div>
-<img alt="../../_images/24-intro-statistics_53_1.png" src="../../_images/24-intro-statistics_53_1.png" />
+<img alt="../../_images/24-intro-statistics_52_1.png" src="../../_images/24-intro-statistics_52_1.png" />
 </div>
 </div>
 <p>This is for 5 independent variables (5 independent coin tosses). The central limit theorem only holds for an infinite number of coin tosses, so it’s accuracy will improve with number of independent coin tosses.</p>
@@ -1297,7 +1289,7 @@ The probability that T is between 10 and 11 is 19.1 percent
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/24-intro-statistics_55_0.png" src="../../_images/24-intro-statistics_55_0.png" />
+<img alt="../../_images/24-intro-statistics_54_0.png" src="../../_images/24-intro-statistics_54_0.png" />
 </div>
 </div>
 <p>Many chemical engineering examples are the results of a huge number of independent random interactions (atoms bouncing off of each other or reacting) so we often get Gaussian distributions in parameter values. Thus, assuming parameters or quantities are gaussian distributed is often a reasonable approximation, but should be checked.</p>
@@ -1370,7 +1362,7 @@ Our estimate on the standard deviation is 1.17 +/- 0.04
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/24-intro-statistics_63_0.png" src="../../_images/24-intro-statistics_63_0.png" />
+<img alt="../../_images/24-intro-statistics_62_0.png" src="../../_images/24-intro-statistics_62_0.png" />
 </div>
 </div>
 <p>This idea is very powerful - based on a single set of data, we estimated properties of the distribution, and got an idea of how much our estimate might be off simply because another set of results would give us a different result.</p>
@@ -1392,7 +1384,7 @@ Our estimate on the standard deviation is 1.17 +/- 0.04
   warnings.warn(msg, FutureWarning)
 </pre></div>
 </div>
-<img alt="../../_images/24-intro-statistics_67_1.png" src="../../_images/24-intro-statistics_67_1.png" />
+<img alt="../../_images/24-intro-statistics_66_1.png" src="../../_images/24-intro-statistics_66_1.png" />
 </div>
 </div>
 <p>Instead of fitting a probability distribution to data, we instead fit the cumulative distribution function. First, let’s plot the CDF of this data.</p>
@@ -1407,7 +1399,7 @@ Our estimate on the standard deviation is 1.17 +/- 0.04
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/24-intro-statistics_69_0.png" src="../../_images/24-intro-statistics_69_0.png" />
+<img alt="../../_images/24-intro-statistics_68_0.png" src="../../_images/24-intro-statistics_68_0.png" />
 </div>
 </div>
 <p>Notice that there is no binning error here - much better than trying to fit a histogram! Now, let’s use the CDF function that we know has to hold true for a Gaussian.</p>
@@ -1434,7 +1426,7 @@ Our estimate on the standard deviation is 1.17 +/- 0.04
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/24-intro-statistics_71_0.png" src="../../_images/24-intro-statistics_71_0.png" />
+<img alt="../../_images/24-intro-statistics_70_0.png" src="../../_images/24-intro-statistics_70_0.png" />
 </div>
 </div>
 <p>We can play with the fixed values of mu and sigma here to see how well we get the two to fit.</p>
@@ -1461,7 +1453,7 @@ Our estimate on the standard deviation is 1.17 +/- 0.04
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/24-intro-statistics_73_0.png" src="../../_images/24-intro-statistics_73_0.png" />
+<img alt="../../_images/24-intro-statistics_72_0.png" src="../../_images/24-intro-statistics_72_0.png" />
 </div>
 </div>
 <p>Note that the best fitted values of the parameters aren’t accurate! We don’t have a way to quantify this uncertainty, but we could do it with likelihood estimation or known estimators.</p>
@@ -1510,7 +1502,7 @@ The observed mean for exam 2: 83.245155
  &lt;a list of 10 Patch objects&gt;)
 </pre></div>
 </div>
-<img alt="../../_images/24-intro-statistics_79_1.png" src="../../_images/24-intro-statistics_79_1.png" />
+<img alt="../../_images/24-intro-statistics_78_1.png" src="../../_images/24-intro-statistics_78_1.png" />
 </div>
 </div>
 <p>We want to know if the average or standard deviation of those two tests is substantially different, or if we gave a different class of similar students the same two exams, the results would have come out different.</p>
@@ -1537,7 +1529,7 @@ The observed mean for exam 2: 83.245155
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f9cce055750&gt;
 </pre></div>
 </div>
-<img alt="../../_images/24-intro-statistics_81_2.png" src="../../_images/24-intro-statistics_81_2.png" />
+<img alt="../../_images/24-intro-statistics_80_2.png" src="../../_images/24-intro-statistics_80_2.png" />
 </div>
 </div>
 <p>Now, let’s find properties of this new distribution</p>
@@ -1632,7 +1624,7 @@ Our estimate on the mean for exam 2 is 83.25 +/- 3.41
     <a class='right-next' id="next-link" href="25-statistics-continue-linear-regression.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Recap from last class</p>
+        <p class="prev-next-title">Stats continued and linear regression</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

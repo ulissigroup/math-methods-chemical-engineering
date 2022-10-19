@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Return to Systems of Equations &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    <title>Intro to Gauss Elimination &#8212; Mathemtaical Methods for Chemical Engineering</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Chemical Engineering example solved with Gauss elimination" href="4-rank-gauss-examples.html" />
-    <link rel="prev" title="Note on HW expectations" href="2-matrix-manipulation.html" />
+    <link rel="next" title="Example of Gauss Elimination, and Matrix Rank/Inverse" href="4-rank-gauss-examples.html" />
+    <link rel="prev" title="Matrix/Linear Algebra" href="2-matrix-manipulation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -117,6 +117,11 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-intro-matrices.html">
+   Introduction to math methods for ChE and motivation for linear algebra
+  </a>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="linear_algebra.html">
    Linear Algebra
@@ -128,50 +133,38 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="1-intro-matrices.html">
-     Introduction
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="2-matrix-manipulation.html">
-     Note on HW expectations
+     Matrix/Linear Algebra
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Return to Systems of Equations
+     Intro to Gauss Elimination
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="4-rank-gauss-examples.html">
-     Chemical Engineering example solved with Gauss elimination
+     Example of Gauss Elimination, and Matrix Rank/Inverse
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="5-determinants.html">
-     Using the inverse of A to solve a system of linear equations
+     Using matrix inverses, and matrix determinants
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="6-eigenvalues-1.html">
-     Homogeneous vs. Non-homogeneous Systems
+     Eigenvalue and Eigenvectors
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="7-eigenvalue-2-difference-equations.html">
-     <span class="math notranslate nohighlight">
-      \(\underline{Ex}\)
-     </span>
-     : Symmetric matrix (
-     <span class="math notranslate nohighlight">
-      \(\lambda\)
-     </span>
-     always real)
+     Eigenvalues/Eigenvectors continued, and application of eigenvalues to difference equations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="7b-numerical-eigenvalues.html">
-     Eigenvectors in python
+     Numerical Calculations of Eigenvalues/Eigenvectors in python
     </a>
    </li>
   </ul>
@@ -188,22 +181,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/8-differential-equations.html">
-     Differential Equations
+     Intro to Differential Equations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/9-exact-ode.html">
-     Recap
+     Exact ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/10-linear-ode.html">
-     Integrating Factors - Recap
+     Linear 1st-order ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/11-linear-ode-example.html">
-     Alternate Method (Last class continued)
+     Application of linear ODEs to ChE examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -213,12 +206,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/13-non-homogeneous-linear-odes.html">
-     Recap from last class
+     Non-homogeneous linear ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/14-MoUC-VoP.html">
-     Method of Undetermined Coefficients (sec 2.9)
+     Method of Undetermined Coefficient and Variations of Parameters
     </a>
    </li>
    <li class="toctree-l2">
@@ -233,7 +226,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/17-coupled-ode-continued.html">
-     Recap for coupled differential equations:
+     Coupled Differential Equations Continued!
     </a>
    </li>
    <li class="toctree-l2">
@@ -248,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/20-BVP.html">
-     Boundary Value Problems
+     Boundary value problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -275,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../partial_differential_equations/23-Fourier-Coefficients.html">
-     Recap on PDEs from last lecture
+     Fourier Coefficients!
     </a>
    </li>
   </ul>
@@ -297,12 +290,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../statistics/25-statistics-continue-linear-regression.html">
-     Recap from last class
+     Stats continued and linear regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../statistics/26-bonus-nonlinear-regression.html">
-     Recap on linear regression
+     Non-linear regression
     </a>
    </li>
   </ul>
@@ -536,119 +529,117 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#return-to-systems-of-equations">
    Return to Systems of Equations
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#gauss-elimination">
    Gauss Elimination
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#elementary-operation-for-equations">
-     Elementary Operation for Equations
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elementary-operation-for-equations">
+   Elementary Operation for Equations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples">
+     Examples
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#examples">
-       Examples
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#form-the-augmented-matrix">
+       Form the augmented matrix
       </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#form-the-augmented-matrix">
-         Form the augmented matrix
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#augmented-matrix-to-upper-triangular-form">
-         Augmented matrix to upper triangular form
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#upper-triangular-to-row-echelon-form">
-         Upper triangular to row echelon form
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#echelon-to-reduced-row-echelon-form">
-         Echelon to reduced row echelon form
-        </a>
-       </li>
-      </ul>
      </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#summary-of-steps">
-     Summary of steps
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#in-class-example">
-     In-class example
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#solution">
-       Solution
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#augmented-matrix-to-upper-triangular-form">
+       Augmented matrix to upper triangular form
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#upper-triangular-to-row-echelon-form">
+       Upper triangular to row echelon form
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#echelon-to-reduced-row-echelon-form">
+       Echelon to reduced row echelon form
       </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gauss-elimination-as-a-test-for-linear-independence">
-     Gauss elimination as a test for linear independence
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#examples-for-underdetermined-systems">
-       Examples for underdetermined systems
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#example-1">
-         Example 1
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#example-2">
-         Example 2
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#overdetermined-systems">
-       Overdetermined systems
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id1">
-         Example 1
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id2">
-         Example 2
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#example-3">
-         Example 3
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#final-notes">
-     Final notes
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary-of-steps">
+   Summary of steps
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#in-class-example">
+   In-class example
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solution">
+     Solution
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gauss-elimination-as-a-test-for-linear-independence">
+   Gauss elimination as a test for linear independence
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples-for-underdetermined-systems">
+     Examples for underdetermined systems
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-1">
+       Example 1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-2">
+       Example 2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#overdetermined-systems">
+     Overdetermined systems
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Example 1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Example 2
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-3">
+       Example 3
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#final-notes">
+   Final notes
+  </a>
  </li>
 </ul>
 
@@ -659,7 +650,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Return to Systems of Equations</h1>
+                <h1>Intro to Gauss Elimination</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -669,119 +660,117 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#return-to-systems-of-equations">
    Return to Systems of Equations
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#gauss-elimination">
    Gauss Elimination
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#elementary-operation-for-equations">
-     Elementary Operation for Equations
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elementary-operation-for-equations">
+   Elementary Operation for Equations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples">
+     Examples
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#examples">
-       Examples
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#form-the-augmented-matrix">
+       Form the augmented matrix
       </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#form-the-augmented-matrix">
-         Form the augmented matrix
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#augmented-matrix-to-upper-triangular-form">
-         Augmented matrix to upper triangular form
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#upper-triangular-to-row-echelon-form">
-         Upper triangular to row echelon form
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#echelon-to-reduced-row-echelon-form">
-         Echelon to reduced row echelon form
-        </a>
-       </li>
-      </ul>
      </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#summary-of-steps">
-     Summary of steps
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#in-class-example">
-     In-class example
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#solution">
-       Solution
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#augmented-matrix-to-upper-triangular-form">
+       Augmented matrix to upper triangular form
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#upper-triangular-to-row-echelon-form">
+       Upper triangular to row echelon form
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#echelon-to-reduced-row-echelon-form">
+       Echelon to reduced row echelon form
       </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gauss-elimination-as-a-test-for-linear-independence">
-     Gauss elimination as a test for linear independence
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#examples-for-underdetermined-systems">
-       Examples for underdetermined systems
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#example-1">
-         Example 1
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#example-2">
-         Example 2
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#overdetermined-systems">
-       Overdetermined systems
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id1">
-         Example 1
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id2">
-         Example 2
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#example-3">
-         Example 3
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#final-notes">
-     Final notes
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary-of-steps">
+   Summary of steps
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#in-class-example">
+   In-class example
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solution">
+     Solution
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gauss-elimination-as-a-test-for-linear-independence">
+   Gauss elimination as a test for linear independence
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples-for-underdetermined-systems">
+     Examples for underdetermined systems
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-1">
+       Example 1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-2">
+       Example 2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#overdetermined-systems">
+     Overdetermined systems
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Example 1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Example 2
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-3">
+       Example 3
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#final-notes">
+   Final notes
+  </a>
  </li>
 </ul>
 
@@ -793,12 +782,16 @@ title="Print to PDF"
                 
               <div>
                 
-  <p>{{ badge }}
-$<span class="math notranslate nohighlight">\(\newcommand{\arr}[1]{\underline{\underline{#1}}}\)</span><span class="math notranslate nohighlight">\(    
-\)</span><span class="math notranslate nohighlight">\(\newcommand{\vec}[1]{\underline{#1}}\)</span><span class="math notranslate nohighlight">\(   
-\)</span><span class="math notranslate nohighlight">\(\require{mhchem}\)</span>$</p>
-<section class="tex2jax_ignore mathjax_ignore" id="return-to-systems-of-equations">
-<h1>Return to Systems of Equations<a class="headerlink" href="#return-to-systems-of-equations" title="Permalink to this headline">#</a></h1>
+  <div class="math notranslate nohighlight">
+\[\newcommand{\arr}[1]{\underline{\underline{#1}}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\vec}[1]{\underline{#1}}\]</div>
+<div class="math notranslate nohighlight">
+\[\require{mhchem}\]</div>
+<section class="tex2jax_ignore mathjax_ignore" id="intro-to-gauss-elimination">
+<h1>Intro to Gauss Elimination<a class="headerlink" href="#intro-to-gauss-elimination" title="Permalink to this headline">#</a></h1>
+<section id="return-to-systems-of-equations">
+<h2>Return to Systems of Equations<a class="headerlink" href="#return-to-systems-of-equations" title="Permalink to this headline">#</a></h2>
 <p>Now that we understand matrix multiplication, let’s go back to linear systems of equations:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -838,8 +831,8 @@ x_1-2x_2+0x_3
 \end{align*}\]</div>
 <p>We’ve talked a lot about how we were going to use linear algebra to solve systems of equations, so it’s time to actually solve them!</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="gauss-elimination">
-<h1>Gauss Elimination<a class="headerlink" href="#gauss-elimination" title="Permalink to this headline">#</a></h1>
+<section id="gauss-elimination">
+<h2>Gauss Elimination<a class="headerlink" href="#gauss-elimination" title="Permalink to this headline">#</a></h2>
 <p>This is a standard method for solving linear systems. It is not the only way you can do it. Let’s do an example without matrices first:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -889,6 +882,7 @@ x_1\\x_2
 <ul class="simple">
 <li><p>This approach involved manipulation of whole equations, one at a time.</p></li>
 </ul>
+</section>
 <section id="elementary-operation-for-equations">
 <h2>Elementary Operation for Equations<a class="headerlink" href="#elementary-operation-for-equations" title="Permalink to this headline">#</a></h2>
 <p>These are allowed when solving equations:</p>
@@ -1551,13 +1545,13 @@ x_1-x_2=3\\
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Note on HW expectations</p>
+            <p class="prev-next-title">Matrix/Linear Algebra</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="4-rank-gauss-examples.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Chemical Engineering example solved with Gauss elimination</p>
+        <p class="prev-next-title">Example of Gauss Elimination, and Matrix Rank/Inverse</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

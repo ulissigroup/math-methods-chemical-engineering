@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Recap for coupled differential equations: &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    <title>Coupled Differential Equations Continued! &#8212; Mathemtaical Methods for Chemical Engineering</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -117,6 +117,11 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linear_algebra/1-intro-matrices.html">
+   Introduction to math methods for ChE and motivation for linear algebra
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../linear_algebra/linear_algebra.html">
    Linear Algebra
@@ -128,50 +133,38 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../linear_algebra/1-intro-matrices.html">
-     Introduction
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/2-matrix-manipulation.html">
-     Note on HW expectations
+     Matrix/Linear Algebra
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/3-gauss-elimination.html">
-     Return to Systems of Equations
+     Intro to Gauss Elimination
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/4-rank-gauss-examples.html">
-     Chemical Engineering example solved with Gauss elimination
+     Example of Gauss Elimination, and Matrix Rank/Inverse
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/5-determinants.html">
-     Using the inverse of A to solve a system of linear equations
+     Using matrix inverses, and matrix determinants
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/6-eigenvalues-1.html">
-     Homogeneous vs. Non-homogeneous Systems
+     Eigenvalue and Eigenvectors
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/7-eigenvalue-2-difference-equations.html">
-     <span class="math notranslate nohighlight">
-      \(\underline{Ex}\)
-     </span>
-     : Symmetric matrix (
-     <span class="math notranslate nohighlight">
-      \(\lambda\)
-     </span>
-     always real)
+     Eigenvalues/Eigenvectors continued, and application of eigenvalues to difference equations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/7b-numerical-eigenvalues.html">
-     Eigenvectors in python
+     Numerical Calculations of Eigenvalues/Eigenvectors in python
     </a>
    </li>
   </ul>
@@ -188,22 +181,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="8-differential-equations.html">
-     Differential Equations
+     Intro to Differential Equations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="9-exact-ode.html">
-     Recap
+     Exact ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10-linear-ode.html">
-     Integrating Factors - Recap
+     Linear 1st-order ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11-linear-ode-example.html">
-     Alternate Method (Last class continued)
+     Application of linear ODEs to ChE examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -213,12 +206,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13-non-homogeneous-linear-odes.html">
-     Recap from last class
+     Non-homogeneous linear ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14-MoUC-VoP.html">
-     Method of Undetermined Coefficients (sec 2.9)
+     Method of Undetermined Coefficient and Variations of Parameters
     </a>
    </li>
    <li class="toctree-l2">
@@ -233,7 +226,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Recap for coupled differential equations:
+     Coupled Differential Equations Continued!
     </a>
    </li>
    <li class="toctree-l2">
@@ -248,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="20-BVP.html">
-     Boundary Value Problems
+     Boundary value problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -275,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../partial_differential_equations/23-Fourier-Coefficients.html">
-     Recap on PDEs from last lecture
+     Fourier Coefficients!
     </a>
    </li>
   </ul>
@@ -297,12 +290,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../statistics/25-statistics-continue-linear-regression.html">
-     Recap from last class
+     Stats continued and linear regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../statistics/26-bonus-nonlinear-regression.html">
-     Recap on linear regression
+     Non-linear regression
     </a>
    </li>
   </ul>
@@ -536,56 +529,68 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#now-let-s-look-at-complex-eigenvalues">
-   Now let’s look at complex eigenvalues
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Coupled Differential Equations Continued!
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#general-solution-for-complex-eigenvalues">
-   General solution for complex eigenvalues
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recap-for-coupled-differential-equations">
+   Recap for coupled differential equations:
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numerical-solution-to-this-example">
-     Numerical solution to this example
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#now-let-s-look-at-complex-eigenvalues">
+     Now let’s look at complex eigenvalues
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#more-than-two-coupled-linear-equations">
-   More than two coupled linear equations:
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numerical-solution">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#general-solution-for-complex-eigenvalues">
+     General solution for complex eigenvalues
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#numerical-solution-to-this-example">
+       Numerical solution to this example
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-than-two-coupled-linear-equations">
+     More than two coupled linear equations:
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#numerical-solution">
+       Numerical solution
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-do-we-handle-non-homogeneous-systems">
+     How do we handle non-homogeneous systems
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#numerical-solutions">
+       Numerical solutions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#non-homogeneous-system-vop-method">
+     Non-homogeneous system - VOP Method
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
      Numerical solution
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-do-we-handle-non-homogeneous-systems">
-   How do we handle non-homogeneous systems
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numerical-solutions">
-     Numerical solutions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#non-homogeneous-system-vop-method">
-   Non-homogeneous system - VOP Method
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Numerical solution
-  </a>
  </li>
 </ul>
 
@@ -596,7 +601,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Recap for coupled differential equations:</h1>
+                <h1>Coupled Differential Equations Continued!</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -606,56 +611,68 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#now-let-s-look-at-complex-eigenvalues">
-   Now let’s look at complex eigenvalues
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Coupled Differential Equations Continued!
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#general-solution-for-complex-eigenvalues">
-   General solution for complex eigenvalues
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recap-for-coupled-differential-equations">
+   Recap for coupled differential equations:
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numerical-solution-to-this-example">
-     Numerical solution to this example
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#now-let-s-look-at-complex-eigenvalues">
+     Now let’s look at complex eigenvalues
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#more-than-two-coupled-linear-equations">
-   More than two coupled linear equations:
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numerical-solution">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#general-solution-for-complex-eigenvalues">
+     General solution for complex eigenvalues
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#numerical-solution-to-this-example">
+       Numerical solution to this example
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-than-two-coupled-linear-equations">
+     More than two coupled linear equations:
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#numerical-solution">
+       Numerical solution
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-do-we-handle-non-homogeneous-systems">
+     How do we handle non-homogeneous systems
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#numerical-solutions">
+       Numerical solutions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#non-homogeneous-system-vop-method">
+     Non-homogeneous system - VOP Method
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
      Numerical solution
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-do-we-handle-non-homogeneous-systems">
-   How do we handle non-homogeneous systems
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numerical-solutions">
-     Numerical solutions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#non-homogeneous-system-vop-method">
-   Non-homogeneous system - VOP Method
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Numerical solution
-  </a>
  </li>
 </ul>
 
@@ -667,10 +684,15 @@ title="Print to PDF"
                 
               <div>
                 
-  <p>{{ badge }}
-$<span class="math notranslate nohighlight">\(\newcommand{\arr}[1]{\underline{\underline{#1}}}\)</span><span class="math notranslate nohighlight">\(    
-\)</span><span class="math notranslate nohighlight">\(\newcommand{\vec}[1]{\underline{#1}}\)</span><span class="math notranslate nohighlight">\(   
-\)</span><span class="math notranslate nohighlight">\(\require{mhchem}\)</span>$</p>
+  <div class="math notranslate nohighlight">
+\[\newcommand{\arr}[1]{\underline{\underline{#1}}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\vec}[1]{\underline{#1}}\]</div>
+<div class="math notranslate nohighlight">
+\[\require{mhchem}\]</div>
+<section class="tex2jax_ignore mathjax_ignore" id="coupled-differential-equations-continued">
+<h1>Coupled Differential Equations Continued!<a class="headerlink" href="#coupled-differential-equations-continued" title="Permalink to this headline">#</a></h1>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="recap-for-coupled-differential-equations">
 <h1>Recap for coupled differential equations:<a class="headerlink" href="#recap-for-coupled-differential-equations" title="Permalink to this headline">#</a></h1>
 <p>Coupled homogeneous 1st order ODEs:</p>
@@ -680,8 +702,8 @@ $<span class="math notranslate nohighlight">\(\newcommand{\arr}[1]{\underline{\u
 <li><p>We assumed that <span class="math notranslate nohighlight">\(\vec{x}e^{\lambda t}\)</span> was a solution, then showed that it was.</p></li>
 <li><p>We proved that the eigenvalues and eigenvectors of <span class="math notranslate nohighlight">\(\arr{A}\)</span> yield the solution</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-6f8639b0-c244-4785-a4d6-009199eaea5f">
-<span class="eqno">(403)<a class="headerlink" href="#equation-6f8639b0-c244-4785-a4d6-009199eaea5f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ada71a9b-de1c-4750-8584-4eab7062f63f">
+<span class="eqno">(403)<a class="headerlink" href="#equation-ada71a9b-de1c-4750-8584-4eab7062f63f" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vec{y} = c_1\vec{x}^{(1)}e^{\lambda_1t} + c_2\vec{x}^{(2)}e^{\lambda_2t} + ... + c_n\vec{x}^{(n)}e^{\lambda_n t}
 \end{align}\]</div>
 <ul class="simple">
@@ -690,8 +712,8 @@ $<span class="math notranslate nohighlight">\(\newcommand{\arr}[1]{\underline{\u
 <section id="now-let-s-look-at-complex-eigenvalues">
 <h2>Now let’s look at complex eigenvalues<a class="headerlink" href="#now-let-s-look-at-complex-eigenvalues" title="Permalink to this headline">#</a></h2>
 <p><span class="math notranslate nohighlight">\(\underline{\text{Ex}}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ba69e65a-e43f-46a0-834a-551d7d0d82b4">
-<span class="eqno">(404)<a class="headerlink" href="#equation-ba69e65a-e43f-46a0-834a-551d7d0d82b4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-196720fe-8cc9-4555-abb1-38514f7cbc89">
+<span class="eqno">(404)<a class="headerlink" href="#equation-196720fe-8cc9-4555-abb1-38514f7cbc89" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1' &amp;= 2y_2\\
 y_2' &amp;= -2y_1\\
 \begin{bmatrix}y_1' \\ y_2' \end{bmatrix} &amp;= \begin{bmatrix} 0 &amp; 2 \\ -2 &amp; 0 \end{bmatrix} \begin{bmatrix} y_1 \\ y_2 \end{bmatrix}\\
@@ -701,8 +723,8 @@ y_2' &amp;= -2y_1\\
 <ol class="simple">
 <li><p>Find eigenvalues of <span class="math notranslate nohighlight">\(\arr{A}\)</span>:</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-721894f2-ab98-41bf-941b-f31b50ded280">
-<span class="eqno">(405)<a class="headerlink" href="#equation-721894f2-ab98-41bf-941b-f31b50ded280" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f57d920b-6957-4c0f-aaa3-f84305b9c863">
+<span class="eqno">(405)<a class="headerlink" href="#equation-f57d920b-6957-4c0f-aaa3-f84305b9c863" title="Permalink to this equation">#</a></span>\[\begin{align}
 \det(\arr{A} - \lambda\arr{I}) = 0\\
 \left| \begin{array}{}0 - \lambda &amp; 2 \\ -2 &amp; 0-\lambda \end{array}\right| = 0 = \lambda^2 + 4\\
 \lambda = \pm 2i \rightarrow \lambda_1 = 2i, \  \lambda_2 = -2i
@@ -714,8 +736,8 @@ Set <span class="math notranslate nohighlight">\((\arr{A} - \lambda\arr{I})\vec{
 <ul class="simple">
 <li><p>For <span class="math notranslate nohighlight">\(\lambda_1 = 2i\)</span></p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-a2aef359-d3e1-4e3f-97aa-ff7461ef969d">
-<span class="eqno">(406)<a class="headerlink" href="#equation-a2aef359-d3e1-4e3f-97aa-ff7461ef969d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-570042e9-bff5-41b9-8872-83e1733b1f63">
+<span class="eqno">(406)<a class="headerlink" href="#equation-570042e9-bff5-41b9-8872-83e1733b1f63" title="Permalink to this equation">#</a></span>\[\begin{align}
   \begin{bmatrix} -2i &amp; 2 \\ -2 &amp; -2i\end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}\\
   \implies -2ix_1 + 2x_2 = 0\\
   [-2x_1 - 2ix_2 = 0]i &amp;&amp; \text{(redundant)}
@@ -725,23 +747,23 @@ Set <span class="math notranslate nohighlight">\((\arr{A} - \lambda\arr{I})\vec{
 <ul class="simple">
 <li><p>For <span class="math notranslate nohighlight">\(\lambda_2 = -2i\)</span></p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-fdf4055f-13d7-4a0f-9798-994d9307697d">
-<span class="eqno">(407)<a class="headerlink" href="#equation-fdf4055f-13d7-4a0f-9798-994d9307697d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a21aaf1e-9a9d-44df-9545-10b7c8bd3c05">
+<span class="eqno">(407)<a class="headerlink" href="#equation-a21aaf1e-9a9d-44df-9545-10b7c8bd3c05" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix} 2i &amp; 2 \\ -2 &amp; 2i \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}\\
 \implies 2ix_1 + 2x_2 = 0\\
 -ix_1 = x_2 \implies \vec{x}^{(2)} = \begin{bmatrix} 1 \\ i \end{bmatrix} = \begin{bmatrix} i \\ 1 \end{bmatrix}
   \end{align}\]</div>
 <p><span class="math notranslate nohighlight">\(\therefore\)</span> General solution is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-76e098fc-3c98-40b9-8f4e-ef75a12c6ba3">
-<span class="eqno">(408)<a class="headerlink" href="#equation-76e098fc-3c98-40b9-8f4e-ef75a12c6ba3" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b9fc6c43-ab88-4079-8adb-6f41e2c259c5">
+<span class="eqno">(408)<a class="headerlink" href="#equation-b9fc6c43-ab88-4079-8adb-6f41e2c259c5" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vec{y} = c_1 \begin{bmatrix} 1 \\ i \end{bmatrix}e^{2it} + c_2 \begin{bmatrix} 1 \\ -i \end{bmatrix} e^{-2it}
 \end{align}\]</div>
 <p>Not very useful since it’s imaginary</p>
 <ul class="simple">
 <li><p>We will again use Euler’s Formula:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-90998791-708d-4514-9f60-09a04effed02">
-<span class="eqno">(409)<a class="headerlink" href="#equation-90998791-708d-4514-9f60-09a04effed02" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fa01c660-1e9d-4481-802e-b76d0180c60b">
+<span class="eqno">(409)<a class="headerlink" href="#equation-fa01c660-1e9d-4481-802e-b76d0180c60b" title="Permalink to this equation">#</a></span>\[\begin{align}
 e^{2it} &amp;= \cos(2t) + i\sin(2t)\\
 e^{-2it} &amp;= \cos(-2t) + i\sin(-2t)\\
 &amp;= \cos(2t) - i\sin(2t)
@@ -749,8 +771,8 @@ e^{-2it} &amp;= \cos(-2t) + i\sin(-2t)\\
 <ul class="simple">
 <li><p>Looking at part of the solution:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-66b2b65a-04d2-4347-87eb-ce824b261c73">
-<span class="eqno">(410)<a class="headerlink" href="#equation-66b2b65a-04d2-4347-87eb-ce824b261c73" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-189f64b3-a43c-4597-91da-2851e9379bcb">
+<span class="eqno">(410)<a class="headerlink" href="#equation-189f64b3-a43c-4597-91da-2851e9379bcb" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix} 1 \\ i \end{bmatrix} e^{2it} &amp;= \begin{bmatrix} 1 \\ i \end{bmatrix} (\cos 2t + i\sin 2t)\\
 &amp;= \begin{bmatrix} \cos 2t + i\sin 2t \\ i\cos 2t - \sin 2t \end{bmatrix}\\
 &amp;= \begin{bmatrix} \cos 2t \\ -\sin 2t \end{bmatrix} + i \begin{bmatrix} \sin 2t \\ \cos 2t\end{bmatrix}\\
@@ -764,8 +786,8 @@ e^{-2it} &amp;= \cos(-2t) + i\sin(-2t)\\
 <li><p>Can we form real solutions from the imaginary solutions?<br />
 <span class="math notranslate nohighlight">\(\implies\)</span> Let’s try multiplying sum of imaginary solutions by <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span></p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-1f7b3b3e-e6cc-41a5-9600-65e4543fb782">
-<span class="eqno">(411)<a class="headerlink" href="#equation-1f7b3b3e-e6cc-41a5-9600-65e4543fb782" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e03d87c3-c7d9-4950-8392-e4ed0a90d310">
+<span class="eqno">(411)<a class="headerlink" href="#equation-e03d87c3-c7d9-4950-8392-e4ed0a90d310" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{1}{2} \left\{\begin{bmatrix} 1 \\ i \end{bmatrix} e^{2it} + \begin{bmatrix} 1 \\ -i\end{bmatrix}e^{-2it} \right\} &amp;= \frac{1}{2}(\vec{a} + i\vec{b} + \vec{a} - i\vec{b})\\
 &amp;= \frac{1}{2}(2\vec{a})\\
 &amp;= \vec{a} &amp;&amp; \rightarrow\text{the sum of two linearly independent solutions is also a solution}\\
@@ -774,13 +796,13 @@ e^{-2it} &amp;= \cos(-2t) + i\sin(-2t)\\
 &amp;= \vec{b} &amp;&amp; \rightarrow\text{the difference of two linearly independent solutions is also a solution}
 \end{align}\]</div>
 <p><span class="math notranslate nohighlight">\(\therefore \vec{y} = c_1 \vec{a} + c_2 \vec{b}\)</span> is a real representation of the general solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5459a7a8-6a2f-4773-aa81-c299e6fe9005">
-<span class="eqno">(412)<a class="headerlink" href="#equation-5459a7a8-6a2f-4773-aa81-c299e6fe9005" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-05227f7f-0c59-4665-9807-19d15e599167">
+<span class="eqno">(412)<a class="headerlink" href="#equation-05227f7f-0c59-4665-9807-19d15e599167" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vec{y} = c_1 \begin{bmatrix} \cos 2t \\ -\sin 2t \end{bmatrix} + c_2 \begin{bmatrix} \sin 2t \\ \cos 2t \end{bmatrix}
 \end{align}\]</div>
 <p>OR</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8d52a214-b559-465c-88d8-33bd5a9d9010">
-<span class="eqno">(413)<a class="headerlink" href="#equation-8d52a214-b559-465c-88d8-33bd5a9d9010" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f36156b3-c148-4261-a92c-3a53c11065ff">
+<span class="eqno">(413)<a class="headerlink" href="#equation-f36156b3-c148-4261-a92c-3a53c11065ff" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1(t) &amp;= c_1 \cos 2t + c_2 \sin 2t\\
 y_2(t) &amp;= -c_1\sin 2t + c_2\cos 2t
 \end{align}\]</div>
@@ -791,16 +813,16 @@ y_2(t) &amp;= -c_1\sin 2t + c_2\cos 2t
 <ul class="simple">
 <li><p>For pairs of complex conjugate eigenvalues <span class="math notranslate nohighlight">\(\lambda\pm  \omega i\)</span> with eigenvectors <span class="math notranslate nohighlight">\(\vec{x}=\vec{a}\pm \vec{b}i\)</span> (the eigenvectors are also complex conjugates), the form will be:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-c1dfb998-c2f5-4d78-bd65-657c2aeada2e">
-<span class="eqno">(414)<a class="headerlink" href="#equation-c1dfb998-c2f5-4d78-bd65-657c2aeada2e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-72cdd2ed-1e58-4398-a61c-11a1b6bd31e8">
+<span class="eqno">(414)<a class="headerlink" href="#equation-72cdd2ed-1e58-4398-a61c-11a1b6bd31e8" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vec{y}=e^\lambda t\left[c_1(\vec{a}\cos\omega t-\vec{b}\sin \omega t)+c_2(\vec{a}\sin\omega t+\vec{b}\cos \omega t)\right]
 \end{align}\]</div>
 <ul class="simple">
 <li><p>To be clear, here <span class="math notranslate nohighlight">\(\vec{a}\)</span> is the real part of the eigenvector, and <span class="math notranslate nohighlight">\(\vec{b}\)</span> is the imaginary part of the eigenvector.</p></li>
 <li><p>For the above example (<span class="math notranslate nohighlight">\(\lambda=\pm 2i\)</span>, eigenvector <span class="math notranslate nohighlight">\(\vec{x}=[1,\pm i]\)</span>, this yields</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-048dff7f-a881-4929-bfa5-4343132c03e0">
-<span class="eqno">(415)<a class="headerlink" href="#equation-048dff7f-a881-4929-bfa5-4343132c03e0" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9b03f303-dff8-456e-8280-d3de29de2019">
+<span class="eqno">(415)<a class="headerlink" href="#equation-9b03f303-dff8-456e-8280-d3de29de2019" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vec{y}&amp;=e^0 t\left[c_1\left(\begin{bmatrix}1\\0\end{bmatrix}\cos2 t-\begin{bmatrix}0\\1\end{bmatrix}\sin 2 t\right)+c_2\left(\begin{bmatrix}1\\0\end{bmatrix}\sin2 t+\begin{bmatrix}0\\1\end{bmatrix}\cos 2 t\right)\right]\\
 y_1&amp;=c_1\cos2t +c_2 \sin2t\\
 y_2&amp;=-c_1\sin 2t+c_2\cos2t
@@ -841,7 +863,7 @@ y_2&amp;=-c_1\sin 2t+c_2\cos2t
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/17-coupled-ode-continued_6_1.png" src="../../_images/17-coupled-ode-continued_6_1.png" />
+<img alt="../../_images/17-coupled-ode-continued_7_1.png" src="../../_images/17-coupled-ode-continued_7_1.png" />
 </div>
 </div>
 </section>
@@ -850,8 +872,8 @@ y_2&amp;=-c_1\sin 2t+c_2\cos2t
 <h2>More than two coupled linear equations:<a class="headerlink" href="#more-than-two-coupled-linear-equations" title="Permalink to this headline">#</a></h2>
 <p>Very easy to add more to our systems</p>
 <p><span class="math notranslate nohighlight">\(\underline{\text{Ex}}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-55ee4ee9-5333-41bf-9c1e-b89fdbe14b24">
-<span class="eqno">(416)<a class="headerlink" href="#equation-55ee4ee9-5333-41bf-9c1e-b89fdbe14b24" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3134e892-71fe-4032-8f9f-4b6d52ec05a1">
+<span class="eqno">(416)<a class="headerlink" href="#equation-3134e892-71fe-4032-8f9f-4b6d52ec05a1" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1' &amp;= 3y_1 + 5y_2 + 3y_3\\
 y_2' &amp;= 4y_2 + 6y_3\\
 y_3' &amp;= y_3
@@ -859,32 +881,32 @@ y_3' &amp;= y_3
 <ul class="simple">
 <li><p>Note that equation 3 isn’t coupled, so in this case we can either solve that separately and plug into first two, or treat as 3D system:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-89420611-acc5-40f9-abd1-5955a476dd58">
-<span class="eqno">(417)<a class="headerlink" href="#equation-89420611-acc5-40f9-abd1-5955a476dd58" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7acc8d8f-3439-49e8-b2d4-1ee457a9ef02">
+<span class="eqno">(417)<a class="headerlink" href="#equation-7acc8d8f-3439-49e8-b2d4-1ee457a9ef02" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vec{y}' = \arr{A}\vec{y} \ \text{ where } \vec{y} = \begin{bmatrix} y_1 \\ y_2 \\ y_3 \end{bmatrix} \text{ and } \arr{A} = \begin{bmatrix} 3 &amp; 5 &amp; 3 \\ 0 &amp; 4 &amp; 6 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
 \end{align}\]</div>
 <ul class="simple">
 <li><p>The solution will be of the form:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-c0dcc96a-e368-4a64-8c65-cc1757c65ade">
-<span class="eqno">(418)<a class="headerlink" href="#equation-c0dcc96a-e368-4a64-8c65-cc1757c65ade" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a7e7037c-755a-485d-b216-e5dc9b28b9b7">
+<span class="eqno">(418)<a class="headerlink" href="#equation-a7e7037c-755a-485d-b216-e5dc9b28b9b7" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vec{y} = c_1 \vec{x}^{(1)}e^{\lambda_1 t} + c_2 \vec{x}^{(2)}e^{\lambda_2 t} + c_3 \vec{x}^{(3)}e^{\lambda_3 t} 
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\lambda\)</span>’s are the eigenvalues of <span class="math notranslate nohighlight">\(\arr{A}\)</span> and <span class="math notranslate nohighlight">\(\vec{x}^{(i)}\)</span>’s are the eigenvectors of <span class="math notranslate nohighlight">\(\arr{A}\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-ccb9ed05-7cc1-4b00-9db5-5174354dddbc">
-<span class="eqno">(419)<a class="headerlink" href="#equation-ccb9ed05-7cc1-4b00-9db5-5174354dddbc" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-07707200-fa4b-42e1-878c-df7a805fc0ae">
+<span class="eqno">(419)<a class="headerlink" href="#equation-07707200-fa4b-42e1-878c-df7a805fc0ae" title="Permalink to this equation">#</a></span>\[\begin{align}
 \arr{A} &amp;= \begin{bmatrix} 3 &amp; 5 &amp; 3 \\ 0 &amp; 4 &amp; 6 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \\
 \implies \lambda_1 &amp;= 3,\ \vec{x}^{(1)} = \begin{bmatrix} 1 &amp; 0 &amp; 0 \end{bmatrix}^T\\
 \lambda_2 &amp;= 4,\ \vec{x}^{(2)} = \begin{bmatrix} 5 &amp; 1 &amp; 0 \end{bmatrix}^T\\
 \lambda_3 &amp;= 1,\ \vec{x}^{(3)} = \begin{bmatrix} 7 &amp; -4 &amp; 2 \end{bmatrix}^T
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-8e01a479-432d-417b-b8c5-d47023c555cb">
-<span class="eqno">(420)<a class="headerlink" href="#equation-8e01a479-432d-417b-b8c5-d47023c555cb" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d450ce69-7572-457d-8da4-2f31419a2d30">
+<span class="eqno">(420)<a class="headerlink" href="#equation-d450ce69-7572-457d-8da4-2f31419a2d30" title="Permalink to this equation">#</a></span>\[\begin{align}
 \therefore \vec{y} = c_1 \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} e^{3t} + c_2 \begin{bmatrix} 5 \\ 1 \\ 0 \end{bmatrix} e^{4t} + c_3 \begin{bmatrix} 7 \\ -4 \\ 2 \end{bmatrix} e^{t} 
 \end{align}\]</div>
 <p>OR:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ade559b5-9bd4-48cf-98e6-30e207afa9b2">
-<span class="eqno">(421)<a class="headerlink" href="#equation-ade559b5-9bd4-48cf-98e6-30e207afa9b2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-824c2271-2770-4578-9614-2bf3fa8b61ae">
+<span class="eqno">(421)<a class="headerlink" href="#equation-824c2271-2770-4578-9614-2bf3fa8b61ae" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1(t) &amp;= c_1 e^{3t} + 5c_2e^{4t} + 7c_3e^t\\
 y_2(t) &amp;= c_2e^{4t} - 4c_3e^t\\
 y_3(t) &amp;= 2c_3e^t 
@@ -951,7 +973,7 @@ y_3(t) &amp;= 2c_3e^t
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/17-coupled-ode-continued_10_1.png" src="../../_images/17-coupled-ode-continued_10_1.png" />
+<img alt="../../_images/17-coupled-ode-continued_11_1.png" src="../../_images/17-coupled-ode-continued_11_1.png" />
 </div>
 </div>
 </section>
@@ -959,8 +981,8 @@ y_3(t) &amp;= 2c_3e^t
 <section id="how-do-we-handle-non-homogeneous-systems">
 <h2>How do we handle non-homogeneous systems<a class="headerlink" href="#how-do-we-handle-non-homogeneous-systems" title="Permalink to this headline">#</a></h2>
 <p><span class="math notranslate nohighlight">\(\rightarrow\)</span> Same idea as single equations</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4ef9c861-043d-4636-9f21-ed448964a40b">
-<span class="eqno">(422)<a class="headerlink" href="#equation-4ef9c861-043d-4636-9f21-ed448964a40b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-31364b5a-6e28-4fac-8a99-8840f843350e">
+<span class="eqno">(422)<a class="headerlink" href="#equation-31364b5a-6e28-4fac-8a99-8840f843350e" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1' &amp;= -3y_1 + y_2 + 3\cos t\\
 y_2' &amp;= y_1 -3y_2 -2\cos t -3\sin t\\
 \begin{bmatrix} y_1' \\ y_2' \end{bmatrix} &amp;= \begin{bmatrix} -3 &amp; 1 \\ 1 &amp; -3 \end{bmatrix} \begin{bmatrix} y_1 \\ y_2 \end{bmatrix} + \begin{bmatrix} 3\cos t \\ -2\cos t - 3\sin t \end{bmatrix}\\
@@ -969,13 +991,13 @@ y_2' &amp;= y_1 -3y_2 -2\cos t -3\sin t\\
 <ol class="simple">
 <li><p>Solve homogeneous system. From <span class="math notranslate nohighlight">\(\arr{A}\)</span>:</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-6874cad4-7853-427a-b3f2-54d008c9d3f6">
-<span class="eqno">(423)<a class="headerlink" href="#equation-6874cad4-7853-427a-b3f2-54d008c9d3f6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e68546c5-6444-49b4-93d2-168c557d0144">
+<span class="eqno">(423)<a class="headerlink" href="#equation-e68546c5-6444-49b4-93d2-168c557d0144" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lambda_1 = -4 &amp;&amp; \vec{x}^{(1)} = \begin{bmatrix} -1 &amp; 1 \end{bmatrix}^T\\
 \lambda_2 = -2 &amp;&amp; \vec{x}^{(2)} = \begin{bmatrix} 1 &amp; 1 \end{bmatrix}^T
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-65116ee3-05c4-44b8-953d-2450d55aa7eb">
-<span class="eqno">(424)<a class="headerlink" href="#equation-65116ee3-05c4-44b8-953d-2450d55aa7eb" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cc96f92a-1c5a-44e4-8302-72e464b07b5a">
+<span class="eqno">(424)<a class="headerlink" href="#equation-cc96f92a-1c5a-44e4-8302-72e464b07b5a" title="Permalink to this equation">#</a></span>\[\begin{align}
 \therefore \vec{y}_H (t) = c_1\begin{bmatrix} -1 \\ 1 \end{bmatrix} e^{-4t} + c_2 \begin{bmatrix} 1 \\ 1 \end{bmatrix} e^{-2t}
 \end{align}\]</div>
 <ol class="simple">
@@ -985,8 +1007,8 @@ y_2' &amp;= y_1 -3y_2 -2\cos t -3\sin t\\
 <li><p>Now, the particular solution <span class="math notranslate nohighlight">\(\vec{y}_P\)</span> is a vector</p></li>
 <li><p>For this example use MoUC. Choose <span class="math notranslate nohighlight">\(\vec{y}_P\)</span> based on <span class="math notranslate nohighlight">\(\vec{g} = \begin{bmatrix} 3\cos t \\ -2\cos t -3\sin t \end{bmatrix}\)</span></p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-c6623a6a-fd62-4aa4-82b8-b8cdc58cbd04">
-<span class="eqno">(425)<a class="headerlink" href="#equation-c6623a6a-fd62-4aa4-82b8-b8cdc58cbd04" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ffffd329-5fcb-43cb-a15f-76ff96b9c162">
+<span class="eqno">(425)<a class="headerlink" href="#equation-ffffd329-5fcb-43cb-a15f-76ff96b9c162" title="Permalink to this equation">#</a></span>\[\begin{align}
   \vec{y}_P = \vec{u}\sin t + \vec{v}\cos t
   \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\vec{u} = \begin{bmatrix} u_1 \\ u_2 \end{bmatrix}\)</span> and <span class="math notranslate nohighlight">\(\vec{v} = \begin{bmatrix} v_1 \\ v_2 \end{bmatrix}\)</span> are the vectors of undetermined coefficients.<br />
@@ -994,8 +1016,8 @@ Then, <span class="math notranslate nohighlight">\(\vec{y}_P' = \vec{u} \cos t -
 <ul class="simple">
 <li><p>Plug in expressions for <span class="math notranslate nohighlight">\(\vec{y}_P\)</span> and <span class="math notranslate nohighlight">\(\vec{y}_P'\)</span> into <span class="math notranslate nohighlight">\(\vec{y}_P' = \arr{A}\vec{y}_P + \vec{g}\)</span></p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-529b3fb6-64fd-46e6-a531-d9a2aa735ef5">
-<span class="eqno">(426)<a class="headerlink" href="#equation-529b3fb6-64fd-46e6-a531-d9a2aa735ef5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-504f4729-49ad-495b-a355-5b5510130b75">
+<span class="eqno">(426)<a class="headerlink" href="#equation-504f4729-49ad-495b-a355-5b5510130b75" title="Permalink to this equation">#</a></span>\[\begin{align}
   \vec{u}\cos t - \vec{v}\sin t = \arr{A}(\vec{u}\sin t + \vec{v}\cos t) + \vec{g}\\
   (\vec{u} - \arr{A}\vec{v})\cos t - (\arr{A}\vec{u} + \vec{v})\sin t = \vec{g}
   \end{align}\]</div>
@@ -1006,8 +1028,8 @@ Then, <span class="math notranslate nohighlight">\(\vec{y}_P' = \vec{u} \cos t -
 </ul>
 </li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-c1ee2a6f-5f31-4266-ba16-3f8163679775">
-<span class="eqno">(427)<a class="headerlink" href="#equation-c1ee2a6f-5f31-4266-ba16-3f8163679775" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d0537403-82a7-480e-8fa1-315038487697">
+<span class="eqno">(427)<a class="headerlink" href="#equation-d0537403-82a7-480e-8fa1-315038487697" title="Permalink to this equation">#</a></span>\[\begin{align}
     \vec{u} - \arr{A}\vec{v} = \begin{bmatrix} 3 \\ -2 \end{bmatrix} 
     \end{align}\]</div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* sin(t) terms (two equations):
@@ -1021,8 +1043,8 @@ Then, <span class="math notranslate nohighlight">\(\vec{y}_P' = \vec{u} \cos t -
 From first equation: <span class="math notranslate nohighlight">\(\vec{u} = \begin{bmatrix} 3 \\ -2 \end{bmatrix} + \arr{A}\vec{v}\)</span><br />
 Plug into second equation:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-3fdccc97-28bd-4cca-8bde-b3445c5a3c2e">
-<span class="eqno">(428)<a class="headerlink" href="#equation-3fdccc97-28bd-4cca-8bde-b3445c5a3c2e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-64752522-9778-4560-8b83-83ec323e563a">
+<span class="eqno">(428)<a class="headerlink" href="#equation-64752522-9778-4560-8b83-83ec323e563a" title="Permalink to this equation">#</a></span>\[\begin{align}
   -\arr{A}\left(\begin{bmatrix} 3 \\ -2 \end{bmatrix} + \arr{A}\vec{v} \right) - \vec{v} = \begin{bmatrix} 0 \\ -3 \end{bmatrix}\\
   \text{simplifies to }\ \begin{bmatrix} -11 &amp; 6 \\ 6 &amp; -11 \end{bmatrix} \begin{bmatrix}v_1 \\ v_2\end{bmatrix} = \begin{bmatrix} -11 \\ 6 \end{bmatrix}\\
   \left[\begin{array}{ll|l}-11 &amp; 6 &amp; -11 \\ 6 &amp; -11 &amp; 6\end{array}\right] \text{ G.E} \rightarrow \left[\begin{array}{ll|l} 1&amp;0&amp;1 \\ 0&amp;1&amp;0\end{array} \right]\\
@@ -1030,8 +1052,8 @@ Plug into second equation:</p></li>
   \therefore \vec{y}_P = \begin{bmatrix} 0 \\ -1 \end{bmatrix} \sin t + \begin{bmatrix} 1 \\ 0 \end{bmatrix} \cos t
   \end{align}\]</div>
 <p>and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1fc19826-4f78-4cbc-98de-ddf34eaf8cae">
-<span class="eqno">(429)<a class="headerlink" href="#equation-1fc19826-4f78-4cbc-98de-ddf34eaf8cae" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b6dd710d-0762-494f-a704-f4509254334a">
+<span class="eqno">(429)<a class="headerlink" href="#equation-b6dd710d-0762-494f-a704-f4509254334a" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vec{y}(t) = c_1 \begin{bmatrix} -1 \\ 1 \end{bmatrix} e^{-4t} + c_2 \begin{bmatrix} 1 \\ 1 \end{bmatrix} e^{-2t} + \begin{bmatrix} 0 \\ -1 \end{bmatrix} \sin t + \begin{bmatrix} 1 \\ 0 \end{bmatrix} \cos t
 \end{align}\]</div>
 <p>Notice that this says the initial conditions don’t matter after a while!!</p>
@@ -1067,7 +1089,7 @@ Plug into second equation:</p></li>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-2.0, 2.0)
 </pre></div>
 </div>
-<img alt="../../_images/17-coupled-ode-continued_13_1.png" src="../../_images/17-coupled-ode-continued_13_1.png" />
+<img alt="../../_images/17-coupled-ode-continued_14_1.png" src="../../_images/17-coupled-ode-continued_14_1.png" />
 </div>
 </div>
 </section>
@@ -1078,8 +1100,8 @@ Plug into second equation:</p></li>
 <li><p>Find the general solution to <span class="math notranslate nohighlight">\(\vec{y}' = \begin{bmatrix}-2 &amp; 1 \\ 1 &amp; -2  \end{bmatrix}\vec{y} + \begin{bmatrix} 2e^{-t} \\ 3t \end{bmatrix}\)</span><br />
 same as:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-78822acf-4f1b-4120-9919-1ff9824d0abe">
-<span class="eqno">(430)<a class="headerlink" href="#equation-78822acf-4f1b-4120-9919-1ff9824d0abe" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0523e66d-7c13-4208-8cd5-d2cc43044ce4">
+<span class="eqno">(430)<a class="headerlink" href="#equation-0523e66d-7c13-4208-8cd5-d2cc43044ce4" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1' &amp;= -2y_1 + y_2 + 2e^{-t}\\
 y_2' &amp;= y_1 -2y_2 + 3t\\
 \vec{y}' &amp;= \arr{A}\vec{y} + \vec{g}(t)
@@ -1088,8 +1110,8 @@ y_2' &amp;= y_1 -2y_2 + 3t\\
 <li><p>Solve homogeneous system<br />
 from <span class="math notranslate nohighlight">\(\arr{A} \rightarrow |\arr{A}-\lambda\arr{I}|=0\)</span></p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-761ce1ab-62b3-48a3-8cac-3a0e69e119b7">
-<span class="eqno">(431)<a class="headerlink" href="#equation-761ce1ab-62b3-48a3-8cac-3a0e69e119b7" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3ebfffa4-5faf-4d76-bde9-ae68c12436bc">
+<span class="eqno">(431)<a class="headerlink" href="#equation-3ebfffa4-5faf-4d76-bde9-ae68c12436bc" title="Permalink to this equation">#</a></span>\[\begin{align}
 \left|\begin{array}{} -2-\lambda &amp; 1 \\ 1 &amp; -2-\lambda \end{array}\right| = 0 &amp; = (-2-\lambda)(-2-\lambda) -1\\
 &amp;= +4 + 2\lambda + 2 \lambda + \lambda^2 - 1\\
 &amp;= \lambda^2 + 4\lambda + 3 = (\lambda + 3)(\lambda + 1)\\
@@ -1097,18 +1119,18 @@ from <span class="math notranslate nohighlight">\(\arr{A} \rightarrow |\arr{A}-\
 \end{align}\]</div>
 <p>then <span class="math notranslate nohighlight">\((\arr{A} - \lambda\arr{I})\vec{x} = \vec{0}\)</span><br />
 For <span class="math notranslate nohighlight">\(\lambda_1=-3\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-53f4028e-cedf-4ac8-8770-6e4e9d0cc2ae">
-<span class="eqno">(432)<a class="headerlink" href="#equation-53f4028e-cedf-4ac8-8770-6e4e9d0cc2ae" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fc1e3ee4-ddaf-44a9-85d8-a60ed9f7bac7">
+<span class="eqno">(432)<a class="headerlink" href="#equation-fc1e3ee4-ddaf-44a9-85d8-a60ed9f7bac7" title="Permalink to this equation">#</a></span>\[\begin{align}
 \left[\begin{array}{ll|l} 1 &amp; 1 &amp; 0 \\ 1 &amp; 1 &amp; 0 \end{array} \right] \rightarrow x_1 + x_2 = 0 \implies x_1 = -x_2 \implies \vec{x}^{(1)} = \begin{bmatrix} 1 \\ -1 \end{bmatrix}
 \end{align}\]</div>
 <p>For <span class="math notranslate nohighlight">\(\lambda_2=-1\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-4bb24595-cd0c-41ae-8efd-8608721c3bc9">
-<span class="eqno">(433)<a class="headerlink" href="#equation-4bb24595-cd0c-41ae-8efd-8608721c3bc9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-acf3d261-a5e7-4fe7-ab56-0d7dc9d2020c">
+<span class="eqno">(433)<a class="headerlink" href="#equation-acf3d261-a5e7-4fe7-ab56-0d7dc9d2020c" title="Permalink to this equation">#</a></span>\[\begin{align}
 \left[\begin{array}{ll|l} -1 &amp; 1 &amp; 0 \\ 1 &amp; -1 &amp; 0 \end{array} \right] \rightarrow -x_1 + x_2 = 0 \implies x_1 = x_2 \implies \vec{x}^{(2)} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
 \end{align}\]</div>
 <p>Then,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cc6dda09-0641-451a-a53c-9bc71b59f7e0">
-<span class="eqno">(434)<a class="headerlink" href="#equation-cc6dda09-0641-451a-a53c-9bc71b59f7e0" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cfe4cdb8-cbb7-4cf9-a7be-30093196b5f7">
+<span class="eqno">(434)<a class="headerlink" href="#equation-cfe4cdb8-cbb7-4cf9-a7be-30093196b5f7" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vec{y}_H(t) = c_1 \begin{bmatrix} 1 \\ -1 \end{bmatrix} e^{-3t} + c_2\begin{bmatrix} 1 \\ 1 \end{bmatrix}e^{-t}
 \end{align}\]</div>
 <ol class="simple">
@@ -1117,8 +1139,8 @@ For <span class="math notranslate nohighlight">\(\lambda_1=-3\)</span></p>
 <ul class="simple">
 <li><p>Write the homogeneous solution as:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-1873485e-1bb4-4c78-a945-e77c423ac6b9">
-<span class="eqno">(435)<a class="headerlink" href="#equation-1873485e-1bb4-4c78-a945-e77c423ac6b9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e01d6d17-a3cb-4f7f-8d42-78c2ace2a266">
+<span class="eqno">(435)<a class="headerlink" href="#equation-e01d6d17-a3cb-4f7f-8d42-78c2ace2a266" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vec{y}_H(t) &amp;= \begin{bmatrix} y_1^{(1)} &amp; y_1^{(2)} \\ y_2^{(1)} &amp; y_2^{(2)} \end{bmatrix} \begin{bmatrix} c_1 \\ c_2 \end{bmatrix} = \arr{Y}(t)\vec{c}\  \text{ where $\arr{Y}(t)$ is the $``$fundamental matrix&quot;}\\
 &amp;= \begin{bmatrix} e^{-3t} &amp; e^{-t} \\ -e^{-3t} &amp; e^{-t}\end{bmatrix} \begin{bmatrix} c_1 \\ c_2 \end{bmatrix}
 \end{align}\]</div>
@@ -1127,34 +1149,34 @@ For <span class="math notranslate nohighlight">\(\lambda_1=-3\)</span></p>
 <li><p>We will determine <span class="math notranslate nohighlight">\(\vec{u}(t)\)</span> by substituting <span class="math notranslate nohighlight">\(\vec{y}_P(t)\)</span> into the original system <br />
 <span class="math notranslate nohighlight">\(\rightarrow\)</span> let’s derive in general terms</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-be6a5c96-d671-4125-8212-c55c4ea2e7d3">
-<span class="eqno">(436)<a class="headerlink" href="#equation-be6a5c96-d671-4125-8212-c55c4ea2e7d3" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-192d1c70-3162-4263-b148-3aa48fbd6b27">
+<span class="eqno">(436)<a class="headerlink" href="#equation-192d1c70-3162-4263-b148-3aa48fbd6b27" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vec{y}' &amp;= \arr{A} \vec{y} + \vec{g} \\
 \vec{y}_P' &amp;= \arr{A}\vec{y}_P + \vec{g}\\
 (\arr{Y}\vec{u})' &amp;= \arr{A} \arr{Y}\vec{u} + \vec{g}\\
 \arr{Y}'\vec{u} &amp;+ \arr{Y}\vec{u}' = \arr{A}\arr{Y}\vec{u} + \vec{g}
 \end{align}\]</div>
 <p><span class="math notranslate nohighlight">\(\implies\)</span> because <span class="math notranslate nohighlight">\(\arr{Y}\)</span> is a solution to the homogeneous system, we know it satifies <span class="math notranslate nohighlight">\(\arr{Y}' = \arr{A}\arr{Y}\rightarrow\)</span> substitute this in</p>
-<div class="amsmath math notranslate nohighlight" id="equation-322a57fe-6b2e-42c1-80b4-0e59625b443d">
-<span class="eqno">(437)<a class="headerlink" href="#equation-322a57fe-6b2e-42c1-80b4-0e59625b443d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-08174483-5e8f-4082-b1e9-7b74a6299c69">
+<span class="eqno">(437)<a class="headerlink" href="#equation-08174483-5e8f-4082-b1e9-7b74a6299c69" title="Permalink to this equation">#</a></span>\[\begin{align}
 \arr{A}\arr{Y}\vec{u} +\arr{Y}\vec{u}' &amp;= \arr{A}\arr{Y}\vec{u} + \vec{g}\\
 \arr{Y}^{-1}(\arr{Y}\vec{u}' &amp;= \vec{g}) 
 \end{align}\]</div>
 <p><span class="math notranslate nohighlight">\(\rightarrow\)</span> can multiply with inverse. We know <span class="math notranslate nohighlight">\(\arr{Y}\)</span> is non singular because <span class="math notranslate nohighlight">\(\det(\arr{Y})=\)</span> Wronskian which is non-zero for a basis</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2acc10d7-d67a-4964-8464-ca7059a1551d">
-<span class="eqno">(438)<a class="headerlink" href="#equation-2acc10d7-d67a-4964-8464-ca7059a1551d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e5f313ad-09b2-4322-a40a-6c5d2b6f0cb9">
+<span class="eqno">(438)<a class="headerlink" href="#equation-e5f313ad-09b2-4322-a40a-6c5d2b6f0cb9" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vec{u}' &amp;= \arr{Y}^{-1} \vec{g}\\
 \vec{u}(t) &amp;= \int \arr{Y}^{-1}(t) \vec{g}(t)dt + \vec{c} &amp;&amp; \rightarrow \text{each element is integrated separately}  
 \end{align}\]</div>
 <p>and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-22015dfc-7f0a-4ed5-b4ec-ec9e49637c5a">
-<span class="eqno">(439)<a class="headerlink" href="#equation-22015dfc-7f0a-4ed5-b4ec-ec9e49637c5a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-74cb5873-d2c3-4067-a3b3-d0da33e74f48">
+<span class="eqno">(439)<a class="headerlink" href="#equation-74cb5873-d2c3-4067-a3b3-d0da33e74f48" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vec{y}_P(t) &amp;= \arr{Y}(t)\vec{u}(t)\\
 &amp;= \arr{Y}(t) \int \arr{Y}^{-1}(t)\vec{g}(t) dt
 \end{align}\]</div>
 <p>and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-68f12480-76e7-4a2a-86f3-feea6024303c">
-<span class="eqno">(440)<a class="headerlink" href="#equation-68f12480-76e7-4a2a-86f3-feea6024303c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9dab4061-7621-47b6-8299-65bedc3b598a">
+<span class="eqno">(440)<a class="headerlink" href="#equation-9dab4061-7621-47b6-8299-65bedc3b598a" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vec{y}(t) &amp;= \vec{y}_H + \vec{y}_P\\
 \vec{y}(t) &amp;= \arr{Y}(t)\vec{c} + \arr{Y}(t) \int \arr{Y}^{-1}(t)\vec{g}(t) dt
 \end{align}\]</div>
@@ -1162,13 +1184,13 @@ For <span class="math notranslate nohighlight">\(\lambda_1=-3\)</span></p>
 <li><p>Now for our example:<br />
 we need <span class="math notranslate nohighlight">\(\arr{Y}^{-1}(t)\)</span>. Can find using matrix property for a 2x2 matrix:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-240136b4-4a2b-4904-9e73-8094d50702a9">
-<span class="eqno">(441)<a class="headerlink" href="#equation-240136b4-4a2b-4904-9e73-8094d50702a9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5f27b16f-f9ea-440c-8d7a-9ba5639530e1">
+<span class="eqno">(441)<a class="headerlink" href="#equation-5f27b16f-f9ea-440c-8d7a-9ba5639530e1" title="Permalink to this equation">#</a></span>\[\begin{align}
 \arr{A}^{-1} = \frac{1}{\det \arr{A}}\begin{bmatrix} a_{22} &amp; -a_{12} \\ -a_{21} &amp; a_{11} \end{bmatrix}
 \end{align}\]</div>
 <p>then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0aaec654-250b-469e-a817-254de5ca14c4">
-<span class="eqno">(442)<a class="headerlink" href="#equation-0aaec654-250b-469e-a817-254de5ca14c4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0bc5e8b0-fe7a-4498-a846-1ed5921f36b5">
+<span class="eqno">(442)<a class="headerlink" href="#equation-0bc5e8b0-fe7a-4498-a846-1ed5921f36b5" title="Permalink to this equation">#</a></span>\[\begin{align}
 \arr{Y}^{-1} &amp;= \frac{1}{e^{-4t} + e^{-4t}} \begin{bmatrix} e^{-t} &amp; -e^{-t} \\ e^{-3t} &amp; e^{-3t} \end{bmatrix}\\
 &amp;=\frac{1}{2} \begin{bmatrix} e^{3t} &amp; -e^{3t} \\ e^t &amp; e^t \end{bmatrix}\\
 \arr{Y}^{-1}\vec{g} &amp;= \frac{1}{2}\begin{bmatrix} e^{3t} &amp; -e^{3t} \\ e^t &amp; e^t \end{bmatrix} \begin{bmatrix} 2e^{-t} \\ 3t\end{bmatrix} \\
@@ -1177,8 +1199,8 @@ we need <span class="math notranslate nohighlight">\(\arr{Y}^{-1}(t)\)</span>. C
 &amp;=\frac{1}{2} \begin{bmatrix} e^{2t} - (te^{3t} - \frac{1}{3} e^{3t}) \\ 2t + 3(te^t - e^t) \end{bmatrix}
 \end{align}\]</div>
 <p>Then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0ed1a231-7ee6-40c8-abe4-75623a510fe3">
-<span class="eqno">(443)<a class="headerlink" href="#equation-0ed1a231-7ee6-40c8-abe4-75623a510fe3" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7b330da9-a3a0-4223-b723-156f1a18ff05">
+<span class="eqno">(443)<a class="headerlink" href="#equation-7b330da9-a3a0-4223-b723-156f1a18ff05" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vec{y}_P(t) &amp;= \arr{Y}(t)\vec{u}(t)\\
 &amp;= \begin{bmatrix} e^{-3t} &amp; e^{-t} \\ -e^{-3t} &amp; e^{-t} \end{bmatrix} \cdot \frac{1}{2} \cdot \begin{bmatrix} e^{2t}-te^{3t} + \frac{1}{3}e^{3t} \\ 2t + 3te^t - 3e^t \end{bmatrix} \\
 &amp;= \frac{1}{2} \begin{bmatrix} e^{-t} -t + \frac{1}{3} + 2te^{-t}+ 3t -3 \\ -e^{-t} + t -\frac{1}{3} + 2te^{-t} + 3t - 3 \end{bmatrix}\\
@@ -1186,8 +1208,8 @@ we need <span class="math notranslate nohighlight">\(\arr{Y}^{-1}(t)\)</span>. C
 \vec{y}_P(t) &amp;= \frac{1}{2}\begin{bmatrix} 1 \\ -1 \end{bmatrix} e^{-t} + \begin{bmatrix} 1 \\ 1\end{bmatrix} te^{-t} + \begin{bmatrix} 1 \\ 2 \end{bmatrix} t -\frac{1}{3}\begin{bmatrix} 4 \\ 5 \end{bmatrix}
 \end{align}\]</div>
 <p>Then,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-10d023e0-7534-4654-87d4-af9b2c2945e5">
-<span class="eqno">(444)<a class="headerlink" href="#equation-10d023e0-7534-4654-87d4-af9b2c2945e5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-dcfd9e0e-bb3a-4083-9098-1c5f596b719b">
+<span class="eqno">(444)<a class="headerlink" href="#equation-dcfd9e0e-bb3a-4083-9098-1c5f596b719b" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vec{y}(t) &amp;= \vec{y}_H(t) + \vec{y}_P(t)\\
 &amp;= c_1 \begin{bmatrix} 1 \\ -1 \end{bmatrix} e^{-3t} + c_2 \begin{bmatrix} 1 \\ 1 \end{bmatrix} e^{-t} + \frac{1}{2}\begin{bmatrix} 1 \\ -1 \end{bmatrix} e^{-t} + \begin{bmatrix} 1 \\ 1 \end{bmatrix}te^{-t} + \begin{bmatrix} 1 \\ 2 \end{bmatrix} t - \frac{1}{3} \begin{bmatrix} 4 \\ 5 \end{bmatrix} &amp;&amp; \text{general solution} 
 \end{align}\]</div>
@@ -1225,7 +1247,7 @@ we need <span class="math notranslate nohighlight">\(\arr{Y}^{-1}(t)\)</span>. C
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/17-coupled-ode-continued_20_1.png" src="../../_images/17-coupled-ode-continued_20_1.png" />
+<img alt="../../_images/17-coupled-ode-continued_21_1.png" src="../../_images/17-coupled-ode-continued_21_1.png" />
 </div>
 </div>
 </section>

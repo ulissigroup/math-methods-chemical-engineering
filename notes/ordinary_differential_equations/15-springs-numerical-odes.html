@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Coupled Differential Equations" href="16-coupled-odes.html" />
-    <link rel="prev" title="Method of Undetermined Coefficients (sec 2.9)" href="14-MoUC-VoP.html" />
+    <link rel="prev" title="Method of Undetermined Coefficient and Variations of Parameters" href="14-MoUC-VoP.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -117,6 +117,11 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linear_algebra/1-intro-matrices.html">
+   Introduction to math methods for ChE and motivation for linear algebra
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../linear_algebra/linear_algebra.html">
    Linear Algebra
@@ -128,50 +133,38 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../linear_algebra/1-intro-matrices.html">
-     Introduction
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/2-matrix-manipulation.html">
-     Note on HW expectations
+     Matrix/Linear Algebra
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/3-gauss-elimination.html">
-     Return to Systems of Equations
+     Intro to Gauss Elimination
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/4-rank-gauss-examples.html">
-     Chemical Engineering example solved with Gauss elimination
+     Example of Gauss Elimination, and Matrix Rank/Inverse
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/5-determinants.html">
-     Using the inverse of A to solve a system of linear equations
+     Using matrix inverses, and matrix determinants
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/6-eigenvalues-1.html">
-     Homogeneous vs. Non-homogeneous Systems
+     Eigenvalue and Eigenvectors
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/7-eigenvalue-2-difference-equations.html">
-     <span class="math notranslate nohighlight">
-      \(\underline{Ex}\)
-     </span>
-     : Symmetric matrix (
-     <span class="math notranslate nohighlight">
-      \(\lambda\)
-     </span>
-     always real)
+     Eigenvalues/Eigenvectors continued, and application of eigenvalues to difference equations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/7b-numerical-eigenvalues.html">
-     Eigenvectors in python
+     Numerical Calculations of Eigenvalues/Eigenvectors in python
     </a>
    </li>
   </ul>
@@ -188,22 +181,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="8-differential-equations.html">
-     Differential Equations
+     Intro to Differential Equations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="9-exact-ode.html">
-     Recap
+     Exact ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10-linear-ode.html">
-     Integrating Factors - Recap
+     Linear 1st-order ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11-linear-ode-example.html">
-     Alternate Method (Last class continued)
+     Application of linear ODEs to ChE examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -213,12 +206,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13-non-homogeneous-linear-odes.html">
-     Recap from last class
+     Non-homogeneous linear ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14-MoUC-VoP.html">
-     Method of Undetermined Coefficients (sec 2.9)
+     Method of Undetermined Coefficient and Variations of Parameters
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -233,7 +226,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="17-coupled-ode-continued.html">
-     Recap for coupled differential equations:
+     Coupled Differential Equations Continued!
     </a>
    </li>
    <li class="toctree-l2">
@@ -248,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="20-BVP.html">
-     Boundary Value Problems
+     Boundary value problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -275,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../partial_differential_equations/23-Fourier-Coefficients.html">
-     Recap on PDEs from last lecture
+     Fourier Coefficients!
     </a>
    </li>
   </ul>
@@ -297,12 +290,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../statistics/25-statistics-continue-linear-regression.html">
-     Recap from last class
+     Stats continued and linear regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../statistics/26-bonus-nonlinear-regression.html">
-     Recap on linear regression
+     Non-linear regression
     </a>
    </li>
   </ul>
@@ -869,30 +862,32 @@ title="Print to PDF"
                 
               <div>
                 
-  <p>{{ badge }}
-$<span class="math notranslate nohighlight">\(\newcommand{\arr}[1]{\underline{\underline{#1}}}\)</span><span class="math notranslate nohighlight">\(    
-\)</span><span class="math notranslate nohighlight">\(\newcommand{\vec}[1]{\underline{#1}}\)</span><span class="math notranslate nohighlight">\(   
-\)</span><span class="math notranslate nohighlight">\(\require{mhchem}\)</span>$</p>
+  <div class="math notranslate nohighlight">
+\[\newcommand{\arr}[1]{\underline{\underline{#1}}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\vec}[1]{\underline{#1}}\]</div>
+<div class="math notranslate nohighlight">
+\[\require{mhchem}\]</div>
 <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-numerical-solution-of-differential-equations">
 <h1>Introduction to Numerical Solution of Differential Equations<a class="headerlink" href="#introduction-to-numerical-solution-of-differential-equations" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>We’ll start with simple <span class="math notranslate nohighlight">\(1^\circ\)</span> ODE Initial Value Problem (IVP)</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-fb689bb9-8960-485e-9532-c7041af8aa35">
-<span class="eqno">(353)<a class="headerlink" href="#equation-fb689bb9-8960-485e-9532-c7041af8aa35" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-afbf7b0b-4c4e-43ca-81a4-79a77f84259e">
+<span class="eqno">(353)<a class="headerlink" href="#equation-afbf7b0b-4c4e-43ca-81a4-79a77f84259e" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{dy}{dt} = -y, &amp;&amp; y(t=0) = 1
 \end{align}\]</div>
 <p>We’ve solved this already</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7ddca1af-337d-485b-ba18-c2f6322b73d1">
-<span class="eqno">(354)<a class="headerlink" href="#equation-7ddca1af-337d-485b-ba18-c2f6322b73d1" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-24665731-fe95-493e-a918-54d79fa6375b">
+<span class="eqno">(354)<a class="headerlink" href="#equation-24665731-fe95-493e-a918-54d79fa6375b" title="Permalink to this equation">#</a></span>\[\begin{align}
 y = \exp(-x)
 \end{align}\]</div>
 <ul class="simple">
 <li><p>How would you do this without being able to solve differential equation? The Taylor expansion is a related concept, so let’s quickly review that.</p></li>
 </ul>
 <p>For today, we’re going to solve differential equations of the form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3b89f55f-e579-4d1b-a605-ff4e2357c3be">
-<span class="eqno">(355)<a class="headerlink" href="#equation-3b89f55f-e579-4d1b-a605-ff4e2357c3be" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-803929d5-2f27-4ac3-8d6a-03529a722dbf">
+<span class="eqno">(355)<a class="headerlink" href="#equation-803929d5-2f27-4ac3-8d6a-03529a722dbf" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{dy}{dt}=f(t, y)
 \end{align}\]</div>
 <section id="benefits-of-analytical-numerical-methods">
@@ -939,16 +934,16 @@ y = \exp(-x)
 <ul class="simple">
 <li><p>We have a complicated function (based on info at one point) that we want to  approximate. The Taylor series is a polynomial approxiamation of <span class="math notranslate nohighlight">\(f\)</span>:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-5df7f94d-503f-4864-8fd0-f086bcff81c9">
-<span class="eqno">(356)<a class="headerlink" href="#equation-5df7f94d-503f-4864-8fd0-f086bcff81c9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b0456289-efa1-4cc0-a57e-2e08f6dbc1e4">
+<span class="eqno">(356)<a class="headerlink" href="#equation-b0456289-efa1-4cc0-a57e-2e08f6dbc1e4" title="Permalink to this equation">#</a></span>\[\begin{align}
 \hat{f} = a + bx + cx^2 + dx^3
 \end{align}\]</div>
 <p>The simplest approximation is <span class="math notranslate nohighlight">\(\hat{f} = a\)</span>. Let’s demonstrate with <span class="math notranslate nohighlight">\(f(x) = \exp(x)\)</span></p>
 <ul class="simple">
 <li><p>Each coefficient is obtained by matching derivatives</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-1936c50e-60e6-4a34-bc00-96d2fff67a54">
-<span class="eqno">(357)<a class="headerlink" href="#equation-1936c50e-60e6-4a34-bc00-96d2fff67a54" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0a3533f9-4ced-4f4e-9c2a-376adbabb734">
+<span class="eqno">(357)<a class="headerlink" href="#equation-0a3533f9-4ced-4f4e-9c2a-376adbabb734" title="Permalink to this equation">#</a></span>\[\begin{align}
 \hat{f}(x=0) = a = f(x=0)\\
 \frac{d\hat{f}}{dx}\bigg|_{x=0} = b = \frac{df}{dx}\bigg|_{x=0}\\
 \frac{d^2\hat{f}}{dx^2}\bigg|_{x=0} = 2c = \frac{d^2}{dx^2}\bigg|_{x=0}
@@ -960,26 +955,26 @@ y = \exp(-x)
 <ul class="simple">
 <li><p>Simplest possible scheme - use the Taylor expansion to move from one point to the next for integrating. Start with definition of derivative:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-40148202-d540-45cd-8717-a93162068f43">
-<span class="eqno">(358)<a class="headerlink" href="#equation-40148202-d540-45cd-8717-a93162068f43" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-081f9f9d-d123-41e4-810d-86ca06c18cf5">
+<span class="eqno">(358)<a class="headerlink" href="#equation-081f9f9d-d123-41e4-810d-86ca06c18cf5" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{dy}{dt}\bigg|_{t=0} = \frac{y(t=h) - y(t=0)}{h - 0}\\
 \frac{dy}{dt}\bigg|_{t=0} = \frac{y(t_1) - y(t_0)}{t_1 - t_0}
 \end{align}\]</div>
 <p>Let’s rearrange</p>
-<div class="amsmath math notranslate nohighlight" id="equation-41673ebc-9f7e-4149-8c45-53368eb46137">
-<span class="eqno">(359)<a class="headerlink" href="#equation-41673ebc-9f7e-4149-8c45-53368eb46137" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9e21ec9a-881b-4ac4-bc3c-7319e3c5c9c1">
+<span class="eqno">(359)<a class="headerlink" href="#equation-9e21ec9a-881b-4ac4-bc3c-7319e3c5c9c1" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(t_1) = \frac{dy}{dt}\bigg|_{t_0}(t_1-t_0) + y(t_0) \ \rightarrow \text{  ODE gives us this!}
 \end{align}\]</div>
 <p><span class="math notranslate nohighlight">\(\underline{\text{Ex}}\)</span> : <span class="math notranslate nohighlight">\(\frac{dy}{dt} = - y\)</span>,  <span class="math notranslate nohighlight">\(\hspace{1cm}y(t=0) = 1\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-14ec2698-b9c7-4456-80ab-f6d3623fe743">
-<span class="eqno">(360)<a class="headerlink" href="#equation-14ec2698-b9c7-4456-80ab-f6d3623fe743" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-774cb642-9b17-4650-b16b-66ab28dbc983">
+<span class="eqno">(360)<a class="headerlink" href="#equation-774cb642-9b17-4650-b16b-66ab28dbc983" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(t&amp;=0) = 1\\
 y(t_1) &amp;= \frac{dy}{dt}\bigg|_{t=0} (t_1 - 0) + y(t = 0)\\
 &amp;= -y \bigg|_{t=0}t_1 + 1
 \end{align}\]</div>
 <p>Evaluate error for Euler approximation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-52b70f9f-d913-45f7-b911-a0cb9af538dd">
-<span class="eqno">(361)<a class="headerlink" href="#equation-52b70f9f-d913-45f7-b911-a0cb9af538dd" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cbc0da3f-c523-4a92-9687-e22ce327b1ab">
+<span class="eqno">(361)<a class="headerlink" href="#equation-cbc0da3f-c523-4a92-9687-e22ce327b1ab" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(t) = \exp(-t) \leftarrow \text{  known}\\
 y(\Delta t) = y(0) + \Delta t \frac{dy}{dt}\bigg|_{t=0} + \frac{\Delta t^2}{2} \frac{d^2y}{dt^2}\bigg|_{t=0} + ...\\
 \frac{y(\Delta t) - y(0)}{\Delta t} = \frac{dy}{dt}\bigg|_{t=0} + \frac{\Delta t}{2} \frac{d^2y}{dt^2}\bigg|_{t=0} + ...
@@ -1143,7 +1138,7 @@ y(\Delta t) = y(0) + \Delta t \frac{dy}{dt}\bigg|_{t=0} + \frac{\Delta t^2}{2} \
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f72a128ac10&gt;
 </pre></div>
 </div>
-<img alt="../../_images/15-springs-numerical-odes_22_1.png" src="../../_images/15-springs-numerical-odes_22_1.png" />
+<img alt="../../_images/15-springs-numerical-odes_21_1.png" src="../../_images/15-springs-numerical-odes_21_1.png" />
 </div>
 </div>
 </section>
@@ -1155,8 +1150,8 @@ y(\Delta t) = y(0) + \Delta t \frac{dy}{dt}\bigg|_{t=0} + \frac{\Delta t^2}{2} \
 <li><p>The Runge-Kutta method works very well and is widely used in practice, and is a reasonable trade-off in Order, complexity, speed etc. This is an <span class="math notranslate nohighlight">\(O(\Delta t^4)\)</span> method - extemely powerful.<br />
 Def:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-9fdb66e3-bd3f-45b4-8952-8e798b6157fe">
-<span class="eqno">(362)<a class="headerlink" href="#equation-9fdb66e3-bd3f-45b4-8952-8e798b6157fe" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d5c971cf-7359-44bd-b14b-e5b5f6bca17c">
+<span class="eqno">(362)<a class="headerlink" href="#equation-d5c971cf-7359-44bd-b14b-e5b5f6bca17c" title="Permalink to this equation">#</a></span>\[\begin{align}
 k_1 &amp;= \Delta t \cdot f(t^N, y^N)\\
 k_2 &amp;= \Delta t \cdot f\left(t^N+\frac{\Delta t}{2}, y^N + \frac{k_1}{2}\right)\\
 k_3 &amp;= \Delta t \cdot f\left(t^N+\frac{\Delta t}{2}, y^N + \frac{k_2}{2}\right)\\
@@ -1197,7 +1192,7 @@ y^{N+1} &amp;= y^N + \frac{k_1}{6} + \frac{k_2}{3} + \frac{k_3}{3} +  \frac{k_4}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f72a14e8290&gt;
 </pre></div>
 </div>
-<img alt="../../_images/15-springs-numerical-odes_26_1.png" src="../../_images/15-springs-numerical-odes_26_1.png" />
+<img alt="../../_images/15-springs-numerical-odes_25_1.png" src="../../_images/15-springs-numerical-odes_25_1.png" />
 </div>
 </div>
 <p>We can also do the same thing and get it to evaluate at a bunch of points.</p>
@@ -1241,7 +1236,7 @@ y^{N+1} &amp;= y^N + \frac{k_1}{6} + \frac{k_2}{3} + \frac{k_3}{3} +  \frac{k_4}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f72a1481b10&gt;
 </pre></div>
 </div>
-<img alt="../../_images/15-springs-numerical-odes_28_1.png" src="../../_images/15-springs-numerical-odes_28_1.png" />
+<img alt="../../_images/15-springs-numerical-odes_27_1.png" src="../../_images/15-springs-numerical-odes_27_1.png" />
 </div>
 </div>
 <section id="troubleshooting-solve-ivp-and-extra-options">
@@ -1343,7 +1338,7 @@ m\frac{d^2x}{dt^2}=-kx-c\frac{dx}{dt}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f72a0f1ecd0&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/15-springs-numerical-odes_31_1.png" src="../../_images/15-springs-numerical-odes_31_1.png" />
+<img alt="../../_images/15-springs-numerical-odes_30_1.png" src="../../_images/15-springs-numerical-odes_30_1.png" />
 </div>
 </div>
 <p>Now, let’s add some damping to this.</p>
@@ -1394,8 +1389,8 @@ m\frac{d^2x}{dt^2}=-kx-c\frac{dx}{dt}+F(t)
 <h2>Euler’s method with second derivatives<a class="headerlink" href="#euler-s-method-with-second-derivatives" title="Permalink to this headline">#</a></h2>
 <p>We truncated the approximation at the first derivative in the Euler scheme. An obvious question is whether using the second derivative would improve things?</p>
 <p>For example, let’s propose a new method:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-92dc3a96-7136-41aa-822d-7c6150d3885c">
-<span class="eqno">(363)<a class="headerlink" href="#equation-92dc3a96-7136-41aa-822d-7c6150d3885c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-02994b21-f8f5-4343-844f-215e79303a92">
+<span class="eqno">(363)<a class="headerlink" href="#equation-02994b21-f8f5-4343-844f-215e79303a92" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(t) - y(t_0) = \Delta t \frac{dy}{dt}\bigg|_{t = t_0} + \frac{\Delta t^2}{2} \frac{d^2y}{dt^2}\bigg|_{t = t_0}
 \end{align}\]</div>
 <p>We have a new term, if we know <span class="math notranslate nohighlight">\(\frac{d^2y}{dt^2}\bigg|_{t=t_0}\)</span>. Now the order should be better as <span class="math notranslate nohighlight">\(\Delta t^2\)</span></p>
@@ -1403,8 +1398,8 @@ y(t) - y(t_0) = \Delta t \frac{dy}{dt}\bigg|_{t = t_0} + \frac{\Delta t^2}{2} \f
 <h3>Example with second order<a class="headerlink" href="#example-with-second-order" title="Permalink to this headline">#</a></h3>
 <p><span class="math notranslate nohighlight">\(y(t_1) = -t + 1\)</span><br />
 or more generally:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3008f1af-dd3e-49c2-9fcb-cb429c6df5a2">
-<span class="eqno">(364)<a class="headerlink" href="#equation-3008f1af-dd3e-49c2-9fcb-cb429c6df5a2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-52b86a4a-2a3d-48da-8cf6-9778fc3c35b5">
+<span class="eqno">(364)<a class="headerlink" href="#equation-52b86a4a-2a3d-48da-8cf6-9778fc3c35b5" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(t_1) = -y (t_0) (t_1 - t_0) + y(t_0)
 \end{align}\]</div>
 <p>Remember, this only really holds for <span class="math notranslate nohighlight">\(t_1 - t_0 \rightarrow 0\)</span></p>
@@ -1461,7 +1456,7 @@ y(t_1) = -y (t_0) (t_1 - t_0) + y(t_0)
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f34480aa750&gt;
 </pre></div>
 </div>
-<img alt="../../_images/15-springs-numerical-odes_41_1.png" src="../../_images/15-springs-numerical-odes_41_1.png" />
+<img alt="../../_images/15-springs-numerical-odes_40_1.png" src="../../_images/15-springs-numerical-odes_40_1.png" />
 </div>
 </div>
 <p>Let’s see how accurate this new method is with respect to step size!</p>
@@ -1504,7 +1499,7 @@ y(t_1) = -y (t_0) (t_1 - t_0) + y(t_0)
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f344804cf10&gt;
 </pre></div>
 </div>
-<img alt="../../_images/15-springs-numerical-odes_43_1.png" src="../../_images/15-springs-numerical-odes_43_1.png" />
+<img alt="../../_images/15-springs-numerical-odes_42_1.png" src="../../_images/15-springs-numerical-odes_42_1.png" />
 </div>
 </div>
 </section>
@@ -1516,21 +1511,21 @@ y(t_1) = -y (t_0) (t_1 - t_0) + y(t_0)
 <li><p>We showed an example of a second order method if we know the second derivative to help in our Taylor series. We can so similarly well with other schemes.</p></li>
 </ul>
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vRnHTAakWpLwYKmHHkSQtfEcBe9IYZse9Sz3DLt5paAkwYClrhBRzp88uAr4BxIFrn_2qA5YYmOhOhj/pub?w=460&amp;h=808"><p>The problem here is that <span class="math notranslate nohighlight">\(\frac{dy}{dt}\bigg|_{t=0}\)</span> is not a good approximation everywhere in the interval and expectedly at the end. So, let’s make a better approximation. Let’s take a step half way across the interval using the first approximation.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-971f36ea-4cc4-4fb3-bfa4-29bd71237ce3">
-<span class="eqno">(365)<a class="headerlink" href="#equation-971f36ea-4cc4-4fb3-bfa4-29bd71237ce3" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6653068e-c108-475d-b928-0108554735ba">
+<span class="eqno">(365)<a class="headerlink" href="#equation-6653068e-c108-475d-b928-0108554735ba" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(\Delta t) = y(0) + \Delta t \frac{dy}{dt} \bigg|_{t = \frac{\Delta t}{2}}\\
 \frac{dy}{dt}\bigg|_{t = \frac{\Delta t}{2}} = \frac{dy}{dt}\bigg|_{t=0} + \left( \frac{\Delta t}{2}\right) \frac{d^2y}{dt^2}\bigg|_{t=0} + \frac{1}{2} \left( \frac{\Delta t}{2}\right)^2 \frac{d^3y}{dt^3}\bigg|_{t=0} + ...\\
 y(\Delta t) = y(t=0) + \Delta t \left(\frac{dy}{dt}\bigg|_{t=0} + \frac{\Delta t}{2} \frac{d^2}{dt^2}\bigg|_{t=0} + ... \right)
 \end{align}\]</div>
 <p>Last full term is the approximation of mid-point slope. Thus, mid-point method is an <span class="math notranslate nohighlight">\(O(\Delta t^2)\)</span> method without using any information from the second derivative. Proposed process:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b5d92d5e-9168-41a4-b284-b1bb57be61cf">
-<span class="eqno">(366)<a class="headerlink" href="#equation-b5d92d5e-9168-41a4-b284-b1bb57be61cf" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-64c24ab1-3ec3-48be-9d9c-f0eddef01bcf">
+<span class="eqno">(366)<a class="headerlink" href="#equation-64c24ab1-3ec3-48be-9d9c-f0eddef01bcf" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_{N+\frac{1}{2}} = y_N + \frac{\Delta t}{2} \frac{dy}{dt}\bigg|_N\\
 y_{N+1} = y_N + \Delta t \frac{dy}{dt}\bigg|_{N+\frac{1}{2}}
 \end{align}\]</div>
 <p><span class="math notranslate nohighlight">\(\underline{\text{Ex}}\)</span>:  <span class="math notranslate nohighlight">\(\frac{dy}{dt} = -y, \hspace{1cm} y(t=0)=1\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-be970fd7-2888-4807-86f9-057324984005">
-<span class="eqno">(367)<a class="headerlink" href="#equation-be970fd7-2888-4807-86f9-057324984005" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-025e136b-3648-4ddb-aeb0-a5104890f4c5">
+<span class="eqno">(367)<a class="headerlink" href="#equation-025e136b-3648-4ddb-aeb0-a5104890f4c5" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_{N+\frac{1}{2}} = 1 + \frac{\Delta t}{2} \frac{dy}{dt}\bigg|_{t=0} = 1 - \frac{\Delta t}{2}\\
 y_{N+1} = 1 + \Delta t \left(- \left(1 - \frac{\Delta t}{2} \right) \right) = 1 - \Delta t \left(1 - \frac{\Delta t}{2} \right) 
 \end{align}\]</div>
@@ -1597,7 +1592,7 @@ y_{N+1} = 1 + \Delta t \left(- \left(1 - \frac{\Delta t}{2} \right) \right) = 1 
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f344859a510&gt;
 </pre></div>
 </div>
-<img alt="../../_images/15-springs-numerical-odes_48_1.png" src="../../_images/15-springs-numerical-odes_48_1.png" />
+<img alt="../../_images/15-springs-numerical-odes_47_1.png" src="../../_images/15-springs-numerical-odes_47_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1645,7 +1640,7 @@ y_{N+1} = 1 + \Delta t \left(- \left(1 - \frac{\Delta t}{2} \right) \right) = 1 
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f3447ee92d0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/15-springs-numerical-odes_49_1.png" src="../../_images/15-springs-numerical-odes_49_1.png" />
+<img alt="../../_images/15-springs-numerical-odes_48_1.png" src="../../_images/15-springs-numerical-odes_48_1.png" />
 </div>
 </div>
 </section>
@@ -1656,16 +1651,16 @@ y_{N+1} = 1 + \Delta t \left(- \left(1 - \frac{\Delta t}{2} \right) \right) = 1 
 <ul class="simple">
 <li><p>We have a complicated function (based on info at one point) that we want to  approximate. The Taylor series is a polynomial approxiamation of <span class="math notranslate nohighlight">\(f\)</span>:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-0029b325-68b6-430c-b57b-4431e65d49e6">
-<span class="eqno">(368)<a class="headerlink" href="#equation-0029b325-68b6-430c-b57b-4431e65d49e6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d359d644-b028-458d-804e-87ba7b8cf520">
+<span class="eqno">(368)<a class="headerlink" href="#equation-d359d644-b028-458d-804e-87ba7b8cf520" title="Permalink to this equation">#</a></span>\[\begin{align}
 \hat{f} = a + bx + cx^2 + dx^3
 \end{align}\]</div>
 <p>The simplest approximation is <span class="math notranslate nohighlight">\(\hat{f} = a\)</span>. Let’s demonstrate with <span class="math notranslate nohighlight">\(f(x) = \exp(x)\)</span></p>
 <ul class="simple">
 <li><p>Each coefficient is obtained by matching derivatives</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-6906b2e0-ff1a-456d-b0a6-61b50df60778">
-<span class="eqno">(369)<a class="headerlink" href="#equation-6906b2e0-ff1a-456d-b0a6-61b50df60778" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8ab3d2a4-a72a-4ad9-9384-c318b8de806c">
+<span class="eqno">(369)<a class="headerlink" href="#equation-8ab3d2a4-a72a-4ad9-9384-c318b8de806c" title="Permalink to this equation">#</a></span>\[\begin{align}
 \hat{f}(x=0) = a = f(x=0)\\
 \frac{d\hat{f}}{dx}\bigg|_{x=0} = b = \frac{df}{dx}\bigg|_{x=0}\\
 \frac{d^2\hat{f}}{dx^2}\bigg|_{x=0} = 2c = \frac{d^2}{dx^2}\bigg|_{x=0}
@@ -1695,7 +1690,7 @@ y_{N+1} = 1 + \Delta t \left(- \left(1 - \frac{\Delta t}{2} \right) \right) = 1 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/15-springs-numerical-odes_51_0.png" src="../../_images/15-springs-numerical-odes_51_0.png" />
+<img alt="../../_images/15-springs-numerical-odes_50_0.png" src="../../_images/15-springs-numerical-odes_50_0.png" />
 </div>
 </div>
 <section id="example-of-taylor-expansion-in-python">
@@ -1758,7 +1753,7 @@ y_{N+1} = 1 + \Delta t \left(- \left(1 - \frac{\Delta t}{2} \right) \right) = 1 
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f344b9f7c90&gt;
 </pre></div>
 </div>
-<img alt="../../_images/15-springs-numerical-odes_55_1.png" src="../../_images/15-springs-numerical-odes_55_1.png" />
+<img alt="../../_images/15-springs-numerical-odes_54_1.png" src="../../_images/15-springs-numerical-odes_54_1.png" />
 </div>
 </div>
 <p>There’s even a scipy function that will estimate the polynomial terms in the Taylor expansion at a point for an arbitrary function!</p>
@@ -1793,7 +1788,7 @@ y_{N+1} = 1 + \Delta t \left(- \left(1 - \frac{\Delta t}{2} \right) \right) = 1 
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f344ba04f90&gt;
 </pre></div>
 </div>
-<img alt="../../_images/15-springs-numerical-odes_57_1.png" src="../../_images/15-springs-numerical-odes_57_1.png" />
+<img alt="../../_images/15-springs-numerical-odes_56_1.png" src="../../_images/15-springs-numerical-odes_56_1.png" />
 </div>
 </div>
 <p>The Taylor expansion is an approximation to the true solution. Clearly, the answer at <span class="math notranslate nohighlight">\(x=2\)</span> gets better as the order of the approximation increases. Let’s plot the difference between the true solution and the approximation for various order n</p>
@@ -1817,15 +1812,15 @@ y_{N+1} = 1 + \Delta t \left(- \left(1 - \frac{\Delta t}{2} \right) \right) = 1 
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Error in Taylor approx, abs[f(x=2)-exp(x=2)]&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/15-springs-numerical-odes_59_1.png" src="../../_images/15-springs-numerical-odes_59_1.png" />
+<img alt="../../_images/15-springs-numerical-odes_58_1.png" src="../../_images/15-springs-numerical-odes_58_1.png" />
 </div>
 </div>
 <ul class="simple">
 <li><p>Notice how the error gets smaller and smaller as the number of points goes.</p></li>
 <li><p>However, this only works so far, and eventually the error saturates. This is because of how numbers are stored in a computer. Floating point numbers are stored as (on a 32-bit computer):</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-128a049f-d06f-4c72-b1a5-907db7cf98f5">
-<span class="eqno">(370)<a class="headerlink" href="#equation-128a049f-d06f-4c72-b1a5-907db7cf98f5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d7ba3d84-9860-4a1f-b1b9-1ed1e919c452">
+<span class="eqno">(370)<a class="headerlink" href="#equation-d7ba3d84-9860-4a1f-b1b9-1ed1e919c452" title="Permalink to this equation">#</a></span>\[\begin{align}
 1.362597134568123 \times 10^{+36} &amp;&amp; \text{(15 decimal places and power of 10)}
 \end{align}\]</div>
 <ul class="simple">
@@ -1865,7 +1860,7 @@ y_{N+1} = 1 + \Delta t \left(- \left(1 - \frac{\Delta t}{2} \right) \right) = 1 
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Method of Undetermined Coefficients (sec 2.9)</p>
+            <p class="prev-next-title">Method of Undetermined Coefficient and Variations of Parameters</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="16-coupled-odes.html" title="next page">

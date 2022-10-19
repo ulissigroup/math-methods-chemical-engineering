@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Recap on linear regression &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    <title>Non-linear regression &#8212; Mathemtaical Methods for Chemical Engineering</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="06-262 Math Methods Recap" href="../course-recap.html" />
-    <link rel="prev" title="Recap from last class" href="25-statistics-continue-linear-regression.html" />
+    <link rel="prev" title="Stats continued and linear regression" href="25-statistics-continue-linear-regression.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -117,6 +117,11 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linear_algebra/1-intro-matrices.html">
+   Introduction to math methods for ChE and motivation for linear algebra
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../linear_algebra/linear_algebra.html">
    Linear Algebra
@@ -128,50 +133,38 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../linear_algebra/1-intro-matrices.html">
-     Introduction
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/2-matrix-manipulation.html">
-     Note on HW expectations
+     Matrix/Linear Algebra
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/3-gauss-elimination.html">
-     Return to Systems of Equations
+     Intro to Gauss Elimination
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/4-rank-gauss-examples.html">
-     Chemical Engineering example solved with Gauss elimination
+     Example of Gauss Elimination, and Matrix Rank/Inverse
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/5-determinants.html">
-     Using the inverse of A to solve a system of linear equations
+     Using matrix inverses, and matrix determinants
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/6-eigenvalues-1.html">
-     Homogeneous vs. Non-homogeneous Systems
+     Eigenvalue and Eigenvectors
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/7-eigenvalue-2-difference-equations.html">
-     <span class="math notranslate nohighlight">
-      \(\underline{Ex}\)
-     </span>
-     : Symmetric matrix (
-     <span class="math notranslate nohighlight">
-      \(\lambda\)
-     </span>
-     always real)
+     Eigenvalues/Eigenvectors continued, and application of eigenvalues to difference equations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/7b-numerical-eigenvalues.html">
-     Eigenvectors in python
+     Numerical Calculations of Eigenvalues/Eigenvectors in python
     </a>
    </li>
   </ul>
@@ -188,22 +181,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/8-differential-equations.html">
-     Differential Equations
+     Intro to Differential Equations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/9-exact-ode.html">
-     Recap
+     Exact ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/10-linear-ode.html">
-     Integrating Factors - Recap
+     Linear 1st-order ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/11-linear-ode-example.html">
-     Alternate Method (Last class continued)
+     Application of linear ODEs to ChE examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -213,12 +206,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/13-non-homogeneous-linear-odes.html">
-     Recap from last class
+     Non-homogeneous linear ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/14-MoUC-VoP.html">
-     Method of Undetermined Coefficients (sec 2.9)
+     Method of Undetermined Coefficient and Variations of Parameters
     </a>
    </li>
    <li class="toctree-l2">
@@ -233,7 +226,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/17-coupled-ode-continued.html">
-     Recap for coupled differential equations:
+     Coupled Differential Equations Continued!
     </a>
    </li>
    <li class="toctree-l2">
@@ -248,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/20-BVP.html">
-     Boundary Value Problems
+     Boundary value problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -275,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../partial_differential_equations/23-Fourier-Coefficients.html">
-     Recap on PDEs from last lecture
+     Fourier Coefficients!
     </a>
    </li>
   </ul>
@@ -297,12 +290,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="25-statistics-continue-linear-regression.html">
-     Recap from last class
+     Stats continued and linear regression
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Recap on linear regression
+     Non-linear regression
     </a>
    </li>
   </ul>
@@ -537,6 +530,11 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recap-on-linear-regression">
+   Recap on linear regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#turn-a-non-linear-regression-problem-into-a-linear-regression-problem">
    Turn a non-linear regression problem into a linear regression problem
   </a>
@@ -555,7 +553,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Recap on linear regression</h1>
+                <h1>Non-linear regression</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -565,6 +563,11 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recap-on-linear-regression">
+   Recap on linear regression
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#turn-a-non-linear-regression-problem-into-a-linear-regression-problem">
    Turn a non-linear regression problem into a linear regression problem
@@ -591,8 +594,10 @@ title="Print to PDF"
 \[\newcommand{\vec}[1]{\underline{#1}}\]</div>
 <div class="math notranslate nohighlight">
 \[\require{mhchem}\]</div>
-<section class="tex2jax_ignore mathjax_ignore" id="recap-on-linear-regression">
-<h1>Recap on linear regression<a class="headerlink" href="#recap-on-linear-regression" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="non-linear-regression">
+<h1>Non-linear regression<a class="headerlink" href="#non-linear-regression" title="Permalink to this headline">#</a></h1>
+<section id="recap-on-linear-regression">
+<h2>Recap on linear regression<a class="headerlink" href="#recap-on-linear-regression" title="Permalink to this headline">#</a></h2>
 <p>Last class, we talked about how we could turn linear regression into a linear algebra problem</p>
 <ul class="simple">
 <li><p>You can calculate this yourself</p></li>
@@ -603,6 +608,7 @@ title="Print to PDF"
 <li><p>Turn a non-linear problem into a linear one and solve</p></li>
 <li><p>Non-linear curve fitting</p></li>
 </ul>
+</section>
 <section id="turn-a-non-linear-regression-problem-into-a-linear-regression-problem">
 <h2>Turn a non-linear regression problem into a linear regression problem<a class="headerlink" href="#turn-a-non-linear-regression-problem-into-a-linear-regression-problem" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
@@ -611,15 +617,15 @@ title="Print to PDF"
 <li><p>We consider the disappearance of <span class="math notranslate nohighlight">\(A\)</span></p></li>
 <li><p>From the mole balance we know:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-d3623dd5-32b4-4832-8339-553a17e32cef">
-<span class="eqno">(507)<a class="headerlink" href="#equation-d3623dd5-32b4-4832-8339-553a17e32cef" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4e33a946-f7e7-46cc-afbb-0c491c4c5502">
+<span class="eqno">(507)<a class="headerlink" href="#equation-4e33a946-f7e7-46cc-afbb-0c491c4c5502" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{dN_A}{dt} = r_A V
 \end{equation}\]</div>
 <ul class="simple">
 <li><p>Let us assume the rate law is of the form: <span class="math notranslate nohighlight">\(r_A = k C_A^\alpha\)</span> and a constant volume so that:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-5c98a40c-509b-43a7-a3c4-35e61488083f">
-<span class="eqno">(508)<a class="headerlink" href="#equation-5c98a40c-509b-43a7-a3c4-35e61488083f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b831ab80-9676-48cd-9c5a-2fd8e5b30862">
+<span class="eqno">(508)<a class="headerlink" href="#equation-b831ab80-9676-48cd-9c5a-2fd8e5b30862" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{dC_A}{dt} = -k C_A^\alpha
 \end{equation}\]</div>
 <ul class="simple">
@@ -629,8 +635,8 @@ title="Print to PDF"
 </ul>
 </li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-4be0f1bf-3972-4bf7-966e-14eba8936d38">
-<span class="eqno">(509)<a class="headerlink" href="#equation-4be0f1bf-3972-4bf7-966e-14eba8936d38" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b4761725-75e8-4e42-b40e-701aba5ff1f4">
+<span class="eqno">(509)<a class="headerlink" href="#equation-b4761725-75e8-4e42-b40e-701aba5ff1f4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \ln(-\frac{dC_A}{dt}) = \ln{k} + \alpha \ln C_A
 \end{equation}\]</div>
 <ul class="simple">
@@ -712,7 +718,7 @@ title="Print to PDF"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Conc. [mol/L]&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/26-bonus-nonlinear-regression_4_1.png" src="../../_images/26-bonus-nonlinear-regression_4_1.png" />
+<img alt="../../_images/26-bonus-nonlinear-regression_5_1.png" src="../../_images/26-bonus-nonlinear-regression_5_1.png" />
 </div>
 </div>
 <p>So, we need to convert the list of numbers to a numpy array so we can do the analysis.</p>
@@ -741,10 +747,10 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f5bf812ce80&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fc8044ace50&gt;
 </pre></div>
 </div>
-<img alt="../../_images/26-bonus-nonlinear-regression_6_1.png" src="../../_images/26-bonus-nonlinear-regression_6_1.png" />
+<img alt="../../_images/26-bonus-nonlinear-regression_7_1.png" src="../../_images/26-bonus-nonlinear-regression_7_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -801,7 +807,7 @@ title="Print to PDF"
 k = 0.1402128334966662, conf interval [0.09372748 0.20975319]
 </pre></div>
 </div>
-<img alt="../../_images/26-bonus-nonlinear-regression_7_1.png" src="../../_images/26-bonus-nonlinear-regression_7_1.png" />
+<img alt="../../_images/26-bonus-nonlinear-regression_8_1.png" src="../../_images/26-bonus-nonlinear-regression_8_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -830,7 +836,7 @@ k = 0.1402128334966662, conf interval [0.09372748 0.20975319]
   <th>Date:</th>             <td>Wed, 19 Oct 2022</td> <th>  Prob (F-statistic):</th> <td>8.22e-08</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>14:41:47</td>     <th>  Log-Likelihood:    </th> <td>  13.785</td>
+  <th>Time:</th>                 <td>15:18:09</td>     <th>  Log-Likelihood:    </th> <td>  13.785</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>     7</td>      <th>  AIC:               </th> <td>  -23.57</td>
@@ -897,7 +903,7 @@ k = 0.1402128334966662, conf interval [0.09372748 0.20975319]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/26-bonus-nonlinear-regression_10_0.png" src="../../_images/26-bonus-nonlinear-regression_10_0.png" />
+<img alt="../../_images/26-bonus-nonlinear-regression_11_0.png" src="../../_images/26-bonus-nonlinear-regression_11_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -960,7 +966,7 @@ k = 0.1402128334966662, conf interval [0.09372748 0.20975319]
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/26-bonus-nonlinear-regression_14_1.png" src="../../_images/26-bonus-nonlinear-regression_14_1.png" />
+<img alt="../../_images/26-bonus-nonlinear-regression_15_1.png" src="../../_images/26-bonus-nonlinear-regression_15_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -989,7 +995,7 @@ k = 0.1402128334966662, conf interval [0.09372748 0.20975319]
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/26-bonus-nonlinear-regression_15_1.png" src="../../_images/26-bonus-nonlinear-regression_15_1.png" />
+<img alt="../../_images/26-bonus-nonlinear-regression_16_1.png" src="../../_images/26-bonus-nonlinear-regression_16_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1019,13 +1025,13 @@ k = 0.1402128334966662, conf interval [0.09372748 0.20975319]
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: lmfit in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (1.0.3)
-Requirement already satisfied: asteval&gt;=0.9.22 in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (from lmfit) (0.9.27)
-Requirement already satisfied: scipy&gt;=1.4 in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (from lmfit) (1.9.2)
-Requirement already satisfied: uncertainties&gt;=3.0.1 in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (from lmfit) (3.1.7)
-Requirement already satisfied: numpy&gt;=1.18 in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (from lmfit) (1.23.4)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: future in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (from uncertainties&gt;=3.0.1-&gt;lmfit) (0.18.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.18 in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (from lmfit) (1.23.4)
+Requirement already satisfied: asteval&gt;=0.9.22 in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (from lmfit) (0.9.27)
+Requirement already satisfied: uncertainties&gt;=3.0.1 in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (from lmfit) (3.1.7)
+Requirement already satisfied: scipy&gt;=1.4 in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (from lmfit) (1.9.2)
+Requirement already satisfied: future in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (from uncertainties&gt;=3.0.1-&gt;lmfit) (0.18.2)
 </pre></div>
 </div>
 </div>
@@ -1074,7 +1080,7 @@ Requirement already satisfied: numpy&gt;=1.18 in /home/runner/micromamba-root/en
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/26-bonus-nonlinear-regression_19_2.png" src="../../_images/26-bonus-nonlinear-regression_19_2.png" />
+<img alt="../../_images/26-bonus-nonlinear-regression_20_2.png" src="../../_images/26-bonus-nonlinear-regression_20_2.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1121,7 +1127,7 @@ Requirement already satisfied: numpy&gt;=1.18 in /home/runner/micromamba-root/en
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Recap from last class</p>
+            <p class="prev-next-title">Stats continued and linear regression</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../course-recap.html" title="next page">

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Boundary Value Problems &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    <title>Boundary value problems &#8212; Mathemtaical Methods for Chemical Engineering</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -117,6 +117,11 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linear_algebra/1-intro-matrices.html">
+   Introduction to math methods for ChE and motivation for linear algebra
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../linear_algebra/linear_algebra.html">
    Linear Algebra
@@ -128,50 +133,38 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../linear_algebra/1-intro-matrices.html">
-     Introduction
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/2-matrix-manipulation.html">
-     Note on HW expectations
+     Matrix/Linear Algebra
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/3-gauss-elimination.html">
-     Return to Systems of Equations
+     Intro to Gauss Elimination
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/4-rank-gauss-examples.html">
-     Chemical Engineering example solved with Gauss elimination
+     Example of Gauss Elimination, and Matrix Rank/Inverse
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/5-determinants.html">
-     Using the inverse of A to solve a system of linear equations
+     Using matrix inverses, and matrix determinants
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/6-eigenvalues-1.html">
-     Homogeneous vs. Non-homogeneous Systems
+     Eigenvalue and Eigenvectors
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/7-eigenvalue-2-difference-equations.html">
-     <span class="math notranslate nohighlight">
-      \(\underline{Ex}\)
-     </span>
-     : Symmetric matrix (
-     <span class="math notranslate nohighlight">
-      \(\lambda\)
-     </span>
-     always real)
+     Eigenvalues/Eigenvectors continued, and application of eigenvalues to difference equations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/7b-numerical-eigenvalues.html">
-     Eigenvectors in python
+     Numerical Calculations of Eigenvalues/Eigenvectors in python
     </a>
    </li>
   </ul>
@@ -188,22 +181,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="8-differential-equations.html">
-     Differential Equations
+     Intro to Differential Equations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="9-exact-ode.html">
-     Recap
+     Exact ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10-linear-ode.html">
-     Integrating Factors - Recap
+     Linear 1st-order ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11-linear-ode-example.html">
-     Alternate Method (Last class continued)
+     Application of linear ODEs to ChE examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -213,12 +206,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13-non-homogeneous-linear-odes.html">
-     Recap from last class
+     Non-homogeneous linear ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14-MoUC-VoP.html">
-     Method of Undetermined Coefficients (sec 2.9)
+     Method of Undetermined Coefficient and Variations of Parameters
     </a>
    </li>
    <li class="toctree-l2">
@@ -233,7 +226,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="17-coupled-ode-continued.html">
-     Recap for coupled differential equations:
+     Coupled Differential Equations Continued!
     </a>
    </li>
    <li class="toctree-l2">
@@ -248,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Boundary Value Problems
+     Boundary value problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -275,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../partial_differential_equations/23-Fourier-Coefficients.html">
-     Recap on PDEs from last lecture
+     Fourier Coefficients!
     </a>
    </li>
   </ul>
@@ -297,12 +290,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../statistics/25-statistics-continue-linear-regression.html">
-     Recap from last class
+     Stats continued and linear regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../statistics/26-bonus-nonlinear-regression.html">
-     Recap on linear regression
+     Non-linear regression
     </a>
    </li>
   </ul>
@@ -536,32 +529,20 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Boundary Value Problems
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-pirate-defense">
+   Example: pirate defense
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Boundary value problems
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analytical-solutions-to-bvps">
+   Analytical solutions to BVPs
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-pirate-defense">
-     Example: pirate defense
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-bvp">
+     Example BVP:
     </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#analytical-solutions-to-bvps">
-     Analytical solutions to BVPs
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#example-bvp">
-       Example BVP:
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
@@ -574,7 +555,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Boundary Value Problems</h1>
+                <h1>Boundary value problems</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -584,32 +565,20 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Boundary Value Problems
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-pirate-defense">
+   Example: pirate defense
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Boundary value problems
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analytical-solutions-to-bvps">
+   Analytical solutions to BVPs
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-pirate-defense">
-     Example: pirate defense
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-bvp">
+     Example BVP:
     </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#analytical-solutions-to-bvps">
-     Analytical solutions to BVPs
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#example-bvp">
-       Example BVP:
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
@@ -623,28 +592,27 @@ title="Print to PDF"
                 
               <div>
                 
-  <p>{{ badge }}
-$<span class="math notranslate nohighlight">\(\newcommand{\arr}[1]{\underline{\underline{#1}}}\)</span><span class="math notranslate nohighlight">\(    
-\)</span><span class="math notranslate nohighlight">\(\newcommand{\vec}[1]{\underline{#1}}\)</span><span class="math notranslate nohighlight">\(   
-\)</span><span class="math notranslate nohighlight">\(\require{mhchem}\)</span>$</p>
+  <div class="math notranslate nohighlight">
+\[\newcommand{\arr}[1]{\underline{\underline{#1}}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\vec}[1]{\underline{#1}}\]</div>
+<div class="math notranslate nohighlight">
+\[\require{mhchem}\]</div>
 <section class="tex2jax_ignore mathjax_ignore" id="boundary-value-problems">
-<h1>Boundary Value Problems<a class="headerlink" href="#boundary-value-problems" title="Permalink to this headline">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>Boundary value problems<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<h1>Boundary value problems<a class="headerlink" href="#boundary-value-problems" title="Permalink to this headline">#</a></h1>
 <p>Everything so far: Initial value problems</p>
 <ul class="simple">
 <li><p>Initial conditions specify state at a single value of the independent variable</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-f8dc2107-fa36-49c9-b431-e5947db2f91e">
-<span class="eqno">(473)<a class="headerlink" href="#equation-f8dc2107-fa36-49c9-b431-e5947db2f91e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1de33937-25ab-4f3a-88b0-ed3b7c9bb6ed">
+<span class="eqno">(473)<a class="headerlink" href="#equation-1de33937-25ab-4f3a-88b0-ed3b7c9bb6ed" title="Permalink to this equation">#</a></span>\[\begin{align}
 t = 0 \rightarrow y(t&amp;=0) = y_0\\
 y'(t&amp;=0) = y_0'
 \end{align}\]</div>
 <p>These IVP will have one unique solution. Implicitly, we have assumed that y and y’ are both defined at the initial condition, and that the system of differential equations is continuous over the solution interval.</p>
 <p><span class="math notranslate nohighlight">\(\underline{\text{Ex}}\)</span>: <span class="math notranslate nohighlight">\(y'' = 0 \hspace{2cm} y(0) = 2, \ y'(0) = 1\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-c4a3ee28-32c8-4296-a8b0-fb006fb5362b">
-<span class="eqno">(474)<a class="headerlink" href="#equation-c4a3ee28-32c8-4296-a8b0-fb006fb5362b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c6c87442-adfc-4561-95b5-9ed8abadba88">
+<span class="eqno">(474)<a class="headerlink" href="#equation-c6c87442-adfc-4561-95b5-9ed8abadba88" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(t) = ct + d\\
 y(0) = 2 = d &amp;&amp; \rightarrow \text{IC#1 gives intercept}\\
 y'(0) = 1 = c &amp;&amp; \text{IC#2 gives slope}
@@ -657,21 +625,21 @@ y'(0) = 1 = c &amp;&amp; \text{IC#2 gives slope}
 <ol class="simple">
 <li><p>Analytical solution <span class="math notranslate nohighlight">\(\rightarrow\)</span> apply all of our boundary conditions</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-629f085f-cf68-4867-92ed-90714ce48df7">
-<span class="eqno">(475)<a class="headerlink" href="#equation-629f085f-cf68-4867-92ed-90714ce48df7" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-df804485-c15b-456a-878b-fc86adc3f526">
+<span class="eqno">(475)<a class="headerlink" href="#equation-df804485-c15b-456a-878b-fc86adc3f526" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{d}{dt}\begin{bmatrix}x\\z\\v_x\\v_z \end{bmatrix} = 
 \begin{bmatrix} v_x\\v_z\\-rv_x\\-rv_z-g\end{bmatrix} \rightarrow \text{physics with air friction}
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-645fc544-b2d0-4a0f-bf34-c907a4a01d3d">
-<span class="eqno">(476)<a class="headerlink" href="#equation-645fc544-b2d0-4a0f-bf34-c907a4a01d3d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b8cc9eac-17f3-4a5a-a21c-ceeb019ae7b6">
+<span class="eqno">(476)<a class="headerlink" href="#equation-b8cc9eac-17f3-4a5a-a21c-ceeb019ae7b6" title="Permalink to this equation">#</a></span>\[\begin{align}
 x(t=0) = 0\\
 z(t=0) = H\\
 z(x=L) = 0 
 \end{align}\]</div>
 <p>That third condition is very strange!</p>
 <p>The conditions that we would use if we were treating this as an initial value problem are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-72672cd9-572d-4ba1-8fbf-945f488a0d21">
-<span class="eqno">(477)<a class="headerlink" href="#equation-72672cd9-572d-4ba1-8fbf-945f488a0d21" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6127119e-89e6-4e17-bd37-b8ebf94a0b03">
+<span class="eqno">(477)<a class="headerlink" href="#equation-6127119e-89e6-4e17-bd37-b8ebf94a0b03" title="Permalink to this equation">#</a></span>\[\begin{align}
 x(t=0) = 0\\
 z(t=0) = H\\
 v_x(t=0) = ?\\
@@ -721,7 +689,7 @@ v_z(t=0) = ?
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;z [m]&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/20-BVP_4_1.png" src="../../_images/20-BVP_4_1.png" />
+<img alt="../../_images/20-BVP_3_1.png" src="../../_images/20-BVP_3_1.png" />
 </div>
 </div>
 <p>Say that we know that the cannonballs were fired at a speed of 40 m/s, but the angle of firing could be adjusted (e.g. <span class="math notranslate nohighlight">\(v_x=v\cos \theta, v_z=v\sin\theta\)</span>). Is it possible to hit the pirate ship?</p>
@@ -770,7 +738,7 @@ v_z(t=0) = ?
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;z [m]&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/20-BVP_7_1.png" src="../../_images/20-BVP_7_1.png" />
+<img alt="../../_images/20-BVP_6_1.png" src="../../_images/20-BVP_6_1.png" />
 </div>
 </div>
 <p>So, what did we learn?</p>
@@ -785,8 +753,8 @@ v_z(t=0) = ?
 <h2>Analytical solutions to BVPs<a class="headerlink" href="#analytical-solutions-to-bvps" title="Permalink to this headline">#</a></h2>
 <p>Analytical solutions to BVPs are usually not a problem to solve, just new boundary conditions.</p>
 <p><span class="math notranslate nohighlight">\(\underline{\text{Ex}}\)</span>: <span class="math notranslate nohighlight">\(2^{nd}\)</span> order ODE would be specified by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-682cfd47-26a3-4507-917a-2978900c9317">
-<span class="eqno">(478)<a class="headerlink" href="#equation-682cfd47-26a3-4507-917a-2978900c9317" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-47cb653d-3014-439e-8aa0-c9e1fe2de860">
+<span class="eqno">(478)<a class="headerlink" href="#equation-47cb653d-3014-439e-8aa0-c9e1fe2de860" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(x=x_1) = y_1\\
 y(x=x_2) = y_2
 \end{align}\]</div>
@@ -797,8 +765,8 @@ y(x=x_2) = y_2
 <li><p>infinite solutions</p></li>
 </ul>
 <p><span class="math notranslate nohighlight">\(\underline{\text{Ex}}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e2b44863-be40-4995-9db9-40c789a18f77">
-<span class="eqno">(479)<a class="headerlink" href="#equation-e2b44863-be40-4995-9db9-40c789a18f77" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-19737aec-e8df-489a-ac4e-f1d74329ea4a">
+<span class="eqno">(479)<a class="headerlink" href="#equation-19737aec-e8df-489a-ac4e-f1d74329ea4a" title="Permalink to this equation">#</a></span>\[\begin{align}
 y'' + \lambda y = 0 &amp;&amp; \rightarrow \text{rod of length $L$}\\
 y(0) = 0\\
 y(L) = 0
@@ -821,18 +789,18 @@ y(L) = 0
 <ul class="simple">
 <li><p>Also care about critical <span class="math notranslate nohighlight">\(P\)</span></p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-2f38ab61-7137-4b76-b7ab-b868fd987fef">
-<span class="eqno">(480)<a class="headerlink" href="#equation-2f38ab61-7137-4b76-b7ab-b868fd987fef" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4462ed34-e47f-45a8-b58c-06a331ee36e5">
+<span class="eqno">(480)<a class="headerlink" href="#equation-4462ed34-e47f-45a8-b58c-06a331ee36e5" title="Permalink to this equation">#</a></span>\[\begin{align}
 EIy'''' + Py'' = 0
 \end{align}\]</div>
 <p>BC:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5184dea7-2311-41cb-9038-bce447c3d17c">
-<span class="eqno">(481)<a class="headerlink" href="#equation-5184dea7-2311-41cb-9038-bce447c3d17c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-82773630-293c-449b-ba57-ea8077a67306">
+<span class="eqno">(481)<a class="headerlink" href="#equation-82773630-293c-449b-ba57-ea8077a67306" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(x=0) = 0 &amp;&amp; y'(x=L) = 0\\
 y(x=L) = 0 &amp;&amp; y''(x=0) = 0
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-7fea39da-cc09-445d-bfde-d6cca727f7bf">
-<span class="eqno">(482)<a class="headerlink" href="#equation-7fea39da-cc09-445d-bfde-d6cca727f7bf" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ce5e9913-96f5-41d3-95e7-b22e62687c36">
+<span class="eqno">(482)<a class="headerlink" href="#equation-ce5e9913-96f5-41d3-95e7-b22e62687c36" title="Permalink to this equation">#</a></span>\[\begin{align}
 y'''' + \lambda y'' = 0 &amp;&amp; \lambda \equiv \frac{P}{EI}\\
 F \equiv y'' \rightarrow &amp;&amp; F'' + \lambda F = 0
 \end{align}\]</div>
@@ -848,8 +816,8 @@ y'' &amp;= ax + b\\
 y &amp;= c_1x^3 + c_2x^2 + c_3x + c_4
 \end{align*}\]</div>
 <p>apply BC:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a757ffa2-d457-4a40-acb1-a4eb530b044a">
-<span class="eqno">(483)<a class="headerlink" href="#equation-a757ffa2-d457-4a40-acb1-a4eb530b044a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d39796a2-8d9e-455d-9038-fd897e94229f">
+<span class="eqno">(483)<a class="headerlink" href="#equation-d39796a2-8d9e-455d-9038-fd897e94229f" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(c&amp;=0) = 0 = c_4\\
 y''(x&amp;=0) = 0 = 2c_2\\
 y(x&amp;=L) = 0 = c_1L^3 + c_3L \rightarrow c_3 = -c_1L^2\\
@@ -860,22 +828,22 @@ This is the solution if <span class="math notranslate nohighlight">\(P=0\)</span
 2. <span class="math notranslate nohighlight">\(\lambda \neq 0 \rightarrow y'''' + \lambda y'' = 0\)</span> <br />
 guess <span class="math notranslate nohighlight">\(y(x) = e^{rx}\)</span><br />
 plug in:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7ec4210c-e898-4f0c-b790-3a804bae0162">
-<span class="eqno">(484)<a class="headerlink" href="#equation-7ec4210c-e898-4f0c-b790-3a804bae0162" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bf5ff365-2081-418e-8132-d48f3807ba3e">
+<span class="eqno">(484)<a class="headerlink" href="#equation-bf5ff365-2081-418e-8132-d48f3807ba3e" title="Permalink to this equation">#</a></span>\[\begin{align}
 r^4e^{rx} + \lambda r^2e^{rx} = 0\\
 r^4 + \lambda r^2 = 0\\
 r^2(r^2 + \lambda) = 0\\
 r = 0,\ 0,\ \pm i\sqrt{\lambda} \\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-d8f43dab-5f2c-4f11-beaa-8ab91dba5d9f">
-<span class="eqno">(485)<a class="headerlink" href="#equation-d8f43dab-5f2c-4f11-beaa-8ab91dba5d9f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cd662d4b-e264-4cf8-a9f9-29d9a7652be7">
+<span class="eqno">(485)<a class="headerlink" href="#equation-cd662d4b-e264-4cf8-a9f9-29d9a7652be7" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1 &amp;= e^{0x}\\
 y_2 &amp;= xe^{0x}\\
 y_3 &amp;= \sin\sqrt{\lambda}x\\
 y_4 &amp;= \cos\sqrt{\lambda}x
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-7ba0e924-227d-4b11-bd1d-6cd1fdcf36db">
-<span class="eqno">(486)<a class="headerlink" href="#equation-7ba0e924-227d-4b11-bd1d-6cd1fdcf36db" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7476cae8-d8ae-434d-be6d-5ee6d8c40e96">
+<span class="eqno">(486)<a class="headerlink" href="#equation-7476cae8-d8ae-434d-be6d-5ee6d8c40e96" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(x) &amp;= c_1 + c_2x + c_3\sin\sqrt{\lambda}x + c_4\cos\sqrt{\lambda}x\\
 y'(x) &amp;= c_2 + c_3\sqrt{\lambda}\cos\sqrt{\lambda}x - c_4\sqrt{\lambda}\sin\sqrt{\lambda}x\\
 y''(x) &amp;= -c_3\lambda\sin\sqrt{\lambda}x - c_4\lambda\cos\sqrt{\lambda}x
@@ -897,15 +865,15 @@ y’(x=L) = 0 &amp;= c_2 + c_3\sqrt{\lambda}\cos\sqrt{\lambda}L\
 &amp;= c_3(\sqrt{\lambda}L\cos\sqrt{\lambda}L - \sin\sqrt{\lambda}L)
 \end{align}
 Only situation without trivial solution is if</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fc57c604-a8fd-454d-b88c-d8e169ae1c4f">
-<span class="eqno">(487)<a class="headerlink" href="#equation-fc57c604-a8fd-454d-b88c-d8e169ae1c4f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0f016bfa-c6de-4291-ab86-4304b5ef7098">
+<span class="eqno">(487)<a class="headerlink" href="#equation-0f016bfa-c6de-4291-ab86-4304b5ef7098" title="Permalink to this equation">#</a></span>\[\begin{align}
 \sqrt{\lambda}L\cos\sqrt{\lambda}L - \sin\sqrt{\lambda}L = 0\\
 \rightarrow \tan\sqrt{\lambda}L = \sqrt{\lambda}L \rightarrow \tan x = x 
 \end{align}\]</div>
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vR-WnIunOQjjauqlmNGvuq83eLzIUUXSaT2SCCEboAIfRNN_tovUiRqnTai2qE6AJAt89KyQPMGRK_p/pub?w=558&h=283">
 <p><span class="math notranslate nohighlight">\(\rightarrow\)</span> infinite number of solutions but only care about the first one (smallest <span class="math notranslate nohighlight">\(P\)</span>)</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bf2db611-d51b-45b4-89d0-8de2a1807538">
-<span class="eqno">(488)<a class="headerlink" href="#equation-bf2db611-d51b-45b4-89d0-8de2a1807538" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a7408cbe-fe50-4824-8ba0-60c17011bd67">
+<span class="eqno">(488)<a class="headerlink" href="#equation-a7408cbe-fe50-4824-8ba0-60c17011bd67" title="Permalink to this equation">#</a></span>\[\begin{align}
 \sqrt{\lambda}L &amp;= 4.4934...\\
 \lambda_1 &amp;= \frac{(4.493)^2}{L^2}\\
 P &amp;= \lambda EI \rightarrow P_{max} = \frac{(4.49)^2}{L^2}EI \approx \frac{20.2}{L^2}EI
@@ -940,7 +908,7 @@ P &amp;= \lambda EI \rightarrow P_{max} = \frac{(4.49)^2}{L^2}EI \approx \frac{2
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/20-BVP_14_1.png" src="../../_images/20-BVP_14_1.png" />
+<img alt="../../_images/20-BVP_13_1.png" src="../../_images/20-BVP_13_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -953,7 +921,7 @@ P &amp;= \lambda EI \rightarrow P_{max} = \frac{(4.49)^2}{L^2}EI \approx \frac{2
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;x&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/20-BVP_15_1.png" src="../../_images/20-BVP_15_1.png" />
+<img alt="../../_images/20-BVP_14_1.png" src="../../_images/20-BVP_14_1.png" />
 </div>
 </div>
 </section>

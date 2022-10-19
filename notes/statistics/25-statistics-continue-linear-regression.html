@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Recap from last class &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    <title>Stats continued and linear regression &#8212; Mathemtaical Methods for Chemical Engineering</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Recap on linear regression" href="26-bonus-nonlinear-regression.html" />
+    <link rel="next" title="Non-linear regression" href="26-bonus-nonlinear-regression.html" />
     <link rel="prev" title="Intro to engineering statistics" href="24-intro-statistics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -117,6 +117,11 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linear_algebra/1-intro-matrices.html">
+   Introduction to math methods for ChE and motivation for linear algebra
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../linear_algebra/linear_algebra.html">
    Linear Algebra
@@ -128,50 +133,38 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../linear_algebra/1-intro-matrices.html">
-     Introduction
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/2-matrix-manipulation.html">
-     Note on HW expectations
+     Matrix/Linear Algebra
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/3-gauss-elimination.html">
-     Return to Systems of Equations
+     Intro to Gauss Elimination
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/4-rank-gauss-examples.html">
-     Chemical Engineering example solved with Gauss elimination
+     Example of Gauss Elimination, and Matrix Rank/Inverse
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/5-determinants.html">
-     Using the inverse of A to solve a system of linear equations
+     Using matrix inverses, and matrix determinants
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/6-eigenvalues-1.html">
-     Homogeneous vs. Non-homogeneous Systems
+     Eigenvalue and Eigenvectors
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/7-eigenvalue-2-difference-equations.html">
-     <span class="math notranslate nohighlight">
-      \(\underline{Ex}\)
-     </span>
-     : Symmetric matrix (
-     <span class="math notranslate nohighlight">
-      \(\lambda\)
-     </span>
-     always real)
+     Eigenvalues/Eigenvectors continued, and application of eigenvalues to difference equations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../linear_algebra/7b-numerical-eigenvalues.html">
-     Eigenvectors in python
+     Numerical Calculations of Eigenvalues/Eigenvectors in python
     </a>
    </li>
   </ul>
@@ -188,22 +181,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/8-differential-equations.html">
-     Differential Equations
+     Intro to Differential Equations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/9-exact-ode.html">
-     Recap
+     Exact ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/10-linear-ode.html">
-     Integrating Factors - Recap
+     Linear 1st-order ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/11-linear-ode-example.html">
-     Alternate Method (Last class continued)
+     Application of linear ODEs to ChE examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -213,12 +206,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/13-non-homogeneous-linear-odes.html">
-     Recap from last class
+     Non-homogeneous linear ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/14-MoUC-VoP.html">
-     Method of Undetermined Coefficients (sec 2.9)
+     Method of Undetermined Coefficient and Variations of Parameters
     </a>
    </li>
    <li class="toctree-l2">
@@ -233,7 +226,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/17-coupled-ode-continued.html">
-     Recap for coupled differential equations:
+     Coupled Differential Equations Continued!
     </a>
    </li>
    <li class="toctree-l2">
@@ -248,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/20-BVP.html">
-     Boundary Value Problems
+     Boundary value problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -275,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../partial_differential_equations/23-Fourier-Coefficients.html">
-     Recap on PDEs from last lecture
+     Fourier Coefficients!
     </a>
    </li>
   </ul>
@@ -297,12 +290,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Recap from last class
+     Stats continued and linear regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="26-bonus-nonlinear-regression.html">
-     Recap on linear regression
+     Non-linear regression
     </a>
    </li>
   </ul>
@@ -538,6 +531,11 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
+   Stats continued and linear regression
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recap-from-last-class">
    Recap from last class
   </a>
  </li>
@@ -609,7 +607,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Recap from last class</h1>
+                <h1>Stats continued and linear regression</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -621,6 +619,11 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
+   Stats continued and linear regression
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recap-from-last-class">
    Recap from last class
   </a>
  </li>
@@ -699,6 +702,8 @@ title="Print to PDF"
 \[\newcommand{\vec}[1]{\underline{#1}}\]</div>
 <div class="math notranslate nohighlight">
 \[\require{mhchem}\]</div>
+<section class="tex2jax_ignore mathjax_ignore" id="stats-continued-and-linear-regression">
+<h1>Stats continued and linear regression<a class="headerlink" href="#stats-continued-and-linear-regression" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># make our plot look a little prettier </span>
@@ -721,6 +726,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="recap-from-last-class">
 <h1>Recap from last class<a class="headerlink" href="#recap-from-last-class" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
@@ -813,7 +819,7 @@ title="Print to PDF"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Concentration $C_A$&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/25-statistics-continue-linear-regression_10_1.png" src="../../_images/25-statistics-continue-linear-regression_10_1.png" />
+<img alt="../../_images/25-statistics-continue-linear-regression_11_1.png" src="../../_images/25-statistics-continue-linear-regression_11_1.png" />
 </div>
 </div>
 <p>Fit a fourth order polynomial to this data and determine the confidence interval for each parameter. This data is from example 5-1 in Fogler, Elements of Chemical Reaction Engineering.</p>
@@ -874,7 +880,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/25-statistics-continue-linear-regression_17_0.png" src="../../_images/25-statistics-continue-linear-regression_17_0.png" />
+<img alt="../../_images/25-statistics-continue-linear-regression_18_0.png" src="../../_images/25-statistics-continue-linear-regression_18_0.png" />
 </div>
 </div>
 </section>
@@ -900,7 +906,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/25-statistics-continue-linear-regression_19_0.png" src="../../_images/25-statistics-continue-linear-regression_19_0.png" />
+<img alt="../../_images/25-statistics-continue-linear-regression_20_0.png" src="../../_images/25-statistics-continue-linear-regression_20_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -936,7 +942,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/25-statistics-continue-linear-regression_23_0.png" src="../../_images/25-statistics-continue-linear-regression_23_0.png" />
+<img alt="../../_images/25-statistics-continue-linear-regression_24_0.png" src="../../_images/25-statistics-continue-linear-regression_24_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -981,7 +987,7 @@ title="Print to PDF"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;SSE&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/25-statistics-continue-linear-regression_27_1.png" src="../../_images/25-statistics-continue-linear-regression_27_1.png" />
+<img alt="../../_images/25-statistics-continue-linear-regression_28_1.png" src="../../_images/25-statistics-continue-linear-regression_28_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1062,7 +1068,7 @@ RMSE = 0.000054
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/25-statistics-continue-linear-regression_35_0.png" src="../../_images/25-statistics-continue-linear-regression_35_0.png" />
+<img alt="../../_images/25-statistics-continue-linear-regression_36_0.png" src="../../_images/25-statistics-continue-linear-regression_36_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1102,7 +1108,7 @@ Mean absolute error = 0.002857
 RMSE = 0.003269
 </pre></div>
 </div>
-<img alt="../../_images/25-statistics-continue-linear-regression_36_1.png" src="../../_images/25-statistics-continue-linear-regression_36_1.png" />
+<img alt="../../_images/25-statistics-continue-linear-regression_37_1.png" src="../../_images/25-statistics-continue-linear-regression_37_1.png" />
 </div>
 </div>
 </section>
@@ -1325,7 +1331,7 @@ Requirement already satisfied: six in /usr/local/lib/python3.7/dist-packages (fr
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f2be31de890&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/25-statistics-continue-linear-regression_44_1.png" src="../../_images/25-statistics-continue-linear-regression_44_1.png" />
+<img alt="../../_images/25-statistics-continue-linear-regression_45_1.png" src="../../_images/25-statistics-continue-linear-regression_45_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1532,7 +1538,7 @@ Requirement already satisfied: six in /usr/local/lib/python3.7/dist-packages (fr
     <a class='right-next' id="next-link" href="26-bonus-nonlinear-regression.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Recap on linear regression</p>
+        <p class="prev-next-title">Non-linear regression</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

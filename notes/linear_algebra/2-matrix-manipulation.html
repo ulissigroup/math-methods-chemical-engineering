@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Note on HW expectations &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    <title>Matrix/Linear Algebra &#8212; Mathemtaical Methods for Chemical Engineering</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Return to Systems of Equations" href="3-gauss-elimination.html" />
-    <link rel="prev" title="Introduction" href="1-intro-matrices.html" />
+    <link rel="next" title="Intro to Gauss Elimination" href="3-gauss-elimination.html" />
+    <link rel="prev" title="Linear Algebra" href="linear_algebra.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -117,6 +117,11 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-intro-matrices.html">
+   Introduction to math methods for ChE and motivation for linear algebra
+  </a>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="linear_algebra.html">
    Linear Algebra
@@ -127,51 +132,39 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="1-intro-matrices.html">
-     Introduction
-    </a>
-   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Note on HW expectations
+     Matrix/Linear Algebra
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="3-gauss-elimination.html">
-     Return to Systems of Equations
+     Intro to Gauss Elimination
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="4-rank-gauss-examples.html">
-     Chemical Engineering example solved with Gauss elimination
+     Example of Gauss Elimination, and Matrix Rank/Inverse
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="5-determinants.html">
-     Using the inverse of A to solve a system of linear equations
+     Using matrix inverses, and matrix determinants
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="6-eigenvalues-1.html">
-     Homogeneous vs. Non-homogeneous Systems
+     Eigenvalue and Eigenvectors
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="7-eigenvalue-2-difference-equations.html">
-     <span class="math notranslate nohighlight">
-      \(\underline{Ex}\)
-     </span>
-     : Symmetric matrix (
-     <span class="math notranslate nohighlight">
-      \(\lambda\)
-     </span>
-     always real)
+     Eigenvalues/Eigenvectors continued, and application of eigenvalues to difference equations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="7b-numerical-eigenvalues.html">
-     Eigenvectors in python
+     Numerical Calculations of Eigenvalues/Eigenvectors in python
     </a>
    </li>
   </ul>
@@ -188,22 +181,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/8-differential-equations.html">
-     Differential Equations
+     Intro to Differential Equations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/9-exact-ode.html">
-     Recap
+     Exact ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/10-linear-ode.html">
-     Integrating Factors - Recap
+     Linear 1st-order ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/11-linear-ode-example.html">
-     Alternate Method (Last class continued)
+     Application of linear ODEs to ChE examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -213,12 +206,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/13-non-homogeneous-linear-odes.html">
-     Recap from last class
+     Non-homogeneous linear ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/14-MoUC-VoP.html">
-     Method of Undetermined Coefficients (sec 2.9)
+     Method of Undetermined Coefficient and Variations of Parameters
     </a>
    </li>
    <li class="toctree-l2">
@@ -233,7 +226,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/17-coupled-ode-continued.html">
-     Recap for coupled differential equations:
+     Coupled Differential Equations Continued!
     </a>
    </li>
    <li class="toctree-l2">
@@ -248,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/20-BVP.html">
-     Boundary Value Problems
+     Boundary value problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -275,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../partial_differential_equations/23-Fourier-Coefficients.html">
-     Recap on PDEs from last lecture
+     Fourier Coefficients!
     </a>
    </li>
   </ul>
@@ -297,12 +290,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../statistics/25-statistics-continue-linear-regression.html">
-     Recap from last class
+     Stats continued and linear regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../statistics/26-bonus-nonlinear-regression.html">
-     Recap on linear regression
+     Non-linear regression
     </a>
    </li>
   </ul>
@@ -538,11 +531,6 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Note on HW expectations
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#matrix-linear-algebra">
    Matrix/Linear Algebra
   </a>
  </li>
@@ -681,7 +669,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Note on HW expectations</h1>
+                <h1>Matrix/Linear Algebra</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -693,11 +681,6 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Note on HW expectations
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#matrix-linear-algebra">
    Matrix/Linear Algebra
   </a>
  </li>
@@ -843,10 +826,6 @@ title="Print to PDF"
 \[\newcommand{\vec}[1]{\underline{#1}}\]</div>
 <div class="math notranslate nohighlight">
 \[\require{mhchem}\]</div>
-<section class="tex2jax_ignore mathjax_ignore" id="note-on-hw-expectations">
-<h1>Note on HW expectations<a class="headerlink" href="#note-on-hw-expectations" title="Permalink to this headline">#</a></h1>
-<p>This is an engineering course. The math and homeworks will be difficult and challenging. I am expecting that they will take you on average about 8 hours per week to do (+ 4 hours in class, for a 12 credit class) including studying. If you find that they are taking you substantially longer to do, please let me know and we can discuss strategies.</p>
-</section>
 <section class="tex2jax_ignore mathjax_ignore" id="matrix-linear-algebra">
 <h1>Matrix/Linear Algebra<a class="headerlink" href="#matrix-linear-algebra" title="Permalink to this headline">#</a></h1>
 <p>This is an example of a vector:</p>
@@ -929,8 +908,8 @@ x_3
 <section id="system-of-reactions-very-helpful-for-reaction-engineering">
 <h3>System of reactions (very helpful for reaction engineering!)<a class="headerlink" href="#system-of-reactions-very-helpful-for-reaction-engineering" title="Permalink to this headline">#</a></h3>
 <p>Let’s consider a set of two reactions, and we know the rate of reaction of each:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-49e334a4-4baf-47a0-8f6e-09b054c99ef6">
-<span class="eqno">(1)<a class="headerlink" href="#equation-49e334a4-4baf-47a0-8f6e-09b054c99ef6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-227c53cd-5de7-46a7-ada6-38065ea0052f">
+<span class="eqno">(1)<a class="headerlink" href="#equation-227c53cd-5de7-46a7-ada6-38065ea0052f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \ce{2H2 + O2 -&gt;[r_1] 2H2O}\\
 \ce{CO + H_2O -&gt;[r_2] H2 + CO2}
 \end{equation}\]</div>
@@ -970,11 +949,11 @@ r_{CO2}
 <section id="addition-example-1">
 <h3>Addition Example 1<a class="headerlink" href="#addition-example-1" title="Permalink to this headline">#</a></h3>
 <p>$\arr{A}=</p>
-<div class="amsmath math notranslate nohighlight" id="equation-43adfcaa-6f2d-49dc-ab86-a7ee52efb07d">
-<span class="eqno">(2)<a class="headerlink" href="#equation-43adfcaa-6f2d-49dc-ab86-a7ee52efb07d" title="Permalink to this equation">#</a></span>\[\begin{bmatrix} 1&amp;-1\\
+<div class="amsmath math notranslate nohighlight" id="equation-d86e3f28-a0ed-438a-9aa5-ff048e5f13cb">
+<span class="eqno">(2)<a class="headerlink" href="#equation-d86e3f28-a0ed-438a-9aa5-ff048e5f13cb" title="Permalink to this equation">#</a></span>\[\begin{bmatrix} 1&amp;-1\\
 0&amp;-1\end{bmatrix}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-2bd83bd4-35c1-4262-8472-22ffce3ce4c2">
-<span class="eqno">(3)<a class="headerlink" href="#equation-2bd83bd4-35c1-4262-8472-22ffce3ce4c2" title="Permalink to this equation">#</a></span>\[\begin{bmatrix} -2 &amp; -1\\
+<div class="amsmath math notranslate nohighlight" id="equation-70cc6214-77ba-42e8-9350-36ce23d271c9">
+<span class="eqno">(3)<a class="headerlink" href="#equation-70cc6214-77ba-42e8-9350-36ce23d271c9" title="Permalink to this equation">#</a></span>\[\begin{bmatrix} -2 &amp; -1\\
 2&amp;4\end{bmatrix}\]</div>
 <p>What is <span class="math notranslate nohighlight">\(\arr{A}+\arr{B}\)</span>?</p>
 <p><span class="math notranslate nohighlight">\(\arr{A}+\arr{B}=\begin{bmatrix} -1 &amp;-2\\2&amp;3\end{bmatrix}\)</span></p>
@@ -1274,17 +1253,17 @@ The shape of D.T is (3, 2)
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="1-intro-matrices.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="linear_algebra.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Introduction</p>
+            <p class="prev-next-title">Linear Algebra</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="3-gauss-elimination.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Return to Systems of Equations</p>
+        <p class="prev-next-title">Intro to Gauss Elimination</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Using the inverse of A to solve a system of linear equations &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    <title>Using matrix inverses, and matrix determinants &#8212; Mathemtaical Methods for Chemical Engineering</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Homogeneous vs. Non-homogeneous Systems" href="6-eigenvalues-1.html" />
-    <link rel="prev" title="Chemical Engineering example solved with Gauss elimination" href="4-rank-gauss-examples.html" />
+    <link rel="next" title="Eigenvalue and Eigenvectors" href="6-eigenvalues-1.html" />
+    <link rel="prev" title="Example of Gauss Elimination, and Matrix Rank/Inverse" href="4-rank-gauss-examples.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -117,6 +117,11 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-intro-matrices.html">
+   Introduction to math methods for ChE and motivation for linear algebra
+  </a>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="linear_algebra.html">
    Linear Algebra
@@ -128,50 +133,38 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="1-intro-matrices.html">
-     Introduction
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="2-matrix-manipulation.html">
-     Note on HW expectations
+     Matrix/Linear Algebra
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="3-gauss-elimination.html">
-     Return to Systems of Equations
+     Intro to Gauss Elimination
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="4-rank-gauss-examples.html">
-     Chemical Engineering example solved with Gauss elimination
+     Example of Gauss Elimination, and Matrix Rank/Inverse
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Using the inverse of A to solve a system of linear equations
+     Using matrix inverses, and matrix determinants
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="6-eigenvalues-1.html">
-     Homogeneous vs. Non-homogeneous Systems
+     Eigenvalue and Eigenvectors
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="7-eigenvalue-2-difference-equations.html">
-     <span class="math notranslate nohighlight">
-      \(\underline{Ex}\)
-     </span>
-     : Symmetric matrix (
-     <span class="math notranslate nohighlight">
-      \(\lambda\)
-     </span>
-     always real)
+     Eigenvalues/Eigenvectors continued, and application of eigenvalues to difference equations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="7b-numerical-eigenvalues.html">
-     Eigenvectors in python
+     Numerical Calculations of Eigenvalues/Eigenvectors in python
     </a>
    </li>
   </ul>
@@ -188,22 +181,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/8-differential-equations.html">
-     Differential Equations
+     Intro to Differential Equations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/9-exact-ode.html">
-     Recap
+     Exact ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/10-linear-ode.html">
-     Integrating Factors - Recap
+     Linear 1st-order ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/11-linear-ode-example.html">
-     Alternate Method (Last class continued)
+     Application of linear ODEs to ChE examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -213,12 +206,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/13-non-homogeneous-linear-odes.html">
-     Recap from last class
+     Non-homogeneous linear ODEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/14-MoUC-VoP.html">
-     Method of Undetermined Coefficients (sec 2.9)
+     Method of Undetermined Coefficient and Variations of Parameters
     </a>
    </li>
    <li class="toctree-l2">
@@ -233,7 +226,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/17-coupled-ode-continued.html">
-     Recap for coupled differential equations:
+     Coupled Differential Equations Continued!
     </a>
    </li>
    <li class="toctree-l2">
@@ -248,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ordinary_differential_equations/20-BVP.html">
-     Boundary Value Problems
+     Boundary value problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -275,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../partial_differential_equations/23-Fourier-Coefficients.html">
-     Recap on PDEs from last lecture
+     Fourier Coefficients!
     </a>
    </li>
   </ul>
@@ -297,12 +290,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../statistics/25-statistics-continue-linear-regression.html">
-     Recap from last class
+     Stats continued and linear regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../statistics/26-bonus-nonlinear-regression.html">
-     Recap on linear regression
+     Non-linear regression
     </a>
    </li>
   </ul>
@@ -538,6 +531,11 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
+   Using matrix inverses, and matrix determinants
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-the-inverse-of-a-to-solve-a-system-of-linear-equations">
    Using the inverse of A to solve a system of linear equations
   </a>
  </li>
@@ -623,7 +621,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Using the inverse of A to solve a system of linear equations</h1>
+                <h1>Using matrix inverses, and matrix determinants</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -635,6 +633,11 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
+   Using matrix inverses, and matrix determinants
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-the-inverse-of-a-to-solve-a-system-of-linear-equations">
    Using the inverse of A to solve a system of linear equations
   </a>
  </li>
@@ -721,10 +724,15 @@ title="Print to PDF"
                 
               <div>
                 
-  <p>{{ badge }}
-$<span class="math notranslate nohighlight">\(\newcommand{\arr}[1]{\underline{\underline{#1}}}\)</span><span class="math notranslate nohighlight">\(    
-\)</span><span class="math notranslate nohighlight">\(\newcommand{\vec}[1]{\underline{#1}}\)</span><span class="math notranslate nohighlight">\(   
-\)</span><span class="math notranslate nohighlight">\(\require{mhchem}\)</span>$</p>
+  <div class="math notranslate nohighlight">
+\[\newcommand{\arr}[1]{\underline{\underline{#1}}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\vec}[1]{\underline{#1}}\]</div>
+<div class="math notranslate nohighlight">
+\[\require{mhchem}\]</div>
+<section class="tex2jax_ignore mathjax_ignore" id="using-matrix-inverses-and-matrix-determinants">
+<h1>Using matrix inverses, and matrix determinants<a class="headerlink" href="#using-matrix-inverses-and-matrix-determinants" title="Permalink to this headline">#</a></h1>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="using-the-inverse-of-a-to-solve-a-system-of-linear-equations">
 <h1>Using the inverse of A to solve a system of linear equations<a class="headerlink" href="#using-the-inverse-of-a-to-solve-a-system-of-linear-equations" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
@@ -770,8 +778,8 @@ if <span class="math notranslate nohighlight">\(\arr{A}=\begin{bmatrix}1&amp;0&a
 <li><p>The value of the determinant will tell us whether or not the matrix is singular.</p></li>
 <li><p>Generalized definition:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-73159306-1571-4cfd-b13c-16714d0fcb94">
-<span class="eqno">(4)<a class="headerlink" href="#equation-73159306-1571-4cfd-b13c-16714d0fcb94" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ff7cd9ce-848b-4b46-8392-3ff2acd88e0c">
+<span class="eqno">(4)<a class="headerlink" href="#equation-ff7cd9ce-848b-4b46-8392-3ff2acd88e0c" title="Permalink to this equation">#</a></span>\[\begin{equation}
   D = |\arr{A}| = \det(\arr{A})=\begin{cases}
     a_{11} &amp; \text{if $n=1$}.\\
     a_{11}A_{11} + a_{12}A_{12} + ... + a_{1n}A_{1n} &amp; \text{if n&gt;1}.
@@ -844,8 +852,8 @@ a_{11}a_{22} - a_{12}a_{21} = a_{12}a_{21}\neq0
 <li><p>Great! These cases of <span class="math notranslate nohighlight">\(a_{11}\neq0\)</span> and <span class="math notranslate nohighlight">\(a_{11}=0\)</span> are consistent and we can define <br />
 <span class="math notranslate nohighlight">\(det(\arr{A}) = |\arr{A}| = a_{11}a_{22} - a_{12} a_{21}\)</span></p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-72e2b87a-306b-4a88-976a-b1b1578179f8">
-<span class="eqno">(5)<a class="headerlink" href="#equation-72e2b87a-306b-4a88-976a-b1b1578179f8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bea0fb74-02d2-4d8b-80b9-fdbc241232a3">
+<span class="eqno">(5)<a class="headerlink" href="#equation-bea0fb74-02d2-4d8b-80b9-fdbc241232a3" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \begin{cases}
     =0 &amp; \text{when $\arr{A}$ is singular}\\
     \neq 0 &amp; \text{when $\arr{A}$ is non-singular}
@@ -869,8 +877,8 @@ a_{31}&amp;a_{32}&amp;a_{33}
 <ul class="simple">
 <li><p>Working with Row 1, decompose as follows:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-31ed20c9-0305-48ca-8013-285006f00c6d">
-<span class="eqno">(6)<a class="headerlink" href="#equation-31ed20c9-0305-48ca-8013-285006f00c6d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-14f4e0d9-f405-4082-a810-518b56930c0e">
+<span class="eqno">(6)<a class="headerlink" href="#equation-14f4e0d9-f405-4082-a810-518b56930c0e" title="Permalink to this equation">#</a></span>\[\begin{align}
 \det(\arr{A}) &amp;= a_{11} \left|\begin{array}{}
 a_{22}&amp;a_{23}\\
 a_{32}&amp;a_{33}
@@ -895,8 +903,8 @@ a_{31}&amp;a_{33}
 3&amp;1&amp;2\\
 5&amp;4&amp;6\end{array}\right|\)</span></p>
 <p>What is <span class="math notranslate nohighlight">\(\det(\arr{A})\)</span>?</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8f0b6379-df29-4e94-8b9f-4d24344dc428">
-<span class="eqno">(7)<a class="headerlink" href="#equation-8f0b6379-df29-4e94-8b9f-4d24344dc428" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7829d72b-c695-4fb0-8772-84a4c9b3b20e">
+<span class="eqno">(7)<a class="headerlink" href="#equation-7829d72b-c695-4fb0-8772-84a4c9b3b20e" title="Permalink to this equation">#</a></span>\[\begin{align}
 \det(\arr{A}) &amp;= 2 \left|\begin{array}{}
 1&amp;2\\
 4&amp;6\end{array}\right|
@@ -920,8 +928,8 @@ a_{31}&amp;a_{33}
 2&amp;5&amp;4\\
 3&amp;1&amp;2\\
 5&amp;4&amp;6\end{array}\right|\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-fce82f80-b67d-4ae5-8d44-ee9deab86ad2">
-<span class="eqno">(8)<a class="headerlink" href="#equation-fce82f80-b67d-4ae5-8d44-ee9deab86ad2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-74f0f2bf-12d8-4fd9-8a6a-8dd5aee2aa5a">
+<span class="eqno">(8)<a class="headerlink" href="#equation-74f0f2bf-12d8-4fd9-8a6a-8dd5aee2aa5a" title="Permalink to this equation">#</a></span>\[\begin{align}
 \det(\arr{A}) &amp;= -5 \left|\begin{array}{}
 3&amp;2\\
 5&amp;6\end{array}\right|
@@ -951,8 +959,8 @@ a_{31}&amp;a_{33}
 <section id="general-definition-of-the-determinant-any-size-matrix">
 <h2>General definition of the determinant (any size matrix)<a class="headerlink" href="#general-definition-of-the-determinant-any-size-matrix" title="Permalink to this headline">#</a></h2>
 <p>OK, so let’s revisit the general determinant definition:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8aaa7059-9a3d-4773-bd84-03d17c2f36b9">
-<span class="eqno">(9)<a class="headerlink" href="#equation-8aaa7059-9a3d-4773-bd84-03d17c2f36b9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7b2dafb3-8898-46d9-a3bd-1df991040d74">
+<span class="eqno">(9)<a class="headerlink" href="#equation-7b2dafb3-8898-46d9-a3bd-1df991040d74" title="Permalink to this equation">#</a></span>\[\begin{equation}
   D = |\arr{A}| = \det(\arr{A})=\begin{cases}
     a_{11} &amp; \text{if $n=1$}.\\
     a_{11}A_{11} + a_{12}A_{12} + ... + a_{1n}A_{1n} &amp; \text{if n&gt;1}.
@@ -962,8 +970,8 @@ a_{31}&amp;a_{33}
 <ul class="simple">
 <li><p>So, for a 3 <span class="math notranslate nohighlight">\(\times\)</span>3 matrix, this would be</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-dff1e230-db93-435d-a8c8-35011fe5e421">
-<span class="eqno">(10)<a class="headerlink" href="#equation-dff1e230-db93-435d-a8c8-35011fe5e421" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bddc36e1-9d8d-4555-b186-ed5c1cb93bbd">
+<span class="eqno">(10)<a class="headerlink" href="#equation-bddc36e1-9d8d-4555-b186-ed5c1cb93bbd" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\arr{A}| &amp; = a_{11}(-1)^2\det(\arr{M_{11}}) + a_{12}(-1)^3\det(\arr{M_{12}}) + a_{13}(-1)^4\det(\arr{M_{13}})\\
 &amp; =a_{11}\det(\arr{M_{11}}) - a_{12}\det(\arr{M_{12}}) + a_{13}\det(\arr{M_{13}})
 \end{align}\]</div>
@@ -971,8 +979,8 @@ a_{31}&amp;a_{33}
 <li><p>This generalized definition is for when we work off of Row 1 only.</p></li>
 <li><p>We can further generalize</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-9beed841-553d-421a-abad-ace5d3c847e3">
-<span class="eqno">(11)<a class="headerlink" href="#equation-9beed841-553d-421a-abad-ace5d3c847e3" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-16699175-103e-48a0-9632-befeb7d191c6">
+<span class="eqno">(11)<a class="headerlink" href="#equation-16699175-103e-48a0-9632-befeb7d191c6" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\arr{A}| = a_{j1}A_{j1} + a_{j2}A_{j2} + ... + a_{jn}A_{jn} &amp;&amp; \text{for n &gt; 1}
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(A_{jk} = (-1)^{j+k}\det(\arr{M_{jk}})\)</span> (careful with the signs!)<br />
@@ -980,8 +988,8 @@ a_{31}&amp;a_{33}
 <ul class="simple">
 <li><p>An n <span class="math notranslate nohighlight">\(\times\)</span> n matrix has <span class="math notranslate nohighlight">\(n^2\)</span> cofactors and <span class="math notranslate nohighlight">\(n^2\)</span> minors.</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-ad4dcbc7-b328-4aac-a28c-15de0870af82">
-<span class="eqno">(12)<a class="headerlink" href="#equation-ad4dcbc7-b328-4aac-a28c-15de0870af82" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b36f3e8c-2ac4-4cd3-8ea3-b4117e24b9fa">
+<span class="eqno">(12)<a class="headerlink" href="#equation-b36f3e8c-2ac4-4cd3-8ea3-b4117e24b9fa" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix}
 a_{11} &amp; a_{12} &amp; a_{13}\\
 a_{21} &amp; a_{22} &amp; a_{23}\\
@@ -1017,8 +1025,8 @@ Ex: \begin{bmatrix}
 \end{bmatrix}<br />
 Which column or row to choose? Column 3, which has most zeros.</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-451f8cae-4d06-42ee-bef4-27d1b4a70c5d">
-<span class="eqno">(13)<a class="headerlink" href="#equation-451f8cae-4d06-42ee-bef4-27d1b4a70c5d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cf4c9835-6a04-432b-865b-55e2dc667b8d">
+<span class="eqno">(13)<a class="headerlink" href="#equation-cf4c9835-6a04-432b-865b-55e2dc667b8d" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\arr{A}| &amp;= a_{13}A_{13} + a_{23}A_{23} + a_{33}A_{33}\\
 &amp; = a_{13} (-1)^{1+3}\det(\arr{M_{13}})\\
 &amp; = 4[(5)(6)-(3)(1)]\\
@@ -1119,13 +1127,13 @@ Makes sense right? When <span class="math notranslate nohighlight">\(|\arr{A}|=0
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Chemical Engineering example solved with Gauss elimination</p>
+            <p class="prev-next-title">Example of Gauss Elimination, and Matrix Rank/Inverse</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="6-eigenvalues-1.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Homogeneous vs. Non-homogeneous Systems</p>
+        <p class="prev-next-title">Eigenvalue and Eigenvectors</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
