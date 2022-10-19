@@ -1369,8 +1369,18 @@ The rank of A is 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\begin{split}\displaystyle \left[\begin{matrix}1 &amp; 0 &amp; 1\\0 &amp; 1 &amp; 2\\0 &amp; 0 &amp; 0\end{matrix}\right]\end{split}\]</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Example from earlier in lecture</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;sympy&#39;
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -1443,24 +1453,26 @@ x_1+2x_2+x_3=1\\
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">LinAlgError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="nn">&lt;ipython-input-9-fb72b6805d72&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> 
 <span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1">#Same answer!</span>
 <span class="ne">----&gt; </span><span class="mi">9</span> <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
 
-<span class="nn">File &lt;__array_function__ internals&gt;:180,</span> in <span class="ni">solve</span><span class="nt">(*args, **kwargs)</span>
+<span class="nn">&lt;__array_function__ internals&gt;</span> in <span class="ni">solve</span><span class="nt">(*args, **kwargs)</span>
 
-<span class="nn">File /opt/conda/lib/python3.10/site-packages/numpy/linalg/linalg.py:387,</span> in <span class="ni">solve</span><span class="nt">(a, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">385</span> <span class="n">a</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">_makearray</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">386</span> <span class="n">_assert_stacked_2d</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">387</span> <span class="n">_assert_stacked_square</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">388</span> <span class="n">b</span><span class="p">,</span> <span class="n">wrap</span> <span class="o">=</span> <span class="n">_makearray</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">389</span> <span class="n">t</span><span class="p">,</span> <span class="n">result_t</span> <span class="o">=</span> <span class="n">_commonType</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="nn">/usr/local/lib/python3.7/dist-packages/numpy/linalg/linalg.py</span> in <span class="ni">solve</span><span class="nt">(a, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">379</span>     <span class="n">a</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">_makearray</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">380</span>     <span class="n">_assert_stacked_2d</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">381</span>     <span class="n">_assert_stacked_square</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">382</span>     <span class="n">b</span><span class="p">,</span> <span class="n">wrap</span> <span class="o">=</span> <span class="n">_makearray</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">383</span>     <span class="n">t</span><span class="p">,</span> <span class="n">result_t</span> <span class="o">=</span> <span class="n">_commonType</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 
-<span class="nn">File /opt/conda/lib/python3.10/site-packages/numpy/linalg/linalg.py:204,</span> in <span class="ni">_assert_stacked_square</span><span class="nt">(*arrays)</span>
-<span class="g g-Whitespace">    </span><span class="mi">202</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
-<span class="g g-Whitespace">    </span><span class="mi">203</span> <span class="k">if</span> <span class="n">m</span> <span class="o">!=</span> <span class="n">n</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">204</span>     <span class="k">raise</span> <span class="n">LinAlgError</span><span class="p">(</span><span class="s1">&#39;Last 2 dimensions of the array must be square&#39;</span><span class="p">)</span>
+<span class="nn">/usr/local/lib/python3.7/dist-packages/numpy/linalg/linalg.py</span> in <span class="ni">_assert_stacked_square</span><span class="nt">(*arrays)</span>
+<span class="g g-Whitespace">    </span><span class="mi">202</span>         <span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span>         <span class="k">if</span> <span class="n">m</span> <span class="o">!=</span> <span class="n">n</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">204</span>             <span class="k">raise</span> <span class="n">LinAlgError</span><span class="p">(</span><span class="s1">&#39;Last 2 dimensions of the array must be square&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">205</span> 
+<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="k">def</span> <span class="nf">_assert_finite</span><span class="p">(</span><span class="o">*</span><span class="n">arrays</span><span class="p">):</span>
 
 <span class="ne">LinAlgError</span>: Last 2 dimensions of the array must be square
 </pre></div>

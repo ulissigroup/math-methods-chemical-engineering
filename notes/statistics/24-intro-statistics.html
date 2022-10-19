@@ -766,6 +766,18 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># make our plot look a little prettier, seaborn is also helpful for some plots</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;seaborn&#39;
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="simple-distributions">
@@ -828,7 +840,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 0 1 1 1 0 0 0 0 0 0 0 1 0 1 1 0 1 1 0]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 0 1 1 0 1 1 1 0 0 0 1 1 1 0 0 1 0 1 1]
 </pre></div>
 </div>
 </div>
@@ -847,7 +859,11 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/24-intro-statistics_12_0.png" src="../../_images/24-intro-statistics_12_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/dist-packages/seaborn/_decorators.py:43: FutureWarning: Pass the following variable as a keyword arg: x. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  FutureWarning
+</pre></div>
+</div>
+<img alt="../../_images/24-intro-statistics_12_1.png" src="../../_images/24-intro-statistics_12_1.png" />
 </div>
 </div>
 <p>Notice that this histogram is stochastic - every time you run it you get a different result. We’ll come back to this.</p>
@@ -877,13 +893,13 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+0
 5
 2
 3
 4
 4
-2
 </pre></div>
 </div>
 </div>
@@ -897,8 +913,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 0 0 0 0 0]
-(array([0]),)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 0 1 0 0 0]
+(array([2]),)
 </pre></div>
 </div>
 </div>
@@ -916,7 +932,11 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/24-intro-statistics_18_0.png" src="../../_images/24-intro-statistics_18_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/dist-packages/seaborn/_decorators.py:43: FutureWarning: Pass the following variable as a keyword arg: x. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  FutureWarning
+</pre></div>
+</div>
+<img alt="../../_images/24-intro-statistics_18_1.png" src="../../_images/24-intro-statistics_18_1.png" />
 </div>
 </div>
 <p>This histogram is also stochastic but has more discrete possibilities.</p>
@@ -944,7 +964,11 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/24-intro-statistics_21_0.png" src="../../_images/24-intro-statistics_21_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/dist-packages/seaborn/_decorators.py:43: FutureWarning: Pass the following variable as a keyword arg: x. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  FutureWarning
+</pre></div>
+</div>
+<img alt="../../_images/24-intro-statistics_21_1.png" src="../../_images/24-intro-statistics_21_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -965,7 +989,11 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/24-intro-statistics_22_0.png" src="../../_images/24-intro-statistics_22_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/dist-packages/seaborn/_decorators.py:43: FutureWarning: Pass the following variable as a keyword arg: x. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  FutureWarning
+</pre></div>
+</div>
+<img alt="../../_images/24-intro-statistics_22_1.png" src="../../_images/24-intro-statistics_22_1.png" />
 </div>
 </div>
 </section>
@@ -1011,17 +1039,10 @@ We can also define the cumulative distribution function:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1013/3296833214.py:3: UserWarning: 
-
-`distplot` is a deprecated function and will be removed in seaborn v0.14.0.
-
-Please adapt your code to use either `displot` (a figure-level function with
-similar flexibility) or `histplot` (an axes-level function for histograms).
-
-For a guide to updating your code to use the new functions, please see
-https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
-
-  ax = sns.distplot(x, rug=True, kde=True)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/dist-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/usr/local/lib/python3.7/dist-packages/seaborn/distributions.py:2103: FutureWarning: The `axis` variable is no longer used and will be removed. Instead, assign variables directly to `x` or `y`.
+  warnings.warn(msg, FutureWarning)
 </pre></div>
 </div>
 <img alt="../../_images/24-intro-statistics_28_1.png" src="../../_images/24-intro-statistics_28_1.png" />
@@ -1146,17 +1167,8 @@ The probability that T is between 10 and 11 is 19.1 percent
 </div>
 <div class="cell_output docutils container">
 <img alt="../../_images/24-intro-statistics_42_0.png" src="../../_images/24-intro-statistics_42_0.png" />
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1013/995082994.py:11: UserWarning: 
-
-`distplot` is a deprecated function and will be removed in seaborn v0.14.0.
-
-Please adapt your code to use either `displot` (a figure-level function with
-similar flexibility) or `histplot` (an axes-level function for histograms).
-
-For a guide to updating your code to use the new functions, please see
-https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
-
-  ax = sns.distplot(x)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/dist-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Count&#39;)
@@ -1217,20 +1229,11 @@ https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1013/3746914587.py:1: UserWarning: 
-
-`distplot` is a deprecated function and will be removed in seaborn v0.14.0.
-
-Please adapt your code to use either `displot` (a figure-level function with
-similar flexibility) or `histplot` (an axes-level function for histograms).
-
-For a guide to updating your code to use the new functions, please see
-https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
-
-  sns.distplot(x)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/dist-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: ylabel=&#39;Density&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f9cd3108f50&gt;
 </pre></div>
 </div>
 <img alt="../../_images/24-intro-statistics_48_2.png" src="../../_images/24-intro-statistics_48_2.png" />
@@ -1258,7 +1261,7 @@ https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.46
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.47
 </pre></div>
 </div>
 </div>
@@ -1275,17 +1278,8 @@ https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1013/166752965.py:3: UserWarning: 
-
-`distplot` is a deprecated function and will be removed in seaborn v0.14.0.
-
-Please adapt your code to use either `displot` (a figure-level function with
-similar flexibility) or `histplot` (an axes-level function for histograms).
-
-For a guide to updating your code to use the new functions, please see
-https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
-
-  sns.distplot(flip_results)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/dist-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
 </pre></div>
 </div>
 <img alt="../../_images/24-intro-statistics_53_1.png" src="../../_images/24-intro-statistics_53_1.png" />
@@ -1352,8 +1346,8 @@ the standard deviation, with variance given by \)</span>\sigma^4/(n-1)$</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Our estimate on the mean is 0.18 +/- 0.04
-Our estimate on the standard deviation is 1.16 +/- 0.04
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Our estimate on the mean is 0.20 +/- 0.04
+Our estimate on the standard deviation is 1.17 +/- 0.04
 </pre></div>
 </div>
 </div>
@@ -1394,17 +1388,8 @@ Our estimate on the standard deviation is 1.16 +/- 0.04
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1013/2311382789.py:3: UserWarning: 
-
-`distplot` is a deprecated function and will be removed in seaborn v0.14.0.
-
-Please adapt your code to use either `displot` (a figure-level function with
-similar flexibility) or `histplot` (an axes-level function for histograms).
-
-For a guide to updating your code to use the new functions, please see
-https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
-
-  sns.distplot(samples)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/dist-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
 </pre></div>
 </div>
 <img alt="../../_images/24-intro-statistics_67_1.png" src="../../_images/24-intro-statistics_67_1.png" />
@@ -1503,8 +1488,8 @@ https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The observed mean for exam 1: 86.628817
-The observed mean for exam 2: 85.113269
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The observed mean for exam 1: 85.916900
+The observed mean for exam 2: 83.245155
 </pre></div>
 </div>
 </div>
@@ -1518,11 +1503,11 @@ The observed mean for exam 2: 85.113269
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 2.,  3.,  9.,  4., 10.,  4.,  5.,  4.,  2.,  2.]),
- array([ 36.17418972,  46.6784408 ,  57.18269188,  67.68694296,
-         78.19119404,  88.69544512,  99.1996962 , 109.70394728,
-        120.20819836, 130.71244944, 141.21670052]),
- &lt;BarContainer object of 10 artists&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([3., 1., 3., 9., 6., 6., 4., 4., 6., 3.]),
+ array([ 36.93482607,  45.88037139,  54.82591671,  63.77146203,
+         72.71700735,  81.66255266,  90.60809798,  99.5536433 ,
+        108.49918862, 117.44473394, 126.39027926]),
+ &lt;a list of 10 Patch objects&gt;)
 </pre></div>
 </div>
 <img alt="../../_images/24-intro-statistics_79_1.png" src="../../_images/24-intro-statistics_79_1.png" />
@@ -1543,31 +1528,13 @@ The observed mean for exam 2: 85.113269
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1013/2967044899.py:6: UserWarning: 
-
-`distplot` is a deprecated function and will be removed in seaborn v0.14.0.
-
-Please adapt your code to use either `displot` (a figure-level function with
-similar flexibility) or `histplot` (an axes-level function for histograms).
-
-For a guide to updating your code to use the new functions, please see
-https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
-
-  sns.distplot(exam1_scores_mean_sample,20)
-/tmp/ipykernel_1013/2967044899.py:7: UserWarning: 
-
-`distplot` is a deprecated function and will be removed in seaborn v0.14.0.
-
-Please adapt your code to use either `displot` (a figure-level function with
-similar flexibility) or `histplot` (an axes-level function for histograms).
-
-For a guide to updating your code to use the new functions, please see
-https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
-
-  sns.distplot(exam2_scores_mean_sample,20)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/dist-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+/usr/local/lib/python3.7/dist-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: ylabel=&#39;Density&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f9cce055750&gt;
 </pre></div>
 </div>
 <img alt="../../_images/24-intro-statistics_81_2.png" src="../../_images/24-intro-statistics_81_2.png" />
@@ -1585,8 +1552,8 @@ https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Our observed distribution of means for exam 1 (multiple exams given) is 86.01 +/- 1.74
-Our observed distribution of means for exam 2 (multiple exams given) is 83.05 +/- 3.16
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Our observed distribution of means for exam 1 (multiple exams given) is 86.00 +/- 1.73
+Our observed distribution of means for exam 2 (multiple exams given) is 82.99 +/- 3.14
 </pre></div>
 </div>
 </div>
@@ -1607,8 +1574,8 @@ Our observed distribution of means for exam 2 (multiple exams given) is 83.05 +/
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Our estimate on the mean for exam 1 is 86.63 +/- 1.70
-Our estimate on the mean for exam 2 is 85.11 +/- 3.70
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Our estimate on the mean for exam 1 is 85.92 +/- 1.75
+Our estimate on the mean for exam 2 is 83.25 +/- 3.41
 </pre></div>
 </div>
 </div>
@@ -1621,7 +1588,7 @@ Our estimate on the mean for exam 2 is 85.11 +/- 3.70
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7919
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7998
 </pre></div>
 </div>
 </div>

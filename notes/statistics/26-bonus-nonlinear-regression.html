@@ -611,15 +611,15 @@ title="Print to PDF"
 <li><p>We consider the disappearance of <span class="math notranslate nohighlight">\(A\)</span></p></li>
 <li><p>From the mole balance we know:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-21945be6-7983-4048-a840-0c12593d99c9">
-<span class="eqno">(507)<a class="headerlink" href="#equation-21945be6-7983-4048-a840-0c12593d99c9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d3623dd5-32b4-4832-8339-553a17e32cef">
+<span class="eqno">(507)<a class="headerlink" href="#equation-d3623dd5-32b4-4832-8339-553a17e32cef" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{dN_A}{dt} = r_A V
 \end{equation}\]</div>
 <ul class="simple">
 <li><p>Let us assume the rate law is of the form: <span class="math notranslate nohighlight">\(r_A = k C_A^\alpha\)</span> and a constant volume so that:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-b3a87510-c222-49c3-a578-9af2198b72e2">
-<span class="eqno">(508)<a class="headerlink" href="#equation-b3a87510-c222-49c3-a578-9af2198b72e2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5c98a40c-509b-43a7-a3c4-35e61488083f">
+<span class="eqno">(508)<a class="headerlink" href="#equation-5c98a40c-509b-43a7-a3c4-35e61488083f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{dC_A}{dt} = -k C_A^\alpha
 \end{equation}\]</div>
 <ul class="simple">
@@ -629,8 +629,8 @@ title="Print to PDF"
 </ul>
 </li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-20792af7-f18c-4ed4-a046-cc2048413c62">
-<span class="eqno">(509)<a class="headerlink" href="#equation-20792af7-f18c-4ed4-a046-cc2048413c62" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4be0f1bf-3972-4bf7-966e-14eba8936d38">
+<span class="eqno">(509)<a class="headerlink" href="#equation-4be0f1bf-3972-4bf7-966e-14eba8936d38" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \ln(-\frac{dC_A}{dt}) = \ln{k} + \alpha \ln C_A
 \end{equation}\]</div>
 <ul class="simple">
@@ -741,7 +741,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f7092557d00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f5bf812ce80&gt;
 </pre></div>
 </div>
 <img alt="../../_images/26-bonus-nonlinear-regression_6_1.png" src="../../_images/26-bonus-nonlinear-regression_6_1.png" />
@@ -797,8 +797,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>alpha = 2.035481644600111, conf interval [1.92418422 2.14677907]
-k = 0.1402128334966632, conf interval [0.09372748 0.20975319]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>alpha = 2.0354816446001145, conf interval [1.92418422 2.14677907]
+k = 0.1402128334966662, conf interval [0.09372748 0.20975319]
 </pre></div>
 </div>
 <img alt="../../_images/26-bonus-nonlinear-regression_7_1.png" src="../../_images/26-bonus-nonlinear-regression_7_1.png" />
@@ -811,7 +811,7 @@ k = 0.1402128334966632, conf interval [0.09372748 0.20975319]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.10/site-packages/statsmodels/stats/stattools.py:74: ValueWarning: omni_normtest is not valid with less than 8 observations; 7 samples were given.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages/statsmodels/stats/stattools.py:74: ValueWarning: omni_normtest is not valid with less than 8 observations; 7 samples were given.
   warn(&quot;omni_normtest is not valid with less than 8 observations; %i &quot;
 </pre></div>
 </div>
@@ -830,7 +830,7 @@ k = 0.1402128334966632, conf interval [0.09372748 0.20975319]
   <th>Date:</th>             <td>Wed, 19 Oct 2022</td> <th>  Prob (F-statistic):</th> <td>8.22e-08</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>14:13:10</td>     <th>  Log-Likelihood:    </th> <td>  13.785</td>
+  <th>Time:</th>                 <td>14:41:47</td>     <th>  Log-Likelihood:    </th> <td>  13.785</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>     7</td>      <th>  AIC:               </th> <td>  -23.57</td>
@@ -1018,20 +1018,14 @@ k = 0.1402128334966632, conf interval [0.09372748 0.20975319]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: The directory &#39;/home/jovyan/.cache/pip&#39; or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo&#39;s -H flag.</span>
-
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: lmfit in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (1.0.3)
+Requirement already satisfied: asteval&gt;=0.9.22 in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (from lmfit) (0.9.27)
+Requirement already satisfied: scipy&gt;=1.4 in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (from lmfit) (1.9.2)
+Requirement already satisfied: uncertainties&gt;=3.0.1 in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (from lmfit) (3.1.7)
+Requirement already satisfied: numpy&gt;=1.18 in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (from lmfit) (1.23.4)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: lmfit in /opt/conda/lib/python3.10/site-packages (1.0.3)
-Requirement already satisfied: scipy&gt;=1.4 in /opt/conda/lib/python3.10/site-packages (from lmfit) (1.9.1)
-Requirement already satisfied: uncertainties&gt;=3.0.1 in /opt/conda/lib/python3.10/site-packages (from lmfit) (3.1.7)
-Requirement already satisfied: asteval&gt;=0.9.22 in /opt/conda/lib/python3.10/site-packages (from lmfit) (0.9.27)
-Requirement already satisfied: numpy&gt;=1.18 in /opt/conda/lib/python3.10/site-packages (from lmfit) (1.23.3)
-Requirement already satisfied: future in /opt/conda/lib/python3.10/site-packages (from uncertainties&gt;=3.0.1-&gt;lmfit) (0.18.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span>
-
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: future in /home/runner/micromamba-root/envs/buildenv/lib/python3.10/site-packages (from uncertainties&gt;=3.0.1-&gt;lmfit) (0.18.2)
 </pre></div>
 </div>
 </div>
