@@ -21,7 +21,7 @@ jobs:
 
     - name: install requirements
       run: |
-        mamba install -y -c conda-forge lmfit
+        mamba install -y -c conda-forge lmfit jupyter-book plotly jupytext
 
     # Build the book
     - name: Build the book
