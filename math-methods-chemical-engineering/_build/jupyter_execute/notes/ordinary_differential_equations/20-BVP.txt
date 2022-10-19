@@ -1,0 +1,102 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+r = 0.1 #1/s
+g = 9.8 #m/s^2
+H = 100 # m
+L = 200 # m
+
+def diff_eq(t, y):
+  x, z, vx, vz = y
+  return [vx,
+          vz,
+          -r*vx,
+          -r*vz-g]
+
+y0 = [0,
+      H,
+      52, #m/s
+      0] #m/s
+
+t_span = [0,10]
+t_eval = np.linspace(0,10,100)
+
+sol = solve_ivp(diff_eq,
+                t_span=t_span,
+                y0=y0,
+                t_eval=t_eval)
+
+plt.plot(sol.y[0,:],
+         sol.y[1,:])
+plt.plot(200,0,'or')
+plt.xlabel('x [m]')
+plt.ylabel('z [m]')
+
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+r = 0.1 #1/s
+g = 9.8 #m/s^2
+H = 100 # m
+L = 200 # m
+
+def diff_eq(t, y):
+  x, z, vx, vz = y
+  return [vx,
+          vz,
+          -r*vx,
+          -r*vz-g]
+
+v0 = 40 # m/s
+theta = 10 # degree
+y0 = [0,
+      H,
+      v0*np.cos(theta/360*2*np.pi), #m/s
+      v0*np.sin(theta/360*2*np.pi)] #m/s
+
+t_span = [0,10]
+t_eval = np.linspace(0,10,100)
+
+sol = solve_ivp(diff_eq,
+                t_span=t_span,
+                y0=y0,
+                t_eval=t_eval)
+
+plt.plot(sol.y[0,:],
+         sol.y[1,:])
+plt.plot(200,0,'or')
+plt.xlabel('x [m]')
+plt.ylabel('z [m]')
+
+
+
+from scipy.optimize import root
+import numpy as np
+import matplotlib.pyplot as plt
+
+L = 1
+sol = root(lambda x: np.tan(x)-x, 4+np.pi*4)
+
+rootLambdaL = sol.x
+lambdaSol = (rootLambdaL/L)**2
+
+c3 = 2
+c2 = -c3*np.sin(np.sqrt(lambdaSol)*L)/L
+
+xrange = np.linspace(0,L,100)
+plt.plot(xrange,
+         c2*xrange+c3*np.sin(np.sqrt(lambdaSol)*xrange))
+
+plt.plot(0,0,'ok')
+plt.plot([0.9,1],[0,0],'-k')
+plt.xlabel('x')
+plt.ylabel('y')
+
+
+
+plt.xlabel('x')
+

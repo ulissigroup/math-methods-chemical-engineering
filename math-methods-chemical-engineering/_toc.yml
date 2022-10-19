@@ -1,0 +1,45 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+- caption: Course Notes
+  chapters:
+  - file: notes/linear_algebra/linear_algebra
+    sections:
+    - file: notes/linear_algebra/1-intro-matrices
+    - file: notes/linear_algebra/2-matrix-manipulation
+    - file: notes/linear_algebra/3-gauss-elimination
+    - file: notes/linear_algebra/4-rank-gauss-examples
+    - file: notes/linear_algebra/5-determinants
+    - file: notes/linear_algebra/6-eigenvalues-1
+    - file: notes/linear_algebra/7-eigenvalue-2-difference-equations
+    - file: notes/linear_algebra/7b-numerical-eigenvalues
+  - file: notes/ordinary_differential_equations/ordinary_differential_equations
+    sections:
+    - file: notes/ordinary_differential_equations/8-differential-equations
+    - file: notes/ordinary_differential_equations/9-exact-ode
+    - file: notes/ordinary_differential_equations/10-linear-ode
+    - file: notes/ordinary_differential_equations/11-linear-ode-example
+    - file: notes/ordinary_differential_equations/12-second-order-odes
+    - file: notes/ordinary_differential_equations/13-non-homogeneous-linear-odes
+    - file: notes/ordinary_differential_equations/14-MoUC-VoP
+    - file: notes/ordinary_differential_equations/15-springs-numerical-odes
+    - file: notes/ordinary_differential_equations/16-coupled-odes
+    - file: notes/ordinary_differential_equations/17-coupled-ode-continued
+    - file: notes/ordinary_differential_equations/18-nonlinear-coupled-ODEs
+    - file: notes/ordinary_differential_equations/19-linear-stability
+    - file: notes/ordinary_differential_equations/20-BVP
+    - file: notes/ordinary_differential_equations/21-BVP-shooting-method
+  - file: notes/partial_differential_equations/partial_differential_equations
+    sections:
+    - file: notes/partial_differential_equations/22-Intro-PDEs
+    - file: notes/partial_differential_equations/23-Fourier-Coefficients
+  - file: notes/statistics/statistics
+    sections:
+    - file: notes/statistics/24-intro-statistics
+    - file: notes/statistics/25-statistics-continue-linear-regression
+    - file: notes/statistics/26-bonus-nonlinear-regression
+  - file: notes/course-recap
+    

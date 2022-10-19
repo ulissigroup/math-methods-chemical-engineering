@@ -1,0 +1,1002 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>06-262 Math Methods Recap &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Recap on linear regression" href="statistics/26-bonus-nonlinear-regression.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Mathemtaical Methods for Chemical Engineering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Lecture notes for CMU 06-262 Math Methods in Chemical Engineering (Zachary Ulissi, CMU)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Notes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="linear_algebra/linear_algebra.html">
+   Linear Algebra
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="linear_algebra/1-intro-matrices.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="linear_algebra/2-matrix-manipulation.html">
+     Note on HW expectations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="linear_algebra/3-gauss-elimination.html">
+     Return to Systems of Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="linear_algebra/4-rank-gauss-examples.html">
+     Chemical Engineering example solved with Gauss elimination
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="linear_algebra/5-determinants.html">
+     Using the inverse of A to solve a system of linear equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="linear_algebra/6-eigenvalues-1.html">
+     Homogeneous vs. Non-homogeneous Systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="linear_algebra/7-eigenvalue-2-difference-equations.html">
+     <span class="math notranslate nohighlight">
+      \(\underline{Ex}\)
+     </span>
+     : Symmetric matrix (
+     <span class="math notranslate nohighlight">
+      \(\lambda\)
+     </span>
+     always real)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="linear_algebra/7b-numerical-eigenvalues.html">
+     Eigenvectors in python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ordinary_differential_equations/ordinary_differential_equations.html">
+   Ordinary Differential Equations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ordinary_differential_equations/8-differential-equations.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ordinary_differential_equations/9-exact-ode.html">
+     Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ordinary_differential_equations/10-linear-ode.html">
+     Integrating Factors - Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ordinary_differential_equations/11-linear-ode-example.html">
+     Alternate Method (Last class continued)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ordinary_differential_equations/12-second-order-odes.html">
+     Second Order Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ordinary_differential_equations/13-non-homogeneous-linear-odes.html">
+     Recap from last class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ordinary_differential_equations/14-MoUC-VoP.html">
+     Method of Undetermined Coefficients (sec 2.9)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ordinary_differential_equations/15-springs-numerical-odes.html">
+     Introduction to Numerical Solution of Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ordinary_differential_equations/16-coupled-odes.html">
+     Coupled Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ordinary_differential_equations/17-coupled-ode-continued.html">
+     Recap for coupled differential equations:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ordinary_differential_equations/18-nonlinear-coupled-ODEs.html">
+     Nonlinear coupled ODE’s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ordinary_differential_equations/19-linear-stability.html">
+     Steady states in Non-Linear Coupled ODE’s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ordinary_differential_equations/20-BVP.html">
+     Boundary Value Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ordinary_differential_equations/21-BVP-shooting-method.html">
+     The Shooting Method for Solving BVPs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="partial_differential_equations/partial_differential_equations.html">
+   Partial Differential Equations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="partial_differential_equations/22-Intro-PDEs.html">
+     Partial Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="partial_differential_equations/23-Fourier-Coefficients.html">
+     Recap on PDEs from last lecture
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="statistics/statistics.html">
+   Statistics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statistics/24-intro-statistics.html">
+     Intro to engineering statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statistics/25-statistics-continue-linear-regression.html">
+     Recap from last class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statistics/26-bonus-nonlinear-regression.html">
+     Recap on linear regression
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   06-262 Math Methods Recap
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ulissigroup/math-methods-chemical-engineering/main?urlpath=lab/tree/math-methods-chemical-engineering/notes/course-recap.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/ulissigroup/math-methods-chemical-engineering/blob/main/math-methods-chemical-engineering/notes/course-recap.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/ulissigroup/math-methods-chemical-engineering"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/ulissigroup/math-methods-chemical-engineering/issues/new?title=Issue%20on%20page%20%2Fnotes/course-recap.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notes/course-recap.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   06-262 Math Methods Recap
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-algebra-recap">
+     Linear Algebra Recap
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ode-recap">
+     ODE Recap
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#your-approach">
+       Your Approach
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#coupled-odes">
+     Coupled ODEs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pdes">
+   PDEs
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#statistics">
+     Statistics
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>06-262 Math Methods Recap</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   06-262 Math Methods Recap
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-algebra-recap">
+     Linear Algebra Recap
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ode-recap">
+     ODE Recap
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#your-approach">
+       Your Approach
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#coupled-odes">
+     Coupled ODEs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pdes">
+   PDEs
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#statistics">
+     Statistics
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p>{{ badge }}
+$<span class="math notranslate nohighlight">\(\newcommand{\arr}[1]{\underline{\underline{#1}}}\)</span><span class="math notranslate nohighlight">\(    
+\)</span><span class="math notranslate nohighlight">\(\newcommand{\vec}[1]{\underline{#1}}\)</span><span class="math notranslate nohighlight">\(   
+\)</span><span class="math notranslate nohighlight">\(\require{mhchem}\)</span>$</p>
+<section class="tex2jax_ignore mathjax_ignore" id="math-methods-recap">
+<h1>06-262 Math Methods Recap<a class="headerlink" href="#math-methods-recap" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Taught you methods needed to solve steady-state and non-steady-state problems.</p></li>
+<li><p>Concepts built on each other. Matrix algebra and the concept of eigenvalues and eigenvectors became important in solving systems of ODEs. Our understanding of <span class="math notranslate nohighlight">\(1^\circ\)</span> ODEs helped us solve <span class="math notranslate nohighlight">\(2^\circ\)</span> ODEs. Our understanding of ODEs helps solve PDEs. And homogeneous solutions help us solve non-homogeneous problems</p></li>
+</ul>
+<section id="linear-algebra-recap">
+<h2>Linear Algebra Recap<a class="headerlink" href="#linear-algebra-recap" title="Permalink to this headline">#</a></h2>
+<div class="amsmath math notranslate nohighlight" id="equation-0d20baa0-7219-48c5-9f94-609e590358d8">
+<span class="eqno">(510)<a class="headerlink" href="#equation-0d20baa0-7219-48c5-9f94-609e590358d8" title="Permalink to this equation">#</a></span>\[\begin{align}
+\arr{A} = \begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{bmatrix} \rightarrow 2\times 2 \text{ matrix}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Allows us to use shorthand in defining linear systems of equations</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-5e75c0cc-c90a-4ab8-9d82-fb0df5cff41b">
+<span class="eqno">(511)<a class="headerlink" href="#equation-5e75c0cc-c90a-4ab8-9d82-fb0df5cff41b" title="Permalink to this equation">#</a></span>\[\begin{align}
+a_{11}x_1 + a_{12}x_2 + ... + a_{1n}x_n = b_1\\
+a_{11}x_1 + a_{12}x_2 + ... + a_{1n}x_n = b_1\\
+.\\.\\.\\
+a_{m1}x_1 + a_{m2}x_2 + ... + a_{mn}x_n = b_m\\
+\implies \arr{A}\vec{x} = \vec{b}
+\end{align}\]</div>
+<p>Which is homogneous when <span class="math notranslate nohighlight">\(\vec{b} \equiv \vec{0}\)</span> and non-homogeneous when <span class="math notranslate nohighlight">\(\vec{b} \neq \vec{0}\)</span></p>
+<ul class="simple">
+<li><p>We used Gauss Elimination to solve systems of equations.<br />
+E.g.the system</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-584fc00d-c79b-433f-8c29-38d56a8565c7">
+<span class="eqno">(512)<a class="headerlink" href="#equation-584fc00d-c79b-433f-8c29-38d56a8565c7" title="Permalink to this equation">#</a></span>\[\begin{align}
+x_1 + 2x_2 - x_3 = 4\\
+4x_2 - 2x_3 = -2\\
+x_1 - 2x_2 + 3x_3 = 0
+\end{align}\]</div>
+<p>can be represented by</p>
+<div class="amsmath math notranslate nohighlight" id="equation-20920b6d-74a2-4114-9b28-3eac9a83c90c">
+<span class="eqno">(513)<a class="headerlink" href="#equation-20920b6d-74a2-4114-9b28-3eac9a83c90c" title="Permalink to this equation">#</a></span>\[\begin{align}
+\left[\begin{array}{rrr|r} 1 &amp; 2 &amp; -1 &amp; 4\\
+0 &amp; 4 &amp; -2 &amp; -2 \\
+1 &amp; -2 &amp; 3 &amp; 0\end{array}\right] \rightarrow ^{\text{G.E.}}
+\left[\begin{array}{rrr|r} 1 &amp; 0 &amp; 0 &amp; 5\\
+0 &amp; 1 &amp; 0 &amp; -2 \\
+0 &amp; 0 &amp; 1 &amp; 3\end{array}\right]\\
+\implies x_1 = 5, \ x_2 = -2, \ x_3 = 3
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Systems of equations can be</p>
+<ol class="simple">
+<li><p>underdetermined (m&lt;n)</p></li>
+<li><p>determined (m=n)</p></li>
+<li><p>overdetermined (m&gt;n)<br />
+And can have 3 solution scenarios:</p></li>
+<li><p>infinite</p></li>
+<li><p>unique</p></li>
+<li><p>none<br />
+Not dictated by how “determined” system is</p></li>
+</ol>
+</li>
+<li><p>Determinants <span class="math notranslate nohighlight">\(\rightarrow\)</span> important property to calculate</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-ae1e971b-773f-43ed-88d2-2eb4cb511e1f">
+<span class="eqno">(514)<a class="headerlink" href="#equation-ae1e971b-773f-43ed-88d2-2eb4cb511e1f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  |\arr{A}| = \det(\arr{A})=\begin{cases}
+    a_{11} &amp; \text{if $n=1$}.\\
+    a_{11}A_{11} + a_{12}A_{12} + ... + a_{1n}A_{1n} &amp; \text{if $n\neq 1$}.
+  \end{cases}
+\end{equation}\]</div>
+<p>(only for square matrices) Here <span class="math notranslate nohighlight">\(A_{11}, \ A_{12}, \ A_{1n} ...\)</span> are cofactors<br />
+e.g. for a <span class="math notranslate nohighlight">\(2\times 2\)</span> matrix, <span class="math notranslate nohighlight">\(\det(\arr{A}) = a_{11}a_{22} - a_{21}a_{12}\)</span></p>
+<ul class="simple">
+<li><p>A matrix is singular (non-invertible) when the det. is zero</p></li>
+</ul>
+<ul class="simple">
+<li><p>Eigenvalues and eigenvectors<br />
+For an <span class="math notranslate nohighlight">\(n\times n\)</span> matrix <span class="math notranslate nohighlight">\(\arr{A}\)</span>, when <span class="math notranslate nohighlight">\(
+\arr{A}\vec{x}=\lambda\vec{x}\)</span>, <span class="math notranslate nohighlight">\(\lambda\)</span> is an eigenvalue and <span class="math notranslate nohighlight">\(\vec{x}\)</span> is the corresponding eigenvector</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span>’s found by solving <span class="math notranslate nohighlight">\(|\arr{A}-\lambda\arr{I}|=0\)</span></p></li>
+<li><p>corresponding <span class="math notranslate nohighlight">\(\vec{x}\)</span> found by solving <span class="math notranslate nohighlight">\((\arr{A}-\lambda\arr{I})\vec{x}=0\)</span></p></li>
+<li><p>the eigenspace of <span class="math notranslate nohighlight">\(\arr{A}\)</span> is <span class="math notranslate nohighlight">\(\vec{x}=\vec{0}\)</span> (always a solution) + all <span class="math notranslate nohighlight">\(\lambda,\vec{x}\)</span> pairs</p></li>
+<li><p>An <span class="math notranslate nohighlight">\(n\times n\)</span> matrix yields <span class="math notranslate nohighlight">\(n\)</span> <span class="math notranslate nohighlight">\(\lambda,\vec{x}\)</span> pairs.</p></li>
+</ul>
+</li>
+<li><p>Special matrices</p>
+<ul>
+<li><p>Diagonal</p></li>
+<li><p>Identity</p></li>
+<li><p>Triangular (upper/lower)</p></li>
+<li><p>Symmetric and skew-symmetric</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="ode-recap">
+<h2>ODE Recap<a class="headerlink" href="#ode-recap" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>We discussed several types of ODEs. Your ability to solve requires you to classify the ODE</p>
+<ul>
+<li><p>these 5 classifications, together, will determine your solution method</p></li>
+</ul>
+</li>
+</ul>
+<ol class="simple">
+<li><p>Order<br />
+Determined by the order of the highest derivative<br />
+A. first <span class="math notranslate nohighlight">\(\ y'=5\)</span><br />
+B. second <span class="math notranslate nohighlight">\(\ y'' + y' + y = 5\)</span></p></li>
+<li><p>Seperable-ness</p></li>
+</ol>
+<ul class="simple">
+<li><p>applies only to <span class="math notranslate nohighlight">\(1^\circ\)</span> ODEs</p></li>
+<li><p>can be written as <span class="math notranslate nohighlight">\(g(y)\cdot y'=f(x)\)</span><br />
+A. separable <span class="math notranslate nohighlight">\(\ y^2\cdot y'= x + 2\)</span><br />
+B. non-separable <span class="math notranslate nohighlight">\(\ y' + y = x\)</span></p></li>
+</ul>
+<ol class="simple">
+<li><p>Exactness</p></li>
+</ol>
+<ul class="simple">
+<li><p>applies only to <span class="math notranslate nohighlight">\(1^\circ\)</span> ODEs</p></li>
+<li><p>can be written as <span class="math notranslate nohighlight">\(N(x,y)y'=M(x,y)\)</span> with <span class="math notranslate nohighlight">\(\frac{\partial N}{\partial x} = \frac{\partial M}{\partial y}\)</span><br />
+A. Exact <span class="math notranslate nohighlight">\(\ y\cdot y'=x^2\)</span> (all separable ODEs are exact)<br />
+B. Non-exact <span class="math notranslate nohighlight">\(y\cdot y' = x^2 + y\)</span></p></li>
+</ul>
+<ol class="simple">
+<li><p>Linearity</p></li>
+</ol>
+<ul class="simple">
+<li><p>can be written as <span class="math notranslate nohighlight">\(y''+p(x)y'+q(x)y=r(x)\)</span> where <span class="math notranslate nohighlight">\(p,q\)</span> and <span class="math notranslate nohighlight">\(r\)</span> are continuous functions of <span class="math notranslate nohighlight">\(x\)</span> only\</p></li>
+<li><p>Constant coefficient is case when all p(x), q(x), etc are just constants
+A. Linear <span class="math notranslate nohighlight">\(\ y' + xy = 0\)</span><br />
+B. Non-linear <span class="math notranslate nohighlight">\(\ y\cdot y' = x^2 + y\)</span></p></li>
+</ul>
+<ol class="simple">
+<li><p>Homogeneity</p></li>
+</ol>
+<ul class="simple">
+<li><p>classification applies only to linear equations</p></li>
+<li><p>occurs when <span class="math notranslate nohighlight">\(r(x) \equiv 0\)</span><br />
+A. Homogeneous <span class="math notranslate nohighlight">\(y' + xy = 0\)</span><br />
+B. Non-homogeneous <span class="math notranslate nohighlight">\(y'' + y = 5x\)</span></p></li>
+</ul>
+<section id="your-approach">
+<h3>Your Approach<a class="headerlink" href="#your-approach" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>If it is first order:<br />
+A. separate if possible<br />
+B. check linearity. If linear, make exact with integrating factor <span class="math notranslate nohighlight">\(F(x) = \exp[\int p(x)dx]\)</span> and use chain rule to obtain <span class="math notranslate nohighlight">\(y(x) = e^{-\int p(x)dx}[\int F(x)r(x)dx + c]\)</span><br />
+C. Write in form <span class="math notranslate nohighlight">\(M(x,y)dx+N(x,y)dy=0\)</span>, check for exactness.<br />
+If not exact, try to find integrating factor <span class="math notranslate nohighlight">\(F(x)\)</span> or <span class="math notranslate nohighlight">\(F(y)\)</span></p></li>
+</ol>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(F(x)\)</span>, then <span class="math notranslate nohighlight">\(\frac{1}{F}\frac{dF}{dx} = \frac{1}{N}\left\{\frac{\partial M}{\partial y} - \frac{\partial N}{\partial x}\right\} = R(x)\)</span><br />
+and <span class="math notranslate nohighlight">\(F(x)=\exp[\int R(x)dx]\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(F(y)\)</span>, then <span class="math notranslate nohighlight">\(\frac{1}{F}\frac{dF}{dy} = \frac{1}{M}\left\{\frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}\right\} = R(y)\)</span><br />
+and <span class="math notranslate nohighlight">\(F(y)=\exp[\int R(y)dy]\)</span><br />
+Once your ODE is exact, find <span class="math notranslate nohighlight">\(u(x,y)\)</span> s.t. <span class="math notranslate nohighlight">\(\frac{\partial u}{\partial x} = M(x,y)\)</span> and <span class="math notranslate nohighlight">\(\frac{\partial u}{\partial y} = N(x,y)\)</span><br />
+Implicit solution is given by <span class="math notranslate nohighlight">\(u(x,y)=c\)</span></p></li>
+</ul>
+<ol class="simple">
+<li><p>If it is second order:<br />
+A. check homogeneity. If homogeneous, identify the two component solution basis, which depends on the roots of the characteristic equation <span class="math notranslate nohighlight">\(\lambda^2+a\lambda+b=0\)</span></p></li>
+<li><p>real, distinct roots<br />
+<span class="math notranslate nohighlight">\(y(x)=c_1e^{\lambda_1x}+c_2e^{\lambda_2x}\)</span>, where <span class="math notranslate nohighlight">\(\lambda=\frac{1}{2}(a\pm\sqrt{a^2-4b})\)</span></p></li>
+<li><p>repeated roots<br />
+<span class="math notranslate nohighlight">\(y(x)=c_1e^{\lambda x}+c_2xe^{\lambda x}\)</span> where <span class="math notranslate nohighlight">\(\lambda=-\frac{1}{2}a\)</span></p></li>
+<li><p>complex roots<br />
+<span class="math notranslate nohighlight">\(y(x)=e^{-\frac{a}{2}x}[c_1\sin(\omega x)+c_2\cos(\omega x)]\)</span> where <span class="math notranslate nohighlight">\(\omega=\sqrt{b-\frac{1}{4}a^2}\)</span></p></li>
+</ol>
+<p>B. if non-homogeneous, find homogeneous solution <span class="math notranslate nohighlight">\(y_H(x)\)</span>, then find a particular solution <span class="math notranslate nohighlight">\(y_P(x)\)</span> using either</p>
+<ol class="simple">
+<li><p>Method of undetermined coefficients
+* applicable only for non-homogeneous terms that return themselves as derivatives, e.g. <span class="math notranslate nohighlight">\(\sin x, e^x, x^n\)</span>
+* assume <span class="math notranslate nohighlight">\(y_P(x)\)</span> looks like <span class="math notranslate nohighlight">\(r(x)\)</span></p></li>
+<li><p>Variation of Parameters
+* works for any <span class="math notranslate nohighlight">\(r(x)\)</span>
+* assume <span class="math notranslate nohighlight">\(y_P(x)=u(x)y_1(x)+v(x)y_2(x)\)</span>
+* Find Wronskian, <span class="math notranslate nohighlight">\(W=y_1y_2'-y_2y_1'\)</span>, then,<br />
+<span class="math notranslate nohighlight">\(y(x)=y_H(x)+y_1(x)\int\frac{-r(x)y_2(x)}{W}dx + y_2(x)\int\frac{r(x)y_1(x)}{W}dx\)</span></p></li>
+</ol>
+<ul class="simple">
+<li><p>Boundary Value Problems</p>
+<ul>
+<li><p>IVPs always have a unique solution provided continuity is met</p></li>
+<li><p>BVPs have either no solution, unique or infinite number of solutions <span class="math notranslate nohighlight">\(\rightarrow\)</span> you must think for these</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="coupled-odes">
+<h2>Coupled ODEs<a class="headerlink" href="#coupled-odes" title="Permalink to this headline">#</a></h2>
+<p>e.g.\begin{align}
+y_1’-y_1+y_2=4\
+y_2’+y_1=8x
+\end{align}
+especially when working with higher number of equations (like in chemical plant), best to solve simultaneously</p>
+<ul class="simple">
+<li><p>Matrices come back:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-af582d19-83bb-4d20-9f77-d347b3d0b899">
+<span class="eqno">(515)<a class="headerlink" href="#equation-af582d19-83bb-4d20-9f77-d347b3d0b899" title="Permalink to this equation">#</a></span>\[\begin{align}
+\vec{y}'=\arr{A}\vec{y}+\vec{b}(x)
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\vec{b}(x)\)</span> is the non-homogeneous term, <span class="math notranslate nohighlight">\(\vec{y}\)</span> is an <span class="math notranslate nohighlight">\(n\times 1\)</span> vector of unknown functions and <span class="math notranslate nohighlight">\(\arr{A}\)</span> is an <span class="math notranslate nohighlight">\(n\times n\)</span> coefficient matrix<br />
+For the example, <span class="math notranslate nohighlight">\(\arr{A}=\begin{bmatrix}1&amp;-1 \\ -1&amp;0 \end{bmatrix}\)</span> and <span class="math notranslate nohighlight">\(\vec{b}=\begin{bmatrix} 4 \\ 8x \end{bmatrix}\)</span></p>
+<ul class="simple">
+<li><p>We proved that the eigenvalues and eigenvectors of <span class="math notranslate nohighlight">\(\arr{A}\)</span> yield the homogenoeus solution:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-8e867100-b05a-4bc7-bf5b-8ce0a7dd26f7">
+<span class="eqno">(516)<a class="headerlink" href="#equation-8e867100-b05a-4bc7-bf5b-8ce0a7dd26f7" title="Permalink to this equation">#</a></span>\[\begin{align}
+\vec{y} = c_1\vec{x}^{(1)}e^{\lambda_1t} + c_2\vec{x}^{(2)}e^{\lambda_2t} + ... + c_n\vec{x}^{(n)}e^{\lambda_nt}
+\end{align}\]</div>
+<p>for real, distinct eigenvalues</p>
+<ul class="simple">
+<li><p>For real, repeated eigenvalues, we must use reduction of order to obtain linearly independent solutions<br />
+e.g. <span class="math notranslate nohighlight">\(c_1\vec{x}^{(1)}e^{\lambda_1t} + c_2\vec{x}^{(1)}te^{\lambda_1t}\)</span> (remember there is also a term from the solution of the generalized eigenvalue problem!)</p></li>
+<li><p>For complex eigenvalues, we must use Euler’s formula</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-ff3ec96f-f74f-4b25-802e-8e076dca2076">
+<span class="eqno">(517)<a class="headerlink" href="#equation-ff3ec96f-f74f-4b25-802e-8e076dca2076" title="Permalink to this equation">#</a></span>\[\begin{align}
+e^{\omega it} = \cos(\omega t) + i\sin(\omega t)
+\end{align}\]</div>
+<p>to change basis and obtain a real solution</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4a3a659d-ea92-4fd5-abba-b66e1fed18a3">
+<span class="eqno">(518)<a class="headerlink" href="#equation-4a3a659d-ea92-4fd5-abba-b66e1fed18a3" title="Permalink to this equation">#</a></span>\[\begin{align}
+\vec{y}=c_1 \begin{bmatrix} \cos\omega t \\ -sin\omega t \end{bmatrix} + c_2 \begin{bmatrix} \sin \omega t \\ \cos \omega t \end{bmatrix}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Non-homogeneous systems are handled similarly to non-homogeneous single equations</p>
+<ul>
+<li><p>after finding homogeneous solution, find a particular solution using MUC or VoP</p></li>
+<li><p>In both cases, you assume a form of <span class="math notranslate nohighlight">\(y_P\)</span><br />
+MUC: <span class="math notranslate nohighlight">\(\vec{y}_P(t) = \vec{u}\sin t + \vec{v}\cos t\)</span> (for, say, <span class="math notranslate nohighlight">\(5\cos t\)</span>)<br />
+<span class="math notranslate nohighlight">\(\vec{y}_P(t) = \vec{u}t^2 + \vec{v}t + \vec{w}\)</span> (for, say, <span class="math notranslate nohighlight">\(2t^2\)</span>)<br />
+VoP: <span class="math notranslate nohighlight">\(\vec{y}_P(t) = \arr{Y}(t)\vec{u}(t)\)</span><br />
+where <span class="math notranslate nohighlight">\(\arr{Y}(t)\)</span> is the fundamental matrix obtained from your two linearly independent solutions to homogeneous equation</p></li>
+</ul>
+</li>
+<li><p>For non-linear ODE’s where we can’t get the solution, we can still find steady states and do a non-linear stability analysis</p>
+<ul>
+<li><p>Steady states are straightforward <span class="math notranslate nohighlight">\(\vec{y}'=\vec{0}\)</span>, but you have to find <strong>every steady state!</strong>. Be careful.</p></li>
+<li><p>At each steady state, evaluate the jacobian and form a linearized ODE that holds near the steady state.</p></li>
+<li><p>Calculate the eigenvalues to understand the type (stability) of the steady state</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="pdes">
+<h1>PDEs<a class="headerlink" href="#pdes" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>2 or more independent variables</p></li>
+<li><p>Order, linearity, homogeneity</p></li>
+<li><p>solve using separation of variables to turn into multiple ODE’s, or if given special solution forms for specific PDE’s</p></li>
+<li><p>If needed, use Fourier coefficients to transform initial conditions into the basis of solutions</p></li>
+</ul>
+<section id="statistics">
+<h2>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">#</a></h2>
+<p>At the very end, we covered some simple statistics that will help you next year.</p>
+<ul class="simple">
+<li><p>Basic statistics</p>
+<ul>
+<li><p>Types of distributions (continuous, discrete) and how to evaluate them (PDF, CDF, sampling) in python</p></li>
+<li><p>Plotting distribution (<strong>NOT JUST HISTOGRAMS</strong>) and kernel density estimation.</p></li>
+<li><p>Fitting distributions based on the CDF</p></li>
+<li><p>Estimates for properties of a Gaussian distribution, and the errors on those estimates</p></li>
+</ul>
+</li>
+<li><p>Regression</p>
+<ul>
+<li><p>Linear regression <strong>[testable]</strong></p>
+<ul>
+<li><p>Form the augmented matrix <span class="math notranslate nohighlight">\(\arr{X}\)</span> with your non-linear functions</p></li>
+<li><p>Solve for the best parameters using the <span class="math notranslate nohighlight">\(\arr{X}^T\)</span> trick</p></li>
+<li><p>If you need uncertainty, use a package like statsmodels</p></li>
+</ul>
+</li>
+<li><p>Non-linear regression</p>
+<ul>
+<li><p>Turn a non-linear problem into a linear one, then solve like that</p></li>
+<li><p>Use a tool like curvefit (easiest) or lmfit (if need uncertainty)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="statistics/26-bonus-nonlinear-regression.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Recap on linear regression</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Zachary Ulissi<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

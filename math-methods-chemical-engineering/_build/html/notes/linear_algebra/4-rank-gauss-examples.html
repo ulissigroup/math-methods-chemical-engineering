@@ -1,0 +1,1558 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Chemical Engineering example solved with Gauss elimination &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Using the inverse of A to solve a system of linear equations" href="5-determinants.html" />
+    <link rel="prev" title="Return to Systems of Equations" href="3-gauss-elimination.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Mathemtaical Methods for Chemical Engineering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Lecture notes for CMU 06-262 Math Methods in Chemical Engineering (Zachary Ulissi, CMU)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Notes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="linear_algebra.html">
+   Linear Algebra
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="1-intro-matrices.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2-matrix-manipulation.html">
+     Note on HW expectations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3-gauss-elimination.html">
+     Return to Systems of Equations
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Chemical Engineering example solved with Gauss elimination
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5-determinants.html">
+     Using the inverse of A to solve a system of linear equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6-eigenvalues-1.html">
+     Homogeneous vs. Non-homogeneous Systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="7b-numerical-eigenvalues.html">
+     Eigenvectors in python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ordinary_differential_equations/ordinary_differential_equations.html">
+   Ordinary Differential Equations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/8-differential-equations.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/9-exact-ode.html">
+     Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/10-linear-ode.html">
+     Integrating Factors - Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/11-linear-ode-example.html">
+     Alternate Method (Last class continued)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/12-second-order-odes.html">
+     Second Order Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/16-coupled-odes.html">
+     Coupled Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/17-coupled-ode-continued.html">
+     Recap for coupled differential equations:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/18-nonlinear-coupled-ODEs.html">
+     Nonlinear coupled ODE’s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/19-linear-stability.html">
+     Steady states in Non-Linear Coupled ODE’s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/20-BVP.html">
+     Boundary Value Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/21-BVP-shooting-method.html">
+     The Shooting Method for Solving BVPs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../partial_differential_equations/partial_differential_equations.html">
+   Partial Differential Equations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../partial_differential_equations/22-Intro-PDEs.html">
+     Partial Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../partial_differential_equations/23-Fourier-Coefficients.html">
+     Recap on PDEs from last lecture
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../statistics/statistics.html">
+   Statistics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/24-intro-statistics.html">
+     Intro to engineering statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/25-statistics-continue-linear-regression.html">
+     Recap from last class
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-recap.html">
+   06-262 Math Methods Recap
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ulissigroup/math-methods-chemical-engineering/main?urlpath=lab/tree/math-methods-chemical-engineering/notes/linear_algebra/4-rank-gauss-examples.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/ulissigroup/math-methods-chemical-engineering/blob/main/math-methods-chemical-engineering/notes/linear_algebra/4-rank-gauss-examples.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/ulissigroup/math-methods-chemical-engineering"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/ulissigroup/math-methods-chemical-engineering/issues/new?title=Issue%20on%20page%20%2Fnotes/linear_algebra/4-rank-gauss-examples.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/notes/linear_algebra/4-rank-gauss-examples.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Chemical Engineering example solved with Gauss elimination
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mass-balances">
+     Mass balances
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#convert-to-math-problem-equation">
+     Convert to math problem equation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solve-system-of-equations">
+     Solve system of equations
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solve-engineering-problem">
+     Solve engineering problem
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rank-of-a-matrix">
+   Rank of a matrix
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-2">
+     Example 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inner-dot-products-of-vectors">
+   Inner (dot) products of vectors
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diagonal-matrices">
+   Diagonal Matrices
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identity-unit-matrix">
+     Identity (unit) matrix
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scalar-matrix">
+     Scalar matrix
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrix-inversion">
+   Matrix inversion
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computing-an-inverse">
+     Computing an inverse
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Example
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rank-inverses-and-row-echelon-form-and-solving-systems-of-linear-equations-in-numpy">
+   Rank, inverses, and row echelon form, and solving systems of linear equations in numpy
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Rank of a matrix
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inverse-of-a-matrix">
+     Inverse of a matrix
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gauss-elimination">
+     Gauss elimination
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solving-a-system-of-linear-equations">
+     Solving a system of linear equations
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-for-determined-system">
+       Example for determined system
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-for-an-underdetermined-system">
+       Example for an underdetermined system
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Chemical Engineering example solved with Gauss elimination</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Chemical Engineering example solved with Gauss elimination
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mass-balances">
+     Mass balances
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#convert-to-math-problem-equation">
+     Convert to math problem equation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solve-system-of-equations">
+     Solve system of equations
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solve-engineering-problem">
+     Solve engineering problem
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rank-of-a-matrix">
+   Rank of a matrix
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-2">
+     Example 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inner-dot-products-of-vectors">
+   Inner (dot) products of vectors
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diagonal-matrices">
+   Diagonal Matrices
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identity-unit-matrix">
+     Identity (unit) matrix
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scalar-matrix">
+     Scalar matrix
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrix-inversion">
+   Matrix inversion
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computing-an-inverse">
+     Computing an inverse
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Example
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rank-inverses-and-row-echelon-form-and-solving-systems-of-linear-equations-in-numpy">
+   Rank, inverses, and row echelon form, and solving systems of linear equations in numpy
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Rank of a matrix
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inverse-of-a-matrix">
+     Inverse of a matrix
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gauss-elimination">
+     Gauss elimination
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solving-a-system-of-linear-equations">
+     Solving a system of linear equations
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-for-determined-system">
+       Example for determined system
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-for-an-underdetermined-system">
+       Example for an underdetermined system
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p>{{ badge }}</p>
+<div class="math notranslate nohighlight">
+\[\newcommand{\arr}[1]{\underline{\underline{#1}}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\vec}[1]{\underline{#1}}\]</div>
+<div class="math notranslate nohighlight">
+\[\require{mhchem}\]</div>
+<section class="tex2jax_ignore mathjax_ignore" id="chemical-engineering-example-solved-with-gauss-elimination">
+<h1>Chemical Engineering example solved with Gauss elimination<a class="headerlink" href="#chemical-engineering-example-solved-with-gauss-elimination" title="Permalink to this headline">#</a></h1>
+<p>Three tanks of water are attached in series. All tanks have the same cross-sectional area <span class="math notranslate nohighlight">\(A\)</span>. The flow rate through the valves is a function of the height of the water in the tanks (equations below)</p>
+<img src="https://docs.google.com/drawings/d/e/2PACX-1vRdeJhg87qBtUYmI28A_IHSRFfsJQUNfAiBTPTbcsiota93b2pL8MHzdpnXdhX21nG7nDAA1-mYLyh3/pub?w=632&amp;h=245">
+<section id="mass-balances">
+<h2>Mass balances<a class="headerlink" href="#mass-balances" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Balance on tank 1 at steady state (accum=0)</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\text{Accumulation}&amp;=\text{In}-\text{Out}+\text{Generation}\\
+0&amp;=\rho F_0-\rho F_1\\
+0&amp;=F_0-F_1=F_0-\frac{h_1-h_2}{R_1}\\
+h_1-h_2&amp;=R_1F_0
+\end{align*}\]</div>
+<p>To prepare for the augmented matrix, we’ll keep unknowns on the left hand side, and constants on the right hand side!</p>
+<ul class="simple">
+<li><p>Balance on tank 2 at steady state (accum=0)</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\text{Accumulation}&amp;=\text{In}-\text{Out}+\text{Generation}\\
+0&amp;=\rho\frac{h_1-h_2}{R_1}-\rho\frac{h_2-h_3}{R_2}=R_2h_1-R_2h_2-R_1h_2+R_1h_3\\
+R_2h_1-(R_1+R_2)h_2+R_1h_3&amp;=0
+\end{align*}\]</div>
+<ul class="simple">
+<li><p>Balance on tank 3 at steady state (accum=0)</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\text{Accumulation}&amp;=\text{In}-\text{Out}+\text{Generation}\\
+0&amp;=\rho\frac{h_2-h_3}{R_2}-\rho\frac{h_3}{R_3}=R_3h_2-R_3h_3-R_2h_3\\
+R_3h_2-(R_2+R_3)h_3&amp;=0
+\end{align*}\]</div>
+</section>
+<section id="convert-to-math-problem-equation">
+<h2>Convert to math problem equation<a class="headerlink" href="#convert-to-math-problem-equation" title="Permalink to this headline">#</a></h2>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\arr{A}\vec{h}=\vec{b}\\
+\begin{bmatrix}
+1&amp;-1&amp;0\\
+R_2&amp;-(R_1+R_2)&amp;R_1\\
+0&amp;R_3&amp;-(R_2+R_3)
+\end{bmatrix}
+\begin{bmatrix}
+h_1\\h_2\\h_3
+\end{bmatrix}&amp;=\begin{bmatrix}
+R_1F_0\\0\\0
+\end{bmatrix}
+\end{align*}\]</div>
+</section>
+<section id="solve-system-of-equations">
+<h2>Solve system of equations<a class="headerlink" href="#solve-system-of-equations" title="Permalink to this headline">#</a></h2>
+<p>For the situation where <span class="math notranslate nohighlight">\(A=5\)</span> m<span class="math notranslate nohighlight">\(^2\)</span>, <span class="math notranslate nohighlight">\(F_0=5\)</span> m<span class="math notranslate nohighlight">\(^3\)</span>/hr, <span class="math notranslate nohighlight">\(R_1=2\)</span> hr/m<span class="math notranslate nohighlight">\(^2\)</span>, <span class="math notranslate nohighlight">\(R_2=1\)</span> hr/m<span class="math notranslate nohighlight">\(^2\)</span>, <span class="math notranslate nohighlight">\(R_3=1\)</span> hr/m<span class="math notranslate nohighlight">\(^2\)</span>, plug into matrix:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\begin{bmatrix}
+1&amp;-1&amp;0\\
+1&amp;-3&amp;2\\
+0&amp;1&amp;-2
+\end{bmatrix}
+\begin{bmatrix}
+h_1\\h_2\\h_3
+\end{bmatrix}&amp;=\begin{bmatrix}
+10\\0\\0
+\end{bmatrix}
+\end{align*}\]</div>
+<ul class="simple">
+<li><p>Form <span class="math notranslate nohighlight">\([\arr{A}|\vec{b}]\)</span></p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\left[\begin{array}{rrr|r}
+1&amp;-1&amp;0&amp;10\\
+1&amp;-3&amp;2&amp;0\\
+0&amp;1&amp;-2&amp;0
+\end{array}\right]
+\end{align*}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R_2=R_2-R_1\)</span></p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\left[\begin{array}{rrr|r}
+1&amp;-1&amp;0&amp;10\\
+0&amp;-2&amp;2&amp;-10\\
+0&amp;1&amp;-2&amp;0
+\end{array}\right]
+\end{align*}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R_2=-R_2/2\)</span></p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\left[\begin{array}{rrr|r}
+1&amp;-1&amp;0&amp;10\\
+0&amp;1&amp;-1&amp;5\\
+0&amp;1&amp;-2&amp;0
+\end{array}\right]
+\end{align*}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R_3=R_2-R_3\)</span></p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\left[\begin{array}{rrr|r}
+1&amp;-1&amp;0&amp;10\\
+0&amp;1&amp;-1&amp;5\\
+0&amp;0&amp;1&amp;5
+\end{array}\right]
+\end{align*}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R_2=R_2+R_3\)</span></p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\left[\begin{array}{rrr|r}
+1&amp;-1&amp;0&amp;10\\
+0&amp;1&amp;0&amp;10\\
+0&amp;0&amp;1&amp;5
+\end{array}\right]
+\end{align*}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R_1=R_1+R_2\)</span></p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\left[\begin{array}{rrr|r}
+1&amp;0&amp;0&amp;20\\
+0&amp;1&amp;0&amp;10\\
+0&amp;0&amp;1&amp;5
+\end{array}\right]
+\end{align*}\]</div>
+<p>Math solved!</p>
+</section>
+<section id="solve-engineering-problem">
+<h2>Solve engineering problem<a class="headerlink" href="#solve-engineering-problem" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(h_1=20\)</span>. What units? Remember <span class="math notranslate nohighlight">\(h\sim FR=(m^3/hr)(hr/m^2)=m\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h_1=20\)</span> m, <span class="math notranslate nohighlight">\(h_2=10\)</span> m, <span class="math notranslate nohighlight">\(h_3=5\)</span> m.</p></li>
+</ul>
+<p>Can this solution make physical sense? Yes!</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="rank-of-a-matrix">
+<h1>Rank of a matrix<a class="headerlink" href="#rank-of-a-matrix" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>The rank of a matrix is the # of non-zero rows after gauss elimination</p></li>
+<li><p>This tells us about the linear independent of the our system</p></li>
+</ul>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h2>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\arr{A}=\begin{bmatrix}
+-3&amp;1&amp;-1\\
+1&amp;0&amp;1\\
+-2&amp;2&amp;2
+\end{bmatrix}
+\end{align*}\]</div>
+<ul class="simple">
+<li><p>After Gauss elimination</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\arr{A}=\begin{bmatrix}
+1&amp;0&amp;1\\
+0&amp;1&amp;2\\
+0&amp;0&amp;0
+\end{bmatrix}
+\end{align*}\]</div>
+<p>*There are two nonzero rows, so rank<span class="math notranslate nohighlight">\((\arr{A})=2\)</span>.</p>
+<ul class="simple">
+<li><p>This also means that only two of these equations are linearly independent!</p></li>
+<li><p>The reduced echelon matrix tells us that <span class="math notranslate nohighlight">\(x_1+x_3\)</span> and <span class="math notranslate nohighlight">\(x_2+2x_3\)</span> form <strong>a basis</strong> of the system!</p></li>
+</ul>
+<p>Definition of a basis: I can form any row in the original equation as a linear combination of the basis vectors.</p>
+<ul class="simple">
+<li><p>[-3,1,-1] can be formed from <span class="math notranslate nohighlight">\(c_1[1,0,1]+c_2[0,1,2]\)</span></p></li>
+</ul>
+</section>
+<section id="example-2">
+<h2>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">#</a></h2>
+<p>Let’s say we get an augment matrix after gauss elimination of:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\arr{\tilde{A}}=\begin{bmatrix}
+-3&amp;1&amp;-1&amp;-3\\
+1&amp;0&amp;1&amp;5\\
+-2&amp;2&amp;2&amp;-17
+\end{bmatrix}
+\end{align*}\]</div>
+<ul class="simple">
+<li><p>rank<span class="math notranslate nohighlight">\((\arr{\tilde{A}})=3\)</span></p></li>
+<li><p>rank<span class="math notranslate nohighlight">\((\arr{A})=2\)</span></p></li>
+</ul>
+<p><strong>No solution!!</strong></p>
+<p>For an m=n system like the 3x3 system here:</p>
+<ul class="simple">
+<li><p>If rank<span class="math notranslate nohighlight">\((\arr{A})=\)</span>rank<span class="math notranslate nohighlight">\((\arr{\tilde{A}})=n\)</span>, one unique solution!</p></li>
+<li><p>If rank<span class="math notranslate nohighlight">\((\arr{A})&lt;\)</span>rank<span class="math notranslate nohighlight">\((\arr{\tilde{A}})=n\)</span>, no solution!</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="inner-dot-products-of-vectors">
+<h1>Inner (dot) products of vectors<a class="headerlink" href="#inner-dot-products-of-vectors" title="Permalink to this headline">#</a></h1>
+<p>You’ve probably done dot products in your calculus class, but let’s go ahead and review dot products.</p>
+<ul class="simple">
+<li><p>This is a special case of matrix multiplication that occurs very often</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\vec{a}\)</span> and <span class="math notranslate nohighlight">\(\vec{b}\)</span> are vectors, both with the same number of elements, then matrix multiplication yields a scalar (a 1x1 matrix) called the inner or dot  product</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\vec{a}\cdot\vec{b}=\vec{a}^T\vec{b}=\begin{bmatrix}a_1&amp;\dots&amp;a_n\end{bmatrix}
+\begin{bmatrix}b_1\\\vdots\\b_n\end{bmatrix}=\sum_{l=1}^n a_lb_l
+\end{align*}\]</div>
+<section id="id1">
+<h2>Example<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\vec{a}=\begin{bmatrix}
+4\\-1\\2
+\end{bmatrix}, \vec{b}=\begin{bmatrix}
+1\\0\\3
+\end{bmatrix}\\
+\vec{a}\cdot\vec{b}=4(1)+-1(0)+2(3)=10
+\end{align*}\]</div>
+<ul class="simple">
+<li><p>Matrix multiplication is just a bunch of dot products. For example, in <span class="math notranslate nohighlight">\(\arr{C}=\arr{A}\arr{B}\)</span>, every operation is just a dot product of a row and columnn vector</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="diagonal-matrices">
+<h1>Diagonal Matrices<a class="headerlink" href="#diagonal-matrices" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Definition: Square matrices that have non-zero entries only on the diagonal. Any entry above of below the diagonal is zero</p></li>
+<li><p>Example:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\begin{bmatrix}
+0.2&amp;0&amp;0\\0&amp;5&amp;0\\0&amp;0&amp;1
+\end{bmatrix}
+\end{align*}\]</div>
+<section id="identity-unit-matrix">
+<h2>Identity (unit) matrix<a class="headerlink" href="#identity-unit-matrix" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>A square matrix  <span class="math notranslate nohighlight">\(\arr{I}\)</span> where every element in the diagonal is 1, and all other elements are 0.</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\arr{I}=\begin{bmatrix}1&amp;0\\0&amp;1\end{bmatrix} &amp;&amp;\arr{I}=\begin{bmatrix}1&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;1\end{bmatrix} &amp;&amp;etc
+\end{align*}\]</div>
+<ul class="simple">
+<li><p>We can denote the size with <span class="math notranslate nohighlight">\(\arr{I}_n\)</span></p></li>
+<li><p><strong>Special property!</strong> Multiplying a matrix <span class="math notranslate nohighlight">\(\arr{A}\)</span> by the same size identity matrix <span class="math notranslate nohighlight">\(\arr{I}\)</span> yields back <span class="math notranslate nohighlight">\(\arr{A}\)</span>!</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\arr{I}\arr{A}=\arr{A}\arr{I}=\begin{bmatrix}
+a_{11}&amp;a_{12}\\
+a_{21}&amp;a_{22}
+\end{bmatrix}\begin{bmatrix}
+1&amp;0\\0&amp;1
+\end{bmatrix}=\begin{bmatrix}
+a_{11}&amp;a_{12}\\
+a_{21}&amp;a_{22}
+\end{bmatrix}
+\end{align*}\]</div>
+</section>
+<section id="scalar-matrix">
+<h2>Scalar matrix<a class="headerlink" href="#scalar-matrix" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>All non-zero entries of a diagonal matrix <span class="math notranslate nohighlight">\(\arr{S}\)</span> are equal to  some number <span class="math notranslate nohighlight">\(c\)</span>. In other words, <span class="math notranslate nohighlight">\(\arr{S}=c\arr{I}\)</span></p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\arr{S}=\begin{bmatrix} c&amp;0\\0&amp;c\end{bmatrix} &amp;&amp;e.g. &amp;&amp; \arr{S}=\begin{bmatrix} 3&amp;0\\0&amp;3\end{bmatrix}
+\end{align*}\]</div>
+<ul class="simple">
+<li><p>From the unit identity info above, <span class="math notranslate nohighlight">\(\arr{S}\arr{A}=c\arr{I}\arr{A}=\arr{A}\arr{S}=\arr{A}c\arr{I}=c\arr{A}\)</span></p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="matrix-inversion">
+<h1>Matrix inversion<a class="headerlink" href="#matrix-inversion" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>A real number <span class="math notranslate nohighlight">\(a\)</span> has a multiplicative inverse if there exists a <span class="math notranslate nohighlight">\(b\)</span> such that <span class="math notranslate nohighlight">\(ab=1\)</span></p></li>
+<li><p>Any non-zero <span class="math notranslate nohighlight">\(a\)</span> has a multiplicative inverse <span class="math notranslate nohighlight">\(b=1/a\)</span>.</p></li>
+</ul>
+<p>We can generalize this idea to matrices!</p>
+<ul class="simple">
+<li><p>A square matrix <span class="math notranslate nohighlight">\(\arr{A}\)</span> is <strong>invertible</strong> or <strong>non-singular</strong> if there is a matrix <span class="math notranslate nohighlight">\(\arr{B}\)</span> such that</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\arr{A}\arr{B}=\arr{B}\arr{A}=\arr{I}
+\end{align*}\]</div>
+<ul class="simple">
+<li><p>Ex: <span class="math notranslate nohighlight">\(\arr{A}=\begin{bmatrix}2&amp;4\\3&amp;1\end{bmatrix}\)</span> and <span class="math notranslate nohighlight">\(\arr{B}=\begin{bmatrix}-1/10&amp;2/5\\3/10&amp;-1/5\end{bmatrix}\)</span> are inverses of each other because <span class="math notranslate nohighlight">\(\arr{A}\arr{B}=\arr{B}\arr{A}=\arr{I}\)</span></p></li>
+<li><p>We say <span class="math notranslate nohighlight">\(\arr{B}\)</span> is the multiplicative inverse of <span class="math notranslate nohighlight">\(\arr{A}\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\arr{B}\)</span> and <span class="math notranslate nohighlight">\(\arr{C}\)</span> are both inverses of <span class="math notranslate nohighlight">\(\arr{A}\)</span>, then</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\arr{B}=\arr{B}\arr{I}=\arr{B}(\arr{A}\arr{C})=(\arr{B}\arr{A})\arr{C}=\arr{I}\arr{C}=\arr{C} \\\therefore \arr{B}=\arr{C} \text{ and $\arr{A}$ has at most one inverse}
+\end{align*}\]</div>
+<ul class="simple">
+<li><p>The inverse of <span class="math notranslate nohighlight">\(\arr{A}\)</span> is denoted <span class="math notranslate nohighlight">\(\arr{A}^{-1}\)</span></p></li>
+<li><p>A square matrix is called <strong>singular</strong> if it doesn’t have an inverse</p></li>
+</ul>
+<section id="computing-an-inverse">
+<h2>Computing an inverse<a class="headerlink" href="#computing-an-inverse" title="Permalink to this headline">#</a></h2>
+<p>We already have the tools to compute the inverse!!</p>
+<ul class="simple">
+<li><p>For a square matrix <span class="math notranslate nohighlight">\(\arr{A}\)</span>, we will augment it with the identity matrix</p></li>
+<li><p>We we will use Gauss elimination to convert <span class="math notranslate nohighlight">\(\arr{A}\)</span> to the identity matrix</p></li>
+<li><p>The augmented matrix is then the inverse!</p></li>
+<li><p>Magic! (not really)</p></li>
+</ul>
+<section id="id2">
+<h3>Example<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>Find <span class="math notranslate nohighlight">\(\arr{A}^{-1}\)</span> for <span class="math notranslate nohighlight">\(\arr{A}=\begin{bmatrix}2&amp;-6\\4&amp;-2\end{bmatrix}\)</span></p>
+<ul class="simple">
+<li><p>Form augmented matrix</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\left[\begin{array}{rr|rr}
+2&amp;-6&amp;1&amp;0\\
+4&amp;-2&amp;0&amp;1
+\end{array}\right]
+\end{align*}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R_1=R_1/2\)</span></p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\left[\begin{array}{rr|rr}
+1&amp;-3&amp;1/2&amp;0\\
+4&amp;-2&amp;0&amp;1
+\end{array}\right]
+\end{align*}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R_2=R_2-4R_1\)</span></p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\left[\begin{array}{rr|rr}
+1&amp;-3&amp;1/2&amp;0\\
+0&amp;10&amp;-2&amp;1
+\end{array}\right]
+\end{align*}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R_2=R_2/10\)</span></p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\left[\begin{array}{rr|rr}
+1&amp;-3&amp;1/2&amp;0\\
+0&amp;1&amp;-1/5&amp;1/10
+\end{array}\right]
+\end{align*}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R_1=R_1+3R_2\)</span></p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\left[\begin{array}{rr|rr}
+1&amp;0&amp;-1/10&amp;3/10\\
+0&amp;1&amp;-1/5&amp;1/10
+\end{array}\right]
+\end{align*}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\arr{A}^{-1}=\begin{bmatrix}-1/10&amp;3/10\\
+-1/5&amp;1/10
+\end{bmatrix}\)</span></p></li>
+<li><p>Quick check!</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\arr{A}\arr{A}^{-1}=\arr{I}=\arr{A}^{-1}\arr{A}
+\end{align*}\]</div>
+<p>Let’s do this one with python!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1">#Define A and the inverse of A</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">6</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">Ainv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="mi">10</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">10</span><span class="p">]])</span>
+
+<span class="c1">#Note that this looks very good, but some residual rounding errors in the </span>
+<span class="c1"># computation has one element VERY close to zero but not quite right. For </span>
+<span class="c1"># practical purposes, anything less than about 10^-8 is probably the same </span>
+<span class="c1"># thing as zero in numerical methods</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="nd">@Ainv</span><span class="p">)</span>
+
+<span class="c1">#Check Ainv*A</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Ainv</span><span class="nd">@A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.00000000e+00 -5.55111512e-17]
+ [ 0.00000000e+00  1.00000000e+00]]
+[[1.00000000e+00 1.11022302e-16]
+ [0.00000000e+00 1.00000000e+00]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="rank-inverses-and-row-echelon-form-and-solving-systems-of-linear-equations-in-numpy">
+<h1>Rank, inverses, and row echelon form, and solving systems of linear equations in numpy<a class="headerlink" href="#rank-inverses-and-row-echelon-form-and-solving-systems-of-linear-equations-in-numpy" title="Permalink to this headline">#</a></h1>
+<section id="id3">
+<h2>Rank of a matrix<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">np.linalg.matrix_rank</span></code> function calculates the matrix rank of A. For the example above:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="c1"># We can use np.linalg.matrix_rank(A)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The rank of A is </span><span class="si">%d</span><span class="s1">&#39;</span><span class="o">%</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">matrix_rank</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-3  1 -1]
+ [ 1  0  1]
+ [-2  2  2]]
+The rank of A is 2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s adjust the matrix and see if the rank changes (<span class="math notranslate nohighlight">\(a_{22}=2\)</span> to <span class="math notranslate nohighlight">\(a_{22}=3\)</span>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
+
+<span class="c1"># Calculate the matrix rank of A</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The rank of A is </span><span class="si">%d</span><span class="s1">&#39;</span><span class="o">%</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">matrix_rank</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The rank of A is 3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Confusingly, np.rank(A) <strong>is not</strong> the matrix rank of A.</p>
+</section>
+<section id="inverse-of-a-matrix">
+<h2>Inverse of a matrix<a class="headerlink" href="#inverse-of-a-matrix" title="Permalink to this headline">#</a></h2>
+<p>Inverses are also easy with <code class="docutils literal notranslate"><span class="pre">np.linalg.inv</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">6</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
+
+<span class="c1">#Same as the answer we got above!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-0.1  0.3]
+ [-0.2  0.1]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can ask numpy what the inverse of a singular matrix is, and it will give us an answer, but that answer is garbage.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Try to get the inverse of a singular matrix</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
+
+<span class="c1">#Same as the answer we got above!</span>
+<span class="n">Ainv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">Ainv</span><span class="p">)</span>
+
+<span class="c1">#Check; notice that Ainv*A is not the identity! This is a problem with numerical</span>
+<span class="c1"># methods; we have to be on top of our game all the time!</span>
+<span class="n">Ainv</span><span class="nd">@A</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-2.25179981e+15 -4.50359963e+15  1.12589991e+15]
+ [-4.50359963e+15 -9.00719925e+15  2.25179981e+15]
+ [ 2.25179981e+15  4.50359963e+15 -1.12589991e+15]]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.  ,  0.  ,  1.  ],
+       [-2.  ,  1.  ,  1.  ],
+       [ 0.5 ,  0.25,  0.5 ]])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="gauss-elimination">
+<h2>Gauss elimination<a class="headerlink" href="#gauss-elimination" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>There’s not a good method in numpy/scipy to do Gauss elimination with numerical methods. You can do it you use symbolic math packages (sort of like mathematica, but in python), but these largely defeat the point of using numerical methods!</p></li>
+<li><p>The closest thing you can do is get a matrix into upper diagonal form, which is echelon form, but this only works for square matrics and isn’t really helpful (see https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.lu_factor.html)</p></li>
+<li><p>We use Gauss elimination to solve linear systems and calculate inverses, and there are better ways to do these.</p></li>
+<li><p>You can use other packages like sympy (symbolic python) which is a little closer to how a software package like mathematica works. It’s helpful if you really want RREF, but not how I would actually solve a large system of equations in real life. <a class="reference external" href="https://docs.sympy.org/latest/tutorial/matrices.html#rref">sympy RREF docs</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
+<span class="c1"># Example from earlier in lecture</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+<span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span>
+
+<span class="c1"># Make a sympy matrix</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">m_rref</span><span class="p">,</span> <span class="n">pivots</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">rref</span><span class="p">()</span> <span class="c1"># Compute reduced row echelon form </span>
+
+<span class="c1">#notice the pretty latex printing!</span>
+<span class="n">m_rref</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1 &amp; 0 &amp; 1\\0 &amp; 1 &amp; 2\\0 &amp; 0 &amp; 0\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+</section>
+<section id="solving-a-system-of-linear-equations">
+<h2>Solving a system of linear equations<a class="headerlink" href="#solving-a-system-of-linear-equations" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>There are excellent methods to solve a system of linear equations (https://docs.scipy.org/doc/numpy/reference/generated/numpy.linalg.solve.html) that is determined (square) and full rank</p></li>
+<li><p>solve takes in the matrix <span class="math notranslate nohighlight">\(\arr{A}\)</span> and the vector <span class="math notranslate nohighlight">\(\vec{b}\)</span> in <span class="math notranslate nohighlight">\(\arr{A}\vec{x}=\vec{b}\)</span> and returns <span class="math notranslate nohighlight">\(\vec{x}\)</span></p></li>
+</ul>
+<section id="example-for-determined-system">
+<h3>Example for determined system<a class="headerlink" href="#example-for-determined-system" title="Permalink to this headline">#</a></h3>
+<p>Let’s try the example from above for the three-tank system</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\begin{bmatrix}
+1&amp;-1&amp;0\\
+1&amp;-3&amp;2\\
+0&amp;1&amp;-2
+\end{bmatrix}
+\begin{bmatrix}
+h_1\\h_2\\h_3
+\end{bmatrix}&amp;=\begin{bmatrix}
+10\\0\\0
+\end{bmatrix}
+\end{align*}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1">#Same answer as above!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[20. 10.  5.]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This works really well for a determined system.</p>
+</section>
+<section id="example-for-an-underdetermined-system">
+<h3>Example for an underdetermined system<a class="headerlink" href="#example-for-an-underdetermined-system" title="Permalink to this headline">#</a></h3>
+<p>Let’s do one of the examples from lecture 3!</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+x_1+2x_2+x_3=1\\
+2x_1-x_2+x_2=2\\
+4x_1+3x_2+3x_3=4\\
+3x_1+x_2+2x_3=3
+\end{align*}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+
+
+<span class="c1">#Same answer!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">LinAlgError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-9-fb72b6805d72&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> 
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1">#Same answer!</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
+
+<span class="nn">&lt;__array_function__ internals&gt;</span> in <span class="ni">solve</span><span class="nt">(*args, **kwargs)</span>
+
+<span class="nn">/usr/local/lib/python3.7/dist-packages/numpy/linalg/linalg.py</span> in <span class="ni">solve</span><span class="nt">(a, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">379</span>     <span class="n">a</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">_makearray</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">380</span>     <span class="n">_assert_stacked_2d</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">381</span>     <span class="n">_assert_stacked_square</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">382</span>     <span class="n">b</span><span class="p">,</span> <span class="n">wrap</span> <span class="o">=</span> <span class="n">_makearray</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">383</span>     <span class="n">t</span><span class="p">,</span> <span class="n">result_t</span> <span class="o">=</span> <span class="n">_commonType</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.7/dist-packages/numpy/linalg/linalg.py</span> in <span class="ni">_assert_stacked_square</span><span class="nt">(*arrays)</span>
+<span class="g g-Whitespace">    </span><span class="mi">202</span>         <span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span>         <span class="k">if</span> <span class="n">m</span> <span class="o">!=</span> <span class="n">n</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">204</span>             <span class="k">raise</span> <span class="n">LinAlgError</span><span class="p">(</span><span class="s1">&#39;Last 2 dimensions of the array must be square&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">205</span> 
+<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="k">def</span> <span class="nf">_assert_finite</span><span class="p">(</span><span class="o">*</span><span class="n">arrays</span><span class="p">):</span>
+
+<span class="ne">LinAlgError</span>: Last 2 dimensions of the array must be square
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that np.linalg.solve can’t handle this case. We can still get a solution,with np.linalg.lstsq, which tries to find a vector that satisfies this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Try least squares solution to this problem</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">rank</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+
+<span class="c1">#First, print the rank of the matrix:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rank</span><span class="p">)</span>
+
+<span class="c1">#print the solution</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># print the residual</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="c1">#Check that this is a solution</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="nd">@x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+[ 1.00000000e+00 -3.61767652e-16  5.06142841e-17]
+[4.46770451e-31]
+[1. 2. 4. 3.]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/dist-packages/ipykernel_launcher.py:2: FutureWarning: `rcond` parameter will change to the default of machine precision times ``max(M, N)`` where M and N are the input matrix dimensions.
+To use the future default and silence this warning we advise to pass `rcond=None`, to keep using the old, explicitly pass `rcond=-1`.
+  
+</pre></div>
+</div>
+</div>
+</div>
+<p>So, np.linalg.lstsq does give us <strong>a solution</strong> but not <strong>all of the solutions</strong>. There are other solutions that also would have worked as we saw. The simplest is [1,0,0]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="nd">@np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 4, 3])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once again, numerical methods can work well, but we have to be extra sharp to make sure we understand what they are doing. It’s on you if you use them and they don’t do quite what you were hoping for!</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notes/linear_algebra"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="3-gauss-elimination.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Return to Systems of Equations</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="5-determinants.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Using the inverse of A to solve a system of linear equations</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Zachary Ulissi<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

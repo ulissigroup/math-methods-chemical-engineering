@@ -1,0 +1,1104 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Coupled Differential Equations &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Recap for coupled differential equations:" href="17-coupled-ode-continued.html" />
+    <link rel="prev" title="Introduction to Numerical Solution of Differential Equations" href="15-springs-numerical-odes.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Mathemtaical Methods for Chemical Engineering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Lecture notes for CMU 06-262 Math Methods in Chemical Engineering (Zachary Ulissi, CMU)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Notes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../linear_algebra/linear_algebra.html">
+   Linear Algebra
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/1-intro-matrices.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/2-matrix-manipulation.html">
+     Note on HW expectations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/3-gauss-elimination.html">
+     Return to Systems of Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/4-rank-gauss-examples.html">
+     Chemical Engineering example solved with Gauss elimination
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/5-determinants.html">
+     Using the inverse of A to solve a system of linear equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/6-eigenvalues-1.html">
+     Homogeneous vs. Non-homogeneous Systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/7-eigenvalue-2-difference-equations.html">
+     <span class="math notranslate nohighlight">
+      \(\underline{Ex}\)
+     </span>
+     : Symmetric matrix (
+     <span class="math notranslate nohighlight">
+      \(\lambda\)
+     </span>
+     always real)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/7b-numerical-eigenvalues.html">
+     Eigenvectors in python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="ordinary_differential_equations.html">
+   Ordinary Differential Equations
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="8-differential-equations.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="9-exact-ode.html">
+     Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10-linear-ode.html">
+     Integrating Factors - Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-linear-ode-example.html">
+     Alternate Method (Last class continued)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12-second-order-odes.html">
+     Second Order Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13-non-homogeneous-linear-odes.html">
+     Recap from last class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14-MoUC-VoP.html">
+     Method of Undetermined Coefficients (sec 2.9)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15-springs-numerical-odes.html">
+     Introduction to Numerical Solution of Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Coupled Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="17-coupled-ode-continued.html">
+     Recap for coupled differential equations:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="18-nonlinear-coupled-ODEs.html">
+     Nonlinear coupled ODE’s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="19-linear-stability.html">
+     Steady states in Non-Linear Coupled ODE’s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="20-BVP.html">
+     Boundary Value Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="21-BVP-shooting-method.html">
+     The Shooting Method for Solving BVPs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../partial_differential_equations/partial_differential_equations.html">
+   Partial Differential Equations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../partial_differential_equations/22-Intro-PDEs.html">
+     Partial Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../partial_differential_equations/23-Fourier-Coefficients.html">
+     Recap on PDEs from last lecture
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../statistics/statistics.html">
+   Statistics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/24-intro-statistics.html">
+     Intro to engineering statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/25-statistics-continue-linear-regression.html">
+     Recap from last class
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-recap.html">
+   06-262 Math Methods Recap
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ulissigroup/math-methods-chemical-engineering/main?urlpath=lab/tree/math-methods-chemical-engineering/notes/ordinary_differential_equations/16-coupled-odes.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/ulissigroup/math-methods-chemical-engineering/blob/main/math-methods-chemical-engineering/notes/ordinary_differential_equations/16-coupled-odes.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/ulissigroup/math-methods-chemical-engineering"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/ulissigroup/math-methods-chemical-engineering/issues/new?title=Issue%20on%20page%20%2Fnotes/ordinary_differential_equations/16-coupled-odes.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/notes/ordinary_differential_equations/16-coupled-odes.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Coupled Differential Equations
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chemical-engineering-example">
+     Chemical Engineering Example
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#convert-two-first-order-diff-eq-to-a-second-order-diff-eq">
+     Convert two first-order diff eq to a second order diff eq
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solving-as-coupled-differential-equations">
+     Solving as coupled differential equations
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vector-derivative-example">
+     Vector derivative example
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#continuing">
+     Continuing!
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example">
+       Example
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numerical-calculation-of-eigenvalues-eigenvectors">
+     Numerical calculation of eigenvalues/eigenvectors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numerical-solutions-to-coupled-differential-equations">
+   Numerical solutions to coupled differential equations
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Coupled Differential Equations</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Coupled Differential Equations
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chemical-engineering-example">
+     Chemical Engineering Example
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#convert-two-first-order-diff-eq-to-a-second-order-diff-eq">
+     Convert two first-order diff eq to a second order diff eq
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solving-as-coupled-differential-equations">
+     Solving as coupled differential equations
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vector-derivative-example">
+     Vector derivative example
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#continuing">
+     Continuing!
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example">
+       Example
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numerical-calculation-of-eigenvalues-eigenvectors">
+     Numerical calculation of eigenvalues/eigenvectors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numerical-solutions-to-coupled-differential-equations">
+   Numerical solutions to coupled differential equations
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p>{{ badge }}
+$<span class="math notranslate nohighlight">\(\newcommand{\arr}[1]{\underline{\underline{#1}}}\)</span><span class="math notranslate nohighlight">\(    
+\)</span><span class="math notranslate nohighlight">\(\newcommand{\vec}[1]{\underline{#1}}\)</span><span class="math notranslate nohighlight">\(   
+\)</span><span class="math notranslate nohighlight">\(\require{mhchem}\)</span>$</p>
+<section class="tex2jax_ignore mathjax_ignore" id="coupled-differential-equations">
+<h1>Coupled Differential Equations<a class="headerlink" href="#coupled-differential-equations" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Everything we’ve done so far has involved functions that depend only on independent variables:<br />
+e.g.,</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-51ad46cf-e04b-4590-b570-1df2177c5fca">
+<span class="eqno">(371)<a class="headerlink" href="#equation-51ad46cf-e04b-4590-b570-1df2177c5fca" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(x) &amp;&amp;  or &amp;&amp; y(x,t)\\
+\frac{dy}{dx} \text{ for ODEs } &amp;&amp; &amp;&amp; 
+\frac{\partial y}{\partial x} \&amp; \frac{\partial y}{\partial t} \text{ for PDEs}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Sometimes, functions can depend on other functions. e.g. given <span class="math notranslate nohighlight">\(y_1(x)\)</span> &amp; <span class="math notranslate nohighlight">\(y_2(x)\)</span></p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-6e8f74c7-e8e8-4686-ad2a-575378777b4d">
+<span class="eqno">(372)<a class="headerlink" href="#equation-6e8f74c7-e8e8-4686-ad2a-575378777b4d" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{dy_1}{dx} = y_2\\
+\frac{dy_2}{dx} = y_1 + \sin x
+\end{align}\]</div>
+<p>are coupled ODEs. Sometimes, we can solve by substitution (e.g. take derivative of equation 1 above and substitute into equation 2) but often will want/need to solve simultaneously.</p>
+<section id="chemical-engineering-example">
+<h2>Chemical Engineering Example<a class="headerlink" href="#chemical-engineering-example" title="Permalink to this headline">#</a></h2>
+<p>Tanks in series example</p>
+<img src="https://docs.google.com/drawings/d/e/2PACX-1vQ4Tx8bePykBg6D30A_nTyemk4WQsF4afTw65ZDy7k1ekplD1rXFc0q3P37WKdGpIURitwDuCEMawhb/pub?w=558&h=283">
+<div class="amsmath math notranslate nohighlight" id="equation-3d75833e-6b0c-46db-a9d3-d5e80894806b">
+<span class="eqno">(373)<a class="headerlink" href="#equation-3d75833e-6b0c-46db-a9d3-d5e80894806b" title="Permalink to this equation">#</a></span>\[\begin{align}
+F_1 &amp;= \frac{h_1 - h_2}{R_1}\\
+F_{out} &amp;= \frac{h_2}{R_2}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>No feed to first tank; <span class="math notranslate nohighlight">\(F_1\)</span> and <span class="math notranslate nohighlight">\(F_{out}\)</span> are volumetric flow rates controlled by resistance valves and are proportional to water height in each tank ( which is a function of time)</p></li>
+<li><p>System is coupled because <span class="math notranslate nohighlight">\(F_1\)</span> depends on both <span class="math notranslate nohighlight">\(h_1(t)\)</span> and <span class="math notranslate nohighlight">\(h_2(t)\)</span>.<br />
+Tank 1 MB:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-c97e2fe5-a26e-4f04-b202-16c52c1ab2cf">
+<span class="eqno">(374)<a class="headerlink" href="#equation-c97e2fe5-a26e-4f04-b202-16c52c1ab2cf" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{dM}{dt} &amp;= -\rho \cdot F_1 &amp;&amp; \left[ \frac{kg}{s} \right] = \left[\frac{kg}{m^3} \right] \cdot \left[\frac{m^3}{s} \right]\\
+\rho A_1 \frac{dh_1}{dt} &amp;= -\rho \left(\frac{h_1 - h_2}{R_1} \right) &amp;&amp; \left[\frac{kg}{m^3} \right] \cdot [m^2] \cdot \left[\frac{m}{s} \right] = \left[\frac{kg}{s} \right]\\
+\frac{dh_1}{dt} &amp;= \frac{h_2}{\tau_1} - \frac{h_1}{\tau_1}
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\tau \equiv A_iR_i \ [=] \ time\)</span> is the “residence time”<br />
+Tank 2 MB:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c4fc2cf4-b1fc-4e0d-84c4-da6f7f347b67">
+<span class="eqno">(375)<a class="headerlink" href="#equation-c4fc2cf4-b1fc-4e0d-84c4-da6f7f347b67" title="Permalink to this equation">#</a></span>\[\begin{align}
+\rho A_2 \frac{dh_2}{dt} &amp;= \rho(F_1 - F_{out})\\
+\frac{dh_2}{dt} &amp;= \frac{1}{A_2} \left( \frac{h_1 - h_2}{R_1} - \frac{h_2}{R_2}\right)\\
+&amp;= \frac{R_2}{\tau_2}\left( \frac{h_1 - h_2}{R_1} - \frac{h_2}{R_2}\right)\\
+&amp;= \frac{R_2h_1}{R_1\tau_2} - \frac{R_2h_2}{R_1\tau_2} - \frac{h_2}{\tau_2}\\
+\frac{dh_2}{dt} &amp;= \frac{R_2}{R_1\tau_2}h_1 - \frac{1}{\tau_2}\left(1 + \frac{R_2}{R_1} \right)h_2
+\end{align}\]</div>
+</section>
+<section id="convert-two-first-order-diff-eq-to-a-second-order-diff-eq">
+<h2>Convert two first-order diff eq to a second order diff eq<a class="headerlink" href="#convert-two-first-order-diff-eq-to-a-second-order-diff-eq" title="Permalink to this headline">#</a></h2>
+<p>One approach you can take is to calculate the derivative of the <span class="math notranslate nohighlight">\(1^{st}\)</span> MB and using it to eliminate <span class="math notranslate nohighlight">\(h_2(t)\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-253b27ef-621d-436c-af05-84866c3c5c22">
+<span class="eqno">(376)<a class="headerlink" href="#equation-253b27ef-621d-436c-af05-84866c3c5c22" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{d^2h_1}{dt^2} &amp;= \frac{1}{\tau_1}\frac{dh_2}{dt} - \frac{1}{\tau_1}\frac{dh_1}{dt}\\
+\frac{dh_2}{dt} &amp;= \tau_1 \frac{d^2h_1}{dt^2} + \frac{dh_1}{dt}
+\end{align}\]</div>
+<p>And (from the <span class="math notranslate nohighlight">\(1^{st}\)</span> MB):</p>
+<div class="amsmath math notranslate nohighlight" id="equation-bc23b06f-7c66-47e8-8861-e9bf07c3f4d2">
+<span class="eqno">(377)<a class="headerlink" href="#equation-bc23b06f-7c66-47e8-8861-e9bf07c3f4d2" title="Permalink to this equation">#</a></span>\[\begin{align}
+h_2 = \tau_1 \frac{dh_1}{dt} + h_1
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Plug those into MB #2</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-afe3c3e7-78f7-4ba1-8bb2-a86380412eed">
+<span class="eqno">(378)<a class="headerlink" href="#equation-afe3c3e7-78f7-4ba1-8bb2-a86380412eed" title="Permalink to this equation">#</a></span>\[\begin{align}
+\tau_1 \frac{d^2h_1}{dt^2} + \frac{dh_1}{dt} = \frac{R_2}{R_1\tau_2}h_1 - \frac{1}{\tau_2}\left(1 + \frac{R_2}{R_2} \right)\left(\tau_1 \frac{dh_1}{dt} + h_1 \right)
+\end{align}\]</div>
+<p>simplify:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d4db62fa-eea6-49ca-a624-b70e3372f66c">
+<span class="eqno">(379)<a class="headerlink" href="#equation-d4db62fa-eea6-49ca-a624-b70e3372f66c" title="Permalink to this equation">#</a></span>\[\begin{align}
+h_1'' + \left(\frac{\tau_2 + \tau_1 + \frac{R_2}{R_1}\tau_1}{\tau_1\tau_2} \right) h_1' + \frac{1}{\tau_1\tau_2}h_1 = 0
+\end{align}\]</div>
+<ul class="simple">
+<li><p>whew! Now we need to solve for <span class="math notranslate nohighlight">\(h_1(t)\)</span> and then plug back in to find <span class="math notranslate nohighlight">\(h_2(t)\)</span></p></li>
+<li><p>Too much work! Can we solve for <span class="math notranslate nohighlight">\(h_1(t)\)</span> and <span class="math notranslate nohighlight">\(h_2(t)\)</span> simultanously?</p></li>
+</ul>
+</section>
+<section id="solving-as-coupled-differential-equations">
+<h2>Solving as coupled differential equations<a class="headerlink" href="#solving-as-coupled-differential-equations" title="Permalink to this headline">#</a></h2>
+<div class="amsmath math notranslate nohighlight" id="equation-7c4a0e48-f77e-4893-beea-3598f5c28700">
+<span class="eqno">(380)<a class="headerlink" href="#equation-7c4a0e48-f77e-4893-beea-3598f5c28700" title="Permalink to this equation">#</a></span>\[\begin{align}
+h_1' &amp;= -\frac{1}{\tau_1}h_1 + \frac{1}{\tau_1}h_2\\
+h_2' &amp;= \frac{R_2}{R_1\tau_2}h_1 - \left(1 + \frac{R_2}{R_1} \right)\frac{1}{\tau_2}h_2
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Now let’s set</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-41877ff0-524f-4dc5-b120-c48478275da4">
+<span class="eqno">(381)<a class="headerlink" href="#equation-41877ff0-524f-4dc5-b120-c48478275da4" title="Permalink to this equation">#</a></span>\[\begin{align}
+a_{11} = -\frac{1}{\tau_1} &amp;&amp; a_{12} = \frac{1}{\tau_1}\\
+a_{21} = \frac{R_2}{R_1\tau_2} &amp;&amp; a_{22} = -\frac{1}{\tau_2}\left(1 + \frac{R_2}{R_1}\right)
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Then we have:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-c28048e3-c74c-4ec4-86dc-1e6ee2561f03">
+<span class="eqno">(382)<a class="headerlink" href="#equation-c28048e3-c74c-4ec4-86dc-1e6ee2561f03" title="Permalink to this equation">#</a></span>\[\begin{align}
+h_1' = a_{11}h_1 + a_{12}h_2\\
+h_2' = a_{21}h_1 + a_{22}h_2
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Look familiar?</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-57b527a4-7082-4636-acd0-6d405dd72e10">
+<span class="eqno">(383)<a class="headerlink" href="#equation-57b527a4-7082-4636-acd0-6d405dd72e10" title="Permalink to this equation">#</a></span>\[\begin{align}
+\begin{bmatrix}h_1' \\ h_2' \end{bmatrix} &amp;= \begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22}\end{bmatrix} \begin{bmatrix} h_1 \\ h_2 \end{bmatrix}\\
+\vec{h'} = \arr{A} \vec{h}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Let’s foray into derivative matrices before returning to our tank problem<br />
+Property:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-ab7cbf99-7783-417b-a382-b90f824560f1">
+<span class="eqno">(384)<a class="headerlink" href="#equation-ab7cbf99-7783-417b-a382-b90f824560f1" title="Permalink to this equation">#</a></span>\[\begin{align}
+\begin{bmatrix}\frac{dy_1}{dt} \\ \frac{dy_2}{dt} \end{bmatrix} = \begin{bmatrix} y_1' \\ y_2' \end{bmatrix} = \frac{d}{dt}\begin{bmatrix}y_1 \\ y_2 \end{bmatrix} \rightarrow \text{take derivative of each element}
+\end{align}\]</div>
+</section>
+<section id="vector-derivative-example">
+<h2>Vector derivative example<a class="headerlink" href="#vector-derivative-example" title="Permalink to this headline">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\underline{\text{Ex}}\)</span>: If <span class="math notranslate nohighlight">\(\vec{y}(x) = \begin{bmatrix}4t &amp; 3t^2 \\ 2t^3 &amp; t \end{bmatrix}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\vec{y'}(x) = \begin{bmatrix}4 &amp; 6t \\ 6t^2 &amp; 1 \end{bmatrix}\)</span></p>
+</section>
+<section id="continuing">
+<h2>Continuing!<a class="headerlink" href="#continuing" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Goal is to solve <span class="math notranslate nohighlight">\(\vec{y'} = \frac{d}{dt} \vec{y} = \arr{A}\vec{y}\)</span> for <span class="math notranslate nohighlight">\(\vec{y}(t)\)</span></p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-e10aad03-3f85-4159-b7b5-07f3abfe047a">
+<span class="eqno">(385)<a class="headerlink" href="#equation-e10aad03-3f85-4159-b7b5-07f3abfe047a" title="Permalink to this equation">#</a></span>\[\begin{align}
+\begin{bmatrix}y_1' \\ y_2' \end{bmatrix} = \begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{bmatrix} \begin{bmatrix} y_1 \\ y_2\end{bmatrix}
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(y_1(t)\)</span> and <span class="math notranslate nohighlight">\(y_2(t)\)</span> are coupled functions, not basis functions.</p>
+<ul class="simple">
+<li><p>Let’s assume <span class="math notranslate nohighlight">\(\vec{y}\)</span> takes the form <span class="math notranslate nohighlight">\(\vec{y} = \vec{x}e^{\lambda t}\)</span> wher <span class="math notranslate nohighlight">\(\vec{x}\)</span> is a vector of constants</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-d6fcd40b-9e19-47ef-a422-57e8b48fba6b">
+<span class="eqno">(386)<a class="headerlink" href="#equation-d6fcd40b-9e19-47ef-a422-57e8b48fba6b" title="Permalink to this equation">#</a></span>\[\begin{align}
+\therefore \vec{y'} = \lambda \vec{x}e^{\lambda t}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Plugging back into <span class="math notranslate nohighlight">\(\vec{y'} = \arr{A}\vec{y}\)</span> gives</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-8757e0c2-8583-4c99-b112-e9309c180d93">
+<span class="eqno">(387)<a class="headerlink" href="#equation-8757e0c2-8583-4c99-b112-e9309c180d93" title="Permalink to this equation">#</a></span>\[\begin{align}
+\lambda \vec{x} e^{\lambda t} &amp;= \arr{A}\vec{x}e^{\lambda t}\\
+\lambda \vec{x} &amp;= \arr{A}\vec{x}
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\therefore\)</span>Any set of <span class="math notranslate nohighlight">\(y_1(t) = x_1e^{\lambda t}\)</span> and <span class="math notranslate nohighlight">\(y_2(t) = x_2e^{\lambda t}\)</span> that fits <span class="math notranslate nohighlight">\(\lambda\vec{x} = \arr{A} \vec{x}\)</span> are solutions. Therefore, finding the eigenvalues and eigenvectors of <span class="math notranslate nohighlight">\(\arr{A}\)</span> will yield solution.</p>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
+<div class="amsmath math notranslate nohighlight" id="equation-b6a8c4e5-1fd4-4f9f-a0db-8318dce3620e">
+<span class="eqno">(388)<a class="headerlink" href="#equation-b6a8c4e5-1fd4-4f9f-a0db-8318dce3620e" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_1' &amp;= -4y_1 - 6y_2\\
+y_2' &amp;= y_1 + y_2
+\end{align}\]</div>
+<ul class="simple">
+<li><p>By assuming that <span class="math notranslate nohighlight">\(\vec{y} = \vec{x}e^{\lambda t}\)</span>, we can find the eigenvalues and vectors of <span class="math notranslate nohighlight">\(\arr{A}\)</span> to identify <span class="math notranslate nohighlight">\(\vec{x}\)</span> and <span class="math notranslate nohighlight">\(\lambda\)</span> to solve system.</p></li>
+<li><p>Find <span class="math notranslate nohighlight">\(\lambda\)</span> and <span class="math notranslate nohighlight">\(\vec{x}\)</span> by solving</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-e0d2c8c7-5556-4895-9310-02e9a23c0193">
+<span class="eqno">(389)<a class="headerlink" href="#equation-e0d2c8c7-5556-4895-9310-02e9a23c0193" title="Permalink to this equation">#</a></span>\[\begin{align}
+\det(\arr{A} - \lambda \arr{I}) = 0\\
+\left|\begin{array}{} -4-\lambda &amp; -6 \\ 1 &amp; 1-\lambda \end{array}\right| = 0\\
+(-4-\lambda)(1-\lambda) - (-6)(1) = 0\\
+-4 + 3\lambda + \lambda^2 + 6 = 0 \\
+\lambda^2 + 3\lambda + 2 = 0&amp;&amp; \leftarrow \text{char. eqn. of $\arr{A}$}\\
+(\lambda + 2)(\lambda + 1) = 0\\
+\lambda_1 = -2; \hspace{0.5cm} \lambda_2 = -1 &amp;&amp; \leftarrow \text{eigenvalues} 
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Find eigenvector <span class="math notranslate nohighlight">\(\vec{x}^{(1)}\)</span> associated with <span class="math notranslate nohighlight">\(\lambda_1 = -2\)</span>. <br />
+solve</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-35651de2-1236-4bbf-afde-9c1a1cfc38fd">
+<span class="eqno">(390)<a class="headerlink" href="#equation-35651de2-1236-4bbf-afde-9c1a1cfc38fd" title="Permalink to this equation">#</a></span>\[\begin{align}
+\arr{A}\vec{x}^{(1)} = \lambda_1 \vec{x}^{(1)}\\
+(\arr{A} - \lambda_1\arr{I}) \vec{x}^{(1)} = \vec{0}\\
+\begin{bmatrix}-2 &amp; -6 \\ 1 &amp; 3 \end{bmatrix} \begin{bmatrix}x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix} \implies x_1 + 3x_2 = 0
+\end{align}\]</div>
+<p>Set <span class="math notranslate nohighlight">\(x_1 = 1\)</span> (arbitrary) then <span class="math notranslate nohighlight">\(x_2 = -\frac{1}{3}\)</span> <br />
+<span class="math notranslate nohighlight">\(\therefore \vec{x}^{(1)} = \begin{bmatrix} 1 \\ -\frac{1}{3} \end{bmatrix}\)</span> and <span class="math notranslate nohighlight">\(\vec{y} = \begin{bmatrix} 1 \\ -\frac{1}{3}\end{bmatrix} e^{-2t}\)</span> is a solution. <br />
+Enough?<br />
+No. Two coupled <span class="math notranslate nohighlight">\(1^\circ\)</span> ODEs will yield two solutions with two arbitrary constants.The rest of the solution comes from <span class="math notranslate nohighlight">\(2^{nd}\)</span> eigenvalue and eigenvector</p>
+<ul class="simple">
+<li><p>Find eigenvector <span class="math notranslate nohighlight">\(\vec{x}^{(2)}\)</span> associated with <span class="math notranslate nohighlight">\(\lambda_2 = -1\)</span></p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-2e851f3d-e467-48fd-88b6-0fcb5009f94f">
+<span class="eqno">(391)<a class="headerlink" href="#equation-2e851f3d-e467-48fd-88b6-0fcb5009f94f" title="Permalink to this equation">#</a></span>\[\begin{align}
+(\arr{A} - \lambda_2 \arr{I}) = \vec{0}\\
+\begin{bmatrix}-3 &amp; -6 \\ 1 &amp; 2 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}\\
+x_1 + 2x_2 = 0\\
+\text{set } x_1 = 1\\
+\therefore x_2 = -\frac{1}{2}
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\therefore x^{(2)} = \begin{bmatrix} 1 \\ -\frac{1}{2} \end{bmatrix} \)</span> and <span class="math notranslate nohighlight">\(\vec{y} = \begin{bmatrix} 1 \\ -\frac{1}{2} \end{bmatrix} e^{-t}\)</span> is a solution</p>
+<ul class="simple">
+<li><p>The general solution to <span class="math notranslate nohighlight">\(\vec{y}' = \arr{A}\vec{y}\)</span> is</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-9e41bd65-70aa-4271-838d-65321c6f63ff">
+<span class="eqno">(392)<a class="headerlink" href="#equation-9e41bd65-70aa-4271-838d-65321c6f63ff" title="Permalink to this equation">#</a></span>\[\begin{align}
+\vec{y} &amp;= c_1\vec{x}^{(1)} e^{\lambda_1t} + c_2\vec{x}^{(2)}e^{\lambda_2t}\\
+\implies y_1 &amp;= c_1e^{-2t} + c_2e^{-t}\\
+y_2 &amp;= -\frac{1}{3}c_1e^{-2t} - \frac{1}{2}c_2e^{-t}
+\end{align}\]</div>
+<p>We have two constants in total from two integrations. We began with two <span class="math notranslate nohighlight">\(1^\circ\)</span> ODEs</p>
+<ul class="simple">
+<li><p>Let’s check our answer:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-44a37377-a3ce-4dea-ad26-84bb79d1b80a">
+<span class="eqno">(393)<a class="headerlink" href="#equation-44a37377-a3ce-4dea-ad26-84bb79d1b80a" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_1' &amp;= -2c_1e^{-2t} - c_2e^{-t}\\
+y_2' &amp;= \frac{2}{3}c_1e^{-2t} + \frac{1}{2}c_2e^{-t}
+\end{align}\]</div>
+<p>Plug into one original equation:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3d69c857-caeb-40b2-889a-8704e894a457">
+<span class="eqno">(394)<a class="headerlink" href="#equation-3d69c857-caeb-40b2-889a-8704e894a457" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_1' &amp;= -4y_1 - 6y_2\\
+-2c_1e^{-2t} - c_2e^{-t} &amp;= -4[c_1e^{-2t} + c_2e^{-t}] -6[-\frac{1}{3}c_1e^{-2t} - \frac{1}{2}c_2e^{-t}]\\
+&amp;= (-4+2)c_1e^{-2t} + (-4+3)c_2e^{-t}\\
+&amp;= -2c_1e^{-2t} - c_2e^{-t}
+\end{align}\]</div>
+<p>And the other:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-bfaef062-e96f-46c7-b6f4-55e3d70f7ea7">
+<span class="eqno">(395)<a class="headerlink" href="#equation-bfaef062-e96f-46c7-b6f4-55e3d70f7ea7" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_2' &amp;= y_1 + y_2\\
+\frac{2}{3}c_1e^{-2t} + \frac{1}{2}c_2e^{-t} &amp;= c_1e^{-2t} + c_2e^{-t} - \frac{1}{3}c_1e^{-2t}-\frac{1}{2}c_2e^{-t}\\
+&amp;= \frac{2}{3}c_1e^{-2t} + \frac{1}{2}c_2e^{-t}
+\end{align}\]</div>
+<p>Now, let’s return to our tanks:<br />
+<span class="math notranslate nohighlight">\(\vec{h}' = \arr{A}\vec{h}\)</span> where</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b41847d1-4bfe-4c89-887c-d1dc2279e9d2">
+<span class="eqno">(396)<a class="headerlink" href="#equation-b41847d1-4bfe-4c89-887c-d1dc2279e9d2" title="Permalink to this equation">#</a></span>\[\begin{align}
+\arr{A} = \begin{bmatrix} -\frac{1}{\tau_1} &amp; \frac{1}{\tau_1} \\ \frac{R_2}{R_1\tau_2} &amp; -\left(\frac{R_1 + R_2}{R_1\tau_2}\right) \end{bmatrix}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Assume solution of form <span class="math notranslate nohighlight">\(\vec{h}= \vec{x}e^{\lambda t}\)</span></p></li>
+<li><p>Solve by inserting values for <span class="math notranslate nohighlight">\(R_2,R_2,\tau_1\)</span> and <span class="math notranslate nohighlight">\(\tau_2 \rightarrow\)</span> then find eigenvalues (<span class="math notranslate nohighlight">\(\lambda_1\)</span> and <span class="math notranslate nohighlight">\(\lambda_2\)</span>) and eigenvectors (<span class="math notranslate nohighlight">\(\vec{x}^{(1)}\)</span> and <span class="math notranslate nohighlight">\(\vec{x}^{(2)}\)</span>) of <span class="math notranslate nohighlight">\(\arr{A}\)</span></p></li>
+<li><p>General solution will be</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-aaa369a7-a651-4db2-8c03-c9366c59fd01">
+<span class="eqno">(397)<a class="headerlink" href="#equation-aaa369a7-a651-4db2-8c03-c9366c59fd01" title="Permalink to this equation">#</a></span>\[\begin{align}
+\vec{h} &amp;= c_1\vec{x}^{(1)}e^{\lambda_1t} + c_2\vec{x}^{(2)}e^{\lambda_2t}\\
+\implies h_1(t) &amp;= c_1x_1^{(1)}e^{\lambda_1t} + c_1x_1^{(2)}e^{\lambda_2t}\\
+h_2(t) &amp;= c_1x_2^{(1)}e^{\lambda_1t} + c_2x_2^{(2)}e^{\lambda_2t} 
+\end{align}\]</div>
+<p>For example, given:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f6cbd2c1-a2b8-4d16-bc4d-19946115dac4">
+<span class="eqno">(398)<a class="headerlink" href="#equation-f6cbd2c1-a2b8-4d16-bc4d-19946115dac4" title="Permalink to this equation">#</a></span>\[\begin{align}
+A_1 = 5\  m^2, R_1 = 2 \ hr/m^2 \rightarrow \tau_1 = 10\  hr\\
+A_2 = 5 \ m^2, R_2 = 1 \ hr/m^2 \rightarrow \tau_2 = 5\ 
+ hr\\
+\therefore \arr{A} = \begin{bmatrix} -0.1 &amp; 0.1 \\ 0.1 &amp; -0.3 \end{bmatrix} [=] \frac{1}{hr}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Find eigenvalues</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-424035a0-092d-4630-9648-9774871c02ce">
+<span class="eqno">(399)<a class="headerlink" href="#equation-424035a0-092d-4630-9648-9774871c02ce" title="Permalink to this equation">#</a></span>\[\begin{align}
+|\arr{A} - \lambda\arr{I}| = 0\\
+\left|\begin{array}{} -0.1-\lambda &amp; 0.1 \\ 0.1 &amp; -0.3-\lambda \end{array}\right| = 0\\
+(-0.1-\lambda)(-0.3-\lambda)-0.01 = 0\\
+\lambda^2 + 0.4 \lambda + 0.02 = 0\\
+\implies \lambda_1 = -0.06 \frac{1}{hr}\\
+\lambda_2 = -0.34 \frac{1}{hr} &amp;&amp;\rightarrow \text{same units as $\arr{A}\hspace{1cm}$ ($\arr{A}\vec{x} = \lambda \vec{x}$)}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Find <span class="math notranslate nohighlight">\(\vec{x}^{(1)}\)</span> associated with <span class="math notranslate nohighlight">\(\lambda_1 = -0.06 \ hr^{-1}\)</span></p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-e1b1c5d5-b744-47cc-8c07-b85f36e4f8be">
+<span class="eqno">(400)<a class="headerlink" href="#equation-e1b1c5d5-b744-47cc-8c07-b85f36e4f8be" title="Permalink to this equation">#</a></span>\[\begin{align}
+\begin{bmatrix} -0.04 &amp; 0.1 \\ 0.1 &amp; -0.24 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}\\
+\implies -0.04 x_1 + 0.1 x_2 = 0\\
+x_1 = \frac{0.1}{+0.04}x_2 \simeq 2.5x_2 \implies \vec{x}^{(1)} \simeq \begin{bmatrix} 2.5 \\ 1 \end{bmatrix}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Find <span class="math notranslate nohighlight">\(\vec{x}^{(2)}\)</span> associated with <span class="math notranslate nohighlight">\(\lambda_2 = -0.34\ hr^{-1}\)</span></p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-9b688cfc-47be-49be-b87d-20113a78a6be">
+<span class="eqno">(401)<a class="headerlink" href="#equation-9b688cfc-47be-49be-b87d-20113a78a6be" title="Permalink to this equation">#</a></span>\[\begin{align}
+\begin{bmatrix} 0.24 &amp; 0.1 \\ 0.1 &amp; 0.04 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}\\
+\implies 0.24 x_1 + 0.1 x_2 = 0\\
+x_1 = \frac{0.1}{-0.24}x_2 \simeq -0.42x_2 \implies \vec{x}^{(2)} \simeq \begin{bmatrix} -0.42 \\ 1 \end{bmatrix}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>General solution is:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-0519359e-6821-42c8-b1a5-968c5a26dd7e">
+<span class="eqno">(402)<a class="headerlink" href="#equation-0519359e-6821-42c8-b1a5-968c5a26dd7e" title="Permalink to this equation">#</a></span>\[\begin{align}
+\vec{h} = c_1\begin{bmatrix}2.5 \\ 1 \end{bmatrix}e^{-0.06\ hr^{-1}t} + c_2 \begin{bmatrix} -0.42 \\ 1 \end{bmatrix} e^{-0.34\ hr^{-1}t}
+\end{align}\]</div>
+</section>
+</section>
+<section id="numerical-calculation-of-eigenvalues-eigenvectors">
+<h2>Numerical calculation of eigenvalues/eigenvectors<a class="headerlink" href="#numerical-calculation-of-eigenvalues-eigenvectors" title="Permalink to this headline">#</a></h2>
+<p>Remember we can get the eigenvectors/eigenvalues from scipy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># get the eigenvalues/eigenvectors and print them</span>
+
+<span class="c1"># hint np.linalg.eig</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">],</span>
+              <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="o">-</span><span class="mf">0.3</span><span class="p">]])</span>
+
+<span class="n">eigval</span><span class="p">,</span> <span class="n">eigvec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">eigval</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eigvec</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">eigvec</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">eigvec</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.05857864 -0.34142136]
+[[ 0.92387953 -0.38268343]
+ [ 0.38268343  0.92387953]]
+[2.41421356 1.        ]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="numerical-solutions-to-coupled-differential-equations">
+<h1>Numerical solutions to coupled differential equations<a class="headerlink" href="#numerical-solutions-to-coupled-differential-equations" title="Permalink to this headline">#</a></h1>
+<p>No real change from solve_ivp!</p>
+<p>Try solving this with solve_ivp using the initial conditions <span class="math notranslate nohighlight">\(h_1(t=0)=5\)</span>m and <span class="math notranslate nohighlight">\(h_2(t=0)=7\)</span>m</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">A1</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1">#m^2</span>
+<span class="n">R1</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1"># hr/m^2</span>
+<span class="n">tau1</span> <span class="o">=</span> <span class="n">A1</span><span class="o">*</span><span class="n">R1</span>
+
+<span class="n">A2</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1">#m^2</span>
+<span class="n">R2</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#hr/m^2</span>
+<span class="n">tau2</span> <span class="o">=</span> <span class="n">A2</span><span class="o">*</span><span class="n">R2</span> 
+
+<span class="n">h0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span> <span class="c1">#m</span>
+
+<span class="k">def</span> <span class="nf">hprime</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+  <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">tau1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="n">tau1</span><span class="p">],</span>
+                <span class="p">[</span><span class="n">R2</span><span class="o">/</span><span class="n">R1</span><span class="o">/</span><span class="n">tau2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">tau2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">R2</span><span class="o">/</span><span class="n">R1</span><span class="p">)]])</span>
+  <span class="k">return</span> <span class="n">A</span><span class="nd">@h</span>
+
+<span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">hprime</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span> <span class="n">h0</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="s1">&#39;o-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time [hr]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tank Height [m]&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Tank Height [m]&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/16-coupled-odes_15_1.png" src="../../_images/16-coupled-odes_15_1.png" />
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notes/ordinary_differential_equations"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="15-springs-numerical-odes.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Introduction to Numerical Solution of Differential Equations</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="17-coupled-ode-continued.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Recap for coupled differential equations:</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Zachary Ulissi<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

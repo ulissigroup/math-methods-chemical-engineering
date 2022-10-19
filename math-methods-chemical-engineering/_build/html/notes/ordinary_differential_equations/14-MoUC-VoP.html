@@ -1,0 +1,1340 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Method of Undetermined Coefficients (sec 2.9) &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Introduction to Numerical Solution of Differential Equations" href="15-springs-numerical-odes.html" />
+    <link rel="prev" title="Recap from last class" href="13-non-homogeneous-linear-odes.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Mathemtaical Methods for Chemical Engineering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Lecture notes for CMU 06-262 Math Methods in Chemical Engineering (Zachary Ulissi, CMU)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Notes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../linear_algebra/linear_algebra.html">
+   Linear Algebra
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/1-intro-matrices.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/2-matrix-manipulation.html">
+     Note on HW expectations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/3-gauss-elimination.html">
+     Return to Systems of Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/4-rank-gauss-examples.html">
+     Chemical Engineering example solved with Gauss elimination
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/5-determinants.html">
+     Using the inverse of A to solve a system of linear equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/6-eigenvalues-1.html">
+     Homogeneous vs. Non-homogeneous Systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/7-eigenvalue-2-difference-equations.html">
+     <span class="math notranslate nohighlight">
+      \(\underline{Ex}\)
+     </span>
+     : Symmetric matrix (
+     <span class="math notranslate nohighlight">
+      \(\lambda\)
+     </span>
+     always real)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear_algebra/7b-numerical-eigenvalues.html">
+     Eigenvectors in python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="ordinary_differential_equations.html">
+   Ordinary Differential Equations
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="8-differential-equations.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="9-exact-ode.html">
+     Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10-linear-ode.html">
+     Integrating Factors - Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-linear-ode-example.html">
+     Alternate Method (Last class continued)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12-second-order-odes.html">
+     Second Order Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13-non-homogeneous-linear-odes.html">
+     Recap from last class
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Method of Undetermined Coefficients (sec 2.9)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15-springs-numerical-odes.html">
+     Introduction to Numerical Solution of Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16-coupled-odes.html">
+     Coupled Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="17-coupled-ode-continued.html">
+     Recap for coupled differential equations:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="18-nonlinear-coupled-ODEs.html">
+     Nonlinear coupled ODE’s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="19-linear-stability.html">
+     Steady states in Non-Linear Coupled ODE’s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="20-BVP.html">
+     Boundary Value Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="21-BVP-shooting-method.html">
+     The Shooting Method for Solving BVPs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../partial_differential_equations/partial_differential_equations.html">
+   Partial Differential Equations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../partial_differential_equations/22-Intro-PDEs.html">
+     Partial Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../partial_differential_equations/23-Fourier-Coefficients.html">
+     Recap on PDEs from last lecture
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../statistics/statistics.html">
+   Statistics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/24-intro-statistics.html">
+     Intro to engineering statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/25-statistics-continue-linear-regression.html">
+     Recap from last class
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-recap.html">
+   06-262 Math Methods Recap
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ulissigroup/math-methods-chemical-engineering/main?urlpath=lab/tree/math-methods-chemical-engineering/notes/ordinary_differential_equations/14-MoUC-VoP.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/ulissigroup/math-methods-chemical-engineering/blob/main/math-methods-chemical-engineering/notes/ordinary_differential_equations/14-MoUC-VoP.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/ulissigroup/math-methods-chemical-engineering"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/ulissigroup/math-methods-chemical-engineering/issues/new?title=Issue%20on%20page%20%2Fnotes/ordinary_differential_equations/14-MoUC-VoP.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/notes/ordinary_differential_equations/14-MoUC-VoP.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Method of Undetermined Coefficients (sec 2.9)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rules-from-textbook">
+   Rules (from textbook)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-y-2y-3y-4e-2x">
+     Example:
+     <span class="math notranslate nohighlight">
+      \(y'' + 2y' - 3y = 4e^{2x}\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#non-homogeneous-linear-2-circ-odes-continued">
+   Non-homogeneous Linear
+   <span class="math notranslate nohighlight">
+    \(2^\circ\)
+   </span>
+   ODEs Continued
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-y-4y-4e-2x">
+     Example:
+     <span class="math notranslate nohighlight">
+      \(y'' - 4y = 4e^{2x}\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-complex-example-y-2y-3y-3x-2-sin-x">
+     More complex example:
+     <span class="math notranslate nohighlight">
+      \(y'' + 2y' -3y = -3x^2 + \sin(x)\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variation-of-parameters">
+   Variation of Parameters
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variation-of-parameters-sec-2-10">
+   Variation of Parameters (sec 2.10)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Example
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Method of Undetermined Coefficients (sec 2.9)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Method of Undetermined Coefficients (sec 2.9)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rules-from-textbook">
+   Rules (from textbook)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-y-2y-3y-4e-2x">
+     Example:
+     <span class="math notranslate nohighlight">
+      \(y'' + 2y' - 3y = 4e^{2x}\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#non-homogeneous-linear-2-circ-odes-continued">
+   Non-homogeneous Linear
+   <span class="math notranslate nohighlight">
+    \(2^\circ\)
+   </span>
+   ODEs Continued
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-y-4y-4e-2x">
+     Example:
+     <span class="math notranslate nohighlight">
+      \(y'' - 4y = 4e^{2x}\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-complex-example-y-2y-3y-3x-2-sin-x">
+     More complex example:
+     <span class="math notranslate nohighlight">
+      \(y'' + 2y' -3y = -3x^2 + \sin(x)\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variation-of-parameters">
+   Variation of Parameters
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variation-of-parameters-sec-2-10">
+   Variation of Parameters (sec 2.10)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Example
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p>{{ badge }}
+$<span class="math notranslate nohighlight">\(\newcommand{\arr}[1]{\underline{\underline{#1}}}\)</span><span class="math notranslate nohighlight">\(    
+\)</span><span class="math notranslate nohighlight">\(\newcommand{\vec}[1]{\underline{#1}}\)</span><span class="math notranslate nohighlight">\(   
+\)</span><span class="math notranslate nohighlight">\(\require{mhchem}\)</span>$</p>
+<section id="method-of-undetermined-coefficients-sec-2-9">
+<h1>Method of Undetermined Coefficients (sec 2.9)<a class="headerlink" href="#method-of-undetermined-coefficients-sec-2-9" title="Permalink to this headline">#</a></h1>
+<div class="amsmath math notranslate nohighlight" id="equation-7fd9615b-6690-4421-ac3f-2a2c214ca351">
+<span class="eqno">(294)<a class="headerlink" href="#equation-7fd9615b-6690-4421-ac3f-2a2c214ca351" title="Permalink to this equation">#</a></span>\[\begin{align}
+y'' + ay' + by = r(x)
+\end{align}\]</div>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(r(x)\)</span> is a function s.t. <span class="math notranslate nohighlight">\(r'(x)\)</span> is like <span class="math notranslate nohighlight">\(r(x)\)</span>, e.g. <span class="math notranslate nohighlight">\(e^{\lambda x}\)</span>, <span class="math notranslate nohighlight">\(\sin(\omega x)\)</span>, <span class="math notranslate nohighlight">\(\cos(\omega x)\)</span>, <span class="math notranslate nohighlight">\(x^n\)</span>… we can choose <span class="math notranslate nohighlight">\(y_P(x)\)</span> based on <span class="math notranslate nohighlight">\(r(x)\)</span> \</p></li>
+</ul>
+</section>
+<section id="rules-from-textbook">
+<h1>Rules (from textbook)<a class="headerlink" href="#rules-from-textbook" title="Permalink to this headline">#</a></h1>
+<p>Table 2.1:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>If <span class="math notranslate nohighlight">\(r(x)=\)</span></p></th>
+<th class="head"><p>Choose <span class="math notranslate nohighlight">\(y_P(x)=\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$<span class="math notranslate nohighlight">\(ke^{rx}\)</span>$</p></td>
+<td><p>$<span class="math notranslate nohighlight">\(ce^{rx}\)</span>$</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(kx^n\)</span> (<span class="math notranslate nohighlight">\(n=0,1,2...\)</span>)</p></td>
+<td><p><span class="math notranslate nohighlight">\(K_nx^n + K_{n-1}x^{n-1} + ... + K_1x + K_0\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(k\cos(\omega x)\)</span> or <span class="math notranslate nohighlight">\(k\sin(\omega x)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(K\cos(\omega x) + M\sin(\omega x)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(ke^{\alpha x}\cos(\omega x)\)</span> or <span class="math notranslate nohighlight">\(ke^{\alpha x}\sin(\omega x)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(e^{\alpha x}(K\cos(\omega x) + M\sin(\omega x))\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Here are some additional rules; we’ll see why these are important later:</p>
+<ul class="simple">
+<li><p><strong>Basic Rule</strong>. If <span class="math notranslate nohighlight">\(r(x)\)</span> is one of the functions in the first column in Table 2.1, choose in the same line and determine its undetermined coefficients by substituting <span class="math notranslate nohighlight">\(y_p\)</span> and its derivatives into the differential equation.</p></li>
+<li><p><strong>Modification Rule</strong>. If a term in your choice for <span class="math notranslate nohighlight">\(y_p\)</span> happens to be a solution of the homogeneous ODE corresponding to (4), multiply this term by x (or by  <span class="math notranslate nohighlight">\(x^2\)</span> if this solution corresponds to a double root of the characteristic equation of the homogeneous ODE).</p></li>
+<li><p><strong>Sum Rule</strong>. If is a sum of functions in the first column of Table 2.1, choose for the sum of the functions in the corresponding lines of the
+second column.</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\underline{\text{Recap}}\)</span>:</p>
+<ul class="simple">
+<li><p>Given <span class="math notranslate nohighlight">\(y'' + ay' + by = r(x) \hspace{3cm} (*)\)</span></p></li>
+<li><p>Solve <span class="math notranslate nohighlight">\(y'' + ay' + by = 0\)</span> to get <span class="math notranslate nohighlight">\(y_H(x) = c_1y_1 + c_2y_2\)</span></p></li>
+<li><p>Then choose <span class="math notranslate nohighlight">\(y_P(x)\)</span> based on <span class="math notranslate nohighlight">\(r(x)\)</span></p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-dfff70c4-c3a7-4c6b-ae73-29ce16216901">
+<span class="eqno">(295)<a class="headerlink" href="#equation-dfff70c4-c3a7-4c6b-ae73-29ce16216901" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(x) = c_1y_1 + c_2y_2 + y_P\\
+y'(x) = c_1y_1' + c_2y_2' + y_p'\\
+y''(x) = c_1y_1'' + c_2y_2'' + y_p''
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Plug back into <span class="math notranslate nohighlight">\((*)\)</span> to check:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-09a80dce-7ad7-4fa6-8f85-9bad160793ac">
+<span class="eqno">(296)<a class="headerlink" href="#equation-09a80dce-7ad7-4fa6-8f85-9bad160793ac" title="Permalink to this equation">#</a></span>\[\begin{align}
+(c_1y_1'' + c_2y_2'' + y_P'') + a(c_1y_1' + c_2y_2' + y_P') + b(c_1y_1 + c_2y_2 + y_P) = r(x)\\
+c_1(y_1'' + ay_1' + by_1) + c_2(y_2'' + ay_2' + by_2) + y_P'' + ay_P' + by_P = r(x)
+\end{align}\]</div>
+<p>Therefore, <span class="math notranslate nohighlight">\(y_P'' + ay_P' + by_P = r(x)\)</span> and <span class="math notranslate nohighlight">\(y_P\)</span> is a linear solution to the problem (which is why only some functions work)</p>
+<section id="example-y-2y-3y-4e-2x">
+<h2>Example: <span class="math notranslate nohighlight">\(y'' + 2y' - 3y = 4e^{2x}\)</span><a class="headerlink" href="#example-y-2y-3y-4e-2x" title="Permalink to this headline">#</a></h2>
+<div class="amsmath math notranslate nohighlight" id="equation-0e4ebd8a-69c2-46b3-9294-5558adfc7102">
+<span class="eqno">(297)<a class="headerlink" href="#equation-0e4ebd8a-69c2-46b3-9294-5558adfc7102" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(x) = y_H(x) + y_P(x)
+\end{align}\]</div>
+<ol class="simple">
+<li><p>Find <span class="math notranslate nohighlight">\(y_H(x)\)</span></p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-ec2dc03b-c243-4ec6-ab0a-aed601882384">
+<span class="eqno">(298)<a class="headerlink" href="#equation-ec2dc03b-c243-4ec6-ab0a-aed601882384" title="Permalink to this equation">#</a></span>\[\begin{align}
+\lambda^2 + 2\lambda - 3 &amp;= 0\\
+(\lambda + 3)(\lambda - 1) &amp;= 0 \implies \lambda_1 = 1; \hspace{0.5cm} \lambda_2 = -3
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-c103f770-996e-4ac7-94e7-58f04319e87c">
+<span class="eqno">(299)<a class="headerlink" href="#equation-c103f770-996e-4ac7-94e7-58f04319e87c" title="Permalink to this equation">#</a></span>\[\begin{align}
+\therefore y_H(x) = c_1e^x + c_2 e^{-3x}
+\end{align}\]</div>
+<ol class="simple">
+<li><p>Choose <span class="math notranslate nohighlight">\(y_P(x)\)</span> based on <span class="math notranslate nohighlight">\(r(x)\)</span><br />
+<span class="math notranslate nohighlight">\(\implies\)</span> Since <span class="math notranslate nohighlight">\(r(x) = 4e^{2x}\)</span>, let’s pick <span class="math notranslate nohighlight">\(y_p(x) = Ke^{2x}\)</span>, where <span class="math notranslate nohighlight">\(K\)</span> is the undetermined coefficient (not arbitrary)</p></li>
+<li><p>Find <span class="math notranslate nohighlight">\(K\)</span> from non-homogeneous ODE</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-76da9156-3727-45fa-84ea-f65a69bfe52a">
+<span class="eqno">(300)<a class="headerlink" href="#equation-76da9156-3727-45fa-84ea-f65a69bfe52a" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_P'' + 2y_p' - 3y_p = 4e^{2x}\\
+y_p' = 2Ke^{2x}\\
+y_P'' = 4Ke^{2x}
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-1f9fa84d-bad5-4dc3-b287-d23b872bb79a">
+<span class="eqno">(301)<a class="headerlink" href="#equation-1f9fa84d-bad5-4dc3-b287-d23b872bb79a" title="Permalink to this equation">#</a></span>\[\begin{align}
+\implies 4Ke^{2x} + 4Ke^{2x} - 3Ke^{2x} = 4e^{2x}\\
+5K = 4\\
+K = \frac{4}{5}
+\end{align}\]</div>
+<ol class="simple">
+<li><p>Write down general solution</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-d5b25dfe-6566-4f2e-be7c-c90509c63d6b">
+<span class="eqno">(302)<a class="headerlink" href="#equation-d5b25dfe-6566-4f2e-be7c-c90509c63d6b" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(x) = y_H(x) + y_P(x)\\
+y(x) = c_1e^x + c_2e^{-3x} + \frac{4}{5}e^{2x}
+\end{align}\]</div>
+<p>Still need 2 IC’s to find <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span></p>
+</section>
+</section>
+<section id="non-homogeneous-linear-2-circ-odes-continued">
+<h1>Non-homogeneous Linear <span class="math notranslate nohighlight">\(2^\circ\)</span> ODEs Continued<a class="headerlink" href="#non-homogeneous-linear-2-circ-odes-continued" title="Permalink to this headline">#</a></h1>
+<p><span class="math notranslate nohighlight">\(\underline{\text{Caution}}\)</span>: If you choose a <span class="math notranslate nohighlight">\(y_P(x)\)</span> that is not linearly independent of <span class="math notranslate nohighlight">\(y_1\)</span> and <span class="math notranslate nohighlight">\(y_2\)</span>, things will go wrong.</p>
+<section id="example-y-4y-4e-2x">
+<h2>Example: <span class="math notranslate nohighlight">\(y'' - 4y = 4e^{2x}\)</span><a class="headerlink" href="#example-y-4y-4e-2x" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>Solve <span class="math notranslate nohighlight">\(y'' - 4y = 0\)</span></p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-c7e66906-9f8a-467d-ac29-3afe84f7900f">
+<span class="eqno">(303)<a class="headerlink" href="#equation-c7e66906-9f8a-467d-ac29-3afe84f7900f" title="Permalink to this equation">#</a></span>\[\begin{align}
+\lambda^2 - 4 &amp;= 0 \implies \lambda_1 = 2; \hspace{0.5cm} \lambda_2 = -2\\
+y_H(x) &amp;= c_1e^{2x} + c_2 e^{-2x}
+\end{align}\]</div>
+<ol class="simple">
+<li><p>Choose <span class="math notranslate nohighlight">\(y_P(x)\)</span> based on <span class="math notranslate nohighlight">\(r(x)\)</span><br />
+Since <span class="math notranslate nohighlight">\(r(x) = 4e^{2x}\)</span>, choose <span class="math notranslate nohighlight">\(y_P(x) = Ke^{2x}\)</span> as before.<br />
+SPOILER: <span class="math notranslate nohighlight">\(Ke^{2x}\)</span> is not linearly independent of <span class="math notranslate nohighlight">\(y_1(x) = e^{2x}\)</span></p></li>
+<li><p>Find <span class="math notranslate nohighlight">\(K\)</span> from non-homogeneous ODE</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-786d595e-3228-4e6a-8de8-3f2c2edf7d8f">
+<span class="eqno">(304)<a class="headerlink" href="#equation-786d595e-3228-4e6a-8de8-3f2c2edf7d8f" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_P'' - 4y_P = 4e^{2x}\\
+y_P' = 2Ke^{2x}\\
+y_P'' = 4Ke^{2x}\\
+\implies 4Ke^{2x} - 4Ke^{2x} = 4e^{2x}\\
+0 = 4e^{2x} \hspace{2cm} ??
+\end{align}\]</div>
+<p>Step back:</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(y_p\)</span> isn’t linearly independent, it can be absorbed into <span class="math notranslate nohighlight">\(y_H(x)\)</span>.</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-46f94bb7-4029-412c-a68c-e4d7fb4f2806">
+<span class="eqno">(305)<a class="headerlink" href="#equation-46f94bb7-4029-412c-a68c-e4d7fb4f2806" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(x) &amp;= c_1e^{2x} + c_2e^{-2x} + Ke^{2x}\\
+&amp;= (c_1 + K)e^{2x} + c_2 e^{-2x} \implies \text{no undefined coefficient}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Solution: If <span class="math notranslate nohighlight">\(y_P(x)\)</span> is linearly dependent on <span class="math notranslate nohighlight">\(y_1(x)\)</span> or <span class="math notranslate nohighlight">\(y_2(x)\)</span>, multiply <span class="math notranslate nohighlight">\(y_P(x)\)</span> by <span class="math notranslate nohighlight">\(x\)</span> to obtain a linearly independent new <span class="math notranslate nohighlight">\(y_P(x)\)</span> based on Reduction of Order.<br />
+Therefore, choose <span class="math notranslate nohighlight">\(y_P(x) = Kxe^{2x}\)</span>. Then,</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-7bfa8706-64c0-46ef-8555-ed0698248d0e">
+<span class="eqno">(306)<a class="headerlink" href="#equation-7bfa8706-64c0-46ef-8555-ed0698248d0e" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_P'(x) &amp;= Ke^{2x} + 2Kxe^{2x}\\
+y_P''(x) &amp;= 2Ke^{2x} + 2Ke^{2x} + 4Kxe^{2x}\\
+&amp;= 4Ke^{2x} + 4Kxe^{2x}
+\end{align}\]</div>
+<ol class="simple">
+<li><p>Find <span class="math notranslate nohighlight">\(K\)</span></p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-6b06b50a-a5c0-4d26-ad03-b127ca278941">
+<span class="eqno">(307)<a class="headerlink" href="#equation-6b06b50a-a5c0-4d26-ad03-b127ca278941" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_P'' - 4y_P = 4e^{2x}\\
+4Ke^{2x} + 4Kxe^{2x} - 4Kxe^{2x} = 4e^{2x}\\
+4K = 4\\
+K=1\\
+\therefore y_P(x) = xe^{2x}
+\end{align}\]</div>
+<ol class="simple">
+<li><p>General Solution</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-9ed689c3-c5c6-4db4-9c79-84e83b79f68b">
+<span class="eqno">(308)<a class="headerlink" href="#equation-9ed689c3-c5c6-4db4-9c79-84e83b79f68b" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(x) &amp;= y_H(x) + y_P(x)\\
+y(x) &amp;= c_1e^{2x} + c_2e^{-2x} + xe^{2x}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Another place to be careful:<br />
+<span class="math notranslate nohighlight">\(\implies\)</span> Double roots yields a homogeneous solution</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-799e7c62-4feb-42e4-8c71-7c5a4f4e3824">
+<span class="eqno">(309)<a class="headerlink" href="#equation-799e7c62-4feb-42e4-8c71-7c5a4f4e3824" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_H(x) = c_1e^{\lambda x} + c_2xe^{\lambda x}
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\implies\)</span> Again, you must be careful to select <span class="math notranslate nohighlight">\(y_P(x)\)</span> s.t. it is linearly independent.<br />
+<span class="math notranslate nohighlight">\(\implies\)</span> if <span class="math notranslate nohighlight">\(r(x) \propto e^{\lambda x} \)</span> or <span class="math notranslate nohighlight">\(xe^{\lambda x}\)</span>, then <span class="math notranslate nohighlight">\(y_P(x) = Kx^2e^{\lambda x}\)</span> (Obtained from a second reduction of order)</p>
+</section>
+<section id="more-complex-example-y-2y-3y-3x-2-sin-x">
+<h2>More complex example: <span class="math notranslate nohighlight">\(y'' + 2y' -3y = -3x^2 + \sin(x)\)</span><a class="headerlink" href="#more-complex-example-y-2y-3y-3x-2-sin-x" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>Solve the homogeneous ODE</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-cff13bcc-5644-4859-ae04-ebc8e5a6bd6f">
+<span class="eqno">(310)<a class="headerlink" href="#equation-cff13bcc-5644-4859-ae04-ebc8e5a6bd6f" title="Permalink to this equation">#</a></span>\[\begin{align}
+y'' + 2y' - 3y = 0\\
+\lambda^2 + 2\lambda -3 = 0\\
+(\lambda+3)(\lambda-1) = 0 &amp;&amp; \implies \lambda_1 = 1, \hspace{0.5cm} \lambda_2 = -3\\
+y_H(x) = c_1e^x + c_2e^{-3x}
+\end{align}\]</div>
+<ol class="simple">
+<li><p>Choose <span class="math notranslate nohighlight">\(y_P(x)\)</span> based on <span class="math notranslate nohighlight">\(r(x)\)</span><br />
+<span class="math notranslate nohighlight">\(\underline{\text{Rule}}\)</span>: If <span class="math notranslate nohighlight">\(r(X)\)</span> is a sum of wo functions, then <span class="math notranslate nohighlight">\(y_P(x)\)</span> should be a sum of the corresponding functions.</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-cde1737c-cd60-451c-98d8-2bd6a1b09d46">
+<span class="eqno">(311)<a class="headerlink" href="#equation-cde1737c-cd60-451c-98d8-2bd6a1b09d46" title="Permalink to this equation">#</a></span>\[\begin{align}
+r(x) &amp;= -3x^2 + \sin(x)\\
+\therefore y_P(x) &amp;= Ax^2 + Bx + C + K\sin(x) + M\cos(x)
+\end{align}\]</div>
+<ol class="simple">
+<li><p>Find undetermined coefficients from ODE</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-9ff5a962-6189-4d1b-8b06-a75c8c318ee0">
+<span class="eqno">(312)<a class="headerlink" href="#equation-9ff5a962-6189-4d1b-8b06-a75c8c318ee0" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_P' &amp;= 2Ax + B + K\cos(x) - M\sin(x)\\
+y_P'' &amp;= 2A - K\sin(x) - M\cos(x)
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Plugging into ODE:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-54d2b866-9653-4376-903c-7b1a6b45f46c">
+<span class="eqno">(313)<a class="headerlink" href="#equation-54d2b866-9653-4376-903c-7b1a6b45f46c" title="Permalink to this equation">#</a></span>\[\begin{align}
+2A - K\sin(x) - M\cos(x) + 2[2Ax + B + K\cos(x) - M\sin(x)] - 3[Ax^2 + Bx + C + K\sin(x) + M\cos(x)] = -3x^2 + \sin(x)
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Rearrange to collect ‘like’ terms</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-ead91484-29ce-4ceb-848a-70d4fd988357">
+<span class="eqno">(314)<a class="headerlink" href="#equation-ead91484-29ce-4ceb-848a-70d4fd988357" title="Permalink to this equation">#</a></span>\[\begin{align}
+-3Ax^2 + (4A - 3B)x + (2A + 2B - 3C) + (-K -2M -3K)\sin(x) + (-M + 2K -3M)\cos(x) = -3x^2 + \sin(x)
+\end{align}\]</div>
+<ul>
+<li><p>Determine the values of the coefficients on each <span class="math notranslate nohighlight">\(f(x)\)</span> that will solve the equation</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(-3Ax^2 = -3x^2 \implies A = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((4A-3B)x - 0\)</span> because <span class="math notranslate nohighlight">\(r(x)\)</span> has no ‘<span class="math notranslate nohighlight">\(x\)</span>’ term . Hence, <span class="math notranslate nohighlight">\(4-3B = 0 \implies B = \frac{4}{3}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(2A + 2B - 3C = 0 \implies 2+\frac{8}{3} - 3C = 0 \implies C=\frac{14}{9}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(-K -2M -3K = 1 \implies 2M = -4K -1 \implies M = -2K -\frac{1}{2}\)</span></p></li>
+<li></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-99bb590f-40ff-4650-a6e6-778f7dcb67e9">
+<span class="eqno">(315)<a class="headerlink" href="#equation-99bb590f-40ff-4650-a6e6-778f7dcb67e9" title="Permalink to this equation">#</a></span>\[\begin{align}
+  -M + 2K -3M = 0\\
+  2K = 4M\\
+  K = 2(-2K-\frac{1}{2}) = -4K-1\\
+  \implies K = -\frac{1}{5}\\
+  \implies M = -\frac{1}{10}
+  \end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-b8656f2a-23ce-44d3-b973-3b5510e5617a">
+<span class="eqno">(316)<a class="headerlink" href="#equation-b8656f2a-23ce-44d3-b973-3b5510e5617a" title="Permalink to this equation">#</a></span>\[\begin{align}
+  \therefore y_P(x) = -3x^2 + \frac{4}{3}x + \frac{14}{9}-\frac{1}{10}(2\sin x + \cos x)
+  \end{align}\]</div>
+</li>
+</ul>
+<ol class="simple">
+<li><p>Write down the general solution</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-caf229df-4b11-4609-9b4b-c50bc69de4f4">
+<span class="eqno">(317)<a class="headerlink" href="#equation-caf229df-4b11-4609-9b4b-c50bc69de4f4" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(x) &amp;= y_H(x) + y_P(x)\\
+&amp;= c_1e^x + c_2e^{-3x} + y_P(x)
+\end{align}\]</div>
+</section>
+</section>
+<section id="variation-of-parameters">
+<h1>Variation of Parameters<a class="headerlink" href="#variation-of-parameters" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Non-homogeneous, linear <span class="math notranslate nohighlight">\(2^\circ\)</span> ODEs are solvable with Method of Undetermined Coefficients only when <span class="math notranslate nohighlight">\(r(x)\)</span> is one of the functions discussed.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(r(x)\)</span> is something different, we need an alternate method <span class="math notranslate nohighlight">\(\rightarrow\)</span> variation of parameters.</p></li>
+<li><p>Requires calculation of the Wronskian of the ODE</p>
+<ul>
+<li><p>The value of the Wronskian answers the question: Does a solution exist for the homogeneous equation <span class="math notranslate nohighlight">\(y'' + p(x)y' + q(x)y = 0\)</span> ? (specifically at initial condition <span class="math notranslate nohighlight">\(x=x_0\)</span>)<br />
+For <span class="math notranslate nohighlight">\(y(x) = c_1y_1(x) + c_2y_2(x)\)</span>, the Wronskian is defined as a determinant:</p></li>
+</ul>
+</li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-10eb8f12-c64f-46df-8a74-4a370409e6e6">
+<span class="eqno">(318)<a class="headerlink" href="#equation-10eb8f12-c64f-46df-8a74-4a370409e6e6" title="Permalink to this equation">#</a></span>\[\begin{align}
+W(y_1,y_2) \equiv \left|\begin{array}{} y_1 &amp; y_2 \\ y_1' &amp; y_2'\end{array}\right| = y_1y_2' - y_2y_1'
+\end{align}\]</div>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(W(y_1,y_2) = 0\)</span> at <span class="math notranslate nohighlight">\(x=x_0\)</span>, then <span class="math notranslate nohighlight">\(y_1\)</span> and <span class="math notranslate nohighlight">\(y_2\)</span> are linearly dependent <span class="math notranslate nohighlight">\(\rightarrow\)</span> not good</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(W(y_1,y_2) \neq 0\)</span> on the interval of interest, which includes <span class="math notranslate nohighlight">\(x_0\)</span>, then the solutions <span class="math notranslate nohighlight">\(y_1\)</span> and <span class="math notranslate nohighlight">\(y_2\)</span> are linearly independent.</p></li>
+</ul>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h2>
+<p>Constant coefficient case with 2 distinct roots: <span class="math notranslate nohighlight">\(y_1=\lambda_1e^{\lambda_1 x}\)</span> and <span class="math notranslate nohighlight">\(y_2 = \lambda_2e^{\lambda_2 x}\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-4d84ddeb-8f01-4e04-9701-620951f98c36">
+<span class="eqno">(319)<a class="headerlink" href="#equation-4d84ddeb-8f01-4e04-9701-620951f98c36" title="Permalink to this equation">#</a></span>\[\begin{align}
+\therefore y_1' = \lambda_1 e^{\lambda_1x} &amp;&amp; \&amp; &amp;&amp; y_2' = \lambda_2e^{\lambda_2x}
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-a1ac7644-e660-4c6b-9f9d-b8aeec1a9fbb">
+<span class="eqno">(320)<a class="headerlink" href="#equation-a1ac7644-e660-4c6b-9f9d-b8aeec1a9fbb" title="Permalink to this equation">#</a></span>\[\begin{align}
+W(y_1,y_2) &amp;= e^{\lambda_1 x}\cdot \lambda_2e^{\lambda_2x} - e^{\lambda_2 x} \cdot \lambda_1 e^{\lambda_1x}\\
+&amp;= (\lambda_2 - \lambda_1)e^{(\lambda_1 + \lambda_2)x} 
+\end{align}\]</div>
+<p>which never equals zero except for <span class="math notranslate nohighlight">\(\lambda_2 = \lambda_1\)</span> which by definition is not the case. Therefore, solution exists for all initial conditions.</p>
+</section>
+</section>
+<section id="variation-of-parameters-sec-2-10">
+<h1>Variation of Parameters (sec 2.10)<a class="headerlink" href="#variation-of-parameters-sec-2-10" title="Permalink to this headline">#</a></h1>
+<p>For solving <span class="math notranslate nohighlight">\(y'' + p(x)y' + q(x)y = r(x)\)</span><br />
+where <span class="math notranslate nohighlight">\(p(x)\)</span>, <span class="math notranslate nohighlight">\(q(x)\)</span> and <span class="math notranslate nohighlight">\(r(x)\)</span> are continuous over some interval <span class="math notranslate nohighlight">\(I\)</span>.<br />
+<span class="math notranslate nohighlight">\(\implies\)</span> Based on same idea as reduction of order</p>
+<ul class="simple">
+<li><p>First, find <span class="math notranslate nohighlight">\(y_H(x) = c_1y_1 + c_2y_2\)</span></p></li>
+<li><p>Then we will base <span class="math notranslate nohighlight">\(y_P(x)\)</span> on <span class="math notranslate nohighlight">\(y_H(x)\)</span>, <span class="math notranslate nohighlight">\(\underline{\text{not}}\)</span> <span class="math notranslate nohighlight">\(r(x)\)</span> like before</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-7f91cb93-98c1-409e-9af3-d1d64ea0bfe6">
+<span class="eqno">(321)<a class="headerlink" href="#equation-7f91cb93-98c1-409e-9af3-d1d64ea0bfe6" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_P(x) = u(x)y_1(x) + v(x)y_2(x) \hspace{3cm} (*)
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(u(x)\)</span> and <span class="math notranslate nohighlight">\(v(x)\)</span> are “parameters” that replace <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span> in <span class="math notranslate nohighlight">\(y_H(x)\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-82dd99aa-5495-44c6-84fb-d7295e379197">
+<span class="eqno">(322)<a class="headerlink" href="#equation-82dd99aa-5495-44c6-84fb-d7295e379197" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_P' = u'y_1 + uy_1' + v'y_2 + vy_2'
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Since there is only one equation <span class="math notranslate nohighlight">\((*)\)</span> for <span class="math notranslate nohighlight">\(y_P(x)\)</span> and two unknown functions (<span class="math notranslate nohighlight">\(u(x)\)</span> and <span class="math notranslate nohighlight">\(v(x)\)</span>), there will likely be many choices of <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> that will work.</p></li>
+<li><p>However, we can impose an additional constraint (since there is an extra degree of freedom) if we like</p></li>
+<li><p>Choose this constraint to help simplify the solution method</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-a0c46238-465c-47f6-9afe-f6162f52ef76">
+<span class="eqno">(323)<a class="headerlink" href="#equation-a0c46238-465c-47f6-9afe-f6162f52ef76" title="Permalink to this equation">#</a></span>\[\begin{align}
+  u'y_1 + v'y_2 = 0
+  \end{align}\]</div>
+<p>That simplifies our first derivative</p>
+<div class="amsmath math notranslate nohighlight" id="equation-44be7555-cc5e-4d0e-be61-5d18f019a914">
+<span class="eqno">(324)<a class="headerlink" href="#equation-44be7555-cc5e-4d0e-be61-5d18f019a914" title="Permalink to this equation">#</a></span>\[\begin{align}
+  y_p' = uy_1' + vy_2'
+  \end{align}\]</div>
+<p>then,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6518114f-d4a1-46d2-9808-b2186452a4ab">
+<span class="eqno">(325)<a class="headerlink" href="#equation-6518114f-d4a1-46d2-9808-b2186452a4ab" title="Permalink to this equation">#</a></span>\[\begin{align}
+  y_p'' = uy_1'' + u'y_1' + vy_2'' + v'y_2'
+  \end{align}\]</div>
+<ul class="simple">
+<li><p>We can then plug these terms back into non-homogeneous ODE:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-daa13ed5-b90d-412d-83b9-9f8bc17119c4">
+<span class="eqno">(326)<a class="headerlink" href="#equation-daa13ed5-b90d-412d-83b9-9f8bc17119c4" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_p'' + p(x)y_p' + q(x)y_p = r(x) \\
+(uy_1'' + u'y_1' + vy_2'' + v'y_2') + p(x)(uy_1' + vy_2') + q(x)(uy_1 + vy_2) = r(x)
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Rearrange strategically:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-0ab1644c-c25c-46ef-97dc-db538dc63946">
+<span class="eqno">(327)<a class="headerlink" href="#equation-0ab1644c-c25c-46ef-97dc-db538dc63946" title="Permalink to this equation">#</a></span>\[\begin{align}
+u(y_1'' + py_1' + qy_1) + v(y_2'' + py_2' + qy_2) + u'y_1' + v'y_2' = r(x)
+\end{align}\]</div>
+<p>By definition, <span class="math notranslate nohighlight">\(y_1\)</span> and <span class="math notranslate nohighlight">\(y_2\)</span> are solutions of homogeneous equation so <span class="math notranslate nohighlight">\(y_1''+py_1'+qy_1=0\)</span> and <span class="math notranslate nohighlight">\(y_2''+py_2'+qy_2\)</span>. Thus</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7384746e-9692-43e9-aff4-2f8bcbe4414d">
+<span class="eqno">(328)<a class="headerlink" href="#equation-7384746e-9692-43e9-aff4-2f8bcbe4414d" title="Permalink to this equation">#</a></span>\[\begin{align}
+\therefore u'y_1' + v'y_2' &amp;= r\\
+u'y_1 + v'y_2 &amp;= 0 \text{ [from above]}
+\end{align}\]</div>
+<p>We now have two equations with two unknowns <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-f62e8c1a-2da1-41a5-a08d-9b962eea6311">
+<span class="eqno">(329)<a class="headerlink" href="#equation-f62e8c1a-2da1-41a5-a08d-9b962eea6311" title="Permalink to this equation">#</a></span>\[\begin{align}
+\begin{bmatrix}y_1 &amp; y_2\\ y_1' &amp; y_2'\end{bmatrix} \begin{bmatrix} u' \\ v' \end{bmatrix} = \begin{bmatrix} 0 \\ r \end{bmatrix}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Could solve by Gauss Elimination or by something called Cramer’s rule, which says<br />
+for <span class="math notranslate nohighlight">\(\begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} b_1 \\b_2 \end{bmatrix}\)</span><br />
+that</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-4aa2916e-17f8-4953-8184-5c2781203417">
+<span class="eqno">(330)<a class="headerlink" href="#equation-4aa2916e-17f8-4953-8184-5c2781203417" title="Permalink to this equation">#</a></span>\[\begin{align}
+x_1 =\frac{ \left| \begin{array}{} b_1 &amp; a_{12} \\ b_2 &amp; a_{22}\end{array}\right|} 
+{\left| \begin{array}{} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22}\end{array}\right| } \hspace{0.5cm}\text{&amp;} \hspace{0.5cm}
+x_2 = \frac{ \left| \begin{array}{} a_{11} &amp; b_1 \\ a_{21} &amp; b_2\end{array}\right|} 
+{\left| \begin{array}{} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22}\end{array}\right| }
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e9cc4951-9f41-4391-b5d2-b89889db9bd5">
+<span class="eqno">(331)<a class="headerlink" href="#equation-e9cc4951-9f41-4391-b5d2-b89889db9bd5" title="Permalink to this equation">#</a></span>\[\begin{align}
+\therefore u' = \frac{ \left| \begin{array}{} 0 &amp; y_2 \\ r &amp; y_2'\end{array}\right|} 
+{\left| \begin{array}{} y_1 &amp; y_2 \\ y_1' &amp; y_2'\end{array}\right| }
+= \frac{-ry_2}{W}
+\end{align}\]</div>
+<p>and</p>
+<div class="amsmath math notranslate nohighlight" id="equation-265e56da-45f6-4a78-b87e-24eec350b189">
+<span class="eqno">(332)<a class="headerlink" href="#equation-265e56da-45f6-4a78-b87e-24eec350b189" title="Permalink to this equation">#</a></span>\[\begin{align}
+v' = \frac{ \left| \begin{array}{} y_1 &amp; 0 \\ y_1' &amp; r\end{array}\right|} 
+{\left| \begin{array}{} y_1 &amp; y_2 \\ y_1' &amp; y_2'\end{array}\right| }
+= \frac{ry_1}{W}\\
+\therefore u(x) = \int \frac{-r(x)y_2(x)}{W}dx\\
+v(x) = \int \frac{r(x)y_1(x)}{W}dx
+\end{align}\]</div>
+<p>and then</p>
+<div class="amsmath math notranslate nohighlight" id="equation-64a6e69e-6f69-4b26-bf68-488e6c649660">
+<span class="eqno">(333)<a class="headerlink" href="#equation-64a6e69e-6f69-4b26-bf68-488e6c649660" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(x) &amp;= y_H(x) + y_P(x)\\
+y(x) &amp;= c_1y_1 + c_2y_2 + uy_1 + vy_2
+\end{align}\]</div>
+<p>Therefore, V.O.P can be written as:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-45850135-aae9-40a8-893b-c28180e4e363">
+<span class="eqno">(334)<a class="headerlink" href="#equation-45850135-aae9-40a8-893b-c28180e4e363" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(x) = \left[c_1 + \int \frac{-ry_2}{W} dx \right]y_1 + \left[c_2 + \int \frac{ry_1}{W} dx \right] y_2 &amp;&amp; \text{general solution}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Nice solution technique because it’s general and can be used for any <span class="math notranslate nohighlight">\(r(x)\)</span></p></li>
+</ul>
+<section id="id1">
+<h2>Example<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>First, let’s do one that can be solved with MUC or VoP</p>
+<div class="amsmath math notranslate nohighlight" id="equation-bb68326b-24fd-4ff5-9f81-8ad39df6d7c5">
+<span class="eqno">(335)<a class="headerlink" href="#equation-bb68326b-24fd-4ff5-9f81-8ad39df6d7c5" title="Permalink to this equation">#</a></span>\[\begin{align}
+y'' + y = x
+\end{align}\]</div>
+<p>for either solution method, solve <span class="math notranslate nohighlight">\(y''+y=0\)</span> first</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f90574d9-9c6e-4138-b8ec-cf785f7a0126">
+<span class="eqno">(336)<a class="headerlink" href="#equation-f90574d9-9c6e-4138-b8ec-cf785f7a0126" title="Permalink to this equation">#</a></span>\[\begin{align}
+\lambda^2 + 1 = 0 \implies \lambda^2 = -1 \implies \lambda = \pm i\\
+a = 0, \hspace{0.5cm} b = 1 \implies \omega = \sqrt{b - \frac{1}{4}a^2} = 1\\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-7c1ed2de-91fe-4ae3-8546-f08dcb5596b5">
+<span class="eqno">(337)<a class="headerlink" href="#equation-7c1ed2de-91fe-4ae3-8546-f08dcb5596b5" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_H(x) &amp;= e^{-\frac{a}{2}}[c_1\sin(\omega x) + c_2\cos(\omega x)]\\
+&amp;= c_1\sin x + c_2 \cos x
+\end{align}\]</div>
+<ol class="simple">
+<li><p>if using MUC, choose</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-21bd1ebb-944a-4632-9d88-8c476fd501f4">
+<span class="eqno">(338)<a class="headerlink" href="#equation-21bd1ebb-944a-4632-9d88-8c476fd501f4" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_P(x) = Ax + B\\
+y_P' = A\\
+y_P'' = 0\\
+\end{align}\]</div>
+<p>substitute,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-46ca95af-309a-450d-a899-839f34e25f8c">
+<span class="eqno">(339)<a class="headerlink" href="#equation-46ca95af-309a-450d-a899-839f34e25f8c" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_P'' + y_P = x\\
+0 + Ax + B = x \\
+\implies A = 1, \hspace{0.5cm} B = 0\\
+\therefore y_P(x) = +x
+\end{align}\]</div>
+<p>and</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c2aedf19-685a-452e-bedd-e1bf83b92117">
+<span class="eqno">(340)<a class="headerlink" href="#equation-c2aedf19-685a-452e-bedd-e1bf83b92117" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(x) = c_1\sin x + c_2\cos x + x
+\end{align}\]</div>
+<ol class="simple">
+<li><p>if using VoP, then</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-cdb6385c-9db2-4492-b307-92d9ed7fa7bb">
+<span class="eqno">(341)<a class="headerlink" href="#equation-cdb6385c-9db2-4492-b307-92d9ed7fa7bb" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_P(x) = u(x)\sin(x) + v(x)\cos(x)
+\end{align}\]</div>
+<p>where</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ea6d77a3-1d9e-493f-b4b2-d4bdb3616cd7">
+<span class="eqno">(342)<a class="headerlink" href="#equation-ea6d77a3-1d9e-493f-b4b2-d4bdb3616cd7" title="Permalink to this equation">#</a></span>\[\begin{align}
+u(x) = \int \frac{-r(x)y_2(x)}{W}dx\\
+v(x) = \int \frac{r(x)y_1(x)}{W}dx
+\end{align}\]</div>
+<ul class="simple">
+<li><p>We know <span class="math notranslate nohighlight">\(r(x)\)</span>, <span class="math notranslate nohighlight">\(y(x)\)</span> and <span class="math notranslate nohighlight">\(y_2(x)\)</span>. Let’s find the Wronskian</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-7e155fd7-ce05-459f-a510-412e94ff64d8">
+<span class="eqno">(343)<a class="headerlink" href="#equation-7e155fd7-ce05-459f-a510-412e94ff64d8" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_1 = \sin x\\
+y_1' = \cos x \\
+y_2 = \cos x\\
+y_2' = -\sin x
+\end{align}\]</div>
+<p>Hence,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6788f395-a2c0-4517-80db-a4950e59999b">
+<span class="eqno">(344)<a class="headerlink" href="#equation-6788f395-a2c0-4517-80db-a4950e59999b" title="Permalink to this equation">#</a></span>\[\begin{align}
+W(y_1, y_2) &amp;= y_1y_2' - y_2y_1'\\
+&amp;= -\sin^2x - \cos^2x\\
+&amp;= -(\sin^2x + \cos^2x)\\
+&amp;= -1\\
+\therefore u(x) &amp;= \int r(x)y_2(x)dx\\
+&amp;= \int x\cos x dx\\
+&amp;=\cos x + x\sin x\\
+v(x) &amp;= -\int r(x) y_1(x) dx\\
+&amp;=-\int x \cdot \sin x dx\\
+&amp;= -\sin x + x\cos x &amp;&amp; \text{(integration by parts)}
+\end{align}\]</div>
+<p>Then,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-258ac57c-d2ca-4839-89cf-e42a3bae6e24">
+<span class="eqno">(345)<a class="headerlink" href="#equation-258ac57c-d2ca-4839-89cf-e42a3bae6e24" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_P &amp;= u\sin x + v\cos x\\
+&amp;= (\cos x + x\sin x)\cdot \sin x + (x \cos x - \sin x) \cos x\\
+&amp;= x (\sin^2x + \cos^2x) \\
+&amp;= x
+\end{align}\]</div>
+<p>and</p>
+<div class="amsmath math notranslate nohighlight" id="equation-67da3dc0-c5bc-41e1-9ae1-864707af5d9d">
+<span class="eqno">(346)<a class="headerlink" href="#equation-67da3dc0-c5bc-41e1-9ae1-864707af5d9d" title="Permalink to this equation">#</a></span>\[\begin{align}
+\therefore y(x) &amp;= y_H(x) + y_P(x)\\
+y(x) &amp;= c_1\sin(x) + c_2\cos(x) + x &amp;&amp; \text{same answer :)}
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\underline{\text{Ques}}\)</span>: Which method would you prefer in this case? What if we had many undefined coefficients?</p>
+</section>
+<section id="id2">
+<h2>Example<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>Now an example for which we can’t use MUC</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9397ed37-b285-42ed-94a9-ead86cd61843">
+<span class="eqno">(347)<a class="headerlink" href="#equation-9397ed37-b285-42ed-94a9-ead86cd61843" title="Permalink to this equation">#</a></span>\[\begin{align}
+y'' -2y' + y = \frac{12e^x}{x^3}
+\end{align}\]</div>
+<ol class="simple">
+<li><p>Solve homogeneous case</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-8e21bca2-383b-4307-a1e0-2763ff0daa86">
+<span class="eqno">(348)<a class="headerlink" href="#equation-8e21bca2-383b-4307-a1e0-2763ff0daa86" title="Permalink to this equation">#</a></span>\[\begin{align}
+\lambda^2 - 2\lambda + 1 = 0\\
+(\lambda - 1)^2 = 0 \implies \lambda = 1\\
+\therefore y_H(x) = c_1e^x + c_2xe^x
+\end{align}\]</div>
+<ol class="simple">
+<li><p>Assume <span class="math notranslate nohighlight">\(y_P(x) = u(x)y_1(x) + v(x)y_2(x)\)</span></p></li>
+</ol>
+<ul class="simple">
+<li><p>Find Wronskian</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-2c663790-f662-43f0-b6a0-909c5f48d946">
+<span class="eqno">(349)<a class="headerlink" href="#equation-2c663790-f662-43f0-b6a0-909c5f48d946" title="Permalink to this equation">#</a></span>\[\begin{align}
+  y_1 = e^x, &amp;\hspace{0.5cm} y_1' = e^x\\
+  y_2 = xe^x, &amp;\hspace{0.5cm} y_2' = e^x(x+1)  
+  \end{align}\]</div>
+<p>Hence,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0926290f-7c55-4a5e-87ca-a30c4ba6e980">
+<span class="eqno">(350)<a class="headerlink" href="#equation-0926290f-7c55-4a5e-87ca-a30c4ba6e980" title="Permalink to this equation">#</a></span>\[\begin{align}
+  W(y_1,y_2) &amp;= y_1y_2' - y_2y_1'\\
+  &amp;= e^{2x}(x+1) - xe^{2x}\\
+  &amp;= xe^{2x} + e^{2x} - xe^{2x}\\
+  W &amp;= e^{2x}
+  \end{align}\]</div>
+<ul class="simple">
+<li><p>Then</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-2b415dec-e58c-4c15-8e14-33355e8c2b59">
+<span class="eqno">(351)<a class="headerlink" href="#equation-2b415dec-e58c-4c15-8e14-33355e8c2b59" title="Permalink to this equation">#</a></span>\[\begin{align}
+  u(x) &amp;= \int \frac{-r(x)y_2(x)}{W} dx\\
+  &amp;= -\int \frac{12e^x}{x^3} \cdot \frac{xe^x}{e^{2x}}dx\\
+  &amp;= -12 \int x^{-2}dx\\
+  u(x) &amp;= 12x^{-1}\\
+  v(x) &amp;= \int\frac{r(x)y_1(x)}{W} dx\\
+  &amp;= \int \frac{12e^x}{x^3} \cdot \frac{e^x}{e^{2x}} dx\\
+  &amp;= 12\int x^{-3}\\
+  v(x) &amp;= -6x^{-2}
+  \end{align}\]</div>
+<ol class="simple">
+<li><p>Write down general solution</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-cb336a9c-b2c3-4dca-8867-3b421f5f6048">
+<span class="eqno">(352)<a class="headerlink" href="#equation-cb336a9c-b2c3-4dca-8867-3b421f5f6048" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(x) &amp;= y_H + y_P\\
+&amp;= (c_1 + u)y_1 + (c_2 + v)y_2\\
+&amp;= \left(c_1 + \frac{12}{x}\right)e^x + \left(c_2 - \frac{6}{x^2}\right)xe^x\\
+y(x) &amp;= (c_1 + c_2x)e^x + \frac{6}{x}e^x
+\end{align}\]</div>
+<p>Still need two IC’s to find particular solution</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notes/ordinary_differential_equations"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="13-non-homogeneous-linear-odes.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Recap from last class</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="15-springs-numerical-odes.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introduction to Numerical Solution of Differential Equations</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Zachary Ulissi<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

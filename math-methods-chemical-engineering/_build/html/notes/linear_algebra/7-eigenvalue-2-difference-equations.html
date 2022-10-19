@@ -1,0 +1,999 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>\(\underline{Ex}\): Symmetric matrix (\(\lambda\) always real) &#8212; Mathemtaical Methods for Chemical Engineering</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Eigenvectors in python" href="7b-numerical-eigenvalues.html" />
+    <link rel="prev" title="Homogeneous vs. Non-homogeneous Systems" href="6-eigenvalues-1.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Mathemtaical Methods for Chemical Engineering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Lecture notes for CMU 06-262 Math Methods in Chemical Engineering (Zachary Ulissi, CMU)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Notes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="linear_algebra.html">
+   Linear Algebra
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="1-intro-matrices.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2-matrix-manipulation.html">
+     Note on HW expectations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3-gauss-elimination.html">
+     Return to Systems of Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4-rank-gauss-examples.html">
+     Chemical Engineering example solved with Gauss elimination
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5-determinants.html">
+     Using the inverse of A to solve a system of linear equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6-eigenvalues-1.html">
+     Homogeneous vs. Non-homogeneous Systems
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     <span class="math notranslate nohighlight">
+      \(\underline{Ex}\)
+     </span>
+     : Symmetric matrix (
+     <span class="math notranslate nohighlight">
+      \(\lambda\)
+     </span>
+     always real)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="7b-numerical-eigenvalues.html">
+     Eigenvectors in python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ordinary_differential_equations/ordinary_differential_equations.html">
+   Ordinary Differential Equations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/8-differential-equations.html">
+     Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/9-exact-ode.html">
+     Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/10-linear-ode.html">
+     Integrating Factors - Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/11-linear-ode-example.html">
+     Alternate Method (Last class continued)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/12-second-order-odes.html">
+     Second Order Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/13-non-homogeneous-linear-odes.html">
+     Recap from last class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/14-MoUC-VoP.html">
+     Method of Undetermined Coefficients (sec 2.9)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/15-springs-numerical-odes.html">
+     Introduction to Numerical Solution of Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/16-coupled-odes.html">
+     Coupled Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/17-coupled-ode-continued.html">
+     Recap for coupled differential equations:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/18-nonlinear-coupled-ODEs.html">
+     Nonlinear coupled ODE’s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/19-linear-stability.html">
+     Steady states in Non-Linear Coupled ODE’s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/20-BVP.html">
+     Boundary Value Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ordinary_differential_equations/21-BVP-shooting-method.html">
+     The Shooting Method for Solving BVPs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../partial_differential_equations/partial_differential_equations.html">
+   Partial Differential Equations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../partial_differential_equations/22-Intro-PDEs.html">
+     Partial Differential Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../partial_differential_equations/23-Fourier-Coefficients.html">
+     Recap on PDEs from last lecture
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../statistics/statistics.html">
+   Statistics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/24-intro-statistics.html">
+     Intro to engineering statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/25-statistics-continue-linear-regression.html">
+     Recap from last class
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-recap.html">
+   06-262 Math Methods Recap
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ulissigroup/math-methods-chemical-engineering/main?urlpath=lab/tree/math-methods-chemical-engineering/notes/linear_algebra/7-eigenvalue-2-difference-equations.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/ulissigroup/math-methods-chemical-engineering/blob/main/math-methods-chemical-engineering/notes/linear_algebra/7-eigenvalue-2-difference-equations.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/ulissigroup/math-methods-chemical-engineering"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/ulissigroup/math-methods-chemical-engineering/issues/new?title=Issue%20on%20page%20%2Fnotes/linear_algebra/7-eigenvalue-2-difference-equations.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/notes/linear_algebra/7-eigenvalue-2-difference-equations.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   <span class="math notranslate nohighlight">
+    \(\underline{Ex}\)
+   </span>
+   : Symmetric matrix (
+   <span class="math notranslate nohighlight">
+    \(\lambda\)
+   </span>
+   always real)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#underline-ex-a-skew-symmetric-matrix-lambda-0-or-complex">
+   <span class="math notranslate nohighlight">
+    \(\underline{Ex}:\)
+   </span>
+   A skew symmetric matrix (
+   <span class="math notranslate nohighlight">
+    \(\lambda=0\)
+   </span>
+   or complex)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#final-example-with-triangular-matrix">
+   Final Example with Triangular Matrix:
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#one-application-of-the-eigenvalue-problem">
+   One Application of the Eigenvalue Problem
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>\underline{Ex}: Symmetric matrix (\lambda always real)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   <span class="math notranslate nohighlight">
+    \(\underline{Ex}\)
+   </span>
+   : Symmetric matrix (
+   <span class="math notranslate nohighlight">
+    \(\lambda\)
+   </span>
+   always real)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#underline-ex-a-skew-symmetric-matrix-lambda-0-or-complex">
+   <span class="math notranslate nohighlight">
+    \(\underline{Ex}:\)
+   </span>
+   A skew symmetric matrix (
+   <span class="math notranslate nohighlight">
+    \(\lambda=0\)
+   </span>
+   or complex)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#final-example-with-triangular-matrix">
+   Final Example with Triangular Matrix:
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#one-application-of-the-eigenvalue-problem">
+   One Application of the Eigenvalue Problem
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p>{{ badge }}
+$<span class="math notranslate nohighlight">\(\newcommand{\arr}[1]{\underline{\underline{#1}}}\)</span><span class="math notranslate nohighlight">\(    
+\)</span><span class="math notranslate nohighlight">\(\newcommand{\vec}[1]{\underline{#1}}\)</span><span class="math notranslate nohighlight">\(   
+\)</span><span class="math notranslate nohighlight">\(\require{mhchem}\)</span>$</p>
+<section class="tex2jax_ignore mathjax_ignore" id="underline-ex-symmetric-matrix-lambda-always-real">
+<h1><span class="math notranslate nohighlight">\(\underline{Ex}\)</span>: Symmetric matrix (<span class="math notranslate nohighlight">\(\lambda\)</span> always real)<a class="headerlink" href="#underline-ex-symmetric-matrix-lambda-always-real" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>A real square matrix <span class="math notranslate nohighlight">\(\arr{A}=[a_{jk}]\)</span> is symmetric if <span class="math notranslate nohighlight">\(\arr{A}^T = \arr{A}\implies\)</span> thus <span class="math notranslate nohighlight">\(a_{kj}=a_{jk}\)</span><br />
+<span class="math notranslate nohighlight">\(\arr{A}=\begin{bmatrix} -5&amp;2\\2&amp;-2 \end{bmatrix}\)</span><br />
+Eigenvalues:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-21d42e8c-4b5a-4d10-828b-00e9d3bf801e">
+<span class="eqno">(53)<a class="headerlink" href="#equation-21d42e8c-4b5a-4d10-828b-00e9d3bf801e" title="Permalink to this equation">#</a></span>\[\begin{align}
+|\arr{A}-\lambda\arr{I}|=0\\
+\left|\begin{array}{} -5-\lambda&amp;2 \\2&amp;-2-\lambda \end{array} \right|=0\\
+&amp;=(-5-\lambda)(-2-\lambda)-4\\
+&amp;=10+5\lambda+2\lambda+\lambda^2-4\\
+&amp;=\lambda^2+7\lambda+6\\
+&amp;=(\lambda+6)(\lambda+1)\\
+\implies \lambda_1=-6 ;\hspace{1cm} \lambda_2 = -1
+\end{align}\]</div>
+<ul class="simple">
+<li><p>The eigenvalues of symmetric matrices are always real.<br />
+Eigenvectors:<br />
+For <span class="math notranslate nohighlight">\(\lambda_1=-6\)</span>,</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-6d23822f-989e-4f4c-bcd4-e96c1dd8a77b">
+<span class="eqno">(54)<a class="headerlink" href="#equation-6d23822f-989e-4f4c-bcd4-e96c1dd8a77b" title="Permalink to this equation">#</a></span>\[\begin{align}
+(\arr{A} + 6\arr{I})\vec{x}^{(1)} = \vec{0}\\
+\begin{bmatrix} 1&amp;2\\2&amp;4 \end{bmatrix} \rightarrow \left[ \begin{array}{rr|r} 1&amp;2&amp;0\\0&amp;0&amp;0\end{array} \right]\\
+\implies x_1 + 2x_2 = 0\\
+x_1 = -2x_2\\
+x^{(1)}=[-2, 1]^T 
+\end{align}\]</div>
+<p>For <span class="math notranslate nohighlight">\(\lambda_2=-1\)</span>,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3d007027-d062-4ae7-b571-7d8150ac5a05">
+<span class="eqno">(55)<a class="headerlink" href="#equation-3d007027-d062-4ae7-b571-7d8150ac5a05" title="Permalink to this equation">#</a></span>\[\begin{align}
+(\arr{A} + \arr{I})\vec{x}^{(2)} = \vec{0}\\
+\begin{bmatrix} -4&amp;2\\2&amp;-1 \end{bmatrix} \rightarrow \left[ \begin{array}{rr|r} 0&amp;0&amp;0\\2&amp;-1&amp;0\end{array} \right]\\
+\implies 2x_1 - x_2 = 0\\
+x_2 = 2x_1\\
+x^{(1)}=[1, 2]^T 
+\end{align}\]</div>
+<p>Eigenspace:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2b81e38c-74b1-4e84-b1cd-3fa5f60a1939">
+<span class="eqno">(56)<a class="headerlink" href="#equation-2b81e38c-74b1-4e84-b1cd-3fa5f60a1939" title="Permalink to this equation">#</a></span>\[\begin{align}
+\vec{x}=\vec{0}; &amp;&amp; \lambda=-6, \vec{x} = \begin{bmatrix} -2\\1 \end{bmatrix}; &amp;&amp; \lambda=-1, \vec{x} = \begin{bmatrix} 1\\2 \end{bmatrix}
+\end{align}\]</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="underline-ex-a-skew-symmetric-matrix-lambda-0-or-complex">
+<h1><span class="math notranslate nohighlight">\(\underline{Ex}:\)</span> A skew symmetric matrix (<span class="math notranslate nohighlight">\(\lambda=0\)</span> or complex)<a class="headerlink" href="#underline-ex-a-skew-symmetric-matrix-lambda-0-or-complex" title="Permalink to this headline">#</a></h1>
+<p><span class="math notranslate nohighlight">\(\rightarrow \arr{A}^T = -\arr{A}\)</span>  <span class="math notranslate nohighlight">\(\hspace{0.5cm}(a_{ij}=-a_{ji})\)</span><br />
+<span class="math notranslate nohighlight">\(\arr{A} = \begin{bmatrix} 0&amp;9&amp;-12 \\ -9&amp;0&amp;20 \\ 12&amp;-20&amp;0 \end{bmatrix}\)</span></p>
+<ul class="simple">
+<li><p>Find eigenvalues by solving <span class="math notranslate nohighlight">\(|\arr{A} - \lambda \arr{I}| = 0\)</span></p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-a560c971-d7ab-4ca8-bb00-2479eafb84d6">
+<span class="eqno">(57)<a class="headerlink" href="#equation-a560c971-d7ab-4ca8-bb00-2479eafb84d6" title="Permalink to this equation">#</a></span>\[\begin{align}
+\left|\begin{array}{} -\lambda&amp;9&amp;-12 \\ -9&amp;-\lambda&amp;20 \\ 12&amp;-20&amp;-\lambda \end{array}
+\right| = 0\\
+-\lambda \left|\begin{array}{} -\lambda&amp;20\\-20&amp;-\lambda \end{array}\right|
+-9 \left|\begin{array}{} -9&amp;20\\12&amp;-\lambda \end{array}\right|
+-12 \left|\begin{array}{} -9&amp;-\lambda\\12&amp;-20 \end{array}\right| = 0\\
+-\lambda(\lambda^2+400) -9 (9\lambda - 240) -12 (180 + 12\lambda) = 0\\
+-\lambda^3 - 400\lambda - 81\lambda + 2160 - 2160 - 144\lambda = 0\\
+-\lambda^3 - 625\lambda = 0\\
+\lambda(\lambda^2 + 625) = 0\\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-0c6dbb1a-1db8-4f5f-9ad9-daa3ca23a202">
+<span class="eqno">(58)<a class="headerlink" href="#equation-0c6dbb1a-1db8-4f5f-9ad9-daa3ca23a202" title="Permalink to this equation">#</a></span>\[\begin{align}
+\lambda_1= 0 &amp;&amp; \lambda_2 = 25i &amp;&amp; 
+\lambda_2 = -25i
+\end{align}\]</div>
+<ul>
+<li><p>The eigenvalues of skew-symmetric matrices are always complex or zero.</p></li>
+<li><p>Find eigenvectors:</p>
+<ol class="simple">
+<li><p>Find <span class="math notranslate nohighlight">\(\vec{x}^{(1)}\)</span> from <span class="math notranslate nohighlight">\((\arr{A} - 0\arr{I}) = \vec{0}\)</span></p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-4c0f758d-1c15-44ee-a131-981a90e99b79">
+<span class="eqno">(59)<a class="headerlink" href="#equation-4c0f758d-1c15-44ee-a131-981a90e99b79" title="Permalink to this equation">#</a></span>\[\begin{align}
+  \left[ \begin{array}{rrr|r} 0&amp;9&amp;-12&amp;0 \\ -9&amp;0&amp;20&amp;0 \\ 12&amp;-20&amp;0&amp;0 \end{array}
+  \right]
+  \end{align}\]</div>
+<p>Swap rows:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-78e7a31a-7c0d-4b7b-9618-aae950ba2bf4">
+<span class="eqno">(60)<a class="headerlink" href="#equation-78e7a31a-7c0d-4b7b-9618-aae950ba2bf4" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
+  12&amp;-20&amp;0 \\ -9&amp;0&amp;20 \\ 0&amp;9&amp;-12
+  \end{bmatrix}\]</div>
+<p><span class="math notranslate nohighlight">\(R_3 = \frac{1}{3}R_3\)</span> ; <span class="math notranslate nohighlight">\(R_1 = \frac{1}{4}R_1\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b73dd0a8-931e-44a9-ba53-2343eb6c1e1f">
+<span class="eqno">(61)<a class="headerlink" href="#equation-b73dd0a8-931e-44a9-ba53-2343eb6c1e1f" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
+  3&amp;-5&amp;0 \\ -9&amp;0&amp;20 \\ 0&amp;3&amp;-4
+  \end{bmatrix}\]</div>
+<p><span class="math notranslate nohighlight">\(R_2 = R_2 +3R_1\)</span>, <span class="math notranslate nohighlight">\(R_3 = 5R_3\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-65fa3157-5314-4b35-836e-8a63342d1662">
+<span class="eqno">(62)<a class="headerlink" href="#equation-65fa3157-5314-4b35-836e-8a63342d1662" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
+  3&amp;-5&amp;0 \\ 0&amp;-15&amp;20 \\ 0&amp;15&amp;-20
+  \end{bmatrix}\]</div>
+<p><span class="math notranslate nohighlight">\(R_3 = R_3 + R_2\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-17f503eb-bf45-4b7d-bef5-983e42f1d126">
+<span class="eqno">(63)<a class="headerlink" href="#equation-17f503eb-bf45-4b7d-bef5-983e42f1d126" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
+  3&amp;-5&amp;0 \\ 0&amp;-15&amp;20 \\ 0&amp;0&amp;0
+  \end{bmatrix}\]</div>
+<p>$R_2 = \frac{1}{5} R_2$\</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c837a684-25a8-4937-b4b7-cb54a24628b3">
+<span class="eqno">(64)<a class="headerlink" href="#equation-c837a684-25a8-4937-b4b7-cb54a24628b3" title="Permalink to this equation">#</a></span>\[\begin{align}
+  \left[ \begin{array}{rrr|r} 3&amp;-5&amp;0&amp;0 \\ 0&amp;-3&amp;4&amp;0 \\ 0&amp;0&amp;0&amp;0 \end{array}
+  \right]
+  \end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-04cd8b8f-019f-4357-af88-98d06d259067">
+<span class="eqno">(65)<a class="headerlink" href="#equation-04cd8b8f-019f-4357-af88-98d06d259067" title="Permalink to this equation">#</a></span>\[\begin{align}
+  \implies 3x_1 - 5x_2 = 0\\
+  -3x_2 + 4x_3 = 0\\
+  \implies x_2 = \frac{4}{3}x_3\\
+  x_1 = \frac{20}{9}x_3\\
+  \end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d1af9e4b-2026-4f22-b91c-c1da7ec1cee7">
+<span class="eqno">(66)<a class="headerlink" href="#equation-d1af9e4b-2026-4f22-b91c-c1da7ec1cee7" title="Permalink to this equation">#</a></span>\[\begin{align}
+  \lambda_1 = 0, &amp;&amp; \arr{x}^{(1)} = \begin{bmatrix}20\\12\\9 \end{bmatrix}
+  \end{align}\]</div>
+<p>Note these are the off-diagonal terms<br />
+<span class="math notranslate nohighlight">\(\vec{x}^{(2)}\)</span> and <span class="math notranslate nohighlight">\(\vec{x}^{(3)}\)</span> will be complex. Practice finding them &#64; home.</p>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Eigenspace of <span class="math notranslate nohighlight">\(\arr{A}\)</span> is:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-06d0bdd7-67aa-4151-9ef6-0a656a6bbd21">
+<span class="eqno">(67)<a class="headerlink" href="#equation-06d0bdd7-67aa-4151-9ef6-0a656a6bbd21" title="Permalink to this equation">#</a></span>\[\begin{align}
+\vec{x} = \vec{0}; &amp;&amp; 0, \begin{bmatrix} 20 \\ 12 \\9 \end{bmatrix}; &amp;&amp; 25i, \begin{bmatrix} -0.33 + 0.55i \\ -0.20 - 0.92i \\ 1 \end{bmatrix} &amp;&amp; -25i, \begin{bmatrix} -0.33 - 0.55i \\ -0.20 + 0.92i \\ 1\end{bmatrix} 
+\end{align}\]</div>
+<p>Note the complex conjugate vectors.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="final-example-with-triangular-matrix">
+<h1>Final Example with Triangular Matrix:<a class="headerlink" href="#final-example-with-triangular-matrix" title="Permalink to this headline">#</a></h1>
+<p><span class="math notranslate nohighlight">\(\arr{A} = \begin{bmatrix} 1&amp;0&amp;0 \\ -9&amp;2&amp;0 \\ 12&amp;1&amp;-3 \end{bmatrix} \rightarrow\)</span> lower triangular matrix, <span class="math notranslate nohighlight">\(a_{ij} = 0\)</span> if <span class="math notranslate nohighlight">\(j&gt;1\)</span></p>
+<ul class="simple">
+<li><p>Eigenvalues from <span class="math notranslate nohighlight">\(|\arr{A}-\lambda \arr{I}| = 0\)</span></p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-b30c6f31-4821-4378-918f-6e8dac24c67e">
+<span class="eqno">(68)<a class="headerlink" href="#equation-b30c6f31-4821-4378-918f-6e8dac24c67e" title="Permalink to this equation">#</a></span>\[\begin{align}
+\left|
+\begin{array}{}
+1-\lambda&amp;0&amp;0 \\ -9&amp;2-\lambda&amp;0 \\ 12&amp;1&amp; -3-\lambda
+\end{array}
+\right| = 0\\
+(1-\lambda)\left| \begin{array}{} 2-\lambda&amp;0\\1&amp;3-\lambda \end{array}\right|=0\\
+(1-\lambda)(2-\lambda)(3-\lambda)=0\\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d71f2fd9-53d5-4337-837a-5cb207a05ec2">
+<span class="eqno">(69)<a class="headerlink" href="#equation-d71f2fd9-53d5-4337-837a-5cb207a05ec2" title="Permalink to this equation">#</a></span>\[\begin{align}
+\implies \lambda_1 = 1,&amp;&amp; \lambda_2 = 2,&amp;&amp; \lambda_3 = -3
+\end{align}\]</div>
+<ul class="simple">
+<li><p>For upper or lower triangular matrices, eigenvalues will be diagonal elements.</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="one-application-of-the-eigenvalue-problem">
+<h1>One Application of the Eigenvalue Problem<a class="headerlink" href="#one-application-of-the-eigenvalue-problem" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>“Difference” Equations (Recurrance Relations)</p>
+<ul>
+<li><p>Can be used to solve problems in population dynamics, digital signal processing and economics.</p></li>
+<li><p>We will use one here to determine how quickly people die from a plague.</p></li>
+</ul>
+</li>
+<li><p>First we must understand that the eigenvectors of any n-dimentional problem form a basis for <span class="math notranslate nohighlight">\(R^n\)</span>. In 3D space for example, we often think of <span class="math notranslate nohighlight">\([1, 0, 0], [0, 1, 0]\)</span> &amp; <span class="math notranslate nohighlight">\([0, 0, 1]\)</span> as basis vectors of <span class="math notranslate nohighlight">\(R^n\)</span>. Eigenvectors also form a basis because they are always linearly independent.</p></li>
+</ul>
+<img src="https://docs.google.com/drawings/d/e/2PACX-1vQOiIlP4wyJlZRcYfFNs3iyuMo8zzmDVS5fe3DFiW2ZtPgw01dv-t7nYIslQ9CtOnSt8wTzmBQmBUZH/pub?w=960&h=720">
+<ul class="simple">
+<li><p>Because eigenvectors form a basis, we can write any vector, <span class="math notranslate nohighlight">\(\vec{z}\)</span>, as</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-5270333d-53be-4ccb-9cbf-22a99851dcb2">
+<span class="eqno">(70)<a class="headerlink" href="#equation-5270333d-53be-4ccb-9cbf-22a99851dcb2" title="Permalink to this equation">#</a></span>\[\begin{align}
+\vec{z} = c_1 \vec{x_1}+ c_2 \vec{x_2} + ... c_n \vec{x_n} &amp;&amp; \text{for scalars $c_1 ... c_n$}\\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-170f6d35-c7e9-45ad-9ad4-4565af6edab2">
+<span class="eqno">(71)<a class="headerlink" href="#equation-170f6d35-c7e9-45ad-9ad4-4565af6edab2" title="Permalink to this equation">#</a></span>\[\begin{align}
+e.g. [2,4,3] &amp;= 2[1, 0, 0] + 4[0, 1, 0] + 3[0, 0, 1]\\
+&amp;=-25[-2, -1, -1] -13[3, 3, 1] -9[1, -2, 1]
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-3e96a743-5dda-420d-9fcf-ed45c64ed863">
+<span class="eqno">(72)<a class="headerlink" href="#equation-3e96a743-5dda-420d-9fcf-ed45c64ed863" title="Permalink to this equation">#</a></span>\[\begin{align}
+\therefore \arr{A}\vec{z} &amp;= \arr{A}(c_1 \vec{x_1} + c_2 \vec{x_2}+...c_n \vec{x_n})\\
+&amp;= c_1\arr{A}\vec{x_1} + c_2\arr{A}\vec{x_2} + ... c_n\arr{A}\vec{x_n}
+\end{align}\]</div>
+<p>But, since <span class="math notranslate nohighlight">\(\arr{A}\vec{x_n} = \lambda_n\vec{x_n}\)</span>, we can greatly simplify:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-08715ec5-5312-406f-b602-de1bb6898c95">
+<span class="eqno">(73)<a class="headerlink" href="#equation-08715ec5-5312-406f-b602-de1bb6898c95" title="Permalink to this equation">#</a></span>\[\begin{align}
+\arr{A}\vec{z} = c_1\lambda_1\vec{x_1} + c_2\lambda_2\vec{x_2} + ... + c_n\lambda_n \vec{x_n}
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\therefore\)</span> If we know <span class="math notranslate nohighlight">\(\arr{A}\)</span>, finding its eigenvalues and vectors will help us find <span class="math notranslate nohighlight">\(\vec{z}\)</span></p>
+<ul class="simple">
+<li><p>This becomes interesting when wanting to multiply an eigenvector <span class="math notranslate nohighlight">\(\vec{x}\)</span> by powers of <span class="math notranslate nohighlight">\(\arr{A}\)</span>. For example:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-d1aa3052-562d-4765-abd6-6cb11dcf853d">
+<span class="eqno">(74)<a class="headerlink" href="#equation-d1aa3052-562d-4765-abd6-6cb11dcf853d" title="Permalink to this equation">#</a></span>\[\begin{align}
+\arr{A}^2\vec{x} = \lambda^2\vec{x} &amp;&amp; (\arr{A}\arr{A}\vec{x} = \arr{A}\lambda\vec{x} = \lambda\arr{A}\vec{x} = \lambda\lambda\vec{x} = \lambda^2\vec{x})\\
+\arr{A}^3\vec{x} = \lambda^3\vec{x}\\
+\arr{A}^k\vec{x} = \lambda^k\vec{x}
+\end{align}\]</div>
+<p>then, <span class="math notranslate nohighlight">\(\arr{A}^k\vec{z} = c_1\lambda_1^k\arr{x_1} + c_2\lambda_2^k\vec{x_2} + ... + c_n\lambda_n^k\vec{x_n}\)</span></p>
+<ul class="simple">
+<li><p>We are interested in equations of the form <span class="math notranslate nohighlight">\(\arr{A}^k\vec{z}\)</span> because it can tell us how some initial state represented by vector <span class="math notranslate nohighlight">\(\vec{z}\)</span> changes on a recurrant basis. For example, if <span class="math notranslate nohighlight">\(\arr{z_0}\)</span> represents the initial state of a population and <span class="math notranslate nohighlight">\(\arr{A}\)</span> tells us how the population changes each year then after 1 year:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-316f2a10-b98b-4b89-8b72-d202ba648d78">
+<span class="eqno">(75)<a class="headerlink" href="#equation-316f2a10-b98b-4b89-8b72-d202ba648d78" title="Permalink to this equation">#</a></span>\[\begin{align}
+\vec{z_1} = \arr{A}\vec{z_0} 
+\end{align}\]</div>
+<p>And after 2 years:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4c04497c-f73d-4323-8acc-687f66b94eb7">
+<span class="eqno">(76)<a class="headerlink" href="#equation-4c04497c-f73d-4323-8acc-687f66b94eb7" title="Permalink to this equation">#</a></span>\[\begin{align}
+\vec{z_2} &amp;= \arr{A}\vec{z_1} = \arr{A}\arr{A}\vec{z_0}\\
+\vec{z_2} &amp;= \arr{A}^2\vec{z_0}
+\end{align}\]</div>
+<p>And after k years:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a8162d09-1d96-45a0-892f-7b0cc98173ee">
+<span class="eqno">(77)<a class="headerlink" href="#equation-a8162d09-1d96-45a0-892f-7b0cc98173ee" title="Permalink to this equation">#</a></span>\[\begin{align}
+\vec{z_k} = \arr{A}^k\vec{z_0} &amp;&amp;\rightarrow \text{this type of equation is called a difference equation} 
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\textbf{Problem:}\)</span> A fearsome new strain of Ebola strikes the island of Niihau, HI with population of 200. People can be categorized as healthy, sick or dead. Each year, the plague causes 60% of healthy people to get sick and another 10% of healthy people to die. Only 30% stay healthy. This strain of Ebola is difficult to cure, and so 60% of sick people die each year, 20% become healthy and 20% will remain sick.</p>
+<ul class="simple">
+<li><p>Determine the equation that predicts how many people are healthy, sick and dead after k years.</p></li>
+<li><p>How many years will it take before only 20 people remain alive on Niihau?</p></li>
+</ul>
+<ul class="simple">
+<li><p>Begin by setting up variables and equations:<br />
+Let <span class="math notranslate nohighlight">\(z_1(k)\)</span> = number of healthy people after k years<br />
+<span class="math notranslate nohighlight">\(z_2(k)\)</span> = number of sick people after k years<br />
+<span class="math notranslate nohighlight">\(z_3(k)\)</span> = number of dead people after k years<br />
+<span class="math notranslate nohighlight">\(\implies\)</span> 3 types of people, 3 dimensions</p></li>
+<li><p>Then info in problem tells us:<br />
+HEALTHY</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-2e9091c7-e459-4430-b193-be3df04faff4">
+<span class="eqno">(78)<a class="headerlink" href="#equation-2e9091c7-e459-4430-b193-be3df04faff4" title="Permalink to this equation">#</a></span>\[\begin{align}
+z_1(k+1) = 0.3z_1(k) + 0.2 z_2(k)
+\end{align}\]</div>
+<ul class="simple">
+<li><p>In a given year <span class="math notranslate nohighlight">\((k+1)\)</span>, the number of healthy people equals 30% of the healthy people from the previous year <span class="math notranslate nohighlight">\((k)\)</span> + 20% of the sick people from the previous year <span class="math notranslate nohighlight">\((k)\)</span>.</p></li>
+</ul>
+<p>SICK</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9b0f7e0d-219e-44d0-ad38-d9434d846f60">
+<span class="eqno">(79)<a class="headerlink" href="#equation-9b0f7e0d-219e-44d0-ad38-d9434d846f60" title="Permalink to this equation">#</a></span>\[\begin{align}
+z_2(k+1) = 0.6 z_1(k) + 0.2 z_2(k)
+\end{align}\]</div>
+<p>DEAD</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1b4abdb0-ebaa-4370-be71-cd3a911c7fc0">
+<span class="eqno">(80)<a class="headerlink" href="#equation-1b4abdb0-ebaa-4370-be71-cd3a911c7fc0" title="Permalink to this equation">#</a></span>\[\begin{align}
+z_3(k+1) = 0.1 z_1(k) + 0.6 z_2(k) + z_3(k)\\ &amp; \rightarrow \text{All dead people stay dead}
+\end{align}\]</div>
+<p>So if <span class="math notranslate nohighlight">\(\vec{z_k} = \begin{bmatrix} z_1(k) \\ z_2(k) \\ z_3(k) \end{bmatrix}\)</span>, then this problem is asking us to solve the difference equaiton</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8bbb7657-e54e-4203-a3d0-24ffabdba6fc">
+<span class="eqno">(81)<a class="headerlink" href="#equation-8bbb7657-e54e-4203-a3d0-24ffabdba6fc" title="Permalink to this equation">#</a></span>\[\begin{align}
+\vec{z_k} = \arr{A}\vec{z_{k-1}} = \arr{A}^k\vec{z_0}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Let’s write the initial population vector in terms of eigenvalues and vectors of <span class="math notranslate nohighlight">\(\arr{A}\)</span>.</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-8d4580b6-0be2-4a88-8bbe-25cf58ccd621">
+<span class="eqno">(82)<a class="headerlink" href="#equation-8d4580b6-0be2-4a88-8bbe-25cf58ccd621" title="Permalink to this equation">#</a></span>\[\begin{align}
+\vec{z_k} = c_1\lambda_1^k\vec{x_1} + c_2\lambda_2^k\vec{x_2} + c_3\lambda_3^k\vec{x_3}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Need to find eigenvalues and eigenvectors of <span class="math notranslate nohighlight">\(\arr{A} = \begin{bmatrix} 0.3&amp;0.2&amp;0 \\ 0.6&amp;0.2&amp;0 \\ 0.1&amp;0.6&amp;1 \end{bmatrix}\)</span></p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-7da3e619-952e-440c-988a-325b28aca700">
+<span class="eqno">(83)<a class="headerlink" href="#equation-7da3e619-952e-440c-988a-325b28aca700" title="Permalink to this equation">#</a></span>\[\begin{align}
+  \lambda_1 = -0.1, &amp;&amp; \vec{x}^T = [1, -2, 1]\\
+  \lambda_2 = 0.6, &amp;&amp; \vec{x}^T = [-2, -3, 5]\\
+  \lambda_1 = 1, &amp;&amp; \vec{x}^T = [0, 0, 1]
+  \end{align}\]</div>
+<ul class="simple">
+<li><p>Finally we can find the <span class="math notranslate nohighlight">\(c_n\)</span> values by expressing the initial population vector, <span class="math notranslate nohighlight">\(\vec{z_0} = \begin{bmatrix} 200\\0\\0 \end{bmatrix}\)</span> in terms of the eigenvector basis.</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-dcb6e215-5985-448d-8c29-46388e9cb9f8">
+<span class="eqno">(84)<a class="headerlink" href="#equation-dcb6e215-5985-448d-8c29-46388e9cb9f8" title="Permalink to this equation">#</a></span>\[\begin{align}
+\vec{z_0} &amp;= \frac{600}{7}\vec{x_1} - \frac{400}{7}\vec{x_2} + 200 \vec{x_3}\\
+\begin{bmatrix}200\\0\\0\end{bmatrix} &amp;= \frac{600}{7}\begin{bmatrix}1\\-2\\1\end{bmatrix} - \frac{400}{7}\begin{bmatrix}-2\\-3\\5\end{bmatrix} + 200 \begin{bmatrix}0\\0\\1\end{bmatrix}
+\end{align}\]</div>
+<p>Here the coefficients represent <span class="math notranslate nohighlight">\(c_1, c_2\)</span> and <span class="math notranslate nohighlight">\(c_3\)</span> respectively.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6c23f642-b6cb-4298-a4ec-094ce6ac0ab8">
+<span class="eqno">(85)<a class="headerlink" href="#equation-6c23f642-b6cb-4298-a4ec-094ce6ac0ab8" title="Permalink to this equation">#</a></span>\[\begin{align}
+\therefore \vec{z_k} = \frac{600}{7}(-0.1)^k\begin{bmatrix}1\\-2\\1\end{bmatrix} - \frac{400}{7}(0.6)^k\begin{bmatrix}-2\\-3\\5\end{bmatrix} + 200(1)^k\begin{bmatrix}0\\0\\1\end{bmatrix}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Finally, to determine how long it will take to have only 20 people remaining, we can plug in some values of <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
+<li><p>Rounded to the nearest person:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-519a4a5b-d046-435e-a368-d49c4dd28195">
+<span class="eqno">(86)<a class="headerlink" href="#equation-519a4a5b-d046-435e-a368-d49c4dd28195" title="Permalink to this equation">#</a></span>\[\begin{align}
+   \vec{z_0} = \begin{bmatrix} 200\\0\\0 \end{bmatrix} &amp;&amp; \vec{z_1} = \begin{bmatrix} 60\\120\\20 \end{bmatrix}\\
+   \vec{z_2} = \begin{bmatrix} 42\\60\\98 \end{bmatrix} &amp;&amp; \vec{z_3} = \begin{bmatrix} 25\\37\\138 \end{bmatrix}\\
+   \vec{z_4} = \begin{bmatrix} 15\\22\\163 \end{bmatrix} &amp;&amp; \vec{z_5} = \begin{bmatrix} 9\\13\\178 \end{bmatrix}\\
+   \vec{z_6} = \begin{bmatrix} 5\\8\\187 \end{bmatrix}
+  \end{align}\]</div>
+<ul class="simple">
+<li><p>After 6 years, only 13 people remain (less than 10% of original population)</p></li>
+</ul>
+  <img src="https://docs.google.com/drawings/d/e/2PACX-1vSjI8TG1ArprwlXWkPPKSoIacb_CbaemjDjFTcYCBfr-YdSEPhM02mitp1NW8uwvcDKh_xDrT_24DdS/pub?w=960&h=720"></section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notes/linear_algebra"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="6-eigenvalues-1.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Homogeneous vs. Non-homogeneous Systems</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="7b-numerical-eigenvalues.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Eigenvectors in python</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Zachary Ulissi<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

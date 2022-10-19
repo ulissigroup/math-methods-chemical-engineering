@@ -1,0 +1,36 @@
+name: deploy
+
+on:
+  # Trigger the workflow on push to main branch
+  push:
+    branches:
+      - main
+
+# This job installs dependencies, build the book, and pushes it to `gh-pages`
+jobs:
+  build-and-deploy-book:
+    runs-on: ubuntu-latest
+    
+    # Use a custom dockerfile for build
+    container:
+      image: jupyter/datascience-notebook
+      options: --user root
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: install requirements
+      run: |
+        mamba install -c conda-forge lmfit
+
+    # Build the book
+    - name: Build the book
+      run: |
+        jupyter-book build math-methods-chemical-engineering
+
+    # Deploy the book's HTML to gh-pages branch
+    - name: GitHub Pages action
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: math-methods-chemical-engineering/_build/html

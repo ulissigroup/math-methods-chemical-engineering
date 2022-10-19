@@ -1,0 +1,42 @@
+import numpy as np
+
+# get the eigenvalues/eigenvectors and print them
+
+# hint np.linalg.eig
+
+A = np.array([[-0.1, 0.1],
+              [0.1,-0.3]])
+
+eigval, eigvec = np.linalg.eig(A)
+
+print(eigval)
+print(eigvec)
+
+print(eigvec[:,0]/eigvec[1,0])
+
+from scipy.integrate import solve_ivp
+import matplotlib.pyplot as plt
+import numpy as np
+
+A1 = 5 #m^2
+R1 = 0.1 # hr/m^2
+tau1 = A1*R1
+
+A2 = 5 #m^2
+R2 = 1 #hr/m^2
+tau2 = A2*R2 
+
+h0 = [4,7] #m
+
+def hprime(t, h):
+  A = np.array([[-1/tau1,1/tau1],
+                [R2/R1/tau2,-1/tau2*(1+R2/R1)]])
+  return A@h
+
+sol = solve_ivp(hprime, [0,10], h0)
+
+plt.plot(sol.t, sol.y.T,'o-')
+plt.xlabel('Time [hr]')
+plt.ylabel('Tank Height [m]')
+
+

@@ -1,0 +1,422 @@
+# Define the function we want to integrate
+def yprime(t,y):
+  return -y
+
+# try y' at t=0, y=1
+yprime(1/2,1/2)
+
+def euler_integrate(func, t, y0):
+  # func: the function to integrate, of the form
+  #       y'=F(t,y)
+  # y0:   the initial function value
+  # t:    the range of times to evaluate
+
+  y = [y0]
+  dt = t[1]-t[0]
+
+  #Loop through and implement the update
+  for new_time in t[1:]:
+
+    # current y
+    current_y = y[-1]
+
+    #Get the current derivative
+    yprime=func(new_time,current_y)
+
+    #Update y, fill this in
+    updated_y = yprime*dt + current_y
+
+    #Save the y
+    y.append(updated_y)
+
+  return y
+
+
+# Generate a range of t from 0 to 2, with a timestep of 0.5
+t = np.arange(0,2.1,.01)
+
+# Use or ne function
+y = euler_integrate(yprime, 
+                    t=t, 
+                    y0=1)
+
+#Plot the results
+plt.plot(t,y,'ok', label='Numerical Sol''n to dy/dt=-y, y(t=0)=1')
+plt.xlabel('t')
+plt.ylabel('Numerical Sol''n to dy/dt=-y, y(t=0)=1')
+
+t=np.linspace(0,2,100)
+
+plt.plot(t,np.exp(-t),'k-', label='full solution, $e^{-t}$')
+plt.legend()
+plt.xlabel('t')
+plt.ylabel('y')
+
+t = np.arange(0,2.01,0.0001)
+y = euler_integrate(yprime, t, 1)
+
+print('Error of f(x=2) = %f'%abs(y[-1]-np.exp(-t[-1])))
+
+# Scan over a range of time steps
+
+for dt in [1,.5,.1,.05,.01]:
+
+  # Calculate the solution
+  t = np.arange(0,2.01,dt)
+  y = euler_integrate(yprime, t, 1)
+
+  # Plot the error (difference beteween analytical 
+  # solution and numerical solution)
+  plt.loglog(dt,abs(y[-1]-np.exp(-t[-1])),'ok')
+
+# Plot a simple -1 log scaling to show the error drops
+dt=np.logspace(-2,0);
+plt.plot(dt,dt/10,'k--',label='Slope 1')
+
+plt.xlabel('Time Step')
+plt.ylabel('Error at t=2 for y\'=-y, y(0)=1')
+plt.legend()
+
+from scipy.integrate import solve_ivp
+
+def yprime(t,y):
+  return -y
+
+sol = solve_ivp(yprime, [0,2], [1])
+
+plt.plot(sol.t,sol.y[0,:],'ok',label='solve_ivp')
+
+t = np.linspace(0,2,100)
+plt.plot(t,np.exp(-t),'k-', label='full solution, $e^{-t}$')
+
+plt.xlabel('t')
+plt.ylabel('y')
+plt.legend()
+
+
+from scipy.integrate import solve_ivp
+
+# The differential equation function - has to be f(t,y)!
+def yprime(t,y, k):
+  return -k*y
+
+# Let's specify the range over which we want regular spaced solutions
+t = np.linspace(0,2,20)
+
+sol = solve_ivp(yprime, # the function to integrate
+                [0,2], # the time range to integrate over
+                [1], # the initial condition; it's a vector because solve_ivp is actually set up for coupled ODEs
+                t_eval=t,# if we want it to evaluate the solution at regular points
+                args=(2,)) 
+
+# Plot the solution - note that sol.t is where the solution was actually evaluated
+# and sol.y is the solution. We take the first row of the solution here, since 
+# solve_ivp is really set up to solve systems of equations
+plt.plot(sol.t,
+         sol.y[0,:], 
+         'ok', # black circles
+         label='solve_ivp',
+         )
+
+# Plot the analytical solution
+t = np.linspace(0,2,100)
+plt.plot(t,np.exp(-2*t),'k-', label='full solution, $e^{-t}$')
+
+plt.xlabel('t')
+plt.ylabel('y')
+plt.legend()
+
+
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+import numpy as np
+
+
+y0 = [0, 5] #y, y'
+t = [0,20]
+
+def yprime(t, y, m, k, c):
+  y, yprime = y 
+
+  return [yprime, #dy/dx = y'
+          -c/m*yprime-k/m*y ] #dyprime/dx = y''
+
+t_eval = np.linspace(0,20,100)
+
+
+sol = solve_ivp(yprime, t, y0, t_eval = t_eval, args = (1, 5, 10))
+plt.plot(sol.t, sol.y.T[:,0]) #plot only the first column of solutions e.g. y'
+
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+import numpy as np
+
+y0 = [0, 5] #y, y'
+t = [0,20]
+
+def yprime(t, y, m, k, c):
+  y, yprime = y 
+
+  return [yprime, #dy/dx = y'
+          -c/m*yprime-k/m*y ] #dyprime/dx = y''
+
+t_eval = np.linspace(0,20,100)
+
+
+sol = solve_ivp(yprime, t, y0, t_eval = t_eval, args = (1, 5, 5))
+plt.plot(sol.t, sol.y.T[:,0]) #plot only the first column of solutions e.g. y'
+
+
+
+# Define the function we want to integrate
+def yprime_yprimeprime(t,y):
+  #return y', y''
+  return -y, y
+
+
+def euler_2nd_derivative_integrate(func, t, y0):
+
+  y = [y0]
+  current_time = t[0]
+  dt = t[1]-t[0]
+
+  #Loop through and implement the update
+  for new_time in t[1:]:
+
+    current_y = y[-1]
+
+    #Get the current derivative
+    yprime, yprimeprime=func(t,current_y)
+
+    #Find the current step size
+    updated_y = current_y + dt*yprime + dt**2/2*yprimeprime
+
+    #Save the y
+    y.append(updated_y)
+
+  return y
+
+t = np.arange(0,2.1,0.5)
+y = euler_integrate(yprime, t, 1)
+plt.plot(t,y,'ok', label='1st-order Euler Sol''n')
+
+y = euler_2nd_derivative_integrate(yprime_yprimeprime, t, 1)
+plt.plot(t,y,'or', label='2nd-order Euler Sol''n')
+
+t = np.linspace(0,2,100)
+plt.plot(t,np.exp(-t),'k-', label='full solution, $e^{-t}$')
+
+plt.xlabel('t')
+plt.ylabel('y')
+plt.legend()
+
+
+# Scan over a range of time steps
+
+for dt in [1,.5,.1,.05,.01]:
+
+  # Calculate the solution
+  t = np.arange(0,2.01,dt)
+  y = euler_integrate(yprime, t, 1)
+
+  # Plot the error (difference beteween analytical 
+  # solution and numerical solution)
+  plt.loglog(dt,abs(y[-1]-np.exp(-t[-1])),'ok')
+
+  # Calculate the solution
+  t = np.arange(0,2.01,dt)
+  y = euler_2nd_derivative_integrate(yprime_yprimeprime, t, 1)
+
+  # Plot the error (difference beteween analytical 
+  # solution and numerical solution)
+  plt.loglog(dt,abs(y[-1]-np.exp(-t[-1])),'or')
+
+# Plot a simple -1 log scaling to show the error drops
+dt=np.logspace(-2,0);
+plt.plot(dt,dt/10,'k--',label='First order Euler')
+
+dt=np.logspace(-2,0);
+plt.plot(dt,dt**2./20,'r--', label='Euler with 2nd Derivatives')
+
+plt.xlabel('Time Step')
+plt.ylabel('Error at t=2 for y\'=-y, y(0)=1')
+plt.legend()
+
+def midpoint_integrate(func, t, y0):
+  # func: the function to integrate, of the form
+  #       y'=F(t,y)
+  # y0:   the initial function value
+  # t:    the range of times to evaluate
+
+  y = [y0]
+  dt = t[1]-t[0]
+
+  #Loop through and implement the update
+  for new_time in t[1:]:
+
+    current_y = y[-1]
+
+    #Get the current derivative
+    yprime=func(t,current_y)
+
+    #Get the mid-point
+    yN12= current_y + yprime * dt/2
+
+    #Get the derivative at the mid-point
+    yprimeN12= func(t+dt/2, yN12) # fill this in
+
+    #Take the full step
+    updated_y= current_y + dt*yprimeN12 # fill this in
+
+    #Save the y
+    y.append(updated_y)
+
+  return y
+
+
+t = np.arange(0,2.1,0.5)
+y = euler_integrate(yprime, t, 1)
+plt.plot(t,y,'ok', label='1st-order Euler Sol''n')
+
+y = euler_2nd_derivative_integrate(yprime_yprimeprime, t, 1)
+plt.plot(t,y,'or', label='2nd-order Euler Sol''n')
+
+y = midpoint_integrate(yprime, t, 1)
+plt.plot(t,y,'ob', markersize=2, label='Mid-point method Sol''n')
+
+t = np.linspace(0,2,100)
+plt.plot(t,np.exp(-t),'k-', label='full solution, $e^{-t}$')
+
+plt.xlabel('t')
+plt.ylabel('y')
+plt.legend()
+
+
+# Scan over a range of time steps
+
+for dt in [1,.5,.1,.05,.01]:
+
+  # Calculate the solution
+  t = np.arange(0,2.01,dt)
+  y = euler_integrate(yprime, t, 1)
+
+  # Plot the error (difference beteween analytical 
+  # solution and numerical solution)
+  plt.loglog(dt,abs(y[-1]-np.exp(-t[-1])),'ok')
+
+  # Calculate the solution
+  y = euler_2nd_derivative_integrate(yprime_yprimeprime, t, 1)
+
+  # Plot the error (difference beteween analytical 
+  # solution and numerical solution)
+  plt.loglog(dt,abs(y[-1]-np.exp(-t[-1])),'or')
+
+  # Calculate the solution
+  y = midpoint_integrate(yprime, t, 1)
+
+  # Plot the error (difference beteween analytical 
+  # solution and numerical solution)
+  plt.loglog(dt,abs(y[-1]-np.exp(-t[-1])),'ob', markersize=3)
+
+# Plot a simple -1 log scaling to show the error drops
+dt=np.logspace(-2,0);
+plt.plot(dt,dt/10,'k--',label='First order Euler')
+
+dt=np.logspace(-2,0);
+plt.plot(dt,dt**2./20,'r--', label='Euler with 2nd Derivatives, or Mid-Point')
+
+plt.xlabel('Time Step')
+plt.ylabel('Error at t=2 for y\'=-y, y(0)=2')
+plt.legend()
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0,2)
+f1 = np.ones(len(x))
+f2 = 1 + x
+f3 = 1 + x + x**2 / 2
+f4 = 1 + x + x**2 / 2 + x**3 / 6
+f = np.exp(x)
+plt.plot(x, f1, '--', label = '$\hat{f}$ = 1')
+plt.plot(x, f2, '--', label = '$\hat{f} = 1 + x$')
+plt.plot(x, f3, '--', label = '$\hat{f} = 1 + x + x^2 / 2$')
+plt.plot(x, f4, '--', label = '$\hat{f} = 1 + x + x^2/2 + x^3/6$')
+plt.plot(x, f, 'k', label = 'exp(x)')
+plt.xlabel('x')
+plt.ylabel('F')
+plt.legend()
+plt.show()
+
+from scipy.special import factorial
+
+def taylor_exp(x,N):
+  # this function evaluates the taylor expansion of exp(x)
+
+  # x is a range of x to evaluate at
+  # N is the order of the taylor expansion
+
+  y=0.0
+
+  # Loop over N, adding terms 
+  for n in range(N):
+      y = y + x**n/factorial(n)
+
+  # return the final approximation to y
+  return y
+
+#Test the function for x=2 at order 1    
+taylor_exp(x=2,N=6)
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Choose 100 points to evaluate
+x = np.linspace(0,2,100)
+
+# For each order 1 to 5, compute teh approximation and plot
+for n in range(1,8):
+  plt.plot(x,taylor_exp(x,n),'--', label='taylor series order %d'%n)
+
+# Plot the known (analytical exp(x) ) expression
+plt.plot(x,np.exp(x),'r',label='exp(x)')
+
+# Add x/y labels and legend
+plt.xlabel('x')
+plt.ylabel('f=exp(x)')
+plt.legend()
+
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.interpolate import approximate_taylor_polynomial 
+
+# Choose 100 points to evaluate
+x = np.linspace(0,3,100)
+
+def myfunc(x):
+  return np.sin(x)*np.exp(x)
+
+# For each order 1 to 5, compute teh approximation and plot
+for n in range(1,8):
+  p = approximate_taylor_polynomial(myfunc, 0, n, scale=0.1)
+  plt.plot(x,np.polyval(p, x),'--', label='taylor series order %d'%(n+1))
+
+# Plot the known (analytical exp(x) ) expression
+plt.plot(x,myfunc(x),'r',label='sin(x)exp(x)')
+
+# Add x/y labels and legend
+plt.xlabel('x')
+plt.ylabel('f=np.sin(x)*np.exp(x)')
+plt.legend()
+
+x=2
+for n in range(1,30):
+  #Calculate the difference between the true solution and approximate solution at x=2
+  error = np.abs(np.exp(x)-taylor_exp(x,n))
+
+  #plot the error
+  plt.semilogy(n,error,'ok')
+
+# add x/y labels
+plt.xlabel('Terms in Taylor Series')
+plt.ylabel('Error in Taylor approx, abs[f(x=2)-exp(x=2)]')
