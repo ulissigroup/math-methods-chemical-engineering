@@ -5,7 +5,7 @@
 
 #######################################################################################
 # Book settings
-title                       : Mathemtaical Methods for Chemical Engineering  # The title of the book. Will be placed in the left navbar.
+title                       : Mathematical Methods for Chemical Engineering  # The title of the book. Will be placed in the left navbar.
 author                      : Zachary Ulissi  # The author of the book
 copyright                   : "2022"  # Copyright year to be placed in the footer
 logo                        : logo.png  # A path to the book logo
