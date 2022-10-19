@@ -668,8 +668,8 @@ title="Print to PDF"
 <li><p>Everything we’ve done so far has involved functions that depend only on independent variables:<br />
 e.g.,</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-02e34c24-5c8b-4d9e-abf8-62649e155f77">
-<span class="eqno">(371)<a class="headerlink" href="#equation-02e34c24-5c8b-4d9e-abf8-62649e155f77" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-565bde29-2185-41d8-82bd-5a47bf0f231e">
+<span class="eqno">(371)<a class="headerlink" href="#equation-565bde29-2185-41d8-82bd-5a47bf0f231e" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(x) &amp;&amp;  or &amp;&amp; y(x,t)\\
 \frac{dy}{dx} \text{ for ODEs } &amp;&amp; &amp;&amp; 
 \frac{\partial y}{\partial x} \&amp; \frac{\partial y}{\partial t} \text{ for PDEs}
@@ -677,8 +677,8 @@ y(x) &amp;&amp;  or &amp;&amp; y(x,t)\\
 <ul class="simple">
 <li><p>Sometimes, functions can depend on other functions. e.g. given <span class="math notranslate nohighlight">\(y_1(x)\)</span> &amp; <span class="math notranslate nohighlight">\(y_2(x)\)</span></p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-c31a1c39-dd36-4884-a879-c82216575a3b">
-<span class="eqno">(372)<a class="headerlink" href="#equation-c31a1c39-dd36-4884-a879-c82216575a3b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a4df4629-3553-48e6-b960-145e805403bd">
+<span class="eqno">(372)<a class="headerlink" href="#equation-a4df4629-3553-48e6-b960-145e805403bd" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{dy_1}{dx} = y_2\\
 \frac{dy_2}{dx} = y_1 + \sin x
 \end{align}\]</div>
@@ -687,8 +687,8 @@ y(x) &amp;&amp;  or &amp;&amp; y(x,t)\\
 <h2>Chemical Engineering Example<a class="headerlink" href="#chemical-engineering-example" title="Permalink to this headline">#</a></h2>
 <p>Tanks in series example</p>
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vQ4Tx8bePykBg6D30A_nTyemk4WQsF4afTw65ZDy7k1ekplD1rXFc0q3P37WKdGpIURitwDuCEMawhb/pub?w=558&h=283">
-<div class="amsmath math notranslate nohighlight" id="equation-b3c99828-9322-4d30-af93-67f7c926e6e4">
-<span class="eqno">(373)<a class="headerlink" href="#equation-b3c99828-9322-4d30-af93-67f7c926e6e4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2846d69a-6f5c-41f7-b473-735bdfa033e7">
+<span class="eqno">(373)<a class="headerlink" href="#equation-2846d69a-6f5c-41f7-b473-735bdfa033e7" title="Permalink to this equation">#</a></span>\[\begin{align}
 F_1 &amp;= \frac{h_1 - h_2}{R_1}\\
 F_{out} &amp;= \frac{h_2}{R_2}
 \end{align}\]</div>
@@ -697,16 +697,16 @@ F_{out} &amp;= \frac{h_2}{R_2}
 <li><p>System is coupled because <span class="math notranslate nohighlight">\(F_1\)</span> depends on both <span class="math notranslate nohighlight">\(h_1(t)\)</span> and <span class="math notranslate nohighlight">\(h_2(t)\)</span>.<br />
 Tank 1 MB:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-a797de81-c185-44a0-8a30-810674d276c4">
-<span class="eqno">(374)<a class="headerlink" href="#equation-a797de81-c185-44a0-8a30-810674d276c4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5593eaa1-33aa-4c0c-8a6d-29d0448dff3b">
+<span class="eqno">(374)<a class="headerlink" href="#equation-5593eaa1-33aa-4c0c-8a6d-29d0448dff3b" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{dM}{dt} &amp;= -\rho \cdot F_1 &amp;&amp; \left[ \frac{kg}{s} \right] = \left[\frac{kg}{m^3} \right] \cdot \left[\frac{m^3}{s} \right]\\
 \rho A_1 \frac{dh_1}{dt} &amp;= -\rho \left(\frac{h_1 - h_2}{R_1} \right) &amp;&amp; \left[\frac{kg}{m^3} \right] \cdot [m^2] \cdot \left[\frac{m}{s} \right] = \left[\frac{kg}{s} \right]\\
 \frac{dh_1}{dt} &amp;= \frac{h_2}{\tau_1} - \frac{h_1}{\tau_1}
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\tau \equiv A_iR_i \ [=] \ time\)</span> is the “residence time”<br />
 Tank 2 MB:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c4520438-fd29-47e6-9106-122e6a0e1077">
-<span class="eqno">(375)<a class="headerlink" href="#equation-c4520438-fd29-47e6-9106-122e6a0e1077" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ee6ea49b-3e6a-45c4-960e-5d3875cc21bb">
+<span class="eqno">(375)<a class="headerlink" href="#equation-ee6ea49b-3e6a-45c4-960e-5d3875cc21bb" title="Permalink to this equation">#</a></span>\[\begin{align}
 \rho A_2 \frac{dh_2}{dt} &amp;= \rho(F_1 - F_{out})\\
 \frac{dh_2}{dt} &amp;= \frac{1}{A_2} \left( \frac{h_1 - h_2}{R_1} - \frac{h_2}{R_2}\right)\\
 &amp;= \frac{R_2}{\tau_2}\left( \frac{h_1 - h_2}{R_1} - \frac{h_2}{R_2}\right)\\
@@ -717,26 +717,26 @@ Tank 2 MB:</p>
 <section id="convert-two-first-order-diff-eq-to-a-second-order-diff-eq">
 <h2>Convert two first-order diff eq to a second order diff eq<a class="headerlink" href="#convert-two-first-order-diff-eq-to-a-second-order-diff-eq" title="Permalink to this headline">#</a></h2>
 <p>One approach you can take is to calculate the derivative of the <span class="math notranslate nohighlight">\(1^{st}\)</span> MB and using it to eliminate <span class="math notranslate nohighlight">\(h_2(t)\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-0bfc70a9-6cb9-4e35-a21b-48c8d6f3fc18">
-<span class="eqno">(376)<a class="headerlink" href="#equation-0bfc70a9-6cb9-4e35-a21b-48c8d6f3fc18" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0f8c28df-b356-4e36-b8d9-1af82c0e947d">
+<span class="eqno">(376)<a class="headerlink" href="#equation-0f8c28df-b356-4e36-b8d9-1af82c0e947d" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{d^2h_1}{dt^2} &amp;= \frac{1}{\tau_1}\frac{dh_2}{dt} - \frac{1}{\tau_1}\frac{dh_1}{dt}\\
 \frac{dh_2}{dt} &amp;= \tau_1 \frac{d^2h_1}{dt^2} + \frac{dh_1}{dt}
 \end{align}\]</div>
 <p>And (from the <span class="math notranslate nohighlight">\(1^{st}\)</span> MB):</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8186d764-91c9-4aa5-8570-2fbac1263959">
-<span class="eqno">(377)<a class="headerlink" href="#equation-8186d764-91c9-4aa5-8570-2fbac1263959" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0f4cd8b4-2205-43e6-a1dd-1f969b141788">
+<span class="eqno">(377)<a class="headerlink" href="#equation-0f4cd8b4-2205-43e6-a1dd-1f969b141788" title="Permalink to this equation">#</a></span>\[\begin{align}
 h_2 = \tau_1 \frac{dh_1}{dt} + h_1
 \end{align}\]</div>
 <ul class="simple">
 <li><p>Plug those into MB #2</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-5aaac84c-6f6b-4538-8853-dc89fff9004d">
-<span class="eqno">(378)<a class="headerlink" href="#equation-5aaac84c-6f6b-4538-8853-dc89fff9004d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-78b6c9ef-ade1-4d45-9dc7-91b70ee7abd1">
+<span class="eqno">(378)<a class="headerlink" href="#equation-78b6c9ef-ade1-4d45-9dc7-91b70ee7abd1" title="Permalink to this equation">#</a></span>\[\begin{align}
 \tau_1 \frac{d^2h_1}{dt^2} + \frac{dh_1}{dt} = \frac{R_2}{R_1\tau_2}h_1 - \frac{1}{\tau_2}\left(1 + \frac{R_2}{R_2} \right)\left(\tau_1 \frac{dh_1}{dt} + h_1 \right)
 \end{align}\]</div>
 <p>simplify:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-eceaf94b-e9df-4414-ae17-6234505f098c">
-<span class="eqno">(379)<a class="headerlink" href="#equation-eceaf94b-e9df-4414-ae17-6234505f098c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cfab4d87-3a28-450e-985b-f512dc5a0eee">
+<span class="eqno">(379)<a class="headerlink" href="#equation-cfab4d87-3a28-450e-985b-f512dc5a0eee" title="Permalink to this equation">#</a></span>\[\begin{align}
 h_1'' + \left(\frac{\tau_2 + \tau_1 + \frac{R_2}{R_1}\tau_1}{\tau_1\tau_2} \right) h_1' + \frac{1}{\tau_1\tau_2}h_1 = 0
 \end{align}\]</div>
 <ul class="simple">
@@ -746,32 +746,32 @@ h_1'' + \left(\frac{\tau_2 + \tau_1 + \frac{R_2}{R_1}\tau_1}{\tau_1\tau_2} \righ
 </section>
 <section id="solving-as-coupled-differential-equations">
 <h2>Solving as coupled differential equations<a class="headerlink" href="#solving-as-coupled-differential-equations" title="Permalink to this headline">#</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-1a4f847b-e1e9-4a48-9665-a0d8370a5588">
-<span class="eqno">(380)<a class="headerlink" href="#equation-1a4f847b-e1e9-4a48-9665-a0d8370a5588" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0b188e1a-5d72-47db-87cd-1ec659dae2db">
+<span class="eqno">(380)<a class="headerlink" href="#equation-0b188e1a-5d72-47db-87cd-1ec659dae2db" title="Permalink to this equation">#</a></span>\[\begin{align}
 h_1' &amp;= -\frac{1}{\tau_1}h_1 + \frac{1}{\tau_1}h_2\\
 h_2' &amp;= \frac{R_2}{R_1\tau_2}h_1 - \left(1 + \frac{R_2}{R_1} \right)\frac{1}{\tau_2}h_2
 \end{align}\]</div>
 <ul class="simple">
 <li><p>Now let’s set</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-e4ba12b1-06aa-4675-8a3c-68d6a2741cb6">
-<span class="eqno">(381)<a class="headerlink" href="#equation-e4ba12b1-06aa-4675-8a3c-68d6a2741cb6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d1d00625-edcb-4833-9b74-71446b97b000">
+<span class="eqno">(381)<a class="headerlink" href="#equation-d1d00625-edcb-4833-9b74-71446b97b000" title="Permalink to this equation">#</a></span>\[\begin{align}
 a_{11} = -\frac{1}{\tau_1} &amp;&amp; a_{12} = \frac{1}{\tau_1}\\
 a_{21} = \frac{R_2}{R_1\tau_2} &amp;&amp; a_{22} = -\frac{1}{\tau_2}\left(1 + \frac{R_2}{R_1}\right)
 \end{align}\]</div>
 <ul class="simple">
 <li><p>Then we have:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-939f4ddd-5f32-439c-b436-0c9b6a0543a0">
-<span class="eqno">(382)<a class="headerlink" href="#equation-939f4ddd-5f32-439c-b436-0c9b6a0543a0" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cffdf794-6f84-46b8-96c3-c9537d1b17af">
+<span class="eqno">(382)<a class="headerlink" href="#equation-cffdf794-6f84-46b8-96c3-c9537d1b17af" title="Permalink to this equation">#</a></span>\[\begin{align}
 h_1' = a_{11}h_1 + a_{12}h_2\\
 h_2' = a_{21}h_1 + a_{22}h_2
 \end{align}\]</div>
 <ul class="simple">
 <li><p>Look familiar?</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-ba2b87f7-07f6-4adf-8de7-7559e12bfd35">
-<span class="eqno">(383)<a class="headerlink" href="#equation-ba2b87f7-07f6-4adf-8de7-7559e12bfd35" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-667a68be-a55f-4ee1-9ae1-ff62060f5526">
+<span class="eqno">(383)<a class="headerlink" href="#equation-667a68be-a55f-4ee1-9ae1-ff62060f5526" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix}h_1' \\ h_2' \end{bmatrix} &amp;= \begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22}\end{bmatrix} \begin{bmatrix} h_1 \\ h_2 \end{bmatrix}\\
 \vec{h'} = \arr{A} \vec{h}
 \end{align}\]</div>
@@ -779,8 +779,8 @@ h_2' = a_{21}h_1 + a_{22}h_2
 <li><p>Let’s foray into derivative matrices before returning to our tank problem<br />
 Property:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-a61970fb-5fe2-4ce0-ba23-393ed7400b3f">
-<span class="eqno">(384)<a class="headerlink" href="#equation-a61970fb-5fe2-4ce0-ba23-393ed7400b3f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-459a70b0-4fad-4977-aade-0d4a6bf190f1">
+<span class="eqno">(384)<a class="headerlink" href="#equation-459a70b0-4fad-4977-aade-0d4a6bf190f1" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix}\frac{dy_1}{dt} \\ \frac{dy_2}{dt} \end{bmatrix} = \begin{bmatrix} y_1' \\ y_2' \end{bmatrix} = \frac{d}{dt}\begin{bmatrix}y_1 \\ y_2 \end{bmatrix} \rightarrow \text{take derivative of each element}
 \end{align}\]</div>
 </section>
@@ -794,31 +794,31 @@ Property:</p></li>
 <ul class="simple">
 <li><p>Goal is to solve <span class="math notranslate nohighlight">\(\vec{y'} = \frac{d}{dt} \vec{y} = \arr{A}\vec{y}\)</span> for <span class="math notranslate nohighlight">\(\vec{y}(t)\)</span></p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-2014d208-6a8f-4cc3-ace7-a2ff01208479">
-<span class="eqno">(385)<a class="headerlink" href="#equation-2014d208-6a8f-4cc3-ace7-a2ff01208479" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4b8deecb-db5c-412c-b099-9df833e82f55">
+<span class="eqno">(385)<a class="headerlink" href="#equation-4b8deecb-db5c-412c-b099-9df833e82f55" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix}y_1' \\ y_2' \end{bmatrix} = \begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{bmatrix} \begin{bmatrix} y_1 \\ y_2\end{bmatrix}
 \end{align}\]</div>
 <p><span class="math notranslate nohighlight">\(y_1(t)\)</span> and <span class="math notranslate nohighlight">\(y_2(t)\)</span> are coupled functions, not basis functions.</p>
 <ul class="simple">
 <li><p>Let’s assume <span class="math notranslate nohighlight">\(\vec{y}\)</span> takes the form <span class="math notranslate nohighlight">\(\vec{y} = \vec{x}e^{\lambda t}\)</span> wher <span class="math notranslate nohighlight">\(\vec{x}\)</span> is a vector of constants</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-b5aae3b4-d9ae-41b0-9851-25d16d9b422e">
-<span class="eqno">(386)<a class="headerlink" href="#equation-b5aae3b4-d9ae-41b0-9851-25d16d9b422e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-936afbcb-fc27-4738-8a75-4d96d23c9533">
+<span class="eqno">(386)<a class="headerlink" href="#equation-936afbcb-fc27-4738-8a75-4d96d23c9533" title="Permalink to this equation">#</a></span>\[\begin{align}
 \therefore \vec{y'} = \lambda \vec{x}e^{\lambda t}
 \end{align}\]</div>
 <ul class="simple">
 <li><p>Plugging back into <span class="math notranslate nohighlight">\(\vec{y'} = \arr{A}\vec{y}\)</span> gives</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-b4cc5491-b6fd-4f7d-bc08-be213005a61a">
-<span class="eqno">(387)<a class="headerlink" href="#equation-b4cc5491-b6fd-4f7d-bc08-be213005a61a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b384667a-5848-448b-bb9f-cc8f4e8536e1">
+<span class="eqno">(387)<a class="headerlink" href="#equation-b384667a-5848-448b-bb9f-cc8f4e8536e1" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lambda \vec{x} e^{\lambda t} &amp;= \arr{A}\vec{x}e^{\lambda t}\\
 \lambda \vec{x} &amp;= \arr{A}\vec{x}
 \end{align}\]</div>
 <p><span class="math notranslate nohighlight">\(\therefore\)</span>Any set of <span class="math notranslate nohighlight">\(y_1(t) = x_1e^{\lambda t}\)</span> and <span class="math notranslate nohighlight">\(y_2(t) = x_2e^{\lambda t}\)</span> that fits <span class="math notranslate nohighlight">\(\lambda\vec{x} = \arr{A} \vec{x}\)</span> are solutions. Therefore, finding the eigenvalues and eigenvectors of <span class="math notranslate nohighlight">\(\arr{A}\)</span> will yield solution.</p>
 <section id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
-<div class="amsmath math notranslate nohighlight" id="equation-238a6bd8-9479-486c-aaaf-34f2561928f2">
-<span class="eqno">(388)<a class="headerlink" href="#equation-238a6bd8-9479-486c-aaaf-34f2561928f2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fdbfb165-252b-4d07-a61d-b435c5179345">
+<span class="eqno">(388)<a class="headerlink" href="#equation-fdbfb165-252b-4d07-a61d-b435c5179345" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1' &amp;= -4y_1 - 6y_2\\
 y_2' &amp;= y_1 + y_2
 \end{align}\]</div>
@@ -826,8 +826,8 @@ y_2' &amp;= y_1 + y_2
 <li><p>By assuming that <span class="math notranslate nohighlight">\(\vec{y} = \vec{x}e^{\lambda t}\)</span>, we can find the eigenvalues and vectors of <span class="math notranslate nohighlight">\(\arr{A}\)</span> to identify <span class="math notranslate nohighlight">\(\vec{x}\)</span> and <span class="math notranslate nohighlight">\(\lambda\)</span> to solve system.</p></li>
 <li><p>Find <span class="math notranslate nohighlight">\(\lambda\)</span> and <span class="math notranslate nohighlight">\(\vec{x}\)</span> by solving</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-91cebfb9-e84e-4a0a-88a7-a85f5851461b">
-<span class="eqno">(389)<a class="headerlink" href="#equation-91cebfb9-e84e-4a0a-88a7-a85f5851461b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a3690607-1cdd-43ba-894b-68d5c786434a">
+<span class="eqno">(389)<a class="headerlink" href="#equation-a3690607-1cdd-43ba-894b-68d5c786434a" title="Permalink to this equation">#</a></span>\[\begin{align}
 \det(\arr{A} - \lambda \arr{I}) = 0\\
 \left|\begin{array}{} -4-\lambda &amp; -6 \\ 1 &amp; 1-\lambda \end{array}\right| = 0\\
 (-4-\lambda)(1-\lambda) - (-6)(1) = 0\\
@@ -840,8 +840,8 @@ y_2' &amp;= y_1 + y_2
 <li><p>Find eigenvector <span class="math notranslate nohighlight">\(\vec{x}^{(1)}\)</span> associated with <span class="math notranslate nohighlight">\(\lambda_1 = -2\)</span>. <br />
 solve</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-c3580061-e8ce-49b8-a457-203f18906e94">
-<span class="eqno">(390)<a class="headerlink" href="#equation-c3580061-e8ce-49b8-a457-203f18906e94" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-43e22236-4d8f-495d-b51f-6d74d677d65c">
+<span class="eqno">(390)<a class="headerlink" href="#equation-43e22236-4d8f-495d-b51f-6d74d677d65c" title="Permalink to this equation">#</a></span>\[\begin{align}
 \arr{A}\vec{x}^{(1)} = \lambda_1 \vec{x}^{(1)}\\
 (\arr{A} - \lambda_1\arr{I}) \vec{x}^{(1)} = \vec{0}\\
 \begin{bmatrix}-2 &amp; -6 \\ 1 &amp; 3 \end{bmatrix} \begin{bmatrix}x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix} \implies x_1 + 3x_2 = 0
@@ -853,8 +853,8 @@ No. Two coupled <span class="math notranslate nohighlight">\(1^\circ\)</span> OD
 <ul class="simple">
 <li><p>Find eigenvector <span class="math notranslate nohighlight">\(\vec{x}^{(2)}\)</span> associated with <span class="math notranslate nohighlight">\(\lambda_2 = -1\)</span></p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-a5d69f08-993a-47e0-844a-95669fa92d24">
-<span class="eqno">(391)<a class="headerlink" href="#equation-a5d69f08-993a-47e0-844a-95669fa92d24" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-26c8c9d7-ef7f-42ed-9b4f-5a1ba4b8bc80">
+<span class="eqno">(391)<a class="headerlink" href="#equation-26c8c9d7-ef7f-42ed-9b4f-5a1ba4b8bc80" title="Permalink to this equation">#</a></span>\[\begin{align}
 (\arr{A} - \lambda_2 \arr{I}) = \vec{0}\\
 \begin{bmatrix}-3 &amp; -6 \\ 1 &amp; 2 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}\\
 x_1 + 2x_2 = 0\\
@@ -865,8 +865,8 @@ x_1 + 2x_2 = 0\\
 <ul class="simple">
 <li><p>The general solution to <span class="math notranslate nohighlight">\(\vec{y}' = \arr{A}\vec{y}\)</span> is</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-606dd730-03a2-4094-81e7-440b7a84b1f0">
-<span class="eqno">(392)<a class="headerlink" href="#equation-606dd730-03a2-4094-81e7-440b7a84b1f0" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1518dea9-e9a7-484d-ad2b-2297fed6ae4d">
+<span class="eqno">(392)<a class="headerlink" href="#equation-1518dea9-e9a7-484d-ad2b-2297fed6ae4d" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vec{y} &amp;= c_1\vec{x}^{(1)} e^{\lambda_1t} + c_2\vec{x}^{(2)}e^{\lambda_2t}\\
 \implies y_1 &amp;= c_1e^{-2t} + c_2e^{-t}\\
 y_2 &amp;= -\frac{1}{3}c_1e^{-2t} - \frac{1}{2}c_2e^{-t}
@@ -875,30 +875,30 @@ y_2 &amp;= -\frac{1}{3}c_1e^{-2t} - \frac{1}{2}c_2e^{-t}
 <ul class="simple">
 <li><p>Let’s check our answer:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-98938686-d759-477a-b4d1-d57222d77372">
-<span class="eqno">(393)<a class="headerlink" href="#equation-98938686-d759-477a-b4d1-d57222d77372" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-88b57562-e1b1-4a03-a232-f3e5e71d609d">
+<span class="eqno">(393)<a class="headerlink" href="#equation-88b57562-e1b1-4a03-a232-f3e5e71d609d" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1' &amp;= -2c_1e^{-2t} - c_2e^{-t}\\
 y_2' &amp;= \frac{2}{3}c_1e^{-2t} + \frac{1}{2}c_2e^{-t}
 \end{align}\]</div>
 <p>Plug into one original equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6f365440-a7ff-4dd6-8638-1a3d593a8244">
-<span class="eqno">(394)<a class="headerlink" href="#equation-6f365440-a7ff-4dd6-8638-1a3d593a8244" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7050b956-d033-4039-a733-f046e653d854">
+<span class="eqno">(394)<a class="headerlink" href="#equation-7050b956-d033-4039-a733-f046e653d854" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1' &amp;= -4y_1 - 6y_2\\
 -2c_1e^{-2t} - c_2e^{-t} &amp;= -4[c_1e^{-2t} + c_2e^{-t}] -6[-\frac{1}{3}c_1e^{-2t} - \frac{1}{2}c_2e^{-t}]\\
 &amp;= (-4+2)c_1e^{-2t} + (-4+3)c_2e^{-t}\\
 &amp;= -2c_1e^{-2t} - c_2e^{-t}
 \end{align}\]</div>
 <p>And the other:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-70844426-206a-46ba-a271-0470d15f5bcc">
-<span class="eqno">(395)<a class="headerlink" href="#equation-70844426-206a-46ba-a271-0470d15f5bcc" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b57929cd-e5e5-48a4-81d9-2e40a121d0ed">
+<span class="eqno">(395)<a class="headerlink" href="#equation-b57929cd-e5e5-48a4-81d9-2e40a121d0ed" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_2' &amp;= y_1 + y_2\\
 \frac{2}{3}c_1e^{-2t} + \frac{1}{2}c_2e^{-t} &amp;= c_1e^{-2t} + c_2e^{-t} - \frac{1}{3}c_1e^{-2t}-\frac{1}{2}c_2e^{-t}\\
 &amp;= \frac{2}{3}c_1e^{-2t} + \frac{1}{2}c_2e^{-t}
 \end{align}\]</div>
 <p>Now, let’s return to our tanks:<br />
 <span class="math notranslate nohighlight">\(\vec{h}' = \arr{A}\vec{h}\)</span> where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fe5b01bd-38a0-4aec-a40d-38049c247913">
-<span class="eqno">(396)<a class="headerlink" href="#equation-fe5b01bd-38a0-4aec-a40d-38049c247913" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7b556b8c-f722-4718-b2b1-cf11c4d0a153">
+<span class="eqno">(396)<a class="headerlink" href="#equation-7b556b8c-f722-4718-b2b1-cf11c4d0a153" title="Permalink to this equation">#</a></span>\[\begin{align}
 \arr{A} = \begin{bmatrix} -\frac{1}{\tau_1} &amp; \frac{1}{\tau_1} \\ \frac{R_2}{R_1\tau_2} &amp; -\left(\frac{R_1 + R_2}{R_1\tau_2}\right) \end{bmatrix}
 \end{align}\]</div>
 <ul class="simple">
@@ -906,15 +906,15 @@ y_2' &amp;= y_1 + y_2\\
 <li><p>Solve by inserting values for <span class="math notranslate nohighlight">\(R_2,R_2,\tau_1\)</span> and <span class="math notranslate nohighlight">\(\tau_2 \rightarrow\)</span> then find eigenvalues (<span class="math notranslate nohighlight">\(\lambda_1\)</span> and <span class="math notranslate nohighlight">\(\lambda_2\)</span>) and eigenvectors (<span class="math notranslate nohighlight">\(\vec{x}^{(1)}\)</span> and <span class="math notranslate nohighlight">\(\vec{x}^{(2)}\)</span>) of <span class="math notranslate nohighlight">\(\arr{A}\)</span></p></li>
 <li><p>General solution will be</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-22b529f0-8a08-455d-9102-e6846e3d685b">
-<span class="eqno">(397)<a class="headerlink" href="#equation-22b529f0-8a08-455d-9102-e6846e3d685b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4ad8d241-ed67-479e-9bc8-43ae51fcf6d3">
+<span class="eqno">(397)<a class="headerlink" href="#equation-4ad8d241-ed67-479e-9bc8-43ae51fcf6d3" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vec{h} &amp;= c_1\vec{x}^{(1)}e^{\lambda_1t} + c_2\vec{x}^{(2)}e^{\lambda_2t}\\
 \implies h_1(t) &amp;= c_1x_1^{(1)}e^{\lambda_1t} + c_1x_1^{(2)}e^{\lambda_2t}\\
 h_2(t) &amp;= c_1x_2^{(1)}e^{\lambda_1t} + c_2x_2^{(2)}e^{\lambda_2t} 
 \end{align}\]</div>
 <p>For example, given:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0e174297-b096-4e83-b102-d21f5574e467">
-<span class="eqno">(398)<a class="headerlink" href="#equation-0e174297-b096-4e83-b102-d21f5574e467" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a2938cf4-43f2-4204-992a-03f0854e3472">
+<span class="eqno">(398)<a class="headerlink" href="#equation-a2938cf4-43f2-4204-992a-03f0854e3472" title="Permalink to this equation">#</a></span>\[\begin{align}
 A_1 = 5\  m^2, R_1 = 2 \ hr/m^2 \rightarrow \tau_1 = 10\  hr\\
 A_2 = 5 \ m^2, R_2 = 1 \ hr/m^2 \rightarrow \tau_2 = 5\ 
  hr\\
@@ -923,8 +923,8 @@ A_2 = 5 \ m^2, R_2 = 1 \ hr/m^2 \rightarrow \tau_2 = 5\
 <ul class="simple">
 <li><p>Find eigenvalues</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-60092245-0f5a-4fa7-bd36-185f2d0f643e">
-<span class="eqno">(399)<a class="headerlink" href="#equation-60092245-0f5a-4fa7-bd36-185f2d0f643e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-726bbb2c-53e1-4a02-9316-0cf70e80dbea">
+<span class="eqno">(399)<a class="headerlink" href="#equation-726bbb2c-53e1-4a02-9316-0cf70e80dbea" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\arr{A} - \lambda\arr{I}| = 0\\
 \left|\begin{array}{} -0.1-\lambda &amp; 0.1 \\ 0.1 &amp; -0.3-\lambda \end{array}\right| = 0\\
 (-0.1-\lambda)(-0.3-\lambda)-0.01 = 0\\
@@ -935,8 +935,8 @@ A_2 = 5 \ m^2, R_2 = 1 \ hr/m^2 \rightarrow \tau_2 = 5\
 <ul class="simple">
 <li><p>Find <span class="math notranslate nohighlight">\(\vec{x}^{(1)}\)</span> associated with <span class="math notranslate nohighlight">\(\lambda_1 = -0.06 \ hr^{-1}\)</span></p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-9e3d3332-fb10-4c23-8c72-afaa6281c55f">
-<span class="eqno">(400)<a class="headerlink" href="#equation-9e3d3332-fb10-4c23-8c72-afaa6281c55f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-abcf0a22-f3af-497d-b806-fb10afff00bd">
+<span class="eqno">(400)<a class="headerlink" href="#equation-abcf0a22-f3af-497d-b806-fb10afff00bd" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix} -0.04 &amp; 0.1 \\ 0.1 &amp; -0.24 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}\\
 \implies -0.04 x_1 + 0.1 x_2 = 0\\
 x_1 = \frac{0.1}{+0.04}x_2 \simeq 2.5x_2 \implies \vec{x}^{(1)} \simeq \begin{bmatrix} 2.5 \\ 1 \end{bmatrix}
@@ -944,8 +944,8 @@ x_1 = \frac{0.1}{+0.04}x_2 \simeq 2.5x_2 \implies \vec{x}^{(1)} \simeq \begin{bm
 <ul class="simple">
 <li><p>Find <span class="math notranslate nohighlight">\(\vec{x}^{(2)}\)</span> associated with <span class="math notranslate nohighlight">\(\lambda_2 = -0.34\ hr^{-1}\)</span></p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-5cf1a75a-7931-4bd3-93f6-6f353410c0a2">
-<span class="eqno">(401)<a class="headerlink" href="#equation-5cf1a75a-7931-4bd3-93f6-6f353410c0a2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0a20eca8-187b-4f7a-adb8-15c80535e1c6">
+<span class="eqno">(401)<a class="headerlink" href="#equation-0a20eca8-187b-4f7a-adb8-15c80535e1c6" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix} 0.24 &amp; 0.1 \\ 0.1 &amp; 0.04 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}\\
 \implies 0.24 x_1 + 0.1 x_2 = 0\\
 x_1 = \frac{0.1}{-0.24}x_2 \simeq -0.42x_2 \implies \vec{x}^{(2)} \simeq \begin{bmatrix} -0.42 \\ 1 \end{bmatrix}
@@ -953,8 +953,8 @@ x_1 = \frac{0.1}{-0.24}x_2 \simeq -0.42x_2 \implies \vec{x}^{(2)} \simeq \begin{
 <ul class="simple">
 <li><p>General solution is:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-9b278ce3-6759-492c-9756-ec83b10c9d5a">
-<span class="eqno">(402)<a class="headerlink" href="#equation-9b278ce3-6759-492c-9756-ec83b10c9d5a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f25493b8-041c-439b-be9f-3b54eb599c30">
+<span class="eqno">(402)<a class="headerlink" href="#equation-f25493b8-041c-439b-be9f-3b54eb599c30" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vec{h} = c_1\begin{bmatrix}2.5 \\ 1 \end{bmatrix}e^{-0.06\ hr^{-1}t} + c_2 \begin{bmatrix} -0.42 \\ 1 \end{bmatrix} e^{-0.34\ hr^{-1}t}
 \end{align}\]</div>
 </section>

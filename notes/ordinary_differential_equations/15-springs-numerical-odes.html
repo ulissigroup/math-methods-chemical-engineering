@@ -873,21 +873,21 @@ title="Print to PDF"
 <ul class="simple">
 <li><p>We’ll start with simple <span class="math notranslate nohighlight">\(1^\circ\)</span> ODE Initial Value Problem (IVP)</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-afbf7b0b-4c4e-43ca-81a4-79a77f84259e">
-<span class="eqno">(353)<a class="headerlink" href="#equation-afbf7b0b-4c4e-43ca-81a4-79a77f84259e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0e0d7791-a9df-41c0-992d-c90566773720">
+<span class="eqno">(353)<a class="headerlink" href="#equation-0e0d7791-a9df-41c0-992d-c90566773720" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{dy}{dt} = -y, &amp;&amp; y(t=0) = 1
 \end{align}\]</div>
 <p>We’ve solved this already</p>
-<div class="amsmath math notranslate nohighlight" id="equation-24665731-fe95-493e-a918-54d79fa6375b">
-<span class="eqno">(354)<a class="headerlink" href="#equation-24665731-fe95-493e-a918-54d79fa6375b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f3b229d6-3ccc-406b-a894-09faad69b62a">
+<span class="eqno">(354)<a class="headerlink" href="#equation-f3b229d6-3ccc-406b-a894-09faad69b62a" title="Permalink to this equation">#</a></span>\[\begin{align}
 y = \exp(-x)
 \end{align}\]</div>
 <ul class="simple">
 <li><p>How would you do this without being able to solve differential equation? The Taylor expansion is a related concept, so let’s quickly review that.</p></li>
 </ul>
 <p>For today, we’re going to solve differential equations of the form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-803929d5-2f27-4ac3-8d6a-03529a722dbf">
-<span class="eqno">(355)<a class="headerlink" href="#equation-803929d5-2f27-4ac3-8d6a-03529a722dbf" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c341f8e6-f507-4a8a-acee-887d8ef06dc5">
+<span class="eqno">(355)<a class="headerlink" href="#equation-c341f8e6-f507-4a8a-acee-887d8ef06dc5" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{dy}{dt}=f(t, y)
 \end{align}\]</div>
 <section id="benefits-of-analytical-numerical-methods">
@@ -934,16 +934,16 @@ y = \exp(-x)
 <ul class="simple">
 <li><p>We have a complicated function (based on info at one point) that we want to  approximate. The Taylor series is a polynomial approxiamation of <span class="math notranslate nohighlight">\(f\)</span>:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-b0456289-efa1-4cc0-a57e-2e08f6dbc1e4">
-<span class="eqno">(356)<a class="headerlink" href="#equation-b0456289-efa1-4cc0-a57e-2e08f6dbc1e4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b7782294-1b19-4b3e-b60c-9cddf3d79212">
+<span class="eqno">(356)<a class="headerlink" href="#equation-b7782294-1b19-4b3e-b60c-9cddf3d79212" title="Permalink to this equation">#</a></span>\[\begin{align}
 \hat{f} = a + bx + cx^2 + dx^3
 \end{align}\]</div>
 <p>The simplest approximation is <span class="math notranslate nohighlight">\(\hat{f} = a\)</span>. Let’s demonstrate with <span class="math notranslate nohighlight">\(f(x) = \exp(x)\)</span></p>
 <ul class="simple">
 <li><p>Each coefficient is obtained by matching derivatives</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-0a3533f9-4ced-4f4e-9c2a-376adbabb734">
-<span class="eqno">(357)<a class="headerlink" href="#equation-0a3533f9-4ced-4f4e-9c2a-376adbabb734" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-289b287c-6cf0-4c10-b715-68629b522f3a">
+<span class="eqno">(357)<a class="headerlink" href="#equation-289b287c-6cf0-4c10-b715-68629b522f3a" title="Permalink to this equation">#</a></span>\[\begin{align}
 \hat{f}(x=0) = a = f(x=0)\\
 \frac{d\hat{f}}{dx}\bigg|_{x=0} = b = \frac{df}{dx}\bigg|_{x=0}\\
 \frac{d^2\hat{f}}{dx^2}\bigg|_{x=0} = 2c = \frac{d^2}{dx^2}\bigg|_{x=0}
@@ -955,26 +955,26 @@ y = \exp(-x)
 <ul class="simple">
 <li><p>Simplest possible scheme - use the Taylor expansion to move from one point to the next for integrating. Start with definition of derivative:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-081f9f9d-d123-41e4-810d-86ca06c18cf5">
-<span class="eqno">(358)<a class="headerlink" href="#equation-081f9f9d-d123-41e4-810d-86ca06c18cf5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7f0d83e3-1dce-4e6f-a0c5-713c0c4fefe9">
+<span class="eqno">(358)<a class="headerlink" href="#equation-7f0d83e3-1dce-4e6f-a0c5-713c0c4fefe9" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{dy}{dt}\bigg|_{t=0} = \frac{y(t=h) - y(t=0)}{h - 0}\\
 \frac{dy}{dt}\bigg|_{t=0} = \frac{y(t_1) - y(t_0)}{t_1 - t_0}
 \end{align}\]</div>
 <p>Let’s rearrange</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9e21ec9a-881b-4ac4-bc3c-7319e3c5c9c1">
-<span class="eqno">(359)<a class="headerlink" href="#equation-9e21ec9a-881b-4ac4-bc3c-7319e3c5c9c1" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-52752fcf-8718-4253-b8c1-87fa522a1395">
+<span class="eqno">(359)<a class="headerlink" href="#equation-52752fcf-8718-4253-b8c1-87fa522a1395" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(t_1) = \frac{dy}{dt}\bigg|_{t_0}(t_1-t_0) + y(t_0) \ \rightarrow \text{  ODE gives us this!}
 \end{align}\]</div>
 <p><span class="math notranslate nohighlight">\(\underline{\text{Ex}}\)</span> : <span class="math notranslate nohighlight">\(\frac{dy}{dt} = - y\)</span>,  <span class="math notranslate nohighlight">\(\hspace{1cm}y(t=0) = 1\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-774cb642-9b17-4650-b16b-66ab28dbc983">
-<span class="eqno">(360)<a class="headerlink" href="#equation-774cb642-9b17-4650-b16b-66ab28dbc983" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-30ce25d5-1133-4b45-a08a-8fd3776e5c4e">
+<span class="eqno">(360)<a class="headerlink" href="#equation-30ce25d5-1133-4b45-a08a-8fd3776e5c4e" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(t&amp;=0) = 1\\
 y(t_1) &amp;= \frac{dy}{dt}\bigg|_{t=0} (t_1 - 0) + y(t = 0)\\
 &amp;= -y \bigg|_{t=0}t_1 + 1
 \end{align}\]</div>
 <p>Evaluate error for Euler approximation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cbc0da3f-c523-4a92-9687-e22ce327b1ab">
-<span class="eqno">(361)<a class="headerlink" href="#equation-cbc0da3f-c523-4a92-9687-e22ce327b1ab" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d205f2ae-08b5-4a9f-b10d-0801094bc205">
+<span class="eqno">(361)<a class="headerlink" href="#equation-d205f2ae-08b5-4a9f-b10d-0801094bc205" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(t) = \exp(-t) \leftarrow \text{  known}\\
 y(\Delta t) = y(0) + \Delta t \frac{dy}{dt}\bigg|_{t=0} + \frac{\Delta t^2}{2} \frac{d^2y}{dt^2}\bigg|_{t=0} + ...\\
 \frac{y(\Delta t) - y(0)}{\Delta t} = \frac{dy}{dt}\bigg|_{t=0} + \frac{\Delta t}{2} \frac{d^2y}{dt^2}\bigg|_{t=0} + ...
@@ -1056,7 +1056,9 @@ y(\Delta t) = y(0) + \Delta t \frac{dy}{dt}\bigg|_{t=0} + \frac{\Delta t^2}{2} \
 <p>Let’s test this function for a step size of 0.5</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate a range of t from 0 to 2, with a timestep of 0.5</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Generate a range of t from 0 to 2, with a timestep of 0.5</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">2.1</span><span class="p">,</span><span class="mf">.01</span><span class="p">)</span>
 
 <span class="c1"># Use or ne function</span>
@@ -1081,15 +1083,16 @@ y(\Delta t) = y(0) + \Delta t \frac{dy}{dt}\bigg|_{t=0} + \frac{\Delta t^2}{2} \
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Generate a range of t from 0 to 2, with a timestep of 0.5</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">2.1</span><span class="p">,</span><span class="mf">.01</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Use or ne function</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">y</span> <span class="o">=</span> <span class="n">euler_integrate</span><span class="p">(</span><span class="n">yprime</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">6</span>                     <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">7</span>                     <span class="n">y0</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">12</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">y</span> <span class="o">=</span> <span class="n">euler_integrate</span><span class="p">(</span><span class="n">yprime</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">8</span>                     <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">9</span>                     <span class="n">y0</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="c1">#Plot the results</span>
+<span class="ne">---&gt; </span><span class="mi">12</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;ok&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Numerical Sol&#39;&#39;n to dy/dt=-y, y(t=0)=1&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Numerical Sol&#39;&#39;n to dy/dt=-y, y(t=0)=1&#39;</span><span class="p">)</span>
 
-<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1101,11 +1104,6 @@ y(\Delta t) = y(0) + \Delta t \frac{dy}{dt}\bigg|_{t=0} + \frac{\Delta t^2}{2} \
 <span class="n">y</span> <span class="o">=</span> <span class="n">euler_integrate</span><span class="p">(</span><span class="n">yprime</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error of f(x=2) = </span><span class="si">%f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">abs</span>(y[-1]-np.exp(-t[-1])))
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error of f(x=2) = 0.000013
 </pre></div>
 </div>
 </div>
@@ -1134,12 +1132,6 @@ y(\Delta t) = y(0) + \Delta t \frac{dy}{dt}\bigg|_{t=0} + \frac{\Delta t^2}{2} \
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f72a128ac10&gt;
-</pre></div>
-</div>
-<img alt="../../_images/15-springs-numerical-odes_21_1.png" src="../../_images/15-springs-numerical-odes_21_1.png" />
-</div>
 </div>
 </section>
 <section id="realistic-method-runge-kutta">
@@ -1150,8 +1142,8 @@ y(\Delta t) = y(0) + \Delta t \frac{dy}{dt}\bigg|_{t=0} + \frac{\Delta t^2}{2} \
 <li><p>The Runge-Kutta method works very well and is widely used in practice, and is a reasonable trade-off in Order, complexity, speed etc. This is an <span class="math notranslate nohighlight">\(O(\Delta t^4)\)</span> method - extemely powerful.<br />
 Def:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-d5c971cf-7359-44bd-b14b-e5b5f6bca17c">
-<span class="eqno">(362)<a class="headerlink" href="#equation-d5c971cf-7359-44bd-b14b-e5b5f6bca17c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8b5fa5fa-241a-4acd-8077-8450276f7319">
+<span class="eqno">(362)<a class="headerlink" href="#equation-8b5fa5fa-241a-4acd-8077-8450276f7319" title="Permalink to this equation">#</a></span>\[\begin{align}
 k_1 &amp;= \Delta t \cdot f(t^N, y^N)\\
 k_2 &amp;= \Delta t \cdot f\left(t^N+\frac{\Delta t}{2}, y^N + \frac{k_1}{2}\right)\\
 k_3 &amp;= \Delta t \cdot f\left(t^N+\frac{\Delta t}{2}, y^N + \frac{k_2}{2}\right)\\
@@ -1187,12 +1179,6 @@ y^{N+1} &amp;= y^N + \frac{k_1}{6} + \frac{k_2}{3} + \frac{k_3}{3} +  \frac{k_4}
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f72a14e8290&gt;
-</pre></div>
-</div>
-<img alt="../../_images/15-springs-numerical-odes_25_1.png" src="../../_images/15-springs-numerical-odes_25_1.png" />
 </div>
 </div>
 <p>We can also do the same thing and get it to evaluate at a bunch of points.</p>
@@ -1231,12 +1217,6 @@ y^{N+1} &amp;= y^N + \frac{k_1}{6} + \frac{k_2}{3} + \frac{k_3}{3} +  \frac{k_4}
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f72a1481b10&gt;
-</pre></div>
-</div>
-<img alt="../../_images/15-springs-numerical-odes_27_1.png" src="../../_images/15-springs-numerical-odes_27_1.png" />
 </div>
 </div>
 <section id="troubleshooting-solve-ivp-and-extra-options">
@@ -1334,12 +1314,6 @@ m\frac{d^2x}{dt^2}=-kx-c\frac{dx}{dt}
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f72a0f1ecd0&gt;]
-</pre></div>
-</div>
-<img alt="../../_images/15-springs-numerical-odes_30_1.png" src="../../_images/15-springs-numerical-odes_30_1.png" />
-</div>
 </div>
 <p>Now, let’s add some damping to this.</p>
 <div class="cell docutils container">
@@ -1389,8 +1363,8 @@ m\frac{d^2x}{dt^2}=-kx-c\frac{dx}{dt}+F(t)
 <h2>Euler’s method with second derivatives<a class="headerlink" href="#euler-s-method-with-second-derivatives" title="Permalink to this headline">#</a></h2>
 <p>We truncated the approximation at the first derivative in the Euler scheme. An obvious question is whether using the second derivative would improve things?</p>
 <p>For example, let’s propose a new method:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-02994b21-f8f5-4343-844f-215e79303a92">
-<span class="eqno">(363)<a class="headerlink" href="#equation-02994b21-f8f5-4343-844f-215e79303a92" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5bbc4059-8642-4ce3-970b-12dc57346c40">
+<span class="eqno">(363)<a class="headerlink" href="#equation-5bbc4059-8642-4ce3-970b-12dc57346c40" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(t) - y(t_0) = \Delta t \frac{dy}{dt}\bigg|_{t = t_0} + \frac{\Delta t^2}{2} \frac{d^2y}{dt^2}\bigg|_{t = t_0}
 \end{align}\]</div>
 <p>We have a new term, if we know <span class="math notranslate nohighlight">\(\frac{d^2y}{dt^2}\bigg|_{t=t_0}\)</span>. Now the order should be better as <span class="math notranslate nohighlight">\(\Delta t^2\)</span></p>
@@ -1398,8 +1372,8 @@ y(t) - y(t_0) = \Delta t \frac{dy}{dt}\bigg|_{t = t_0} + \frac{\Delta t^2}{2} \f
 <h3>Example with second order<a class="headerlink" href="#example-with-second-order" title="Permalink to this headline">#</a></h3>
 <p><span class="math notranslate nohighlight">\(y(t_1) = -t + 1\)</span><br />
 or more generally:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-52b86a4a-2a3d-48da-8cf6-9778fc3c35b5">
-<span class="eqno">(364)<a class="headerlink" href="#equation-52b86a4a-2a3d-48da-8cf6-9778fc3c35b5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ff066917-41dd-43b6-b164-fabf7311e9b4">
+<span class="eqno">(364)<a class="headerlink" href="#equation-ff066917-41dd-43b6-b164-fabf7311e9b4" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(t_1) = -y (t_0) (t_1 - t_0) + y(t_0)
 \end{align}\]</div>
 <p>Remember, this only really holds for <span class="math notranslate nohighlight">\(t_1 - t_0 \rightarrow 0\)</span></p>
@@ -1452,12 +1426,6 @@ y(t_1) = -y (t_0) (t_1 - t_0) + y(t_0)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f34480aa750&gt;
-</pre></div>
-</div>
-<img alt="../../_images/15-springs-numerical-odes_40_1.png" src="../../_images/15-springs-numerical-odes_40_1.png" />
-</div>
 </div>
 <p>Let’s see how accurate this new method is with respect to step size!</p>
 <div class="cell docutils container">
@@ -1495,12 +1463,6 @@ y(t_1) = -y (t_0) (t_1 - t_0) + y(t_0)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f344804cf10&gt;
-</pre></div>
-</div>
-<img alt="../../_images/15-springs-numerical-odes_42_1.png" src="../../_images/15-springs-numerical-odes_42_1.png" />
-</div>
 </div>
 </section>
 </section>
@@ -1511,21 +1473,21 @@ y(t_1) = -y (t_0) (t_1 - t_0) + y(t_0)
 <li><p>We showed an example of a second order method if we know the second derivative to help in our Taylor series. We can so similarly well with other schemes.</p></li>
 </ul>
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vRnHTAakWpLwYKmHHkSQtfEcBe9IYZse9Sz3DLt5paAkwYClrhBRzp88uAr4BxIFrn_2qA5YYmOhOhj/pub?w=460&amp;h=808"><p>The problem here is that <span class="math notranslate nohighlight">\(\frac{dy}{dt}\bigg|_{t=0}\)</span> is not a good approximation everywhere in the interval and expectedly at the end. So, let’s make a better approximation. Let’s take a step half way across the interval using the first approximation.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6653068e-c108-475d-b928-0108554735ba">
-<span class="eqno">(365)<a class="headerlink" href="#equation-6653068e-c108-475d-b928-0108554735ba" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-03064d9d-10a4-49f0-9f8b-f8d0d463803c">
+<span class="eqno">(365)<a class="headerlink" href="#equation-03064d9d-10a4-49f0-9f8b-f8d0d463803c" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(\Delta t) = y(0) + \Delta t \frac{dy}{dt} \bigg|_{t = \frac{\Delta t}{2}}\\
 \frac{dy}{dt}\bigg|_{t = \frac{\Delta t}{2}} = \frac{dy}{dt}\bigg|_{t=0} + \left( \frac{\Delta t}{2}\right) \frac{d^2y}{dt^2}\bigg|_{t=0} + \frac{1}{2} \left( \frac{\Delta t}{2}\right)^2 \frac{d^3y}{dt^3}\bigg|_{t=0} + ...\\
 y(\Delta t) = y(t=0) + \Delta t \left(\frac{dy}{dt}\bigg|_{t=0} + \frac{\Delta t}{2} \frac{d^2}{dt^2}\bigg|_{t=0} + ... \right)
 \end{align}\]</div>
 <p>Last full term is the approximation of mid-point slope. Thus, mid-point method is an <span class="math notranslate nohighlight">\(O(\Delta t^2)\)</span> method without using any information from the second derivative. Proposed process:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-64c24ab1-3ec3-48be-9d9c-f0eddef01bcf">
-<span class="eqno">(366)<a class="headerlink" href="#equation-64c24ab1-3ec3-48be-9d9c-f0eddef01bcf" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-da866c48-38f9-429c-9972-0ac45eae4ab7">
+<span class="eqno">(366)<a class="headerlink" href="#equation-da866c48-38f9-429c-9972-0ac45eae4ab7" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_{N+\frac{1}{2}} = y_N + \frac{\Delta t}{2} \frac{dy}{dt}\bigg|_N\\
 y_{N+1} = y_N + \Delta t \frac{dy}{dt}\bigg|_{N+\frac{1}{2}}
 \end{align}\]</div>
 <p><span class="math notranslate nohighlight">\(\underline{\text{Ex}}\)</span>:  <span class="math notranslate nohighlight">\(\frac{dy}{dt} = -y, \hspace{1cm} y(t=0)=1\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-025e136b-3648-4ddb-aeb0-a5104890f4c5">
-<span class="eqno">(367)<a class="headerlink" href="#equation-025e136b-3648-4ddb-aeb0-a5104890f4c5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-902b21ce-d7ba-412d-89b9-08d155f7e286">
+<span class="eqno">(367)<a class="headerlink" href="#equation-902b21ce-d7ba-412d-89b9-08d155f7e286" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_{N+\frac{1}{2}} = 1 + \frac{\Delta t}{2} \frac{dy}{dt}\bigg|_{t=0} = 1 - \frac{\Delta t}{2}\\
 y_{N+1} = 1 + \Delta t \left(- \left(1 - \frac{\Delta t}{2} \right) \right) = 1 - \Delta t \left(1 - \frac{\Delta t}{2} \right) 
 \end{align}\]</div>
@@ -1588,12 +1550,6 @@ y_{N+1} = 1 + \Delta t \left(- \left(1 - \frac{\Delta t}{2} \right) \right) = 1 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f344859a510&gt;
-</pre></div>
-</div>
-<img alt="../../_images/15-springs-numerical-odes_47_1.png" src="../../_images/15-springs-numerical-odes_47_1.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1636,12 +1592,6 @@ y_{N+1} = 1 + \Delta t \left(- \left(1 - \frac{\Delta t}{2} \right) \right) = 1 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f3447ee92d0&gt;
-</pre></div>
-</div>
-<img alt="../../_images/15-springs-numerical-odes_48_1.png" src="../../_images/15-springs-numerical-odes_48_1.png" />
-</div>
 </div>
 </section>
 </section>
@@ -1651,16 +1601,16 @@ y_{N+1} = 1 + \Delta t \left(- \left(1 - \frac{\Delta t}{2} \right) \right) = 1 
 <ul class="simple">
 <li><p>We have a complicated function (based on info at one point) that we want to  approximate. The Taylor series is a polynomial approxiamation of <span class="math notranslate nohighlight">\(f\)</span>:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-d359d644-b028-458d-804e-87ba7b8cf520">
-<span class="eqno">(368)<a class="headerlink" href="#equation-d359d644-b028-458d-804e-87ba7b8cf520" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-52891377-091b-4b49-a4d9-c5f2458899ff">
+<span class="eqno">(368)<a class="headerlink" href="#equation-52891377-091b-4b49-a4d9-c5f2458899ff" title="Permalink to this equation">#</a></span>\[\begin{align}
 \hat{f} = a + bx + cx^2 + dx^3
 \end{align}\]</div>
 <p>The simplest approximation is <span class="math notranslate nohighlight">\(\hat{f} = a\)</span>. Let’s demonstrate with <span class="math notranslate nohighlight">\(f(x) = \exp(x)\)</span></p>
 <ul class="simple">
 <li><p>Each coefficient is obtained by matching derivatives</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-8ab3d2a4-a72a-4ad9-9384-c318b8de806c">
-<span class="eqno">(369)<a class="headerlink" href="#equation-8ab3d2a4-a72a-4ad9-9384-c318b8de806c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-246ad6c3-25d9-41af-8f7b-e269020da0a6">
+<span class="eqno">(369)<a class="headerlink" href="#equation-246ad6c3-25d9-41af-8f7b-e269020da0a6" title="Permalink to this equation">#</a></span>\[\begin{align}
 \hat{f}(x=0) = a = f(x=0)\\
 \frac{d\hat{f}}{dx}\bigg|_{x=0} = b = \frac{df}{dx}\bigg|_{x=0}\\
 \frac{d^2\hat{f}}{dx^2}\bigg|_{x=0} = 2c = \frac{d^2}{dx^2}\bigg|_{x=0}
@@ -1688,9 +1638,6 @@ y_{N+1} = 1 + \Delta t \left(- \left(1 - \frac{\Delta t}{2} \right) \right) = 1 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/15-springs-numerical-odes_50_0.png" src="../../_images/15-springs-numerical-odes_50_0.png" />
 </div>
 </div>
 <section id="example-of-taylor-expansion-in-python">
@@ -1720,11 +1667,6 @@ y_{N+1} = 1 + \Delta t \left(- \left(1 - \frac{\Delta t}{2} \right) \right) = 1 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.266666666666667
-</pre></div>
-</div>
-</div>
 </div>
 <p>Using this function, we plot the the curves from before.</p>
 <div class="cell docutils container">
@@ -1748,12 +1690,6 @@ y_{N+1} = 1 + \Delta t \left(- \left(1 - \frac{\Delta t}{2} \right) \right) = 1 
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f344b9f7c90&gt;
-</pre></div>
-</div>
-<img alt="../../_images/15-springs-numerical-odes_54_1.png" src="../../_images/15-springs-numerical-odes_54_1.png" />
 </div>
 </div>
 <p>There’s even a scipy function that will estimate the polynomial terms in the Taylor expansion at a point for an arbitrary function!</p>
@@ -1784,12 +1720,6 @@ y_{N+1} = 1 + \Delta t \left(- \left(1 - \frac{\Delta t}{2} \right) \right) = 1 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f344ba04f90&gt;
-</pre></div>
-</div>
-<img alt="../../_images/15-springs-numerical-odes_56_1.png" src="../../_images/15-springs-numerical-odes_56_1.png" />
-</div>
 </div>
 <p>The Taylor expansion is an approximation to the true solution. Clearly, the answer at <span class="math notranslate nohighlight">\(x=2\)</span> gets better as the order of the approximation increases. Let’s plot the difference between the true solution and the approximation for various order n</p>
 <div class="cell docutils container">
@@ -1808,19 +1738,13 @@ y_{N+1} = 1 + \Delta t \left(- \left(1 - \frac{\Delta t}{2} \right) \right) = 1 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Error in Taylor approx, abs[f(x=2)-exp(x=2)]&#39;)
-</pre></div>
-</div>
-<img alt="../../_images/15-springs-numerical-odes_58_1.png" src="../../_images/15-springs-numerical-odes_58_1.png" />
-</div>
 </div>
 <ul class="simple">
 <li><p>Notice how the error gets smaller and smaller as the number of points goes.</p></li>
 <li><p>However, this only works so far, and eventually the error saturates. This is because of how numbers are stored in a computer. Floating point numbers are stored as (on a 32-bit computer):</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-d7ba3d84-9860-4a1f-b1b9-1ed1e919c452">
-<span class="eqno">(370)<a class="headerlink" href="#equation-d7ba3d84-9860-4a1f-b1b9-1ed1e919c452" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-dce4a5eb-0207-490f-8bd7-bc5bcff6b28c">
+<span class="eqno">(370)<a class="headerlink" href="#equation-dce4a5eb-0207-490f-8bd7-bc5bcff6b28c" title="Permalink to this equation">#</a></span>\[\begin{align}
 1.362597134568123 \times 10^{+36} &amp;&amp; \text{(15 decimal places and power of 10)}
 \end{align}\]</div>
 <ul class="simple">
