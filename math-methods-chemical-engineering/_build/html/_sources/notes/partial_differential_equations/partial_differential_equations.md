@@ -1,1 +1,0 @@
-# Partial Differential Equations
