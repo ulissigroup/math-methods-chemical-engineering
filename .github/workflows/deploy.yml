@@ -11,11 +11,6 @@ jobs:
   build-and-deploy-book:
     runs-on: ubuntu-latest
     
-    # Use a custom dockerfile for build
-    #container:
-    #  image: jupyter/datascience-notebook
-    #  options: --user root
-
     steps:
     - uses: actions/checkout@v3
 
@@ -24,14 +19,11 @@ jobs:
       with:
         environment-file: myenv.yml
 
-    #- name: install requirements
-    #  run: |
-    #    mamba install -y -c conda-forge lmfit jupyter-book plotly jupytext
-
     # Build the book
     - name: Build the book
+      shell: bash -l {0}
       run: |
-        conda activate buildenv && jupyter-book build math-methods-chemical-engineering
+        jupyter-book build math-methods-chemical-engineering
 
     # Deploy the book's HTML to gh-pages branch
     - name: GitHub Pages action
