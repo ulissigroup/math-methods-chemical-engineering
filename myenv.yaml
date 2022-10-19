@@ -1,0 +1,12 @@
+name: base
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - jupyter-book
+  - scipy
+  - matplotlib
+  - jupyter-book
+  - plotly
+  - lmfit
+  - statsmodels

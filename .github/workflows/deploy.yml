@@ -12,16 +12,21 @@ jobs:
     runs-on: ubuntu-latest
     
     # Use a custom dockerfile for build
-    container:
-      image: jupyter/datascience-notebook
-      options: --user root
+    #container:
+    #  image: jupyter/datascience-notebook
+    #  options: --user root
 
     steps:
     - uses: actions/checkout@v3
 
-    - name: install requirements
-      run: |
-        mamba install -y -c conda-forge lmfit jupyter-book plotly jupytext
+    - name: Install Conda environment with Micromamba
+      uses: mamba-org/provision-with-micromamba@main
+      with:
+        environment-file: myenv.yaml
+
+    #- name: install requirements
+    #  run: |
+    #    mamba install -y -c conda-forge lmfit jupyter-book plotly jupytext
 
     # Build the book
     - name: Build the book
